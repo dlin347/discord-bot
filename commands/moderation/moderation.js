@@ -1,5 +1,6 @@
-const { SlashCommandBuilder } = require('discord.js');
+const { SlashCommandBuilder, PermissionFlagsBits } = require('discord.js');
 const kickTranslations = require('../../translations/moderation/kick.json')
+const permissions = require('../../translations/other/permissions');
 
 module.exports = {
     data: new SlashCommandBuilder()
@@ -105,25 +106,29 @@ module.exports = {
     async execute(interaction) {
         if (interaction.commandName == 'moderation') {
             const subcommand = interaction.options.getSubcommand();
-            const locale = (interaction.locale);
-            if (subcommand == 'kick') {
-                //Revisar permisos
-                const member = interaction.options.getMember('member');
-                const reason = interaction.options.getString('reason') ?? kickTranslations[locale.replace('-', '')]?.noReason;
-                let content = kickTranslations[locale.replace('-', '')]?.kickSuccess.replace('{member}', `<@${member.id}>`).replace('{reason}', reason);;
-                let error = kickTranslations[locale.replace('-', '')]?.kickError.replace('{member}', `<@${member.id}>`);;
+            let locale = (interaction.locale);
+            if (!Object.keys(kickTranslations).includes(locale.replace('-', ''))) locale = 'en-US';
+            switch (subcommand) {
+                case 'kick':
+                    const msg = await permissions(locale.replace('-', ''), 'KICK_MEMBERS');
+                    if (!interaction.member.permissions.has(PermissionFlagsBits.KickMembers)) return interaction.reply({ content: msg, ephemeral: true });
+                    const member = interaction.options.getMember('member');
+                    const reason = interaction.options.getString('reason') ?? kickTranslations[locale.replace('-', '')].noReason;
+                    const content = kickTranslations[locale.replace('-', '')].kickSuccess.replace('{member}', `<@${member.id}>`).replace('{reason}', reason);;
+                    const error = kickTranslations[locale.replace('-', '')].kickError.replace('{member}', `<@${member.id}>`);;
 
-                try {
-                    await member.kick(reason)
-                    console.log("\x1b[33m" + `<<@${interaction.user.username}>> has successfully kicked <<@${member.user.username}>> from <<${interaction.guild.name}>>.` + "\x1b[0m")
-                    await interaction.reply({ content: content, ephemeral: true });
-                } catch (e) {
-                    await interaction.reply({ content: error, ephemeral: true });
-                    console.error("\x1b[31m" + e + "\x1b[0m");
-                }
-            }/*  else if (subcommand === 'ban') {
+                    try {
+                        await member.kick(reason)
+                        console.log("\x1b[33m" + `<<@${interaction.user.username}>> has successfully kicked <<@${member.user.username}>> from <<${interaction.guild.name}>>.` + "\x1b[0m")
+                        await interaction.reply({ content: content, ephemeral: true });
+                    } catch (e) {
+                        await interaction.reply({ content: error, ephemeral: true });
+                        console.error("\x1b[31m" + e + "\x1b[0m");
+                    }
+                    break;
+            }
+        }/*  else if (subcommand === 'ban') {
                 await interaction.reply('Ban working!');
             } */
-        };
     }
 };
