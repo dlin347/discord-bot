@@ -34,10 +34,8 @@ module.exports = {
         }
 
         timestamps.set(interaction.user.id, now);
-        console.log("\x1b[33m" + `<<@${interaction.user.username}>> is in cooldown for the command <</${command.data.name}>>.` + "\x1b[0m")
         setTimeout(() => {
             timestamps.delete(interaction.user.id)
-            console.log("\x1b[33m" + `<<@${interaction.user.username}>> was removed from cooldown for the command <</${command.data.name}>>.` + "\x1b[0m")
         }, cooldownAmount);
 
         try {

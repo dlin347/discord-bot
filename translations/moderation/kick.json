@@ -1,72 +1,93 @@
 {
-    "en": {
+    "enUS": {
         "slashCommandName": "moderation",
         "slashCommandDescription": "Moderation category commands",
         "subcommandName": "kick",
         "subcommandDescription": "Kick a member from the server",
-        "subcommandFirstOptionName": "member", 
+        "subcommandFirstOptionName": "member",
         "subcommandFirstOptionReason": "The member you want to kick",
         "subcommandSecondOptionName": "reason",
-        "subcommandSecondOptionReason": "The reason of kicking the member"
+        "subcommandSecondOptionReason": "The reason for kicking the member",
+        "kickSuccess": "Successfully kicked {member} from the server. Reason: {reason}",
+        "noReason": "No reason provided",
+        "kickError": "I can't kick {member} from the server. Make sure I have the necessary permissions and my role is higher than the member's role."
     },
     "de": {
         "slashCommandName": "moderation",
         "slashCommandDescription": "Befehle der Kategorie Moderation",
         "subcommandName": "kick",
         "subcommandDescription": "Kicke ein Mitglied vom Server",
-        "subcommandFirstOptionName": "mitglied", 
+        "subcommandFirstOptionName": "mitglied",
         "subcommandFirstOptionReason": "Das Mitglied, das du kicken möchtest",
         "subcommandSecondOptionName": "grund",
-        "subcommandSecondOptionReason": "Der Grund, warum das Mitglied gekickt wird"
+        "subcommandSecondOptionReason": "Der Grund, warum das Mitglied gekickt wird",
+        "kickSuccess": "Mitglied {member} wurde erfolgreich vom Server gekickt. Grund: {reason}",
+        "noReason": "Kein Grund angegeben",
+        "kickError": "Ich kann {member} nicht vom Server kicken. Stelle sicher, dass ich die erforderlichen Berechtigungen habe und meine Rolle höher ist als die Rolle des Mitglieds."
     },
     "fr": {
         "slashCommandName": "moderation",
         "slashCommandDescription": "Commandes de la catégorie Modération",
         "subcommandName": "kick",
         "subcommandDescription": "Expulsez un membre du serveur",
-        "subcommandFirstOptionName": "membre", 
+        "subcommandFirstOptionName": "membre",
         "subcommandFirstOptionReason": "Le membre que vous souhaitez expulser",
         "subcommandSecondOptionName": "raison",
-        "subcommandSecondOptionReason": "La raison de l'expulsion du membre"
+        "subcommandSecondOptionReason": "La raison de l'expulsion du membre",
+        "kickSuccess": "Membre {member} expulsé avec succès. Raison: {reason}",
+        "noReason": "Aucune raison fournie",
+        "kickError": "Je ne peux pas expulser {member} du serveur. Assurez-vous que j'ai les autorisations nécessaires et que mon rôle est supérieur au rôle du membre."
     },
-    "pt": {
+    "ptBR": {
         "slashCommandName": "moderation",
         "slashCommandDescription": "Comandos da categoria de moderação",
         "subcommandName": "kick",
         "subcommandDescription": "Expulse um membro do servidor",
-        "subcommandFirstOptionName": "membro", 
+        "subcommandFirstOptionName": "membro",
         "subcommandFirstOptionReason": "O membro que você deseja expulsar",
         "subcommandSecondOptionName": "razao",
-        "subcommandSecondOptionReason": "O motivo da expulsão do membro"
+        "subcommandSecondOptionReason": "O motivo da expulsão do membro",
+        "kickSuccess": "Membro {member} expulso com sucesso. Motivo: {reason}",
+        "noReason": "Nenhum motivo fornecido",
+        "kickError": "Não posso expulsar {member} do servidor. Certifique-se de que tenho as permissões necessárias e meu cargo é maior que o cargo do membro."
     },
-    "es": {
+    "esES": {
         "slashCommandName": "moderation",
         "slashCommandDescription": "Comandos de la categoría de moderación",
         "subcommandName": "kick",
         "subcommandDescription": "Expulsa a un miembro del servidor",
-        "subcommandFirstOptionName": "miembro", 
+        "subcommandFirstOptionName": "miembro",
         "subcommandFirstOptionReason": "El miembro que deseas expulsar",
         "subcommandSecondOptionName": "razon",
-        "subcommandSecondOptionReason": "La razón de la expulsión del miembro"
+        "subcommandSecondOptionReason": "La razón de la expulsión del miembro",
+        "kickSuccess": "Miembro {member} expulsado con éxito. Razón: {reason}",
+        "noReason": "No se proporcionó ninguna razón",
+        "kickError": "No puedo expulsar a {member} del servidor. Asegúrate de que tengo los permisos necesarios y mi rol es superior al rol del miembro."
     },
     "tr": {
         "slashCommandName": "moderation",
         "slashCommandDescription": "Moderasyon kategorisi komutları",
         "subcommandName": "kick",
         "subcommandDescription": "Bir üyeyi sunucudan at",
-        "subcommandFirstOptionName": "uye", 
+        "subcommandFirstOptionName": "uye",
         "subcommandFirstOptionReason": "Atmak istediğiniz üye",
         "subcommandSecondOptionName": "sebep",
-        "subcommandSecondOptionReason": "Üyenin atılma nedeni"
+        "subcommandSecondOptionReason": "Üyenin atılma nedeni",
+        "kickSuccess": "Başarıyla {member} üyesi sunucudan atıldı. Sebep: {reason}",
+        "noReason": "Sebep belirtilmedi",
+        "kickError": "{member} üyesini sunucudan atamam. Gerekli izinlere sahip olduğumdan ve rolümün üyenin rolünden yüksek olduğundan emin olun."
     },
     "ru": {
         "slashCommandName": "moderation",
         "slashCommandDescription": "Команды категории модерации",
         "subcommandName": "kick",
         "subcommandDescription": "Выгоните участника с сервера",
-        "subcommandFirstOptionName": "uchastnik", 
+        "subcommandFirstOptionName": "uchastnik",
         "subcommandFirstOptionReason": "Участник, которого вы хотите выгнать",
         "subcommandSecondOptionName": "prichina",
-        "subcommandSecondOptionReason": "Причина выгнания участника"
+        "subcommandSecondOptionReason": "Причина выгнания участника",
+        "kickSuccess": "Участник {member} успешно выгнан с сервера. Причина: {reason}",
+        "noReason": "Причина не указана",
+        "kickError": "Я не могу выгнать участника {member} с сервера. Убедитесь, что у меня есть необходимые разрешения и моя роль выше роли участника."
     }
 }
