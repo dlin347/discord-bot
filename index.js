@@ -10,7 +10,7 @@ const client = new Client({
         GatewayIntentBits.GuildMembers,
         GatewayIntentBits.GuildEmojisAndStickers,
         GatewayIntentBits.GuildPresences,
-        GatewayIntentBits.MessageContent,
+        GatewayIntentBits.MessageContent
     ]
 });
 
@@ -25,6 +25,7 @@ for (const folder of commandFolders) {
         const filePath = path.join(commandsPath, file);
         const command = require(filePath);
         if ('data' in command && 'execute' in command) {
+            console.log("\x1b[32m" + `COMMAND LOADED: <</${command.data.name}>>` + "\x1b[0m")
             client.commands.set(command.data.name, command);
         }
     }
