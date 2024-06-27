@@ -2,7 +2,7 @@ require('dotenv').config();
 const { REST, Routes } = require('discord.js');
 const fs = require('node:fs');
 const path = require('node:path');
-const { clientId } = require('./config.json');
+const { clientId, guildId } = require('./config.json');
 
 const commands = [];
 const foldersPath = path.join(__dirname, 'commands');
@@ -24,8 +24,12 @@ const rest = new REST().setToken(process.env.BOT_TOKEN);
 (async () => {
     try {
         console.log("\x1b[32m" +`STARTED REFRESHING SLASH (/) COMMANDS.` + "\x1b[0m");
-        const data = await rest.put(
+        /* const data = await rest.put(
             Routes.applicationCommands(clientId),
+            { body: commands },
+        ); */
+        const data = await rest.put(
+            Routes.applicationCommands(clientId, guildId),
             { body: commands },
         );
         data.forEach(command => {

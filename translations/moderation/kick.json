@@ -1,0 +1,72 @@
+{
+    "en": {
+        "slashCommandName": "moderation",
+        "slashCommandDescription": "Moderation category commands",
+        "subcommandName": "kick",
+        "subcommandDescription": "Kick a member from the server",
+        "subcommandFirstOptionName": "member", 
+        "subcommandFirstOptionReason": "The member you want to kick",
+        "subcommandSecondOptionName": "reason",
+        "subcommandSecondOptionReason": "The reason of kicking the member"
+    },
+    "de": {
+        "slashCommandName": "moderation",
+        "slashCommandDescription": "Befehle der Kategorie Moderation",
+        "subcommandName": "kick",
+        "subcommandDescription": "Kicke ein Mitglied vom Server",
+        "subcommandFirstOptionName": "mitglied", 
+        "subcommandFirstOptionReason": "Das Mitglied, das du kicken möchtest",
+        "subcommandSecondOptionName": "grund",
+        "subcommandSecondOptionReason": "Der Grund, warum das Mitglied gekickt wird"
+    },
+    "fr": {
+        "slashCommandName": "moderation",
+        "slashCommandDescription": "Commandes de la catégorie Modération",
+        "subcommandName": "kick",
+        "subcommandDescription": "Expulsez un membre du serveur",
+        "subcommandFirstOptionName": "membre", 
+        "subcommandFirstOptionReason": "Le membre que vous souhaitez expulser",
+        "subcommandSecondOptionName": "raison",
+        "subcommandSecondOptionReason": "La raison de l'expulsion du membre"
+    },
+    "pt": {
+        "slashCommandName": "moderation",
+        "slashCommandDescription": "Comandos da categoria de moderação",
+        "subcommandName": "kick",
+        "subcommandDescription": "Expulse um membro do servidor",
+        "subcommandFirstOptionName": "membro", 
+        "subcommandFirstOptionReason": "O membro que você deseja expulsar",
+        "subcommandSecondOptionName": "razao",
+        "subcommandSecondOptionReason": "O motivo da expulsão do membro"
+    },
+    "es": {
+        "slashCommandName": "moderation",
+        "slashCommandDescription": "Comandos de la categoría de moderación",
+        "subcommandName": "kick",
+        "subcommandDescription": "Expulsa a un miembro del servidor",
+        "subcommandFirstOptionName": "miembro", 
+        "subcommandFirstOptionReason": "El miembro que deseas expulsar",
+        "subcommandSecondOptionName": "razon",
+        "subcommandSecondOptionReason": "La razón de la expulsión del miembro"
+    },
+    "tr": {
+        "slashCommandName": "moderation",
+        "slashCommandDescription": "Moderasyon kategorisi komutları",
+        "subcommandName": "kick",
+        "subcommandDescription": "Bir üyeyi sunucudan at",
+        "subcommandFirstOptionName": "uye", 
+        "subcommandFirstOptionReason": "Atmak istediğiniz üye",
+        "subcommandSecondOptionName": "sebep",
+        "subcommandSecondOptionReason": "Üyenin atılma nedeni"
+    },
+    "ru": {
+        "slashCommandName": "moderation",
+        "slashCommandDescription": "Команды категории модерации",
+        "subcommandName": "kick",
+        "subcommandDescription": "Выгоните участника с сервера",
+        "subcommandFirstOptionName": "uchastnik", 
+        "subcommandFirstOptionReason": "Участник, которого вы хотите выгнать",
+        "subcommandSecondOptionName": "prichina",
+        "subcommandSecondOptionReason": "Причина выгнания участника"
+    }
+}
