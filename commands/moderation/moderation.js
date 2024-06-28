@@ -1,60 +1,74 @@
 const { SlashCommandBuilder, PermissionFlagsBits } = require('discord.js');
-const kickTranslations = require('../../translations/moderation/kick.json')
-const permissions = require('../../translations/other/permissions');
+const permissions = require('../../locales/permissions.js');
+
+const de = require('../../locales/de.json');
+const fr = require('../../locales/fr.json');
+const pt = require('../../locales/pt-BR.json');
+const es = require('../../locales/es-ES.json');
+const tr = require('../../locales/tr.json');
+const ru = require('../../locales/ru.json');
+const fs = require('fs');
+const path = require('path');
 
 module.exports = {
     data: new SlashCommandBuilder()
         .setName('moderation')
         .setNameLocalizations({
+            de: de.categories.moderation.name,
+            fr: fr.categories.moderation.name,
+            "pt-BR": pt.categories.moderation.name,
+            "es-ES": es.categories.moderation.name,
+            tr: tr.categories.moderation.name,
+            ru: ru.categories.moderation.name
         })
         .setDescription('Moderation category commands')
         .setDescriptionLocalizations({
-            de: kickTranslations.de.slashCommandDescription,
-            fr: kickTranslations.fr.slashCommandDescription,
-            "pt-BR": kickTranslations.ptBR.slashCommandDescription,
-            "es-ES": kickTranslations.esES.slashCommandDescription,
-            tr: kickTranslations.tr.slashCommandDescription,
-            ru: kickTranslations.ru.slashCommandDescription,
+            de: de.categories.moderation.description,
+            fr: fr.categories.moderation.description,
+            "pt-BR": pt.categories.moderation.description,
+            "es-ES": es.categories.moderation.description,
+            tr: tr.categories.moderation.description,
+            ru: ru.categories.moderation.description
         })
         .addSubcommand(subcommand =>
             subcommand
                 .setName('kick')
                 .setNameLocalizations({
-                    de: kickTranslations.de.subcommandName,
-                    fr: kickTranslations.fr.subcommandName,
-                    "pt-BR": kickTranslations.ptBR.subcommandName,
-                    "es-ES": kickTranslations.esES.subcommandName,
-                    tr: kickTranslations.tr.subcommandName,
-                    ru: kickTranslations.ru.subcommandName,
+                    de: de.categories.moderation.commands.kick.name,
+                    fr: fr.categories.moderation.commands.kick.name,
+                    "pt-BR": pt.categories.moderation.commands.kick.name,
+                    "es-ES": es.categories.moderation.commands.kick.name,
+                    tr: tr.categories.moderation.commands.kick.name,
+                    ru: ru.categories.moderation.commands.kick.name
                 })
                 .setDescription('Kick a member from the server')
                 .setDescriptionLocalizations({
-                    de: kickTranslations.de.subcommandDescription,
-                    fr: kickTranslations.fr.subcommandDescription,
-                    "pt-BR": kickTranslations.ptBR.subcommandDescription,
-                    "es-ES": kickTranslations.esES.subcommandDescription,
-                    tr: kickTranslations.tr.subcommandDescription,
-                    ru: kickTranslations.ru.subcommandDescription,
+                    de: de.categories.moderation.commands.kick.description,
+                    fr: fr.categories.moderation.commands.kick.description,
+                    "pt-BR": pt.categories.moderation.commands.kick.description,
+                    "es-ES": es.categories.moderation.commands.kick.description,
+                    tr: tr.categories.moderation.commands.kick.description,
+                    ru: ru.categories.moderation.commands.kick.description
                 })
                 .addUserOption(option =>
                     option
                         .setName('member')
                         .setNameLocalizations({
-                            de: kickTranslations.de.subcommandFirstOptionName,
-                            fr: kickTranslations.fr.subcommandFirstOptionName,
-                            "pt-BR": kickTranslations.ptBR.subcommandFirstOptionName,
-                            "es-ES": kickTranslations.esES.subcommandFirstOptionName,
-                            tr: kickTranslations.tr.subcommandFirstOptionName,
-                            ru: kickTranslations.ru.subcommandFirstOptionName,
+                            de: de.categories.moderation.commands.kick.options.member.name,
+                            fr: fr.categories.moderation.commands.kick.options.member.name,
+                            "pt-BR": pt.categories.moderation.commands.kick.options.member.name,
+                            "es-ES": es.categories.moderation.commands.kick.options.member.name,
+                            tr: tr.categories.moderation.commands.kick.options.member.name,
+                            ru: ru.categories.moderation.commands.kick.options.member.name
                         })
                         .setDescription('The member you want to kick')
                         .setDescriptionLocalizations({
-                            de: kickTranslations.de.subcommandFirstOptionReason,
-                            fr: kickTranslations.fr.subcommandFirstOptionReason,
-                            "pt-BR": kickTranslations.ptBR.subcommandFirstOptionReason,
-                            "es-ES": kickTranslations.esES.subcommandFirstOptionReason,
-                            tr: kickTranslations.tr.subcommandFirstOptionReason,
-                            ru: kickTranslations.ru.subcommandFirstOptionReason,
+                            de: de.categories.moderation.commands.kick.options.member.description,
+                            fr: fr.categories.moderation.commands.kick.options.member.description,
+                            "pt-BR": pt.categories.moderation.commands.kick.options.member.description,
+                            "es-ES": es.categories.moderation.commands.kick.options.member.description,
+                            tr: tr.categories.moderation.commands.kick.options.member.description,
+                            ru: ru.categories.moderation.commands.kick.options.member.description
                         })
                         .setRequired(true)
                 )
@@ -62,60 +76,63 @@ module.exports = {
                     option
                         .setName('reason')
                         .setNameLocalizations({
-                            de: kickTranslations.de.subcommandSecondOptionName,
-                            fr: kickTranslations.fr.subcommandSecondOptionName,
-                            "pt-BR": kickTranslations.ptBR.subcommandSecondOptionName,
-                            "es-ES": kickTranslations.esES.subcommandSecondOptionName,
-                            tr: kickTranslations.tr.subcommandSecondOptionName,
-                            ru: kickTranslations.ru.subcommandSecondOptionName,
+                            de: de.categories.moderation.commands.kick.options.reason.name,
+                            fr: fr.categories.moderation.commands.kick.options.reason.name,
+                            "pt-BR": pt.categories.moderation.commands.kick.options.reason.name,
+                            "es-ES": es.categories.moderation.commands.kick.options.reason.name,
+                            tr: tr.categories.moderation.commands.kick.options.reason.name,
+                            ru: ru.categories.moderation.commands.kick.options.reason.name
                         })
                         .setDescription('The reason of kicking the member')
                         .setDescriptionLocalizations({
-                            de: kickTranslations.de.subcommandSecondOptionReason,
-                            fr: kickTranslations.fr.subcommandSecondOptionReason,
-                            "pt-BR": kickTranslations.ptBR.subcommandSecondOptionReason,
-                            "es-ES": kickTranslations.esES.subcommandSecondOptionReason,
-                            tr: kickTranslations.tr.subcommandSecondOptionReason,
-                            ru: kickTranslations.ru.subcommandSecondOptionReason,
+                            de: de.categories.moderation.commands.kick.options.reason.description,
+                            fr: fr.categories.moderation.commands.kick.options.reason.description,
+                            "pt-BR": pt.categories.moderation.commands.kick.options.reason.description,
+                            "es-ES": es.categories.moderation.commands.kick.options.reason.description,
+                            tr: tr.categories.moderation.commands.kick.options.reason.description,
+                            ru: ru.categories.moderation.commands.kick.options.reason.description
                         })
                 )
         )
-        /* .addSubcommand(subcommand =>
-            subcommand
-                .setName('ban')
-                .setDescription('Bans a member from the server')
-                .addUserOption(option =>
-                    option.setName('member')
-                        .setDescription('Member to ban')
-                        .setRequired(true)
-                )
-                .addStringOption(option =>
-                    option.setName('reason')
-                        .setDescription('Reason to ban the member')
-                        .setRequired(true)
-                )
-        ) */
         .setDMPermission(false),
     async execute(interaction) {
         if (interaction.commandName == 'moderation') {
             const subcommand = interaction.options.getSubcommand();
-            let locale = (interaction.locale);
-            if (!Object.keys(kickTranslations).includes(locale.replace('-', ''))) locale = 'en-US';
+            const localesPath = path.join(__dirname, '../../locales');
+            const localeFiles = fs.readdirSync(localesPath).filter(files => files.endsWith('.json'));
+            let localeFile;
+
+            for (const file of localeFiles) {
+                const locale = file.split('.')[0];
+                if (locale === interaction.locale) {
+                    localeFile = require(path.join(localesPath, file));
+                }
+            }
+            if (!localeFile) {
+                locale = 'en-US';
+                localeFile = require(path.join(localesPath, 'en-US.json'));
+            }
+
             switch (subcommand) {
                 case 'kick':
-                    const msg = await permissions(locale.replace('-', ''), 'KICK_MEMBERS');
-                    if (!interaction.member.permissions.has(PermissionFlagsBits.KickMembers)) return interaction.reply({ content: msg, ephemeral: true });
+                    const message = await permissions(interaction.locale, 'KICK_MEMBERS');
+                    if (!interaction.member.permissions.has(PermissionFlagsBits.KickMembers)) return interaction.reply({ content: message, ephemeral: true });
                     const member = interaction.options.getMember('member');
-                    const reason = interaction.options.getString('reason') ?? kickTranslations[locale.replace('-', '')].noReason;
-                    const content = kickTranslations[locale.replace('-', '')].kickSuccess.replace('{member}', `<@${member.id}>`).replace('{reason}', reason);;
-                    const error = kickTranslations[locale.replace('-', '')].kickError.replace('{member}', `<@${member.id}>`);;
+                    const reason = interaction.options.getString('reason') ?? localeFile.categories.moderation.commands.kick.responses.noReason
+                    const content = localeFile.categories.moderation.commands.kick.responses.success.replace('{{member}}', `<@${member.id}>`).replace('{{reason}}', reason)
+                    const defaultError = localeFile.categories.moderation.commands.kick.responses.defaultError.replace('{{member}}', `<@${member.id}>`).replace('{{guild}}', interaction.guild.name)
+                    const noPermissionsError = localeFile.categories.moderation.commands.kick.responses.noPermissionsError.replace('{{member}}', `<@${member.id}>`).replace('{{guild}}', interaction.guild.name)
+                    const higherRoleError = localeFile.categories.moderation.commands.kick.responses.higherRoleError.replace('{{member}}', `<@${member.id}>`).replace('{{guild}}', interaction.guild.name)
+
+                    if (!interaction.guild.members.me.permissions.has(PermissionFlagsBits.KickMembers)) return interaction.reply({ content: noPermissionsError, ephemeral: true });
+                    if (interaction.guild.members.me.roles.highest.comparePositionTo(member.roles.highest) <= 0) return interaction.reply({ content: higherRoleError, ephemeral: true });
 
                     try {
                         await member.kick(reason)
-                        console.log("\x1b[33m" + `<<@${interaction.user.username}>> has successfully kicked <<@${member.user.username}>> from <<${interaction.guild.name}>>.` + "\x1b[0m")
+                        console.log("\x1b[33m" + `<<@${interaction.user.username}>> HAS SUCCESSFULLY <<@${member.user.username}>> FROM <<${interaction.guild.name}>>.` + "\x1b[0m")
                         await interaction.reply({ content: content, ephemeral: true });
                     } catch (e) {
-                        await interaction.reply({ content: error, ephemeral: true });
+                        await interaction.reply({ content: defaultError, ephemeral: true });
                         console.error("\x1b[31m" + e + "\x1b[0m");
                     }
                     break;

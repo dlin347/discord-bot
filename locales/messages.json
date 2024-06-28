@@ -1,0 +1,32 @@
+{
+    "en-US": {
+        "eExists": "Looks like this command does not exist anymore",
+        "eExecution": "There was an error while executing this command. Try again later...",
+        "cooldown": "You are in a cooldown for the command {{command}}. You may use this command again {{timestamp}}"
+    },
+    "es-ES": {
+        "eExists": "Parece que este comando ya no existe",
+        "eExecution": "Hubo un error al ejecutar este comando. Inténtalo de nuevo más tarde...",
+        "cooldown": "Estás en un cooldown para el comando {{command}}. Puedes usar este comando de nuevo {{timestamp}}"
+    },
+    "de": {
+        "eExists": "Es sieht so aus, als ob dieser Befehl nicht mehr existiert",
+        "eExecution": "Beim Ausführen dieses Befehls ist ein Fehler aufgetreten. Versuchen Sie es später erneut...",
+        "cooldown": "Sie befinden sich in einer Abkühlphase für den Befehl {{command}}. Sie können diesen Befehl erneut verwenden {{timestamp}}"
+    },
+    "fr": {
+        "eExists": "Il semble que cette commande n'existe plus",
+        "eExecution": "Une erreur s'est produite lors de l'exécution de cette commande. Réessayez plus tard...",
+        "cooldown": "Vous êtes en cooldown pour la commande {{command}}. Vous pouvez utiliser cette commande à nouveau {{timestamp}}"
+    },
+    "pt-BR": {
+        "eExists": "Parece que este comando não existe mais",
+        "eExecution": "Houve um erro ao executar este comando. Tente novamente mais tarde...",
+        "cooldown": "Você está em cooldown para o comando {{command}}. Você pode usar este comando novamente {{timestamp}}"
+    },
+    "ru": {
+        "eExists": "Похоже, что этой команды больше не существует",
+        "eExecution": "При выполнении этой команды произошла ошибка. Попробуйте позже...",
+        "cooldown": "Вы находитесь в режиме охлаждения для команды {{command}}. Вы можете использовать эту команду снова {{timestamp}}"
+    }
+}

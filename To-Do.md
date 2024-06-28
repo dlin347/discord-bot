@@ -1,0 +1,2 @@
+- [ ] Send DM to Kick User
+- [ ] Ban Command

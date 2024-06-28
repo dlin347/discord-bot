@@ -4,10 +4,15 @@ module.exports = {
     name: Events.InteractionCreate,
     async execute(interaction) {
         if (!interaction.isChatInputCommand()) return;
+        const messages = require('../locales/messages.json');
+        let locale = interaction.locale;
+        if (!Object.keys(messages).includes(locale)) locale = 'en-US';
+        const eExists = messages[locale].eExists;
+        const eExecution = messages[locale].eExecution;
 
         const command = interaction.client.commands.get(interaction.commandName);
         if (!command) {
-            interaction.reply({ content: 'Looks like this command does not exist anymore.', ephemeral: true });
+            interaction.reply({ content: eExists, ephemeral: true });
             return;
         }
 
@@ -29,7 +34,8 @@ module.exports = {
             const expirationTime = timestamps.get(interaction.user.id) + cooldownAmount;
             if (now < expirationTime) {
                 const expiredTimestamp = Math.round(expirationTime / 1000);
-                return interaction.reply({ content: `You are in a cooldown for the command </${command.data.name}:${cmd.id}>. You may use this command again <t:${expiredTimestamp}:R>.`, ephemeral: true });
+                const cooldown = messages[locale].cooldown.replace('{{command}}', `</${command.data.name}:${cmd.id}>`).replace('{{timestamp}}', `<t:${expiredTimestamp}:R>`);
+                return interaction.reply({ content: `${cooldown}`, ephemeral: true });
             }
         }
 
@@ -43,9 +49,9 @@ module.exports = {
         } catch (error) {
             console.error("\x1b[31m" + error + "\x1b[0m");
             if (interaction.replied || interaction.deferred) {
-                await interaction.followUp({ content: 'There was an error while executing this command. Try again later...', ephemeral: true });
+                await interaction.followUp({ content: eExecution, ephemeral: true });
             } else {
-                await interaction.reply({ content: 'There was an error while executing this command. Try again later...', ephemeral: true });
+                await interaction.reply({ content: eExecution, ephemeral: true });
             }
         }
     },

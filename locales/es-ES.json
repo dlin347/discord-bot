@@ -20,7 +20,7 @@
                     "responses": {
                         "success": "El miembro {{member}} ha sido expulsado con éxito. Razón: {{reason}}",
                         "noReason": "No se proporcionó ninguna razón",
-                        "defaultError": "No puedo expulsar a {{member}} del servidor",
+                        "defaultError": "No puedo expulsar a {{member}} de {{guild}}",
                         "noPermissionsError": "No puedo expulsar a {{member}} del servidor. Asegúrate de que tengo el permiso `KICK_MEMBERS`",
                         "higherRoleError": "No puedo expulsar a {{member}} del servidor. Asegúrate de que mi rol es superior al rol del miembro"
                     }
