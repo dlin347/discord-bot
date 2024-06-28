@@ -18,6 +18,8 @@
   "homepage": "https://github.com/Dawwwei/cybot#readme",
   "dependencies": {
     "discord.js": "^14.15.3",
-    "dotenv": "^16.4.5"
+    "dotenv": "^16.4.5",
+    "i18next": "^23.11.5",
+    "i18next-fs-backend": "^2.3.1"
   }
 }

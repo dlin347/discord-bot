@@ -5,14 +5,7 @@ const permissions = require('../../translations/other/permissions');
 module.exports = {
     data: new SlashCommandBuilder()
         .setName('moderation')
-        // Consultar regiones e idiomas. Algunos requieren ser strings. Idioma en caso de que el usuario no hable ninguno de estos idiomas: Inglés
         .setNameLocalizations({
-            de: kickTranslations.de.slashCommandName,
-            fr: kickTranslations.fr.slashCommandName,
-            "pt-BR": kickTranslations.ptBR.slashCommandName,
-            "es-ES": kickTranslations.esES.slashCommandName,
-            tr: kickTranslations.tr.slashCommandName,
-            ru: kickTranslations.ru.slashCommandName,
         })
         .setDescription('Moderation category commands')
         .setDescriptionLocalizations({
@@ -127,8 +120,6 @@ module.exports = {
                     }
                     break;
             }
-        }/*  else if (subcommand === 'ban') {
-                await interaction.reply('Ban working!');
-            } */
+        }
     }
 };

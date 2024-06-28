@@ -1,0 +1,31 @@
+{
+    "categories": {
+        "moderation": {
+            "name": "moderasyon",
+            "description": "Moderasyon kategorisi komutları",
+            "commands": {
+                "kick": {
+                    "name": "kick",
+                    "description": "Sunucudan bir üyeyi at",
+                    "options": {
+                        "member": {
+                            "name": "üye",
+                            "description": "Atmak istediğiniz üye"
+                        },
+                        "reason": {
+                            "name": "sebep",
+                            "description": "Üyenin atılma sebebi"
+                        }
+                    },
+                    "responses": {
+                        "success": "{{member}} başarıyla sunucudan atıldı. Sebep: {{reason}}",
+                        "noReason": "Sebep belirtilmedi",
+                        "defaultError": "{{member}}'ı {{guild}} sunucusundan atamam",
+                        "noPermissionsError": "{{member}}'ı {{guild}} sunucusundan atamam. `KICK_MEMBERS` iznine sahip olduğumdan emin olun",
+                        "higherRoleError": "{{member}}'ı {{guild}} sunucusundan atamam. Rolümün üyenin rolünden üstün olduğundan emin olun"
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,31 @@
+{
+    "categories": {
+        "moderation": {
+            "name": "модерация",
+            "description": "Команды категории модерации",
+            "commands": {
+                "kick": {
+                    "name": "kick",
+                    "description": "Выгоните участника из сервера",
+                    "options": {
+                        "member": {
+                            "name": "участник",
+                            "description": "Участник, которого вы хотите выгнать"
+                        },
+                        "reason": {
+                            "name": "причина",
+                            "description": "Причина выгнания участника"
+                        }
+                    },
+                    "responses": {
+                        "success": "Успешно выгнан участник {{member}} из сервера. Причина: {{reason}}",
+                        "noReason": "Причина не указана",
+                        "defaultError": "Я не могу выгнать {{member}} из {{guild}}",
+                        "noPermissionsError": "Я не могу выгнать {{member}} из {{guild}}. Убедитесь, что у меня есть разрешение `KICK_MEMBERS`",
+                        "higherRoleError": "Я не могу выгнать {{member}} из {{guild}}. Убедитесь, что моя роль выше роли участника"
+                    }
+                }
+            }
+        }
+    }
+}

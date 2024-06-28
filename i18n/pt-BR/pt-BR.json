@@ -1,0 +1,31 @@
+{
+    "categories": {
+        "moderation": {
+            "name": "moderação",
+            "description": "Comandos de moderação",
+            "commands": {
+                "kick": {
+                    "name": "kick",
+                    "description": "Expulse um membro do servidor",
+                    "options": {
+                        "member": {
+                            "name": "membro",
+                            "description": "O membro que você deseja expulsar"
+                        },
+                        "reason": {
+                            "name": "razão",
+                            "description": "O motivo da expulsão do membro"
+                        }
+                    },
+                    "responses": {
+                        "success": "{{member}} foi expulso com sucesso do servidor. Motivo: {{reason}}",
+                        "noReason": "Nenhum motivo fornecido",
+                        "defaultError": "Não posso expulsar {{member}} de {{guild}}",
+                        "noPermissionsError": "Não posso expulsar {{member}} de {{guild}}. Certifique-se de que tenho permissão `KICK_MEMBERS`",
+                        "higherRoleError": "Não posso expulsar {{member}} de {{guild}}. Certifique-se de que meu cargo é superior ao cargo do membro"
+                    }
+                }
+            }
+        }
+    }
+}

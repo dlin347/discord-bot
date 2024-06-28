@@ -1,0 +1,31 @@
+{
+    "categories": {
+        "moderation": {
+            "name": "moderation",
+            "description": "Moderation category commands",
+            "commands": {
+                "kick": {
+                    "name": "kick",
+                    "description": "Kick a member from the server",
+                    "options": {
+                        "member": {
+                            "name": "member",
+                            "description": "The member you want to kick"
+                        },
+                        "reason": {
+                            "name": "reason",
+                            "description": "The reason for kicking the member"
+                        }
+                    },
+                    "responses": {
+                        "success": "Successfully kicked {{member}} from the server. Reason: {{reason}}",
+                        "noReason": "No reason provided",
+                        "defaultError": "I can't kick {{member}} from {{guild}}",
+                        "noPermissionsError": "I can't kick {{member}} from {{guild}}. Make sure I have `KICK_MEMBERS` permission",
+                        "higherRoleError": "I can't kick {{member}} from {{guild}}. Make sure my role is higher than the member's role"
+                    }
+                }
+            }
+        }
+    }
+}
