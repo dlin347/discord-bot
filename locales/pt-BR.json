@@ -24,6 +24,27 @@
                         "noPermissionsError": "Não posso expulsar {{member}} de {{guild}}. Certifique-se de que tenho permissão `KICK_MEMBERS`",
                         "higherRoleError": "Não posso expulsar {{member}} de {{guild}}. Certifique-se de que meu cargo é superior ao cargo do membro"
                     }
+                },
+                "ban": {
+                    "name": "ban",
+                    "description": "Proíba um membro do servidor",
+                    "options": {
+                        "member": {
+                            "name": "membro",
+                            "description": "O membro que você deseja banir"
+                        },
+                        "reason": {
+                            "name": "razão",
+                            "description": "O motivo da proibição do membro"
+                        }
+                    },
+                    "responses": {
+                        "success": "{{member}} foi banido com sucesso do servidor. Motivo: {{reason}}",
+                        "noReason": "Nenhum motivo fornecido",
+                        "defaultError": "Não posso banir {{member}} de {{guild}}",
+                        "noPermissionsError": "Não posso banir {{member}} de {{guild}}. Certifique-se de que tenho permissão `BAN_MEMBERS`",
+                        "higherRoleError": "Não posso banir {{member}} de {{guild}}. Certifique-se de que meu cargo é superior ao cargo do membro"
+                    }
                 }
             }
         }

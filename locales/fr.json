@@ -24,6 +24,27 @@
                         "noPermissionsError": "Je ne peux pas expulser {{member}} de {{guild}}. Assurez-vous que j'ai la permission `KICK_MEMBERS`",
                         "higherRoleError": "Je ne peux pas expulser {{member}} de {{guild}}. Assurez-vous que mon rôle est supérieur au rôle du membre"
                     }
+                },
+                "ban": {
+                    "name": "ban",
+                    "description": "Interdisez un membre du serveur",
+                    "options": {
+                        "member": {
+                            "name": "membre",
+                            "description": "Le membre que vous souhaitez interdire"
+                        },
+                        "reason": {
+                            "name": "raison",
+                            "description": "La raison de l'interdiction du membre"
+                        }
+                    },
+                    "responses": {
+                        "success": "{{member}} a été interdit avec succès du serveur. Raison: {{reason}}",
+                        "noReason": "Aucune raison fournie",
+                        "defaultError": "Je ne peux pas interdire {{member}} de {{guild}}",
+                        "noPermissionsError": "Je ne peux pas interdire {{member}} de {{guild}}. Assurez-vous que j'ai la permission `BAN_MEMBERS`",
+                        "higherRoleError": "Je ne peux pas interdire {{member}} de {{guild}}. Assurez-vous que mon rôle est supérieur au rôle du membre"
+                    }
                 }
             }
         }

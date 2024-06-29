@@ -4,7 +4,7 @@ module.exports = {
     name: Events.InteractionCreate,
     async execute(interaction) {
         if (!interaction.isChatInputCommand()) return;
-        const messages = require('../locales/messages.json');
+        const messages = require('../locales/other/messages.json');
         let locale = interaction.locale;
         if (!Object.keys(messages).includes(locale)) locale = 'en-US';
         const eExists = messages[locale].eExists;

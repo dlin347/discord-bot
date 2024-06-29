@@ -24,6 +24,27 @@
                         "noPermissionsError": "Ich kann {{member}} nicht von {{guild}} kicken. Stelle sicher, dass ich die `KICK_MEMBERS`-Berechtigung habe",
                         "higherRoleError": "Ich kann {{member}} nicht von {{guild}} kicken. Stelle sicher, dass meine Rolle höher ist als die Rolle des Mitglieds"
                     }
+                },
+                "ban": {
+                    "name": "ban",
+                    "description": "Verbanne ein Mitglied vom Server",
+                    "options": {
+                        "member": {
+                            "name": "member",
+                            "description": "Das Mitglied, das du verbannen möchtest"
+                        },
+                        "reason": {
+                            "name": "reason",
+                            "description": "Der Grund für das Verbannen des Mitglieds"
+                        }
+                    },
+                    "responses": {
+                        "success": "{{member}} erfolgreich vom Server verbannt. Grund: {{reason}}",
+                        "noReason": "Kein Grund angegeben",
+                        "defaultError": "Ich kann {{member}} nicht von {{guild}} verbannen",
+                        "noPermissionsError": "Ich kann {{member}} nicht von {{guild}} verbannen. Stelle sicher, dass ich die `BAN_MEMBERS`-Berechtigung habe",
+                        "higherRoleError": "Ich kann {{member}} nicht von {{guild}} verbannen. Stelle sicher, dass meine Rolle höher ist als die Rolle des Mitglieds"
+                    }
                 }
             }
         }

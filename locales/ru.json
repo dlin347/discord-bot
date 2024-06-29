@@ -24,6 +24,27 @@
                         "noPermissionsError": "Я не могу выгнать {{member}} из {{guild}}. Убедитесь, что у меня есть разрешение `KICK_MEMBERS`",
                         "higherRoleError": "Я не могу выгнать {{member}} из {{guild}}. Убедитесь, что моя роль выше роли участника"
                     }
+                },
+                "ban": {
+                    "name": "ban",
+                    "description": "Забаньте участника на сервере",
+                    "options": {
+                        "member": {
+                            "name": "участник",
+                            "description": "Участник, которого вы хотите забанить"
+                        },
+                        "reason": {
+                            "name": "причина",
+                            "description": "Причина бана участника"
+                        }
+                    },
+                    "responses": {
+                        "success": "Участник {{member}} успешно забанен на сервере. Причина: {{reason}}",
+                        "noReason": "Причина не указана",
+                        "defaultError": "Я не могу забанить {{member}} из {{guild}}",
+                        "noPermissionsError": "Я не могу забанить {{member}} из {{guild}}. Убедитесь, что у меня есть разрешение `BAN_MEMBERS`",
+                        "higherRoleError": "Я не могу забанить {{member}} из {{guild}}. Убедитесь, что моя роль выше роли участника"
+                    }
                 }
             }
         }

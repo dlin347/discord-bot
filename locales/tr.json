@@ -24,6 +24,27 @@
                         "noPermissionsError": "{{member}}'ı {{guild}} sunucusundan atamam. `KICK_MEMBERS` iznine sahip olduğumdan emin olun",
                         "higherRoleError": "{{member}}'ı {{guild}} sunucusundan atamam. Rolümün üyenin rolünden üstün olduğundan emin olun"
                     }
+                },
+                "ban": {
+                    "name": "ban",
+                    "description": "Sunucudan bir üyeyi yasakla",
+                    "options": {
+                        "member": {
+                            "name": "üye",
+                            "description": "Yasaklamak istediğiniz üye"
+                        },
+                        "reason": {
+                            "name": "sebep",
+                            "description": "Üyenin yasaklanma sebebi"
+                        }
+                    },
+                    "responses": {
+                        "success": "{{member}} başarıyla sunucudan yasaklandı. Sebep: {{reason}}",
+                        "noReason": "Sebep belirtilmedi",
+                        "defaultError": "{{member}}'ı {{guild}} sunucusundan yasaklayamam",
+                        "noPermissionsError": "{{member}}'ı {{guild}} sunucusundan yasaklayamam. `BAN_MEMBERS` iznine sahip olduğumdan emin olun",
+                        "higherRoleError": "{{member}}'ı {{guild}} sunucusundan yasaklayamam. Rolümün üyenin rolünden üstün olduğundan emin olun"
+                    }
                 }
             }
         }
