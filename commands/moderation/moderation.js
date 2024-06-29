@@ -2,6 +2,7 @@ const { SlashCommandBuilder, ChannelType } = require('discord.js');
 
 const kickMember = require('./kick');
 const banMember = require('./ban');
+const deleteMessages = require('./delete-messages');
 
 const de = require('../../locales/de.json');
 const fr = require('../../locales/fr.json');
