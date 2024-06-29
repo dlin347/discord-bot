@@ -50,6 +50,25 @@
                         "noPermissionsError": "Não posso banir {{member}} de {{guild}}. Certifique-se de que tenho permissão `BAN_MEMBERS`",
                         "higherRoleError": "Não posso banir {{member}} de {{guild}}. Certifique-se de que meu cargo é superior ao cargo do membro"
                     }
+                },
+                "delete_messages": {
+                    "name": "excluir_mensagens",
+                    "description": "Excluir uma quantidade de mensagens em um canal específico",
+                    "options": {
+                        "amount": {
+                            "name": "quantidade",
+                            "description": "A quantidade de mensagens a ser excluída"
+                        },
+                        "channel": {
+                            "name": "canal",
+                            "description": "O canal onde as mensagens devem ser excluídas"
+                        }
+                    },
+                    "responses": {
+                        "success": "Excluídas com sucesso {{amount}} mensagens em {{channel}}",
+                        "defaultError": "Não posso excluir mensagens em {{channel}}",
+                        "noPermissionsError": "Não posso excluir mensagens em {{channel}}. Certifique-se de que tenho permissão `MANAGE_MESSAGES`"
+                    }
                 }
             }
         }

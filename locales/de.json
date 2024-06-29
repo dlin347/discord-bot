@@ -50,6 +50,25 @@
                         "noPermissionsError": "Ich kann {{member}} nicht von {{guild}} verbannen. Stelle sicher, dass ich die `BAN_MEMBERS`-Berechtigung habe",
                         "higherRoleError": "Ich kann {{member}} nicht von {{guild}} verbannen. Stelle sicher, dass meine Rolle höher ist als die Rolle des Mitglieds"
                     }
+                },
+                "delete_messages": {
+                    "name": "nachrichten_löschen",
+                    "description": "Lösche eine Anzahl von Nachrichten in einem bestimmten Kanal",
+                    "options": {
+                        "amount": {
+                            "name": "anzahl",
+                            "description": "Die Anzahl der zu löschenden Nachrichten"
+                        },
+                        "channel": {
+                            "name": "kanal",
+                            "description": "Der Kanal, in dem die Nachrichten gelöscht werden sollen"
+                        }
+                    },
+                    "responses": {
+                        "success": "{{amount}} Nachrichten aus {{channel}} erfolgreich gelöscht",
+                        "defaultError": "Ich kann keine Nachrichten aus {{channel}} löschen",
+                        "noPermissionsError": "Ich kann keine Nachrichten aus {{channel}} löschen. Stelle sicher, dass ich die `MANAGE_MESSAGES`-Berechtigung habe"
+                    }
                 }
             }
         }

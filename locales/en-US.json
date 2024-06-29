@@ -50,6 +50,25 @@
                         "noPermissionsError": "I can't ban {{member}} from {{guild}}. Make sure I have `BAN_MEMBERS` permission",
                         "higherRoleError": "I can't ban {{member}} from {{guild}}. Make sure my role is higher than the member's role"
                     }
+                },
+                "delete_messages": {
+                    "name": "delete_messages",
+                    "description": "Delete a number of messages in a specific channel",
+                    "options": {
+                        "amount": {
+                            "name": "amount",
+                            "description": "The number of messages to delete"
+                        },
+                        "channel": {
+                            "name": "channel",
+                            "description": "The channel where the messages will be deleted"
+                        },
+                        "responses": {
+                            "success": "Successfully deleted {{amount}} messages from {{channel}}",
+                            "defaultError": "I can't delete messages from {{channel}}",
+                            "noPermissionsError": "I can't delete messages from {{channel}}. Make sure I have `MANAGE_MESSAGES` permission"
+                        }
+                    }
                 }
             }
         }

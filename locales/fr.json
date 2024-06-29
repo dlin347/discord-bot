@@ -50,6 +50,25 @@
                         "noPermissionsError": "Je ne peux pas interdire {{member}} de {{guild}}. Assurez-vous que j'ai la permission `BAN_MEMBERS`",
                         "higherRoleError": "Je ne peux pas interdire {{member}} de {{guild}}. Assurez-vous que mon rôle est supérieur au rôle du membre"
                     }
+                },
+                "delete_messages": {
+                    "name": "supprimer_messages",
+                    "description": "Supprimez un certain nombre de messages dans un canal spécifique",
+                    "options": {
+                        "amount": {
+                            "name": "quantité",
+                            "description": "Le nombre de messages à supprimer"
+                        },
+                        "channel": {
+                            "name": "canal",
+                            "description": "Le canal dans lequel vous souhaitez supprimer les messages"
+                        }
+                    },
+                    "responses": {
+                        "success": "Suppression de {{amount}} messages dans {{channel}}",
+                        "defaultError": "Je ne peux pas supprimer de messages dans {{channel}}",
+                        "noPermissionsError": "Je ne peux pas supprimer de messages dans {{channel}}. Assurez-vous que j'ai la permission `MANAGE_MESSAGES`"
+                    }
                 }
             }
         }

@@ -50,6 +50,25 @@
                         "noPermissionsError": "{{member}}'ı {{guild}} sunucusundan yasaklayamam. `BAN_MEMBERS` iznine sahip olduğumdan emin olun",
                         "higherRoleError": "{{member}}'ı {{guild}} sunucusundan yasaklayamam. Rolümün üyenin rolünden üstün olduğundan emin olun"
                     }
+                },
+                "delete_messages": {
+                    "name": "mesajları_sil",
+                    "description": "Belirli bir kanalda belirli bir sayıda mesajı sil",
+                    "options": {
+                        "amount": {
+                            "name": "miktar",
+                            "description": "Silinecek mesaj sayısı"
+                        },
+                        "channel": {
+                            "name": "kanal",
+                            "description": "Mesajları silinecek kanal"
+                        }
+                    },
+                    "responses": {
+                        "success": "{{channel}} kanalından başarıyla {{amount}} mesaj silindi",
+                        "defaultError": "{{channel}} kanalındaki mesajları silemem",
+                        "noPermissionsError": "{{channel}} kanalındaki mesajları silemem. `MANAGE_MESSAGES` iznine sahip olduğumdan emin olun"
+                    }
                 }
             }
         }

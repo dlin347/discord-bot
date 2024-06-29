@@ -50,6 +50,25 @@
                         "noPermissionsError": "No puedo prohibir a {{member}} del servidor. Asegúrate de que tengo el permiso `BAN_MEMBERS`",
                         "higherRoleError": "No puedo prohibir a {{member}} del servidor. Asegúrate de que mi rol es superior al rol del miembro"
                     }
+                },
+                "delete_messages": {
+                    "description": "Elimina una cantidad de mensajes en un canal específico",
+                    "name": "eliminar_mensajes",
+                    "options": {
+                        "amount": {
+                            "description": "La cantidad de mensajes a eliminar",
+                            "name": "cantidad"
+                        },
+                        "channel": {
+                            "description": "El canal en el que se eliminarán los mensajes",
+                            "name": "canal"
+                        }
+                    },
+                    "responses": {
+                        "success": "Se han eliminado con éxito {{amount}} mensajes en {{channel}}",
+                        "defaultError": "No puedo eliminar mensajes en {{channel}}",
+                        "noPermissionsError": "No puedo eliminar mensajes en {{channel}}. Asegúrate de que tengo el permiso `MANAGE_MESSAGES`"
+                    }
                 }
             }
         }

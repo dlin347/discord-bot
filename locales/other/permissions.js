@@ -1,4 +1,4 @@
-async function permissions(language, permission) {
+module.exports = async function permissions(language, permission) {
     switch (language) {
         case 'de':
             return `Sie haben nicht die erforderliche Berechtigung (\`${permission}\`) um diesen Befehl zu verwenden`;
@@ -16,5 +16,3 @@ async function permissions(language, permission) {
             return `You don't have the required permission (\`${permission}\`) to use this command`;
     }
 }
-
-module.exports = permissions;
