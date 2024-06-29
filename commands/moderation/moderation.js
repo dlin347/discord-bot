@@ -137,6 +137,28 @@ module.exports = {
                         })
                         .setRequired(true)
                 )
+                .addBooleanOption(option =>
+                    option
+                        .setName('delete_messages')
+                        .setNameLocalizations({
+                            de: de.categories.moderation.commands.ban.options.delete_messages.name,
+                            fr: fr.categories.moderation.commands.ban.options.delete_messages.name,
+                            "pt-BR": pt.categories.moderation.commands.ban.options.delete_messages.name,
+                            "es-ES": es.categories.moderation.commands.ban.options.delete_messages.name,
+                            tr: tr.categories.moderation.commands.ban.options.delete_messages.name,
+                            ru: ru.categories.moderation.commands.ban.options.delete_messages.name
+                        })
+                        .setDescription("Delete the member's messages from the past 7 days?")
+                        .setDescriptionLocalizations({
+                            de: de.categories.moderation.commands.ban.options.delete_messages.description,
+                            fr: fr.categories.moderation.commands.ban.options.delete_messages.description,
+                            "pt-BR": pt.categories.moderation.commands.ban.options.delete_messages.description,
+                            "es-ES": es.categories.moderation.commands.ban.options.delete_messages.description,
+                            tr: tr.categories.moderation.commands.ban.options.delete_messages.description,
+                            ru: ru.categories.moderation.commands.ban.options.delete_messages.description
+                        })
+                        .setRequired(true)
+                )
                 .addStringOption(option =>
                     option
                         .setName('reason')
@@ -158,7 +180,6 @@ module.exports = {
                             ru: ru.categories.moderation.commands.ban.options.reason.description
                         })
                 )
-
         )
         .setDMPermission(false),
     async execute(interaction) {
@@ -179,27 +200,26 @@ module.exports = {
                 localeFile = require(path.join(localesPath, 'en-US.json'));
             }
 
-            const member = interaction.options.getMember('member');
-            const reasonEnUS = (interaction.options.getString('reason') ? interaction.options.getString('reason') : "No reason provided");
-
             //Export into independant files next session
 
             async function kickMember(interaction) {
-                const message = await permissions(interaction.locale, 'KICK_MEMBERS');
-                if (!interaction.member.permissions.has(PermissionFlagsBits.KickMembers)) return interaction.reply({ content: message, ephemeral: true });
-
-                const reason = interaction.options.getString('reason') ?? localeFile.categories.moderation.commands.kick.responses.noReason;
-                const content = localeFile.categories.moderation.commands.kick.responses.success.replace('{{member}}', `<@${member.id}>`).replace('{{reason}}', reason);
+                const member = interaction.options.getMember('member');
                 const defaultError = localeFile.categories.moderation.commands.kick.responses.defaultError.replace('{{member}}', `<@${member.id}>`).replace('{{guild}}', interaction.guild.name);
                 const noPermissionsError = localeFile.categories.moderation.commands.kick.responses.noPermissionsError.replace('{{member}}', `<@${member.id}>`).replace('{{guild}}', interaction.guild.name);
                 const higherRoleError = localeFile.categories.moderation.commands.kick.responses.higherRoleError.replace('{{member}}', `<@${member.id}>`).replace('{{guild}}', interaction.guild.name);
-
+                const message = await permissions(interaction.locale, 'KICK_MEMBERS');
+                if (!member.kickable) return interaction.reply({ content: defaultError, ephemeral: true });
+                if (!interaction.member.permissions.has(PermissionFlagsBits.KickMembers)) return interaction.reply({ content: message, ephemeral: true });
                 if (!interaction.guild.members.me.permissions.has(PermissionFlagsBits.KickMembers)) return interaction.reply({ content: noPermissionsError, ephemeral: true });
                 if (interaction.guild.members.me.roles.highest.comparePositionTo(member.roles.highest) <= 0) return interaction.reply({ content: higherRoleError, ephemeral: true });
 
+                const reason = interaction.options.getString('reason') ?? localeFile.categories.common.noReason;
+                const reasonEnUS = (interaction.options.getString('reason') ? interaction.options.getString('reason') : "No reason provided");
+                const content = localeFile.categories.moderation.commands.kick.responses.success.replace('{{member}}', `<@${member.id}>`).replace('{{reason}}', reason);
+
                 try {
                     await member.send({ content: `You have been kicked from ${interaction.guild.name} by <@${interaction.user.id}>. Reason: ${reasonEnUS}` });
-                    await member.kick({ reason: reasonEnUS });
+                    await member.kick(reasonEnUS);
                     console.log("\x1b[33m" + `<<@${interaction.user.username}>> HAS SUCCESSFULLY KICKED <<@${member.user.username}>> FROM <<${interaction.guild.name}>>.` + "\x1b[0m");
                     await interaction.reply({ content: content, ephemeral: true });
                 } catch (e) {
@@ -209,21 +229,24 @@ module.exports = {
             }
 
             async function banMember(interaction) {
-                const message = await permissions(interaction.locale, 'BAN_MEMBERS');
-                if (!interaction.member.permissions.has(PermissionFlagsBits.BanMembers)) return interaction.reply({ content: message, ephemeral: true });
-
-                const reason = interaction.options.getString('reason') ?? localeFile.categories.moderation.commands.ban.responses.noReason;
-                const content = localeFile.categories.moderation.commands.ban.responses.success.replace('{{member}}', `<@${member.id}>`).replace('{{reason}}', reason);
+                const member = interaction.options.getMember('member');
                 const defaultError = localeFile.categories.moderation.commands.ban.responses.defaultError.replace('{{member}}', `<@${member.id}>`).replace('{{guild}}', interaction.guild.name);
                 const noPermissionsError = localeFile.categories.moderation.commands.ban.responses.noPermissionsError.replace('{{member}}', `<@${member.id}>`).replace('{{guild}}', interaction.guild.name);
                 const higherRoleError = localeFile.categories.moderation.commands.ban.responses.higherRoleError.replace('{{member}}', `<@${member.id}>`).replace('{{guild}}', interaction.guild.name);
-
+                const message = await permissions(interaction.locale, 'BAN_MEMBERS');
+                if (!interaction.member.permissions.has(PermissionFlagsBits.BanMembers)) return interaction.reply({ content: message, ephemeral: true });
+                if (!member.bannable) return interaction.reply({ content: defaultError, ephemeral: true });
                 if (!interaction.guild.members.me.permissions.has(PermissionFlagsBits.BanMembers)) return interaction.reply({ content: noPermissionsError, ephemeral: true });
                 if (interaction.guild.members.me.roles.highest.comparePositionTo(member.roles.highest) <= 0) return interaction.reply({ content: higherRoleError, ephemeral: true });
 
+                const reason = interaction.options.getString('reason') ?? localeFile.categories.common.noReason;
+                const reasonEnUS = (interaction.options.getString('reason') ? interaction.options.getString('reason') : "No reason provided");
+                const content = localeFile.categories.moderation.commands.ban.responses.success.replace('{{member}}', `<@${member.id}>`).replace('{{reason}}', reason);
+                const deleteMessages = interaction.options.getBoolean('delete_messages') ? (60 * 60 * 24 * 7) : 0;
+
                 try {
                     await member.send({ content: `You have been banned from ${interaction.guild.name} by <@${interaction.user.id}>. Reason: ${reasonEnUS}` });
-                    await member.ban({ reason: reasonEnUS });
+                    await member.ban({ deleteMessageSeconds: deleteMessages, reason: reasonEnUS });
                     console.log("\x1b[33m" + `<<@${interaction.user.username}>> HAS SUCCESSFULLY BANNED <<@${member.user.username}>> FROM <<${interaction.guild.name}>>.` + "\x1b[0m");
                     await interaction.reply({ content: content, ephemeral: true });
                 } catch (e) {
@@ -234,10 +257,10 @@ module.exports = {
 
             switch (subcommand) {
                 case 'kick':
-                    await kickMember(interaction, member);
+                    await kickMember(interaction);
                     break;
                 case 'ban':
-                    await banMember(interaction, member);
+                    await banMember(interaction);
                     break;
             }
         }

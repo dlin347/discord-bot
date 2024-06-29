@@ -1,11 +1,14 @@
 {
     "categories": {
+        "common": {
+            "noReason": "Sebep belirtilmedi"
+        },
         "moderation": {
             "name": "moderasyon",
             "description": "Moderasyon kategorisi komutları",
             "commands": {
                 "kick": {
-                    "name": "kick",
+                    "name": "tekme",
                     "description": "Sunucudan bir üyeyi at",
                     "options": {
                         "member": {
@@ -19,19 +22,22 @@
                     },
                     "responses": {
                         "success": "{{member}} başarıyla sunucudan atıldı. Sebep: {{reason}}",
-                        "noReason": "Sebep belirtilmedi",
                         "defaultError": "{{member}}'ı {{guild}} sunucusundan atamam",
                         "noPermissionsError": "{{member}}'ı {{guild}} sunucusundan atamam. `KICK_MEMBERS` iznine sahip olduğumdan emin olun",
                         "higherRoleError": "{{member}}'ı {{guild}} sunucusundan atamam. Rolümün üyenin rolünden üstün olduğundan emin olun"
                     }
                 },
                 "ban": {
-                    "name": "ban",
+                    "name": "yasak",
                     "description": "Sunucudan bir üyeyi yasakla",
                     "options": {
                         "member": {
                             "name": "üye",
                             "description": "Yasaklamak istediğiniz üye"
+                        },
+                        "delete_messages": {
+                            "name": "mesajları_sil",
+                            "description": "Üyenin son 7 gün içindeki mesajlarını silmek istiyor musunuz?"
                         },
                         "reason": {
                             "name": "sebep",
@@ -40,7 +46,6 @@
                     },
                     "responses": {
                         "success": "{{member}} başarıyla sunucudan yasaklandı. Sebep: {{reason}}",
-                        "noReason": "Sebep belirtilmedi",
                         "defaultError": "{{member}}'ı {{guild}} sunucusundan yasaklayamam",
                         "noPermissionsError": "{{member}}'ı {{guild}} sunucusundan yasaklayamam. `BAN_MEMBERS` iznine sahip olduğumdan emin olun",
                         "higherRoleError": "{{member}}'ı {{guild}} sunucusundan yasaklayamam. Rolümün üyenin rolünden üstün olduğundan emin olun"

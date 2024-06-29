@@ -1,46 +1,51 @@
 {
     "categories": {
+        "common": {
+            "noReason": "Kein Grund angegeben"
+        },
         "moderation": {
             "name": "moderation",
             "description": "Moderationskategorie-Befehle",
             "commands": {
                 "kick": {
-                    "name": "kick",
+                    "name": "kicken",
                     "description": "Kicke ein Mitglied vom Server",
                     "options": {
                         "member": {
-                            "name": "member",
+                            "name": "mitglied",
                             "description": "Das Mitglied, das du kicken möchtest"
                         },
                         "reason": {
-                            "name": "reason",
+                            "name": "grund",
                             "description": "Der Grund für das Kicken des Mitglieds"
                         }
                     },
                     "responses": {
                         "success": "{{member}} erfolgreich vom Server gekickt. Grund: {{reason}}",
-                        "noReason": "Kein Grund angegeben",
                         "defaultError": "Ich kann {{member}} nicht von {{guild}} kicken",
                         "noPermissionsError": "Ich kann {{member}} nicht von {{guild}} kicken. Stelle sicher, dass ich die `KICK_MEMBERS`-Berechtigung habe",
                         "higherRoleError": "Ich kann {{member}} nicht von {{guild}} kicken. Stelle sicher, dass meine Rolle höher ist als die Rolle des Mitglieds"
                     }
                 },
                 "ban": {
-                    "name": "ban",
+                    "name": "verbieten",
                     "description": "Verbanne ein Mitglied vom Server",
                     "options": {
                         "member": {
-                            "name": "member",
+                            "name": "mitglied",
                             "description": "Das Mitglied, das du verbannen möchtest"
                         },
+                        "delete_messages": {
+                            "name": "nachrichten_löschen",
+                            "description": "Lösche die Nachrichten des Mitglieds aus den letzten 7 Tagen?"
+                        },
                         "reason": {
-                            "name": "reason",
+                            "name": "grund",
                             "description": "Der Grund für das Verbannen des Mitglieds"
                         }
                     },
                     "responses": {
                         "success": "{{member}} erfolgreich vom Server verbannt. Grund: {{reason}}",
-                        "noReason": "Kein Grund angegeben",
                         "defaultError": "Ich kann {{member}} nicht von {{guild}} verbannen",
                         "noPermissionsError": "Ich kann {{member}} nicht von {{guild}} verbannen. Stelle sicher, dass ich die `BAN_MEMBERS`-Berechtigung habe",
                         "higherRoleError": "Ich kann {{member}} nicht von {{guild}} verbannen. Stelle sicher, dass meine Rolle höher ist als die Rolle des Mitglieds"

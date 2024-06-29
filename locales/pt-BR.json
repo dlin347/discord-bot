@@ -1,11 +1,14 @@
 {
     "categories": {
+        "common": {
+            "noReason": "Nenhum motivo fornecido"
+        },
         "moderation": {
             "name": "moderação",
             "description": "Comandos de moderação",
             "commands": {
                 "kick": {
-                    "name": "kick",
+                    "name": "expulsar",
                     "description": "Expulse um membro do servidor",
                     "options": {
                         "member": {
@@ -19,19 +22,22 @@
                     },
                     "responses": {
                         "success": "{{member}} foi expulso com sucesso do servidor. Motivo: {{reason}}",
-                        "noReason": "Nenhum motivo fornecido",
                         "defaultError": "Não posso expulsar {{member}} de {{guild}}",
                         "noPermissionsError": "Não posso expulsar {{member}} de {{guild}}. Certifique-se de que tenho permissão `KICK_MEMBERS`",
                         "higherRoleError": "Não posso expulsar {{member}} de {{guild}}. Certifique-se de que meu cargo é superior ao cargo do membro"
                     }
                 },
                 "ban": {
-                    "name": "ban",
+                    "name": "banir",
                     "description": "Proíba um membro do servidor",
                     "options": {
                         "member": {
                             "name": "membro",
                             "description": "O membro que você deseja banir"
+                        },
+                        "delete_messages": {
+                            "name": "excluir_mensagens",
+                            "description": "Excluir as mensagens do membro dos últimos 7 dias?"
                         },
                         "reason": {
                             "name": "razão",
@@ -40,7 +46,6 @@
                     },
                     "responses": {
                         "success": "{{member}} foi banido com sucesso do servidor. Motivo: {{reason}}",
-                        "noReason": "Nenhum motivo fornecido",
                         "defaultError": "Não posso banir {{member}} de {{guild}}",
                         "noPermissionsError": "Não posso banir {{member}} de {{guild}}. Certifique-se de que tenho permissão `BAN_MEMBERS`",
                         "higherRoleError": "Não posso banir {{member}} de {{guild}}. Certifique-se de que meu cargo é superior ao cargo do membro"

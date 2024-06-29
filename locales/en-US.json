@@ -1,5 +1,8 @@
 {
     "categories": {
+        "common": {
+            "noReason": "No reason provided"
+        },
         "moderation": {
             "name": "moderation",
             "description": "Moderation category commands",
@@ -19,7 +22,6 @@
                     },
                     "responses": {
                         "success": "Successfully kicked {{member}} from the server. Reason: {{reason}}",
-                        "noReason": "No reason provided",
                         "defaultError": "I can't kick {{member}} from {{guild}}",
                         "noPermissionsError": "I can't kick {{member}} from {{guild}}. Make sure I have `KICK_MEMBERS` permission",
                         "higherRoleError": "I can't kick {{member}} from {{guild}}. Make sure my role is higher than the member's role"
@@ -33,6 +35,10 @@
                             "name": "member",
                             "description": "The member you want to ban"
                         },
+                        "delete_messages": {
+                            "name": "delete_messages",
+                            "description": "Delete the member's messages from the past 7 days?"
+                        },
                         "reason": {
                             "name": "reason",
                             "description": "The reason for banning the member"
@@ -40,7 +46,6 @@
                     },
                     "responses": {
                         "success": "Successfully banned {{member}} from the server. Reason: {{reason}}",
-                        "noReason": "No reason provided",
                         "defaultError": "I can't ban {{member}} from {{guild}}",
                         "noPermissionsError": "I can't ban {{member}} from {{guild}}. Make sure I have `BAN_MEMBERS` permission",
                         "higherRoleError": "I can't ban {{member}} from {{guild}}. Make sure my role is higher than the member's role"

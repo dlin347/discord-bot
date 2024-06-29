@@ -1,7 +1,7 @@
-- [ x ] Commands and events handler
-- [ x ] Multiple language support (Future: Set specific language for a guild)
-- [ x ] Kick Command
-- [ x ] Ban Command
-- [ ] Common Category for .JSON
+- [x] Commands and events handler
+- [x] Multiple language support (Future: Set specific language for a guild)
+- [x] Kick Command
+- [x] Ban Command
+- [x] Common Category for .JSON
+- [x] Choice to delete messages when banning a member
 - [ ] Modularization
-- [ ] Choice to delete messages when banning a member
