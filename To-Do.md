@@ -6,7 +6,7 @@
 - [x] Choice to delete messages when banning a member
 - [x] Modularization
 - [x] Delete messages / Purge command
-- [] More efficient error handling system
+- [x] More efficient error handling system (node.js)
 - [] Module: Simple Local Database (sldb)
 - [] Unban command
 - [] Mute command

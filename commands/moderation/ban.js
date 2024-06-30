@@ -33,7 +33,7 @@ module.exports = async function banMember(interaction) {
 
     try {
         await member.send({ content: `You have been banned from ${interaction.guild.name} by @${interaction.user.tag}. Reason: ${reasonEnUS}` });
-        await member.ban({ deleteMessageDays: deleteMessages, reason: reasonEnUS });
+        await member.ban({ deleteMessageSeconds: deleteMessages, reason: reasonEnUS });
         console.log("\x1b[33m" + `<<@${interaction.user.username}>> HAS SUCCESSFULLY BANNED <<@${member.user.username}>> FROM <<${interaction.guild.name}>>.` + "\x1b[0m");
         await interaction.reply({ content: content, ephemeral: true });
     } catch (e) {
