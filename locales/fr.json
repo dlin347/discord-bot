@@ -69,6 +69,28 @@
                         "defaultError": "Je ne peux pas supprimer de messages dans {{channel}}",
                         "noPermissionsError": "Je ne peux pas supprimer de messages dans {{channel}}. Assurez-vous que j'ai la permission `MANAGE_MESSAGES`"
                     }
+                },
+                "mute": {
+                    "name": "mute",
+                    "description": "Mutez un membre du serveur",
+                    "options": {
+                        "member": {
+                            "name": "membre",
+                            "description": "Le membre que vous souhaitez mute"
+                        },
+                        "reason": {
+                            "name": "raison",
+                            "description": "La raison du mute du membre"
+                        }
+                    },
+                    "responses": {
+                        "success": "{{member}} a été muté avec succès de {{guild}}. Raison: {{reason}}",
+                        "defaultError": "Je ne peux pas mute {{member}} de {{guild}}",
+                        "noPermissionsError": "Je ne peux pas mute {{member}} de {{guild}}. Assurez-vous que j'ai la permission `MANAGE_ROLES`",
+                        "higherRoleError": "Je ne peux pas mute {{member}} de {{guild}}. Assurez-vous que mon rôle est supérieur au rôle du membre",
+                        "muteRoleIsHigherError": "Je ne peux pas mute {{member}} de {{guild}}. Assurez-vous que le rôle de mute est supérieur au rôle du membre, mais inférieur à mon rôle",
+                        "alreadyMutedError": "Je ne peux pas mute {{member}} de {{guild}}. Le membre est déjà muté"
+                    }
                 }
             }
         }

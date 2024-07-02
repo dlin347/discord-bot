@@ -69,6 +69,28 @@
                         "defaultError": "{{channel}} kanalındaki mesajları silemem",
                         "noPermissionsError": "{{channel}} kanalındaki mesajları silemem. `MANAGE_MESSAGES` iznine sahip olduğumdan emin olun"
                     }
+                },
+                "mute": {
+                    "name": "sustur",
+                    "description": "Sunucuda bir üyeyi sustur",
+                    "options": {
+                        "member": {
+                            "name": "üye",
+                            "description": "Susturmak istediğiniz üye"
+                        },
+                        "reason": {
+                            "name": "sebep",
+                            "description": "Üyenin susturulma sebebi"
+                        }
+                    },
+                    "responses": {
+                        "success": "{{member}} başarıyla sunucuda susturuldu. Sebep: {{reason}}",
+                        "defaultError": "{{member}}'ı {{guild}} sunucusunda susturamam",
+                        "noPermissionsError": "{{member}}'ı {{guild}} sunucusunda susturamam. `MANAGE_ROLES` iznine sahip olduğumdan emin olun",
+                        "higherRoleError": "{{member}}'ı {{guild}} sunucusunda susturamam. Rolümün üyenin rolünden üstün olduğundan emin olun",
+                        "muteRoleIsHigherError": "{{member}}'ı {{guild}} sunucusunda susturamam. Susturma rolünün üyenin rolünden üstün, ancak benim rolümden düşük olduğundan emin olun",
+                        "alreadyMutedError": "{{member}} zaten susturulmuş"
+                    }
                 }
             }
         }

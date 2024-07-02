@@ -69,6 +69,28 @@
                         "defaultError": "Ich kann keine Nachrichten aus {{channel}} löschen",
                         "noPermissionsError": "Ich kann keine Nachrichten aus {{channel}} löschen. Stelle sicher, dass ich die `MANAGE_MESSAGES`-Berechtigung habe"
                     }
+                },
+                "mute": {
+                    "name": "stummschalten",
+                    "description": "Stummschalten eines Mitglieds auf dem Server",
+                    "options": {
+                        "member": {
+                            "name": "mitglied",
+                            "description": "Das Mitglied, das du stummschalten möchtest"
+                        },
+                        "reason": {
+                            "name": "grund",
+                            "description": "Der Grund für das Stummschalten des Mitglieds"
+                        }
+                    },
+                    "responses": {
+                        "success": "{{member}} erfolgreich auf dem {{guild}} stummgeschaltet. Grund: {{reason}}",
+                        "defaultError": "Ich kann {{member}} nicht auf {{guild}} stumm schalten",
+                        "noPermissionsError": "Ich kann {{member}} nicht auf {{guild}} stumm schalten. Stelle sicher, dass ich die `MUTE_MEMBERS`-Berechtigung habe",
+                        "higherRoleError": "Ich kann {{member}} nicht auf {{guild}} stumm schalten. Stelle sicher, dass meine Rolle höher ist als die Rolle des Mitglieds",
+                        "muteRoleIsHigherError": "Ich kann {{member}} nicht auf {{guild}} stumm schalten. Stelle sicher, dass die Stummschaltungsrolle höher ist als die Rolle des Mitglieds, aber niedriger als meine Rolle",
+                        "alreadyMutedError": "{{member}} ist bereits auf dem Server stummgeschaltet"
+                    }
                 }
             }
         }

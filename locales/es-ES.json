@@ -69,6 +69,28 @@
                         "defaultError": "No puedo eliminar mensajes en {{channel}}",
                         "noPermissionsError": "No puedo eliminar mensajes en {{channel}}. Asegúrate de que tengo el permiso `MANAGE_MESSAGES`"
                     }
+                },
+                "mute": {
+                    "description": "Silencia a un miembro en el servidor",
+                    "name": "silenciar",
+                    "options": {
+                        "member": {
+                            "description": "El miembro que deseas silenciar",
+                            "name": "miembro"
+                        },
+                        "reason": {
+                            "description": "La razón de silenciar al miembro",
+                            "name": "razon"
+                        }
+                    },
+                    "responses": {
+                        "success": "El miembro {{member}} ha sido silenciado con éxito de {{guild}}. Razón: {{reason}}",
+                        "defaultError": "No puedo silenciar a {{member}} en {{guild}}",
+                        "noPermissionsError": "No puedo silenciar a {{member}} en el servidor. Asegúrate de que tengo el permiso `MANAGE_ROLES`",
+                        "higherRoleError": "No puedo silenciar a {{member}} en el servidor. Asegúrate de que mi rol es superior al rol del miembro",
+                        "muteRoleIsHigherError": "No puedo silenciar a {{member}} en el servidor. Asegúrate de que el rol de mute es superior al rol del miembro, pero inferior a mi rol",
+                        "alreadyMutedError": "No puedo silenciar a {{member}} en el servidor. El miembro ya está silenciado"
+                    }
                 }
             }
         }

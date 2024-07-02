@@ -62,12 +62,34 @@
                         "channel": {
                             "name": "channel",
                             "description": "The channel where the messages will be deleted"
-                        },
-                        "responses": {
-                            "success": "Successfully deleted {{amount}} messages from {{channel}}",
-                            "defaultError": "I can't delete messages from {{channel}}",
-                            "noPermissionsError": "I can't delete messages from {{channel}}. Make sure I have `MANAGE_MESSAGES` permission"
                         }
+                    },
+                    "responses": {
+                        "success": "Successfully deleted {{amount}} messages from {{channel}}",
+                        "defaultError": "I can't delete messages from {{channel}}",
+                        "noPermissionsError": "I can't delete messages from {{channel}}. Make sure I have `MANAGE_MESSAGES` permission"
+                    }
+                },
+                "mute": {
+                    "name": "mute",
+                    "description": "Mute a member in the server",
+                    "options": {
+                        "member": {
+                            "name": "member",
+                            "description": "The member you want to mute"
+                        },
+                        "reason": {
+                            "name": "reason",
+                            "description": "The reason for muting the member"
+                        }
+                    },
+                    "responses": {
+                        "success": "Successfully muted {{member}} from {{guild}}. Reason: {{reason}}",
+                        "defaultError": "I can't mute {{member}} from {{guild}}",
+                        "noPermissionsError": "I can't mute {{member}} from {{guild}}. Make sure I have `MANAGE_ROLES` permission",
+                        "higherRoleError": "I can't mute {{member}} from {{guild}}. Make sure my role is higher than the member's role",
+                        "muteRoleIsHigherError": "I can't mute {{member}} from {{guild}}. Make sure the mute role is higher than the member's role, but lower than my role",
+                        "alreadyMutedError": "{{member}} is already muted"
                     }
                 }
             }
