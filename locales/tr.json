@@ -60,7 +60,7 @@
                         }
                     },
                     "responses": {
-                        "success": "{{üye}}, {{guild}}'den başarıyla yasaklandı. Sebep: {{sebep}}",
+                        "success": "{{member}}, {{guild}}'den başarıyla yasaklandı. Sebep: {{reason}}",
                         "defaultError": "{{member}}'ı {{guild}} sunucusundan yasaklayamam",
                         "noPermissionsError": "{{member}}'ı {{guild}} sunucusundan yasaklayamam. `BAN_MEMBERS` iznine sahip olduğumdan emin olun",
                         "higherRoleError": "{{member}}'ı {{guild}} sunucusundan yasaklayamam. Rolümün üyenin rolünden üstün olduğundan emin olun",
@@ -81,9 +81,10 @@
                         }
                     },
                     "responses": {
-                        "success": "{{member}}'ın yasağı başarıyla kaldırıldı",
+                        "success": "{{member}}'ın yasağı başarıyla kaldırıldı. Sebep: {{reason}}",
                         "defaultError": "{{member}}'ın yasağını kaldıramam",
-                        "noPermissionsError": "{{member}}'ın yasağını kaldıramam. `BAN_MEMBERS` iznine sahip olduğumdan emin olun"
+                        "noPermissionsError": "{{member}}'ın yasağını kaldıramam. `BAN_MEMBERS` iznine sahip olduğumdan emin olun",
+                        "invalidIDError": "Sağlanan ID geçersiz veya sunucuda o ID'ye sahip yasaklanmış bir kullanıcı yok"
                     }
                 },
                 "delete_messages": {

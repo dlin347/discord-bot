@@ -81,9 +81,10 @@
                         }
                     },
                     "responses": {
-                        "success": "Успешно разбанен {{member}} из {{guild}}",
+                        "success": "Успешно разбанен {{member}} из {{guild}}. Причина: {{причина}}",
                         "defaultError": "Я не могу разбанить {{member}} из {{guild}}",
-                        "noPermissionsError": "Я не могу разбанить {{member}} из {{guild}}. Убедитесь, что у меня есть разрешение `BAN_MEMBERS`"
+                        "noPermissionsError": "Я не могу разбанить {{member}} из {{guild}}. Убедитесь, что у меня есть разрешение `BAN_MEMBERS`",
+                        "invalidIDError": "Предоставленный ID недействителен или нет забаненного пользователя с этим ID на сервере"
                     }
                 },
                 "delete_messages": {

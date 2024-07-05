@@ -81,9 +81,10 @@
                         }
                     },
                     "responses": {
-                        "success": "Benutzer {{member}} wurde erfolgreich von {{guild}} entsperrt",
+                        "success": "Benutzer {{member}} wurde erfolgreich von {{guild}} entsperrt. Grund: {{reason}}",
                         "defaultError": "Ich kann {{member}} nicht von {{guild}} entsperren",
-                        "noPermissionsError": "Ich kann {{member}} nicht von {{guild}} entsperren. Stelle sicher, dass ich die Berechtigung `BAN_MEMBERS` habe"
+                        "noPermissionsError": "Ich kann {{member}} nicht von {{guild}} entsperren. Stelle sicher, dass ich die Berechtigung `BAN_MEMBERS` habe",
+                        "invalidIDError": "Die bereitgestellte ID ist ungültig oder es gibt keinen gesperrten Benutzer mit dieser ID auf dem Server"
                     }
                 },
                 "delete_messages": {

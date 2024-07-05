@@ -9,11 +9,21 @@
 - [x] More efficient error handling system (node.js)
 - [x] DM ban message to user and catch error
 - [x] DM kick message to user and catch error
+- [x] Unban command
+- [] Improvement of translations
+- [] Make some ephemeral responses non ephemeral (they don't make any sense being)
+- [] <<>> Missing in some logs
 - [] Set min and max length of some slash commands fields
-- [] Unban command
 - [] Lock channel command
 - [] Unlock channel command
-- [] Mongodb or locally hosted database
+- [] Add more commands from other categories
+- [] Integrate mongodb or locally hosted database
+- [] Create .github and its corresponding files (README, CONTRIBUTING, TEMPLATES...)
+- [] Choose an open source license (https://choosealicense.com/)
+- [] Host locally the bot
+- [] Add the bot to some websites such as top.gg (read requirements)
+- [] Find a way to optimize translation
+- [] Integration with a website????
 
 ```
 Files to modify if there is an expansion of languages:

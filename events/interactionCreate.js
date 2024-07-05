@@ -46,7 +46,7 @@ module.exports = {
             try {
                 await command.execute(interaction);
             } catch (error) {
-                console.error("\x1b[31m" + error + "\x1b[0m");
+                console.error("\x1b[31m" + '[COMMAND EXECUTION ERROR] ' + error + "\x1b[0m");
             }
         }
     },

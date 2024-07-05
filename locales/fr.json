@@ -81,9 +81,10 @@
                         }
                     },
                     "responses": {
-                        "success": "{{member}} a été débanni avec succès de {{guild}}",
+                        "success": "{{member}} a été débanni avec succès de {{guild}}. Raison: {{reason}}",
                         "defaultError": "Je ne peux pas débannir {{member}} de {{guild}}",
-                        "noPermissionsError": "Je ne peux pas débannir {{member}} de {{guild}}. Assurez-vous que j'ai la permission `BAN_MEMBERS`"
+                        "noPermissionsError": "Je ne peux pas débannir {{member}} de {{guild}}. Assurez-vous que j'ai la permission `BAN_MEMBERS`",
+                        "invalidIDError": "L'ID fourni est invalide ou il n'y a pas d'utilisateur banni avec cet ID dans le serveur"
                     }
                 },
                 "delete_messages": {

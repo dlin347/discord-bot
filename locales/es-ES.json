@@ -78,12 +78,13 @@
                         "reason": {
                             "name": "razon",
                             "description": "La razón de permitir el acceso al miembro"
-                        },
-                        "responses": {
-                            "success": "El miembro {{member}} ha sido permitido de {{guild}} con éxito",
-                            "defaultError": "No puedo permitir a {{member}} de {{guild}}",
-                            "noPermissionsError": "No puedo permitir a {{member}} del servidor. Asegúrate de que tengo el permiso `BAN_MEMBERS`"
                         }
+                    },
+                    "responses": {
+                        "success": "El miembro {{member}} ha sido permitido de {{guild}} con éxito. Razón: {{reason}}",
+                        "defaultError": "No puedo permitir a {{member}} de {{guild}}",
+                        "noPermissionsError": "No puedo permitir a {{member}} del servidor. Asegúrate de que tengo el permiso `BAN_MEMBERS`",
+                        "invalidIDError": "La ID proporcionada es inválida o no hay ningún usuario prohibido con esa ID en el servidor"
                     }
                 },
                 "delete_messages": {

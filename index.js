@@ -45,11 +45,11 @@ for (const file of eventFiles) {
 }
 
 process.on('uncaughtException', (error) => {
-    console.error("\x1b[31m" + error + "\x1b[0m");
+    console.error("\x1b[31m" + '[UNCAUGHT EXCEPTION] ' + error + "\x1b[0m");
 });
 
 process.on('unhandledRejection', (error) => {
-    console.error("\x1b[31m" + error + "\x1b[0m");
+    console.error("\x1b[31m" + '[UNHANDLED REJECTION] ' + error + "\x1b[0m");
 });
 
 client.login(process.env.BOT_TOKEN);
