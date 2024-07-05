@@ -3,7 +3,6 @@ const { SlashCommandBuilder, ChannelType } = require('discord.js');
 const kickMember = require('./kick');
 const banMember = require('./ban');
 const deleteMessages = require('./delete-messages');
-const mute = require('./mute');
 
 const de = require('../../locales/de.json');
 const fr = require('../../locales/fr.json');
@@ -251,74 +250,9 @@ module.exports = {
                         .setRequired(false)
                 )
         )
-        .addSubcommand(subcommand =>
-            subcommand
-                .setName('mute')
-                .setNameLocalizations({
-                    de: de.categories.moderation.commands.mute.name,
-                    fr: fr.categories.moderation.commands.mute.name,
-                    "pt-BR": pt.categories.moderation.commands.mute.name,
-                    "es-ES": es.categories.moderation.commands.mute.name,
-                    tr: tr.categories.moderation.commands.mute.name,
-                    ru: ru.categories.moderation.commands.mute.name
-                })
-                .setDescription('Mute a member from the server')
-                .setDescriptionLocalizations({
-                    de: de.categories.moderation.commands.mute.description,
-                    fr: fr.categories.moderation.commands.mute.description,
-                    "pt-BR": pt.categories.moderation.commands.mute.description,
-                    "es-ES": es.categories.moderation.commands.mute.description,
-                    tr: tr.categories.moderation.commands.mute.description,
-                    ru: ru.categories.moderation.commands.mute.description
-                })
-                .addUserOption(option =>
-                    option
-                        .setName('member')
-                        .setNameLocalizations({
-                            de: de.categories.moderation.commands.mute.options.member.name,
-                            fr: fr.categories.moderation.commands.mute.options.member.name,
-                            "pt-BR": pt.categories.moderation.commands.mute.options.member.name,
-                            "es-ES": es.categories.moderation.commands.mute.options.member.name,
-                            tr: tr.categories.moderation.commands.mute.options.member.name,
-                            ru: ru.categories.moderation.commands.mute.options.member.name
-                        })
-                        .setDescription('The member you want to mute')
-                        .setDescriptionLocalizations({
-                            de: de.categories.moderation.commands.mute.options.member.description,
-                            fr: fr.categories.moderation.commands.mute.options.member.description,
-                            "pt-BR": pt.categories.moderation.commands.mute.options.member.description,
-                            "es-ES": es.categories.moderation.commands.mute.options.member.description,
-                            tr: tr.categories.moderation.commands.mute.options.member.description,
-                            ru: ru.categories.moderation.commands.mute.options.member.description
-                        })
-                        .setRequired(true)
-                )
-                .addStringOption(option =>
-                    option
-                        .setName('reason')
-                        .setNameLocalizations({
-                            de: de.categories.moderation.commands.mute.options.reason.name,
-                            fr: fr.categories.moderation.commands.mute.options.reason.name,
-                            "pt-BR": pt.categories.moderation.commands.mute.options.reason.name,
-                            "es-ES": es.categories.moderation.commands.mute.options.reason.name,
-                            tr: tr.categories.moderation.commands.mute.options.reason.name,
-                            ru: ru.categories.moderation.commands.mute.options.reason.name
-                        })
-                        .setDescription('The reason of muting the member')
-                        .setDescriptionLocalizations({
-                            de: de.categories.moderation.commands.mute.options.reason.description,
-                            fr: fr.categories.moderation.commands.mute.options.reason.description,
-                            "pt-BR": pt.categories.moderation.commands.mute.options.reason.description,
-                            "es-ES": es.categories.moderation.commands.mute.options.reason.description,
-                            tr: tr.categories.moderation.commands.mute.options.reason.description,
-                            ru: ru.categories.moderation.commands.mute.options.reason.description
-                        })
-                )
-        )
-
         .setDMPermission(false),
     async execute(interaction) {
-        if (interaction.commandName == 'moderation') {
+        if (interaction.commandName === 'moderation') {
             const subcommand = interaction.options.getSubcommand();
             switch (subcommand) {
                 case 'kick':
@@ -329,9 +263,6 @@ module.exports = {
                     break;
                 case 'delete_messages':
                     await deleteMessages(interaction);
-                    break;
-                case 'mute':
-                    await mute(interaction);
                     break;
             }
         }

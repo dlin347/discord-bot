@@ -25,7 +25,7 @@ module.exports = async function deleteMessages(interaction) {
         console.log(`<<@${interaction.user.username}>> HAS SUCCESSFULLY DELETED <<${realAmount} MESSAGES>> FROM <<#${channel.name}>> (<<${interaction.guild.name}>>)`);
         await interaction.reply({ content: content, ephemeral: true });
     } catch (e) {
-        console.error(e);
+        console.error('[/DELETE-MESSAGES]' + "\x1b[31m" + e + "\x1b[0m");
         await interaction.reply({ content: defaultError, ephemeral: true });
     }
 }

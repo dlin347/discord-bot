@@ -3,6 +3,20 @@
         "common": {
             "noReason": "Kein Grund angegeben"
         },
+        "information": {
+            "name": "information",
+            "description": "Informationen zu verschiedenen Dingen abrufen",
+            "commands": {
+                "ping": {
+                    "name": "ping",
+                    "description": "Erhalte die Latenz des Bots",
+                    "responses": {
+                        "success": "Pong! Meine Latenz beträgt {{ping}}ms",
+                        "defaultError": "Ich kann meine Latenz im Moment nicht abrufen... Versuche es später erneut"
+                    }
+                }
+            }
+        },
         "moderation": {
             "name": "moderation",
             "description": "Moderationskategorie-Befehle",
@@ -21,7 +35,7 @@
                         }
                     },
                     "responses": {
-                        "success": "{{member}} erfolgreich vom Server gekickt. Grund: {{reason}}",
+                        "success": "{{member}} erfolgreich vom {{guild}} gekickt. Grund: {{reason}}",
                         "defaultError": "Ich kann {{member}} nicht von {{guild}} kicken",
                         "noPermissionsError": "Ich kann {{member}} nicht von {{guild}} kicken. Stelle sicher, dass ich die `KICK_MEMBERS`-Berechtigung habe",
                         "higherRoleError": "Ich kann {{member}} nicht von {{guild}} kicken. Stelle sicher, dass meine Rolle höher ist als die Rolle des Mitglieds"
@@ -45,10 +59,11 @@
                         }
                     },
                     "responses": {
-                        "success": "{{member}} erfolgreich vom Server verbannt. Grund: {{reason}}",
+                        "success": "{{member}} erfolgreich vom {{guild}} verbannt. Grund: {{reason}}",
                         "defaultError": "Ich kann {{member}} nicht von {{guild}} verbannen",
                         "noPermissionsError": "Ich kann {{member}} nicht von {{guild}} verbannen. Stelle sicher, dass ich die `BAN_MEMBERS`-Berechtigung habe",
-                        "higherRoleError": "Ich kann {{member}} nicht von {{guild}} verbannen. Stelle sicher, dass meine Rolle höher ist als die Rolle des Mitglieds"
+                        "higherRoleError": "Ich kann {{member}} nicht von {{guild}} verbannen. Stelle sicher, dass meine Rolle höher ist als die Rolle des Mitglieds",
+                        "unreachableError": "Die direkte Verbannungsnachricht konnte nicht an {{member}} gesendet werden. Das Mitglied ist nicht erreichbar"
                     }
                 },
                 "delete_messages": {
@@ -68,28 +83,6 @@
                         "success": "{{amount}} Nachrichten aus {{channel}} erfolgreich gelöscht",
                         "defaultError": "Ich kann keine Nachrichten aus {{channel}} löschen",
                         "noPermissionsError": "Ich kann keine Nachrichten aus {{channel}} löschen. Stelle sicher, dass ich die `MANAGE_MESSAGES`-Berechtigung habe"
-                    }
-                },
-                "mute": {
-                    "name": "stummschalten",
-                    "description": "Stummschalten eines Mitglieds auf dem Server",
-                    "options": {
-                        "member": {
-                            "name": "mitglied",
-                            "description": "Das Mitglied, das du stummschalten möchtest"
-                        },
-                        "reason": {
-                            "name": "grund",
-                            "description": "Der Grund für das Stummschalten des Mitglieds"
-                        }
-                    },
-                    "responses": {
-                        "success": "{{member}} erfolgreich auf dem {{guild}} stummgeschaltet. Grund: {{reason}}",
-                        "defaultError": "Ich kann {{member}} nicht auf {{guild}} stumm schalten",
-                        "noPermissionsError": "Ich kann {{member}} nicht auf {{guild}} stumm schalten. Stelle sicher, dass ich die `MUTE_MEMBERS`-Berechtigung habe",
-                        "higherRoleError": "Ich kann {{member}} nicht auf {{guild}} stumm schalten. Stelle sicher, dass meine Rolle höher ist als die Rolle des Mitglieds",
-                        "muteRoleIsHigherError": "Ich kann {{member}} nicht auf {{guild}} stumm schalten. Stelle sicher, dass die Stummschaltungsrolle höher ist als die Rolle des Mitglieds, aber niedriger als meine Rolle",
-                        "alreadyMutedError": "{{member}} ist bereits auf dem Server stummgeschaltet"
                     }
                 }
             }

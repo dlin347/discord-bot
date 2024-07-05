@@ -8,7 +8,6 @@ module.exports = {
             let locale = interaction.locale;
             if (!Object.keys(messages).includes(locale)) locale = 'en-US';
             const eExists = messages[locale].eExists;
-            const eExecution = messages[locale].eExecution;
 
             const command = interaction.client.commands.get(interaction.commandName);
             if (!command) {
@@ -48,11 +47,6 @@ module.exports = {
                 await command.execute(interaction);
             } catch (error) {
                 console.error("\x1b[31m" + error + "\x1b[0m");
-                if (interaction.replied || interaction.deferred) {
-                    await interaction.followUp({ content: eExecution, ephemeral: true });
-                } else {
-                    await interaction.reply({ content: eExecution, ephemeral: true });
-                }
             }
         }
     },

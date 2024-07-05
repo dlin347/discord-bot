@@ -3,6 +3,20 @@
         "common": {
             "noReason": "No se proporcionó ninguna razón"
         },
+        "information": {
+            "name": "información",
+            "description": "Obtén información de diversas cosas",
+            "commands": {
+                "ping": {
+                    "name": "ping",
+                    "description": "Obtén la latencia del bot",
+                    "responses": {
+                        "success": "¡Pong! Mi latencia es de {{ping}}ms",
+                        "defaultError": "No puedo obtener mi latencia en este momento... Inténtalo de nuevo más tarde"
+                    }
+                }
+            }
+        },
         "moderation": {
             "name": "moderación",
             "description": "Comandos de la categoría de moderación",
@@ -21,7 +35,7 @@
                         }
                     },
                     "responses": {
-                        "success": "El miembro {{member}} ha sido expulsado con éxito. Razón: {{reason}}",
+                        "success": "El miembro {{member}} ha sido expulsado de {{guild}} con éxito. Razón: {{reason}}",
                         "defaultError": "No puedo expulsar a {{member}} de {{guild}}",
                         "noPermissionsError": "No puedo expulsar a {{member}} del servidor. Asegúrate de que tengo el permiso `KICK_MEMBERS`",
                         "higherRoleError": "No puedo expulsar a {{member}} del servidor. Asegúrate de que mi rol es superior al rol del miembro"
@@ -45,10 +59,11 @@
                         }
                     },
                     "responses": {
-                        "success": "El miembro {{member}} ha sido prohibido con éxito. Razón: {{reason}}",
+                        "success": "El miembro {{member}} ha sido prohibido de {{guild}} con éxito. Razón: {{reason}}",
                         "defaultError": "No puedo prohibir a {{member}} de {{guild}}",
                         "noPermissionsError": "No puedo prohibir a {{member}} del servidor. Asegúrate de que tengo el permiso `BAN_MEMBERS`",
-                        "higherRoleError": "No puedo prohibir a {{member}} del servidor. Asegúrate de que mi rol es superior al rol del miembro"
+                        "higherRoleError": "No puedo prohibir a {{member}} del servidor. Asegúrate de que mi rol es superior al rol del miembro",
+                        "unreachableError": "El mensaje directo de prohibición no pudo ser enviado a {{member}}. El miembro no es accesible"
                     }
                 },
                 "delete_messages": {
@@ -68,28 +83,6 @@
                         "success": "Se han eliminado con éxito {{amount}} mensajes en {{channel}}",
                         "defaultError": "No puedo eliminar mensajes en {{channel}}",
                         "noPermissionsError": "No puedo eliminar mensajes en {{channel}}. Asegúrate de que tengo el permiso `MANAGE_MESSAGES`"
-                    }
-                },
-                "mute": {
-                    "description": "Silencia a un miembro en el servidor",
-                    "name": "silenciar",
-                    "options": {
-                        "member": {
-                            "description": "El miembro que deseas silenciar",
-                            "name": "miembro"
-                        },
-                        "reason": {
-                            "description": "La razón de silenciar al miembro",
-                            "name": "razon"
-                        }
-                    },
-                    "responses": {
-                        "success": "El miembro {{member}} ha sido silenciado con éxito de {{guild}}. Razón: {{reason}}",
-                        "defaultError": "No puedo silenciar a {{member}} en {{guild}}",
-                        "noPermissionsError": "No puedo silenciar a {{member}} en el servidor. Asegúrate de que tengo el permiso `MANAGE_ROLES`",
-                        "higherRoleError": "No puedo silenciar a {{member}} en el servidor. Asegúrate de que mi rol es superior al rol del miembro",
-                        "muteRoleIsHigherError": "No puedo silenciar a {{member}} en el servidor. Asegúrate de que el rol de mute es superior al rol del miembro, pero inferior a mi rol",
-                        "alreadyMutedError": "No puedo silenciar a {{member}} en el servidor. El miembro ya está silenciado"
                     }
                 }
             }

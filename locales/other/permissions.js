@@ -11,7 +11,7 @@ module.exports = async function permissions(language, permission) {
         case 'tr':
             return `Bu komutu kullanmak için gerekli izne sahip değilsiniz (\`${permission}\`)`;
         case 'ru':
-            return `У вас нет необходимого разреш   ения (\`${permission}\`) для использования этой команды`;
+            return `У вас нет необходимого разреш ения (\`${permission}\`) для использования этой команды`;
         default:
             return `You don't have the required permission (\`${permission}\`) to use this command`;
     }

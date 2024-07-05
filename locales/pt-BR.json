@@ -3,6 +3,20 @@
         "common": {
             "noReason": "Nenhum motivo fornecido"
         },
+        "information": {
+            "name": "informação",
+            "description": "Obtenha informações de várias coisas",
+            "commands": {
+                "ping": {
+                    "name": "ping",
+                    "description": "Obtenha a latência do bot",
+                    "responses": {
+                        "success": "Pong! Minha latência é de {{ping}}ms",
+                        "defaultError": "Não consigo obter minha latência no momento... Tente novamente mais tarde"
+                    }
+                }
+            }
+        },
         "moderation": {
             "name": "moderação",
             "description": "Comandos de moderação",
@@ -21,7 +35,7 @@
                         }
                     },
                     "responses": {
-                        "success": "{{member}} foi expulso com sucesso do servidor. Motivo: {{reason}}",
+                        "success": "{{member}} foi expulso com sucesso de {{guild}}. Motivo: {{reason}}",
                         "defaultError": "Não posso expulsar {{member}} de {{guild}}",
                         "noPermissionsError": "Não posso expulsar {{member}} de {{guild}}. Certifique-se de que tenho permissão `KICK_MEMBERS`",
                         "higherRoleError": "Não posso expulsar {{member}} de {{guild}}. Certifique-se de que meu cargo é superior ao cargo do membro"
@@ -45,10 +59,11 @@
                         }
                     },
                     "responses": {
-                        "success": "{{member}} foi banido com sucesso do servidor. Motivo: {{reason}}",
+                        "success": "{{member}} foi banido com sucesso de {{guild}}. Motivo: {{reason}}",
                         "defaultError": "Não posso banir {{member}} de {{guild}}",
                         "noPermissionsError": "Não posso banir {{member}} de {{guild}}. Certifique-se de que tenho permissão `BAN_MEMBERS`",
-                        "higherRoleError": "Não posso banir {{member}} de {{guild}}. Certifique-se de que meu cargo é superior ao cargo do membro"
+                        "higherRoleError": "Não posso banir {{member}} de {{guild}}. Certifique-se de que meu cargo é superior ao cargo do membro",
+                        "unreachableError": "A mensagem direto de banimento não pôde ser enviada para {{member}}. O membro está fora de alcance"
                     }
                 },
                 "delete_messages": {
@@ -68,28 +83,6 @@
                         "success": "Excluídas com sucesso {{amount}} mensagens em {{channel}}",
                         "defaultError": "Não posso excluir mensagens em {{channel}}",
                         "noPermissionsError": "Não posso excluir mensagens em {{channel}}. Certifique-se de que tenho permissão `MANAGE_MESSAGES`"
-                    }
-                },
-                "mute": {
-                    "name": "silenciar",
-                    "description": "Silencie um membro do servidor",
-                    "options": {
-                        "member": {
-                            "name": "membro",
-                            "description": "O membro que você deseja silenciar"
-                        },
-                        "reason": {
-                            "name": "razão",
-                            "description": "O motivo do silenciamento do membro"
-                        }
-                    },
-                    "responses": {
-                        "success": "{{member}} foi silenciado com sucesso de {{guild}}. Motivo: {{reason}}",
-                        "defaultError": "Não posso silenciar {{member}} de {{guild}}",
-                        "noPermissionsError": "Não posso silenciar {{member}} de {{guild}}. Certifique-se de que tenho permissão `MANAGE_ROLES`",
-                        "higherRoleError": "Não posso silenciar {{member}} de {{guild}}. Certifique-se de que meu cargo é superior ao cargo do membro",
-                        "muteRoleIsHigherError": "Não posso silenciar {{member}} de {{guild}}. Certifique-se de que o cargo de silenciamento é superior ao cargo do membro, mas inferior ao meu cargo",
-                        "alreadyMutedError": "{{member}} já está silenciado"
                     }
                 }
             }

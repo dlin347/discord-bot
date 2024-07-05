@@ -3,6 +3,20 @@
         "common": {
             "noReason": "Aucune raison fournie"
         },
+        "information": {
+            "name": "information",
+            "description": "Obtenez des informations sur diverses choses",
+            "commands": {
+                "ping": {
+                    "name": "ping",
+                    "description": "Obtenez la latence du bot",
+                    "responses": {
+                        "success": "Pong! Ma latence est de {{ping}}ms",
+                        "defaultError": "Je ne peux pas obtenir ma latence pour le moment... Réessayez plus tard"
+                    }
+                }
+            }
+        },
         "moderation": {
             "name": "modération",
             "description": "Commandes de la catégorie de modération",
@@ -21,7 +35,7 @@
                         }
                     },
                     "responses": {
-                        "success": "{{member}} a été expulsé avec succès du serveur. Raison: {{reason}}",
+                        "success": "{{member}} a été expulsé avec succès de {{guild}}. Raison: {{reason}}",
                         "defaultError": "Je ne peux pas expulser {{member}} de {{guild}}",
                         "noPermissionsError": "Je ne peux pas expulser {{member}} de {{guild}}. Assurez-vous que j'ai la permission `KICK_MEMBERS`",
                         "higherRoleError": "Je ne peux pas expulser {{member}} de {{guild}}. Assurez-vous que mon rôle est supérieur au rôle du membre"
@@ -45,10 +59,11 @@
                         }
                     },
                     "responses": {
-                        "success": "{{member}} a été interdit avec succès du serveur. Raison: {{reason}}",
+                        "success": "{{member}} a été interdit avec succès de {{guild}}. Raison: {{reason}}",
                         "defaultError": "Je ne peux pas interdire {{member}} de {{guild}}",
                         "noPermissionsError": "Je ne peux pas interdire {{member}} de {{guild}}. Assurez-vous que j'ai la permission `BAN_MEMBERS`",
-                        "higherRoleError": "Je ne peux pas interdire {{member}} de {{guild}}. Assurez-vous que mon rôle est supérieur au rôle du membre"
+                        "higherRoleError": "Je ne peux pas interdire {{member}} de {{guild}}. Assurez-vous que mon rôle est supérieur au rôle du membre",
+                        "unreachableError": "Le direct message de interdire n'a pas pu être envoyé au {{membre}}. Le membre est injoignable"
                     }
                 },
                 "delete_messages": {
@@ -68,28 +83,6 @@
                         "success": "Suppression de {{amount}} messages dans {{channel}}",
                         "defaultError": "Je ne peux pas supprimer de messages dans {{channel}}",
                         "noPermissionsError": "Je ne peux pas supprimer de messages dans {{channel}}. Assurez-vous que j'ai la permission `MANAGE_MESSAGES`"
-                    }
-                },
-                "mute": {
-                    "name": "mute",
-                    "description": "Mutez un membre du serveur",
-                    "options": {
-                        "member": {
-                            "name": "membre",
-                            "description": "Le membre que vous souhaitez mute"
-                        },
-                        "reason": {
-                            "name": "raison",
-                            "description": "La raison du mute du membre"
-                        }
-                    },
-                    "responses": {
-                        "success": "{{member}} a été muté avec succès de {{guild}}. Raison: {{reason}}",
-                        "defaultError": "Je ne peux pas mute {{member}} de {{guild}}",
-                        "noPermissionsError": "Je ne peux pas mute {{member}} de {{guild}}. Assurez-vous que j'ai la permission `MANAGE_ROLES`",
-                        "higherRoleError": "Je ne peux pas mute {{member}} de {{guild}}. Assurez-vous que mon rôle est supérieur au rôle du membre",
-                        "muteRoleIsHigherError": "Je ne peux pas mute {{member}} de {{guild}}. Assurez-vous que le rôle de mute est supérieur au rôle du membre, mais inférieur à mon rôle",
-                        "alreadyMutedError": "Je ne peux pas mute {{member}} de {{guild}}. Le membre est déjà muté"
                     }
                 }
             }

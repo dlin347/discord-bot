@@ -7,8 +7,9 @@
 - [x] Modularization
 - [x] Delete messages / Purge command
 - [x] More efficient error handling system (node.js)
-- [] Mute command
-- [] Unmute command
+- [x] DM ban message to user and catch error
+- [] DM kick message to user and catch error
+- [] Unban command
 - [] Lock channel command
 - [] Unlock channel command
 - [] Unban command

@@ -3,6 +3,20 @@
         "common": {
             "noReason": "Sebep belirtilmedi"
         },
+        "information": {
+            "name": "bilgi",
+            "description": "Çeşitli şeyler hakkında bilgi alın",
+            "commands": {
+                "ping": {
+                    "name": "ping",
+                    "description": "Botun gecikmesini alın",
+                    "responses": {
+                        "success": "Pong! Benim gecikmem {{ping}}ms",
+                        "defaultError": "Şu anda gecikmemi alamıyorum... Daha sonra tekrar deneyin"
+                    }
+                }
+            }
+        },
         "moderation": {
             "name": "moderasyon",
             "description": "Moderasyon kategorisi komutları",
@@ -21,7 +35,7 @@
                         }
                     },
                     "responses": {
-                        "success": "{{member}} başarıyla sunucudan atıldı. Sebep: {{reason}}",
+                        "success": "Başarılı bir şekilde {{member}} {{guild}}'den atıldı. Sebep: {{reason}}",
                         "defaultError": "{{member}}'ı {{guild}} sunucusundan atamam",
                         "noPermissionsError": "{{member}}'ı {{guild}} sunucusundan atamam. `KICK_MEMBERS` iznine sahip olduğumdan emin olun",
                         "higherRoleError": "{{member}}'ı {{guild}} sunucusundan atamam. Rolümün üyenin rolünden üstün olduğundan emin olun"
@@ -45,10 +59,11 @@
                         }
                     },
                     "responses": {
-                        "success": "{{member}} başarıyla sunucudan yasaklandı. Sebep: {{reason}}",
+                        "success": "{{üye}}, {{guild}}'den başarıyla yasaklandı. Sebep: {{sebep}}",
                         "defaultError": "{{member}}'ı {{guild}} sunucusundan yasaklayamam",
                         "noPermissionsError": "{{member}}'ı {{guild}} sunucusundan yasaklayamam. `BAN_MEMBERS` iznine sahip olduğumdan emin olun",
-                        "higherRoleError": "{{member}}'ı {{guild}} sunucusundan yasaklayamam. Rolümün üyenin rolünden üstün olduğundan emin olun"
+                        "higherRoleError": "{{member}}'ı {{guild}} sunucusundan yasaklayamam. Rolümün üyenin rolünden üstün olduğundan emin olun",
+                        "unreachableError": "Doğrudan yasaklama mesajı {{member}}'ye gönderilemez. Üyeye ulaşılamıyor"
                     }
                 },
                 "delete_messages": {
@@ -68,28 +83,6 @@
                         "success": "{{channel}} kanalından başarıyla {{amount}} mesaj silindi",
                         "defaultError": "{{channel}} kanalındaki mesajları silemem",
                         "noPermissionsError": "{{channel}} kanalındaki mesajları silemem. `MANAGE_MESSAGES` iznine sahip olduğumdan emin olun"
-                    }
-                },
-                "mute": {
-                    "name": "sustur",
-                    "description": "Sunucuda bir üyeyi sustur",
-                    "options": {
-                        "member": {
-                            "name": "üye",
-                            "description": "Susturmak istediğiniz üye"
-                        },
-                        "reason": {
-                            "name": "sebep",
-                            "description": "Üyenin susturulma sebebi"
-                        }
-                    },
-                    "responses": {
-                        "success": "{{member}} başarıyla sunucuda susturuldu. Sebep: {{reason}}",
-                        "defaultError": "{{member}}'ı {{guild}} sunucusunda susturamam",
-                        "noPermissionsError": "{{member}}'ı {{guild}} sunucusunda susturamam. `MANAGE_ROLES` iznine sahip olduğumdan emin olun",
-                        "higherRoleError": "{{member}}'ı {{guild}} sunucusunda susturamam. Rolümün üyenin rolünden üstün olduğundan emin olun",
-                        "muteRoleIsHigherError": "{{member}}'ı {{guild}} sunucusunda susturamam. Susturma rolünün üyenin rolünden üstün, ancak benim rolümden düşük olduğundan emin olun",
-                        "alreadyMutedError": "{{member}} zaten susturulmuş"
                     }
                 }
             }
