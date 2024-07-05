@@ -8,12 +8,12 @@
 - [x] Delete messages / Purge command
 - [x] More efficient error handling system (node.js)
 - [x] DM ban message to user and catch error
-- [] DM kick message to user and catch error
+- [x] DM kick message to user and catch error
+- [] Set min and max length of some slash commands fields
 - [] Unban command
 - [] Lock channel command
 - [] Unlock channel command
-- [] Unban command
-- [] Simpl.db
+- [] Mongodb or locally hosted database
 
 ```
 Files to modify if there is an expansion of languages:

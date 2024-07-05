@@ -33,7 +33,7 @@ const rest = new REST().setToken(process.env.BOT_TOKEN);
             { body: commands },
         );
         data.forEach(command => {
-            console.log("\x1b[32m" + `REFRESHED COMMAND <<${command.name}>> WITH ID <<${command.id}>>.` + "\x1b[0m");
+            console.log("\x1b[32m" + `REFRESHED COMMAND <<${command.name}>> WITH ID <<${command.id}>>` + "\x1b[0m");
         })
     } catch (error) {
         console.error("\x1b[31m" + error + "\x1b[0m");

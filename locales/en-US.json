@@ -38,7 +38,8 @@
                         "success": "Successfully kicked {{member}} from {{guild}}. Reason: {{reason}}",
                         "defaultError": "I can't kick {{member}} from {{guild}}",
                         "noPermissionsError": "I can't kick {{member}} from {{guild}}. Make sure I have `KICK_MEMBERS` permission",
-                        "higherRoleError": "I can't kick {{member}} from {{guild}}. Make sure my role is higher than the member's role"
+                        "higherRoleError": "I can't kick {{member}} from {{guild}}. Make sure my role is higher than the member's role",
+                        "unreachableError": "The kick direct message couldn't be sent to {{member}}. The member is unreachable"
                     }
                 },
                 "ban": {
@@ -63,7 +64,26 @@
                         "defaultError": "I can't ban {{member}} from {{guild}}",
                         "noPermissionsError": "I can't ban {{member}} from {{guild}}. Make sure I have `BAN_MEMBERS` permission",
                         "higherRoleError": "I can't ban {{member}} from {{guild}}. Make sure my role is higher than the member's role",
-                        "unreachableError": "The direct ban message couldn't be sent to {{member}}. The member is unreachable"
+                        "unreachableError": "The ban direct message couldn't be sent to {{member}}. The member is unreachable"
+                    }
+                },
+                "unban": {
+                    "name": "unban",
+                    "description": "Unban a user from the server",
+                    "options": {
+                        "id": {
+                            "name": "id",
+                            "description": "The id of the user you want to unban"
+                        },
+                        "reason": {
+                            "name": "reason",
+                            "description": "The reason for unbanning the user"
+                        }
+                    },
+                    "responses": {
+                        "success": "Successfully unbanned {{member}} from {{guild}}",
+                        "defaultError": "I can't unban {{member}} from {{guild}}",
+                        "noPermissionsError": "I can't unban {{member}} from {{guild}}. Make sure I have `BAN_MEMBERS` permission"
                     }
                 },
                 "delete_messages": {

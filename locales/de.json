@@ -38,7 +38,8 @@
                         "success": "{{member}} erfolgreich vom {{guild}} gekickt. Grund: {{reason}}",
                         "defaultError": "Ich kann {{member}} nicht von {{guild}} kicken",
                         "noPermissionsError": "Ich kann {{member}} nicht von {{guild}} kicken. Stelle sicher, dass ich die `KICK_MEMBERS`-Berechtigung habe",
-                        "higherRoleError": "Ich kann {{member}} nicht von {{guild}} kicken. Stelle sicher, dass meine Rolle höher ist als die Rolle des Mitglieds"
+                        "higherRoleError": "Ich kann {{member}} nicht von {{guild}} kicken. Stelle sicher, dass meine Rolle höher ist als die Rolle des Mitglieds",
+                        "unreachableError": "Die Kick-Direktnachricht konnte nicht an {{member}} gesendet werden. Das Mitglied ist unerreichbar"
                     }
                 },
                 "ban": {
@@ -63,7 +64,26 @@
                         "defaultError": "Ich kann {{member}} nicht von {{guild}} verbannen",
                         "noPermissionsError": "Ich kann {{member}} nicht von {{guild}} verbannen. Stelle sicher, dass ich die `BAN_MEMBERS`-Berechtigung habe",
                         "higherRoleError": "Ich kann {{member}} nicht von {{guild}} verbannen. Stelle sicher, dass meine Rolle höher ist als die Rolle des Mitglieds",
-                        "unreachableError": "Die direkte Verbannungsnachricht konnte nicht an {{member}} gesendet werden. Das Mitglied ist nicht erreichbar"
+                        "unreachableError": "Die direkte Verbotsnachricht konnte nicht an {{member}} gesendet werden. Das Mitglied ist unerreichbar"
+                    }
+                },
+                "unban": {
+                    "name": "entsperren",
+                    "description": "Entsperrt einen Benutzer auf dem Server",
+                    "options": {
+                        "id": {
+                            "name": "id",
+                            "description": "Die id des Benutzers, den du entsperren möchtest"
+                        },
+                        "reason": {
+                            "name": "grund",
+                            "description": "Der Grund für die Entsperrung des Benutzers"
+                        }
+                    },
+                    "responses": {
+                        "success": "Benutzer {{member}} wurde erfolgreich von {{guild}} entsperrt",
+                        "defaultError": "Ich kann {{member}} nicht von {{guild}} entsperren",
+                        "noPermissionsError": "Ich kann {{member}} nicht von {{guild}} entsperren. Stelle sicher, dass ich die Berechtigung `BAN_MEMBERS` habe"
                     }
                 },
                 "delete_messages": {

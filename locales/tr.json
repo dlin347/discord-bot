@@ -38,7 +38,8 @@
                         "success": "Başarılı bir şekilde {{member}} {{guild}}'den atıldı. Sebep: {{reason}}",
                         "defaultError": "{{member}}'ı {{guild}} sunucusundan atamam",
                         "noPermissionsError": "{{member}}'ı {{guild}} sunucusundan atamam. `KICK_MEMBERS` iznine sahip olduğumdan emin olun",
-                        "higherRoleError": "{{member}}'ı {{guild}} sunucusundan atamam. Rolümün üyenin rolünden üstün olduğundan emin olun"
+                        "higherRoleError": "{{member}}'ı {{guild}} sunucusundan atamam. Rolümün üyenin rolünden üstün olduğundan emin olun",
+                        "unreachableError": "Doğrudan atma mesajı {{member}}'ye gönderilemez. Üyeye ulaşılamıyor"
                     }
                 },
                 "ban": {
@@ -64,6 +65,25 @@
                         "noPermissionsError": "{{member}}'ı {{guild}} sunucusundan yasaklayamam. `BAN_MEMBERS` iznine sahip olduğumdan emin olun",
                         "higherRoleError": "{{member}}'ı {{guild}} sunucusundan yasaklayamam. Rolümün üyenin rolünden üstün olduğundan emin olun",
                         "unreachableError": "Doğrudan yasaklama mesajı {{member}}'ye gönderilemez. Üyeye ulaşılamıyor"
+                    }
+                },
+                "unban": {
+                    "name": "yasak_kaldır",
+                    "description": "Bir üyenin yasağını kaldır",
+                    "options": {
+                        "id": {
+                            "name": "id",
+                            "description": "Yasağı kaldırılacak üyenin kimliği"
+                        },
+                        "reason": {
+                            "name": "sebep",
+                            "description": "Üyenin yasağının kaldırılma sebebi"
+                        }
+                    },
+                    "responses": {
+                        "success": "{{member}}'ın yasağı başarıyla kaldırıldı",
+                        "defaultError": "{{member}}'ın yasağını kaldıramam",
+                        "noPermissionsError": "{{member}}'ın yasağını kaldıramam. `BAN_MEMBERS` iznine sahip olduğumdan emin olun"
                     }
                 },
                 "delete_messages": {

@@ -38,7 +38,8 @@
                         "success": "{{member}} foi expulso com sucesso de {{guild}}. Motivo: {{reason}}",
                         "defaultError": "Não posso expulsar {{member}} de {{guild}}",
                         "noPermissionsError": "Não posso expulsar {{member}} de {{guild}}. Certifique-se de que tenho permissão `KICK_MEMBERS`",
-                        "higherRoleError": "Não posso expulsar {{member}} de {{guild}}. Certifique-se de que meu cargo é superior ao cargo do membro"
+                        "higherRoleError": "Não posso expulsar {{member}} de {{guild}}. Certifique-se de que meu cargo é superior ao cargo do membro",
+                        "unreachableError": "A mensagem direto de expulsão não pôde ser enviada para {{member}}. O membro está fora de alcance"
                     }
                 },
                 "ban": {
@@ -64,6 +65,25 @@
                         "noPermissionsError": "Não posso banir {{member}} de {{guild}}. Certifique-se de que tenho permissão `BAN_MEMBERS`",
                         "higherRoleError": "Não posso banir {{member}} de {{guild}}. Certifique-se de que meu cargo é superior ao cargo do membro",
                         "unreachableError": "A mensagem direto de banimento não pôde ser enviada para {{member}}. O membro está fora de alcance"
+                    }
+                },
+                "unban": {
+                    "name": "desbanir",
+                    "description": "Desbanir um membro do servidor",
+                    "options": {
+                        "id": {
+                            "name": "id",
+                            "description": "O id do usuário que você deseja desbanir"
+                        },
+                        "reason": {
+                            "name": "razão",
+                            "description": "O motivo do desbanimento do membro"
+                        }
+                    },
+                    "responses": {
+                        "success": "{{member}} foi desbanido com sucesso de {{guild}}",
+                        "defaultError": "Não posso desbanir {{member}} de {{guild}}",
+                        "noPermissionsError": "Não posso desbanir {{member}} de {{guild}}. Certifique-se de que tenho permissão `BAN_MEMBERS`"
                     }
                 },
                 "delete_messages": {

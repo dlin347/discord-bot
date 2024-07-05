@@ -2,6 +2,7 @@ const { SlashCommandBuilder, ChannelType } = require('discord.js');
 
 const kickMember = require('./kick');
 const banMember = require('./ban');
+const unbanMember = require('./unban');
 const deleteMessages = require('./delete-messages');
 
 const de = require('../../locales/de.json');
@@ -250,6 +251,70 @@ module.exports = {
                         .setRequired(false)
                 )
         )
+        .addSubcommand(subcommand =>
+            subcommand
+                .setName('unban')
+                .setNameLocalizations({
+                    de: de.categories.moderation.commands.unban.name,
+                    fr: fr.categories.moderation.commands.unban.name,
+                    "pt-BR": pt.categories.moderation.commands.unban.name,
+                    "es-ES": es.categories.moderation.commands.unban.name,
+                    tr: tr.categories.moderation.commands.unban.name,
+                    ru: ru.categories.moderation.commands.unban.name
+                })
+                .setDescription('Unban a user from the server')
+                .setDescriptionLocalizations({
+                    de: de.categories.moderation.commands.unban.description,
+                    fr: fr.categories.moderation.commands.unban.description,
+                    "pt-BR": pt.categories.moderation.commands.unban.description,
+                    "es-ES": es.categories.moderation.commands.unban.description,
+                    tr: tr.categories.moderation.commands.unban.description,
+                    ru: ru.categories.moderation.commands.unban.description
+                })
+                .addStringOption(option =>
+                    option
+                        .setName('id')
+                        .setNameLocalizations({
+                            de: de.categories.moderation.commands.unban.options.id.name,
+                            fr: fr.categories.moderation.commands.unban.options.id.name,
+                            "pt-BR": pt.categories.moderation.commands.unban.options.id.name,
+                            "es-ES": es.categories.moderation.commands.unban.options.id.name,
+                            tr: tr.categories.moderation.commands.unban.options.id.name,
+                            ru: ru.categories.moderation.commands.unban.options.id.name
+                        })
+                        .setDescription('The id of the user you want to unban')
+                        .setDescriptionLocalizations({
+                            de: de.categories.moderation.commands.unban.options.id.description,
+                            fr: fr.categories.moderation.commands.unban.options.id.description,
+                            "pt-BR": pt.categories.moderation.commands.unban.options.id.description,
+                            "es-ES": es.categories.moderation.commands.unban.options.id.description,
+                            tr: tr.categories.moderation.commands.unban.options.id.description,
+                            ru: ru.categories.moderation.commands.unban.options.id.description
+                        })
+                        .setRequired(true)
+                )
+                .addStringOption(option =>
+                    option
+                        .setName('reason')
+                        .setNameLocalizations({
+                            de: de.categories.moderation.commands.unban.options.reason.name,
+                            fr: fr.categories.moderation.commands.unban.options.reason.name,
+                            "pt-BR": pt.categories.moderation.commands.unban.options.reason.name,
+                            "es-ES": es.categories.moderation.commands.unban.options.reason.name,
+                            tr: tr.categories.moderation.commands.unban.options.reason.name,
+                            ru: ru.categories.moderation.commands.unban.options.reason.name
+                        })
+                        .setDescription('The reason of unbanning the user')
+                        .setDescriptionLocalizations({
+                            de: de.categories.moderation.commands.unban.options.reason.description,
+                            fr: fr.categories.moderation.commands.unban.options.reason.description,
+                            "pt-BR": pt.categories.moderation.commands.unban.options.reason.description,
+                            "es-ES": es.categories.moderation.commands.unban.options.reason.description,
+                            tr: tr.categories.moderation.commands.unban.options.reason.description,
+                            ru: ru.categories.moderation.commands.unban.options.reason.description
+                        })
+                )
+        )
         .setDMPermission(false),
     async execute(interaction) {
         if (interaction.commandName === 'moderation') {
@@ -260,6 +325,9 @@ module.exports = {
                     break;
                 case 'ban':
                     await banMember(interaction);
+                    break;
+                case 'unban':
+                    await unbanMember(interaction);
                     break;
                 case 'delete_messages':
                     await deleteMessages(interaction);

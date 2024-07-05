@@ -38,7 +38,8 @@
                         "success": "El miembro {{member}} ha sido expulsado de {{guild}} con éxito. Razón: {{reason}}",
                         "defaultError": "No puedo expulsar a {{member}} de {{guild}}",
                         "noPermissionsError": "No puedo expulsar a {{member}} del servidor. Asegúrate de que tengo el permiso `KICK_MEMBERS`",
-                        "higherRoleError": "No puedo expulsar a {{member}} del servidor. Asegúrate de que mi rol es superior al rol del miembro"
+                        "higherRoleError": "No puedo expulsar a {{member}} del servidor. Asegúrate de que mi rol es superior al rol del miembro",
+                        "unreachableError": "El mensaje directo de expulsión no pudo ser enviado a {{member}}. No se puede contactar con el miembro"
                     }
                 },
                 "ban": {
@@ -63,7 +64,26 @@
                         "defaultError": "No puedo prohibir a {{member}} de {{guild}}",
                         "noPermissionsError": "No puedo prohibir a {{member}} del servidor. Asegúrate de que tengo el permiso `BAN_MEMBERS`",
                         "higherRoleError": "No puedo prohibir a {{member}} del servidor. Asegúrate de que mi rol es superior al rol del miembro",
-                        "unreachableError": "El mensaje directo de prohibición no pudo ser enviado a {{member}}. El miembro no es accesible"
+                        "unreachableError": "El mensaje directo de prohibición no pudo ser enviado a {{member}}. No se puede contactar con el miembro"
+                    }
+                },
+                "unban": {
+                    "description": "Permite el acceso a un miembro previamente prohibido del servidor",
+                    "name": "permitir",
+                    "options": {
+                        "id": {
+                            "description": "La id del miembro al que le deseas permitir el acceso al servidor",
+                            "name": "id"
+                        },
+                        "reason": {
+                            "name": "razon",
+                            "description": "La razón de permitir el acceso al miembro"
+                        },
+                        "responses": {
+                            "success": "El miembro {{member}} ha sido permitido de {{guild}} con éxito",
+                            "defaultError": "No puedo permitir a {{member}} de {{guild}}",
+                            "noPermissionsError": "No puedo permitir a {{member}} del servidor. Asegúrate de que tengo el permiso `BAN_MEMBERS`"
+                        }
                     }
                 },
                 "delete_messages": {
