@@ -1,33 +1,33 @@
 {
     "categories": {
         "common": {
-            "noReason": "Kein Grund angegeben"
+            "noReason": "Es wurde kein Grund angegeben"
         },
         "information": {
             "name": "information",
-            "description": "Informationen zu verschiedenen Dingen abrufen",
+            "description": "Erhalten Sie Informationen zu verschiedenen Themen",
             "commands": {
                 "ping": {
                     "name": "ping",
-                    "description": "Erhalte die Latenz des Bots",
+                    "description": "Erhalten Sie die Latenz des Bots",
                     "responses": {
                         "success": "Pong! Meine Latenz beträgt {{ping}}ms",
-                        "defaultError": "Ich kann meine Latenz im Moment nicht abrufen... Versuche es später erneut"
+                        "defaultError": "Ich kann meine Latenz im Moment nicht ermitteln... Bitte versuchen Sie es später noch einmal"
                     }
                 }
             }
         },
         "moderation": {
             "name": "moderation",
-            "description": "Moderationskategorie-Befehle",
+            "description": "Befehle der Moderationskategorie",
             "commands": {
                 "kick": {
-                    "name": "kicken",
-                    "description": "Kicke ein Mitglied vom Server",
+                    "name": "kick",
+                    "description": "Ein Mitglied vom Server kicken",
                     "options": {
                         "member": {
                             "name": "mitglied",
-                            "description": "Das Mitglied, das du kicken möchtest"
+                            "description": "Das Mitglied, das Sie vom Server kicken möchten"
                         },
                         "reason": {
                             "name": "grund",
@@ -35,61 +35,61 @@
                         }
                     },
                     "responses": {
-                        "success": "{{member}} erfolgreich vom {{guild}} gekickt. Grund: {{reason}}",
+                        "success": "Das Mitglied {{member}} wurde erfolgreich von {{guild}} gekickt. Grund: {{reason}}",
                         "defaultError": "Ich kann {{member}} nicht von {{guild}} kicken",
-                        "noPermissionsError": "Ich kann {{member}} nicht von {{guild}} kicken. Stelle sicher, dass ich die `KICK_MEMBERS`-Berechtigung habe",
-                        "higherRoleError": "Ich kann {{member}} nicht von {{guild}} kicken. Stelle sicher, dass meine Rolle höher ist als die Rolle des Mitglieds",
-                        "unreachableError": "Die Kick-Direktnachricht konnte nicht an {{member}} gesendet werden. Das Mitglied ist unerreichbar"
+                        "noPermissionsError": "Ich kann {{member}} nicht von {{guild}} kicken. Stellen Sie sicher, dass ich die Berechtigung `KICK_MEMBERS` habe",
+                        "higherRoleError": "Ich kann {{member}} nicht von {{guild}} kicken. Stellen Sie sicher, dass meine Rolle über der Rolle des Mitglieds liegt",
+                        "unreachableError": "Die Kickedirektnachricht konnte nicht an {{member}} gesendet werden. Das Mitglied ist nicht erreichbar"
                     }
                 },
                 "ban": {
-                    "name": "verbieten",
-                    "description": "Verbanne ein Mitglied vom Server",
+                    "name": "ban",
+                    "description": "Einen Benutzer vom Server bannen",
                     "options": {
-                        "member": {
-                            "name": "mitglied",
-                            "description": "Das Mitglied, das du verbannen möchtest"
-                        },
                         "delete_messages": {
                             "name": "nachrichten_löschen",
-                            "description": "Lösche die Nachrichten des Mitglieds aus den letzten 7 Tagen?"
+                            "description": "Möchten Sie die Nachrichten des Benutzers der letzten 7 Tage löschen?"
+                        },
+                        "member": {
+                            "name": "mitglied",
+                            "description": "Das Mitglied, das Sie vom Server bannen möchten"
                         },
                         "reason": {
                             "name": "grund",
-                            "description": "Der Grund für das Verbannen des Mitglieds"
+                            "description": "Der Grund für das Bann des Mitglieds vom Server"
                         }
                     },
                     "responses": {
-                        "success": "{{member}} erfolgreich vom {{guild}} verbannt. Grund: {{reason}}",
-                        "defaultError": "Ich kann {{member}} nicht von {{guild}} verbannen",
-                        "noPermissionsError": "Ich kann {{member}} nicht von {{guild}} verbannen. Stelle sicher, dass ich die `BAN_MEMBERS`-Berechtigung habe",
-                        "higherRoleError": "Ich kann {{member}} nicht von {{guild}} verbannen. Stelle sicher, dass meine Rolle höher ist als die Rolle des Mitglieds",
-                        "unreachableError": "Die direkte Verbotsnachricht konnte nicht an {{member}} gesendet werden. Das Mitglied ist unerreichbar"
+                        "success": "Das Mitglied {{member}} wurde erfolgreich von {{guild}} gebannt. Grund: {{reason}}",
+                        "defaultError": "Ich kann {{member}} nicht von {{guild}} bannen",
+                        "noPermissionsError": "Ich kann {{member}} nicht von {{guild}} bannen. Stellen Sie sicher, dass ich die Berechtigung `BAN_MEMBERS` habe",
+                        "higherRoleError": "Ich kann {{member}} nicht von {{guild}} bannen. Stellen Sie sicher, dass meine Rolle über der Rolle des Mitglieds liegt",
+                        "unreachableError": "Die Bannnachricht konnte nicht an {{member}} gesendet werden. Das Mitglied ist nicht erreichbar"
                     }
                 },
                 "unban": {
-                    "name": "entsperren",
-                    "description": "Entsperrt einen Benutzer auf dem Server",
+                    "name": "unban",
+                    "description": "Einen Benutzer vom Server entbannen",
                     "options": {
                         "id": {
                             "name": "id",
-                            "description": "Die id des Benutzers, den du entsperren möchtest"
+                            "description": "Die ID des Benutzers, den Sie entbannen möchten"
                         },
                         "reason": {
                             "name": "grund",
-                            "description": "Der Grund für die Entsperrung des Benutzers"
+                            "description": "Der Grund für das Entbannen des Benutzers vom Server"
                         }
                     },
                     "responses": {
-                        "success": "Benutzer {{member}} wurde erfolgreich von {{guild}} entsperrt. Grund: {{reason}}",
-                        "defaultError": "Ich kann {{member}} nicht von {{guild}} entsperren",
-                        "noPermissionsError": "Ich kann {{member}} nicht von {{guild}} entsperren. Stelle sicher, dass ich die Berechtigung `BAN_MEMBERS` habe",
-                        "invalidIDError": "Die bereitgestellte ID ist ungültig oder es gibt keinen gesperrten Benutzer mit dieser ID auf dem Server"
+                        "success": "Das Mitglied {{member}} wurde erfolgreich von {{guild}} entbannt. Grund: {{reason}}",
+                        "defaultError": "Ich kann {{member}} nicht von {{guild}} entbannen",
+                        "noPermissionsError": "Ich kann {{member}} nicht von {{guild}} entbannen. Stellen Sie sicher, dass ich die Berechtigung `BAN_MEMBERS` habe",
+                        "invalidIDError": "Die angegebene ID ist ungültig oder es gibt keinen gebannten Benutzer mit dieser ID auf dem Server"
                     }
                 },
                 "delete_messages": {
-                    "name": "nachrichten_löschen",
-                    "description": "Lösche eine Anzahl von Nachrichten in einem bestimmten Kanal",
+                    "name": "delete_messages",
+                    "description": "Löschen Sie eine bestimmte Anzahl von Nachrichten in einem bestimmten Kanal",
                     "options": {
                         "amount": {
                             "name": "anzahl",
@@ -101,9 +101,9 @@
                         }
                     },
                     "responses": {
-                        "success": "{{amount}} Nachrichten aus {{channel}} erfolgreich gelöscht",
-                        "defaultError": "Ich kann keine Nachrichten aus {{channel}} löschen",
-                        "noPermissionsError": "Ich kann keine Nachrichten aus {{channel}} löschen. Stelle sicher, dass ich die `MANAGE_MESSAGES`-Berechtigung habe"
+                        "success": "{{amount}} Nachrichten wurden erfolgreich in {{channel}} gelöscht",
+                        "defaultError": "Ich kann keine Nachrichten in {{channel}} löschen",
+                        "noPermissionsError": "Ich kann keine Nachrichten in {{channel}} löschen. Stellen Sie sicher, dass ich die Berechtigung `MANAGE_MESSAGES` habe"
                     }
                 }
             }

@@ -1,7 +1,7 @@
 {
     "categories": {
         "common": {
-            "noReason": "Aucune raison fournie"
+            "noReason": "Aucune raison n'a été fournie"
         },
         "information": {
             "name": "information",
@@ -11,7 +11,7 @@
                     "name": "ping",
                     "description": "Obtenez la latence du bot",
                     "responses": {
-                        "success": "Pong! Ma latence est de {{ping}}ms",
+                        "success": "Pong ! Ma latence est de {{ping}}ms",
                         "defaultError": "Je ne peux pas obtenir ma latence pour le moment... Réessayez plus tard"
                     }
                 }
@@ -22,88 +22,88 @@
             "description": "Commandes de la catégorie de modération",
             "commands": {
                 "kick": {
-                    "name": "expulser",
+                    "name": "kick",
                     "description": "Expulsez un membre du serveur",
                     "options": {
                         "member": {
-                            "name": "membre",
-                            "description": "Le membre que vous souhaitez expulser"
+                            "description": "Le membre que vous souhaitez expulser",
+                            "name": "membre"
                         },
                         "reason": {
-                            "name": "raison",
-                            "description": "La raison de l'expulsion du membre"
+                            "description": "La raison de l'expulsion du membre",
+                            "name": "raison"
                         }
                     },
                     "responses": {
-                        "success": "{{member}} a été expulsé avec succès de {{guild}}. Raison: {{reason}}",
                         "defaultError": "Je ne peux pas expulser {{member}} de {{guild}}",
-                        "noPermissionsError": "Je ne peux pas expulser {{member}} de {{guild}}. Assurez-vous que j'ai la permission `KICK_MEMBERS`",
                         "higherRoleError": "Je ne peux pas expulser {{member}} de {{guild}}. Assurez-vous que mon rôle est supérieur au rôle du membre",
-                        "unreachableError": "Le direct message d'expulsion n'a pas pu être envoyé au {{membre}}. Le membre est injoignable"
+                        "noPermissionsError": "Je ne peux pas expulser {{member}} de {{guild}}. Assurez-vous que j'ai la permission `KICK_MEMBERS`",
+                        "success": "Le membre {{member}} a été expulsé de {{guild}} avec succès. Raison : {{reason}}",
+                        "unreachableError": "Le message direct d'expulsion n'a pas pu être envoyé à {{member}}. Le membre est injoignable"
                     }
                 },
                 "ban": {
-                    "name": "interdire",
-                    "description": "Interdisez un membre du serveur",
+                    "description": "Bannissez un membre du serveur",
+                    "name": "ban",
                     "options": {
-                        "member": {
-                            "name": "membre",
-                            "description": "Le membre que vous souhaitez interdire"
-                        },
                         "delete_messages": {
                             "name": "supprimer_messages",
-                            "description": "Supprimer les messages du membre des 7 derniers jours?"
+                            "description": "Supprimer les messages du membre des 7 derniers jours ?"
+                        },
+                        "member": {
+                            "description": "Le membre que vous souhaitez bannir du serveur",
+                            "name": "membre"
                         },
                         "reason": {
-                            "name": "raison",
-                            "description": "La raison de l'interdiction du membre"
+                            "description": "La raison du bannissement du membre du serveur",
+                            "name": "raison"
                         }
                     },
                     "responses": {
-                        "success": "{{member}} a été interdit avec succès de {{guild}}. Raison: {{reason}}",
-                        "defaultError": "Je ne peux pas interdire {{member}} de {{guild}}",
-                        "noPermissionsError": "Je ne peux pas interdire {{member}} de {{guild}}. Assurez-vous que j'ai la permission `BAN_MEMBERS`",
-                        "higherRoleError": "Je ne peux pas interdire {{member}} de {{guild}}. Assurez-vous que mon rôle est supérieur au rôle du membre",
-                        "unreachableError": "Le direct message de interdire n'a pas pu être envoyé au {{membre}}. Le membre est injoignable"
+                        "defaultError": "Je ne peux pas bannir {{member}} de {{guild}}",
+                        "higherRoleError": "Je ne peux pas bannir {{member}} de {{guild}}. Assurez-vous que mon rôle est supérieur au rôle du membre",
+                        "noPermissionsError": "Je ne peux pas bannir {{member}} de {{guild}}. Assurez-vous que j'ai la permission `BAN_MEMBERS`",
+                        "success": "Le membre {{member}} a été banni de {{guild}} avec succès. Raison : {{reason}}",
+                        "unreachableError": "Le message direct de bannissement n'a pas pu être envoyé à {{member}}. Le membre est injoignable"
                     }
                 },
                 "unban": {
-                    "name": "débannir",
-                    "description": "Débannir un membre du serveur",
+                    "description": "Débannissez un utilisateur du serveur",
+                    "name": "unban",
                     "options": {
                         "id": {
-                            "name": "id",
-                            "description": "L'id du membre que vous souhaitez débannir"
+                            "description": "L'ID de l'utilisateur que vous souhaitez débannir",
+                            "name": "id"
                         },
                         "reason": {
-                            "name": "raison",
-                            "description": "La raison de la débannissement du membre"
+                            "description": "La raison du débannissement de l'utilisateur du serveur",
+                            "name": "raison"
                         }
                     },
                     "responses": {
-                        "success": "{{member}} a été débanni avec succès de {{guild}}. Raison: {{reason}}",
-                        "defaultError": "Je ne peux pas débannir {{member}} de {{guild}}",
-                        "noPermissionsError": "Je ne peux pas débannir {{member}} de {{guild}}. Assurez-vous que j'ai la permission `BAN_MEMBERS`",
-                        "invalidIDError": "L'ID fourni est invalide ou il n'y a pas d'utilisateur banni avec cet ID dans le serveur"
+                        "defaultError": "Je ne peux pas débannir {{user}} de {{guild}}",
+                        "invalidIDError": "L'ID fournie est invalide ou il n'y a aucun utilisateur banni avec cette ID dans le serveur",
+                        "noPermissionsError": "Je ne peux pas débannir {{user}} de {{guild}}. Assurez-vous que j'ai la permission `BAN_MEMBERS`",
+                        "success": "L'utilisateur {{user}} a été débanni de {{guild}} avec succès. Raison : {{reason}}"
                     }
                 },
                 "delete_messages": {
-                    "name": "supprimer_messages",
-                    "description": "Supprimez un certain nombre de messages dans un canal spécifique",
+                    "description": "Supprimez une quantité de messages dans un canal spécifique",
+                    "name": "delete_messages",
                     "options": {
                         "amount": {
-                            "name": "quantité",
-                            "description": "Le nombre de messages à supprimer"
+                            "description": "La quantité de messages à supprimer",
+                            "name": "quantité"
                         },
                         "channel": {
-                            "name": "canal",
-                            "description": "Le canal dans lequel vous souhaitez supprimer les messages"
+                            "description": "Le canal dans lequel les messages seront supprimés",
+                            "name": "canal"
                         }
                     },
                     "responses": {
-                        "success": "Suppression de {{amount}} messages dans {{channel}}",
                         "defaultError": "Je ne peux pas supprimer de messages dans {{channel}}",
-                        "noPermissionsError": "Je ne peux pas supprimer de messages dans {{channel}}. Assurez-vous que j'ai la permission `MANAGE_MESSAGES`"
+                        "noPermissionsError": "Je ne peux pas supprimer de messages dans {{channel}}. Assurez-vous que j'ai la permission `MANAGE_MESSAGES`",
+                        "success": "{{amount}} messages ont été supprimés avec succès dans {{channel}}"
                     }
                 }
             }

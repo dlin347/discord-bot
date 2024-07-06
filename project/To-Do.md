@@ -10,20 +10,21 @@
 - [x] DM ban message to user and catch error
 - [x] DM kick message to user and catch error
 - [x] Unban command
-- [] Improvement of translations
-- [] Make some ephemeral responses non ephemeral (they don't make any sense being)
-- [] <<>> Missing in some logs
-- [] Set min and max length of some slash commands fields
-- [] Lock channel command
-- [] Unlock channel command
-- [] Add more commands from other categories
-- [] Integrate mongodb or locally hosted database
-- [] Create .github and its corresponding files (README, CONTRIBUTING, TEMPLATES...)
-- [] Choose an open source license (https://choosealicense.com/)
-- [] Host locally the bot
-- [] Add the bot to some websites such as top.gg (read requirements)
-- [] Find a way to optimize translation
-- [] Integration with a website????
+- [x] Improvement of translations
+- [x] <<>> Missing in some logs
+- [ ] Filter by name when unbanning the user (problem: og tags)
+- [ ] Accept variants from a language
+- [ ] Set min and max length of some slash commands fields
+- [ ] Lock channel command
+- [ ] Unlock channel command
+- [ ] Add more commands from other categories
+- [ ] Integrate mongodb or locally hosted database
+- [ ] Create .github and its corresponding files (README, CONTRIBUTING, TEMPLATES...)
+- [ ] Choose an open source license (https://choosealicense.com/)
+- [ ] Host locally the bot
+- [ ] Add the bot to some websites such as top.gg (read requirements)
+- [ ] Find a way to optimize translation
+- [ ] Integration with a website????
 
 ```
 Files to modify if there is an expansion of languages:

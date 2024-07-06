@@ -10,7 +10,7 @@ module.exports = async function unban(interaction) {
         console.error("\x1b[31m" + '[/UNBAN] ' + e + "\x1b[0m");
         return interaction.reply({ content: invalidIDError, ephemeral: true });
     });
-    const defaultError = localeFile.categories.moderation.commands.unban.responses.defaultError.replace('{{member}}', `<@${fetched.user.id}>`).replace('{{guild}}', interaction.guild.name);
+    const defaultError = localeFile.categories.moderation.commands.unban.responses.defaultError.replace('{{user}}', `<@${fetched.user.id}>`).replace('{{guild}}', interaction.guild.name);
 
     if (!interaction.member.permissions.has(PermissionFlagsBits.BanMembers)) {
         const message = await permissions(interaction.locale, 'BAN_MEMBERS');
@@ -18,7 +18,7 @@ module.exports = async function unban(interaction) {
     }
 
     if (!interaction.guild.members.me.permissions.has(PermissionFlagsBits.BanMembers)) {
-        const noPermissionsError = localeFile.categories.moderation.commands.unban.responses.noPermissionsError.replace('{{member}}', `<@${fetched.user.id}>`).replace('{{guild}}', interaction.guild.name);
+        const noPermissionsError = localeFile.categories.moderation.commands.unban.responses.noPermissionsError.replace('{{user}}', `<@${fetched.user.id}>`).replace('{{guild}}', interaction.guild.name);
         return interaction.reply({ content: noPermissionsError, ephemeral: true });
     }
 
@@ -27,8 +27,8 @@ module.exports = async function unban(interaction) {
 
     try {
         await interaction.guild.members.unban(id, reasonEnUS).then(async () => {
-            console.log("\x1b[33m" + `<<@${interaction.user.username}>> HAS SUCCESSFULLY UNBANNED <<@${fetched.user.username}>> FROM <<${interaction.guild.name}>> FOR ${reasonEnUS}.` + "\x1b[0m");
-            const content = localeFile.categories.moderation.commands.unban.responses.success.replace('{{member}}', `@${fetched.user.username}`).replace('{{guild}}', interaction.guild.name).replace('{{reason}}', reason);
+            console.log("\x1b[33m" + `<<@${interaction.user.username}>> HAS SUCCESSFULLY UNBANNED <<@${fetched.user.username}>> FROM <<${interaction.guild.name}>> FOR <<${reasonEnUS}>>` + "\x1b[0m");
+            const content = localeFile.categories.moderation.commands.unban.responses.success.replace('{{user}}', `@${fetched.user.username}`).replace('{{guild}}', interaction.guild.name).replace('{{reason}}', reason);
             await interaction.reply({ content: content, ephemeral: true });
         });
     } catch (e) {

@@ -1,11 +1,11 @@
 {
     "categories": {
         "common": {
-            "noReason": "Nenhum motivo fornecido"
+            "noReason": "Nenhum motivo foi fornecido"
         },
         "information": {
             "name": "informação",
-            "description": "Obtenha informações de várias coisas",
+            "description": "Obtenha informações sobre diversas coisas",
             "commands": {
                 "ping": {
                     "name": "ping",
@@ -19,11 +19,11 @@
         },
         "moderation": {
             "name": "moderação",
-            "description": "Comandos de moderação",
+            "description": "Comandos da categoria de moderação",
             "commands": {
                 "kick": {
-                    "name": "expulsar",
-                    "description": "Expulse um membro do servidor",
+                    "name": "kick",
+                    "description": "Expulsar um membro do servidor",
                     "options": {
                         "member": {
                             "name": "membro",
@@ -35,75 +35,75 @@
                         }
                     },
                     "responses": {
-                        "success": "{{member}} foi expulso com sucesso de {{guild}}. Motivo: {{reason}}",
-                        "defaultError": "Não posso expulsar {{member}} de {{guild}}",
-                        "noPermissionsError": "Não posso expulsar {{member}} de {{guild}}. Certifique-se de que tenho permissão `KICK_MEMBERS`",
-                        "higherRoleError": "Não posso expulsar {{member}} de {{guild}}. Certifique-se de que meu cargo é superior ao cargo do membro",
-                        "unreachableError": "A mensagem direto de expulsão não pôde ser enviada para {{member}}. O membro está fora de alcance"
+                        "success": "O membro {{member}} foi expulso com sucesso de {{guild}}. Motivo: {{reason}}",
+                        "defaultError": "Não consigo expulsar {{member}} de {{guild}}",
+                        "noPermissionsError": "Não consigo expulsar {{member}} de {{guild}}. Certifique-se de que eu tenho a permissão `KICK_MEMBERS`",
+                        "higherRoleError": "Não consigo expulsar {{member}} de {{guild}}. Certifique-se de que meu cargo é superior ao cargo do membro",
+                        "unreachableError": "A mensagem direta de expulsão não pôde ser enviada para {{member}}. O membro está inacessível"
                     }
                 },
                 "ban": {
-                    "name": "banir",
-                    "description": "Proíba um membro do servidor",
+                    "name": "ban",
+                    "description": "Banir um membro do servidor",
                     "options": {
+                        "delete_messages": {
+                            "name": "deletar_mensagens",
+                            "description": "Deletar as mensagens do membro dos últimos 7 dias?"
+                        },
                         "member": {
                             "name": "membro",
-                            "description": "O membro que você deseja banir"
-                        },
-                        "delete_messages": {
-                            "name": "excluir_mensagens",
-                            "description": "Excluir as mensagens do membro dos últimos 7 dias?"
+                            "description": "O membro que você deseja banir do servidor"
                         },
                         "reason": {
                             "name": "razão",
-                            "description": "O motivo da proibição do membro"
+                            "description": "O motivo do banimento do membro do servidor"
                         }
                     },
                     "responses": {
-                        "success": "{{member}} foi banido com sucesso de {{guild}}. Motivo: {{reason}}",
-                        "defaultError": "Não posso banir {{member}} de {{guild}}",
-                        "noPermissionsError": "Não posso banir {{member}} de {{guild}}. Certifique-se de que tenho permissão `BAN_MEMBERS`",
-                        "higherRoleError": "Não posso banir {{member}} de {{guild}}. Certifique-se de que meu cargo é superior ao cargo do membro",
-                        "unreachableError": "A mensagem direto de banimento não pôde ser enviada para {{member}}. O membro está fora de alcance"
+                        "success": "O membro {{member}} foi banido com sucesso de {{guild}}. Motivo: {{reason}}",
+                        "defaultError": "Não consigo banir {{member}} de {{guild}}",
+                        "noPermissionsError": "Não consigo banir {{member}} de {{guild}}. Certifique-se de que eu tenho a permissão `BAN_MEMBERS`",
+                        "higherRoleError": "Não consigo banir {{member}} de {{guild}}. Certifique-se de que meu cargo é superior ao cargo do membro",
+                        "unreachableError": "A mensagem direta de banimento não pôde ser enviada para {{member}}. O membro está inacessível"
                     }
                 },
                 "unban": {
-                    "name": "desbanir",
-                    "description": "Desbanir um membro do servidor",
+                    "name": "unban",
+                    "description": "Desbanir um usuário do servidor",
                     "options": {
                         "id": {
                             "name": "id",
-                            "description": "O id do usuário que você deseja desbanir"
+                            "description": "O ID do usuário que você deseja desbanir"
                         },
                         "reason": {
                             "name": "razão",
-                            "description": "O motivo do desbanimento do membro"
+                            "description": "O motivo para desbanir o usuário do servidor"
                         }
                     },
                     "responses": {
-                        "success": "{{member}} foi desbanido com sucesso de {{guild}}. Motivo: {{reason}}",
-                        "defaultError": "Não posso desbanir {{member}} de {{guild}}",
-                        "noPermissionsError": "Não posso desbanir {{member}} de {{guild}}. Certifique-se de que tenho permissão `BAN_MEMBERS`",
-                        "invalidIDError": "O ID fornecido é inválido ou não há usuário banido com esse ID no servidor"
+                        "success": "O usuário {{user}} foi desbanido com sucesso de {{guild}}. Motivo: {{reason}}",
+                        "defaultError": "Não consigo desbanir {{user}} de {{guild}}",
+                        "noPermissionsError": "Não consigo desbanir {{user}} de {{guild}}. Certifique-se de que eu tenho a permissão `BAN_MEMBERS`",
+                        "invalidIDError": "O ID fornecido é inválido ou não há nenhum usuário banido com esse ID no servidor"
                     }
                 },
                 "delete_messages": {
-                    "name": "excluir_mensagens",
-                    "description": "Excluir uma quantidade de mensagens em um canal específico",
+                    "name": "delete_messages",
+                    "description": "Deletar uma quantidade de mensagens em um canal específico",
                     "options": {
                         "amount": {
                             "name": "quantidade",
-                            "description": "A quantidade de mensagens a ser excluída"
+                            "description": "A quantidade de mensagens a serem deletadas"
                         },
                         "channel": {
                             "name": "canal",
-                            "description": "O canal onde as mensagens devem ser excluídas"
+                            "description": "O canal onde as mensagens serão deletadas"
                         }
                     },
                     "responses": {
-                        "success": "Excluídas com sucesso {{amount}} mensagens em {{channel}}",
-                        "defaultError": "Não posso excluir mensagens em {{channel}}",
-                        "noPermissionsError": "Não posso excluir mensagens em {{channel}}. Certifique-se de que tenho permissão `MANAGE_MESSAGES`"
+                        "success": "{{amount}} mensagens foram deletadas com sucesso em {{channel}}",
+                        "defaultError": "Não consigo deletar mensagens em {{channel}}",
+                        "noPermissionsError": "Não consigo deletar mensagens em {{channel}}. Certifique-se de que eu tenho a permissão `MANAGE_MESSAGES`"
                     }
                 }
             }

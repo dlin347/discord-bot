@@ -81,9 +81,9 @@
                         }
                     },
                     "responses": {
-                        "success": "Successfully unbanned {{member}} from {{guild}}. Reason: {{reason}}",
-                        "defaultError": "I can't unban {{member}} from {{guild}}",
-                        "noPermissionsError": "I can't unban {{member}} from {{guild}}. Make sure I have `BAN_MEMBERS` permission",
+                        "success": "Successfully unbanned {{user}} from {{guild}}. Reason: {{reason}}",
+                        "defaultError": "I can't unban {{user}} from {{guild}}",
+                        "noPermissionsError": "I can't unban {{user}} from {{guild}}. Make sure I have `BAN_MEMBERS` permission",
                         "invalidIDError": "The provided ID is invalid or there is no banned user with that ID in the server"
                     }
                 },

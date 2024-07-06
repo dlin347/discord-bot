@@ -22,8 +22,8 @@
             "description": "Comandos de la categoría de moderación",
             "commands": {
                 "kick": {
+                    "name": "kick",
                     "description": "Expulsa a un miembro del servidor",
-                    "name": "expulsar",
                     "options": {
                         "member": {
                             "description": "El miembro que deseas expulsar",
@@ -37,17 +37,17 @@
                     "responses": {
                         "success": "El miembro {{member}} ha sido expulsado de {{guild}} con éxito. Razón: {{reason}}",
                         "defaultError": "No puedo expulsar a {{member}} de {{guild}}",
-                        "noPermissionsError": "No puedo expulsar a {{member}} del servidor. Asegúrate de que tengo el permiso `KICK_MEMBERS`",
-                        "higherRoleError": "No puedo expulsar a {{member}} del servidor. Asegúrate de que mi rol es superior al rol del miembro",
+                        "noPermissionsError": "No puedo expulsar a {{member}} de {{guild}}. Asegúrate de que tengo el permiso `KICK_MEMBERS`",
+                        "higherRoleError": "No puedo expulsar a {{member}} de {{guild}}. Asegúrate de que mi rol es superior al rol del miembro",
                         "unreachableError": "El mensaje directo de expulsión no pudo ser enviado a {{member}}. No se puede contactar con el miembro"
                     }
                 },
                 "ban": {
-                    "description": "Prohibe el acceso a un miembro del servidor",
-                    "name": "prohibir",
+                    "description": "Banea a un miembro del servidor",
+                    "name": "ban",
                     "options": {
                         "member": {
-                            "description": "El miembro que deseas prohibir el acceso al servidor",
+                            "description": "El miembro que deseas banear del servidor",
                             "name": "miembro"
                         },
                         "delete_messages": {
@@ -55,35 +55,35 @@
                             "description": "¿Eliminar los mensajes del miembro de los últimos 7 días?"
                         },
                         "reason": {
-                            "description": "La razón de la prohibición del miembro",
+                            "description": "La razón del baneo al miembro del servidor",
                             "name": "razon"
                         }
                     },
                     "responses": {
-                        "success": "El miembro {{member}} ha sido prohibido de {{guild}} con éxito. Razón: {{reason}}",
-                        "defaultError": "No puedo prohibir a {{member}} de {{guild}}",
-                        "noPermissionsError": "No puedo prohibir a {{member}} del servidor. Asegúrate de que tengo el permiso `BAN_MEMBERS`",
-                        "higherRoleError": "No puedo prohibir a {{member}} del servidor. Asegúrate de que mi rol es superior al rol del miembro",
-                        "unreachableError": "El mensaje directo de prohibición no pudo ser enviado a {{member}}. No se puede contactar con el miembro"
+                        "success": "El miembro {{member}} ha sido baneado de {{guild}} con éxito. Razón: {{reason}}",
+                        "defaultError": "No puedo banear a {{member}} de {{guild}}",
+                        "noPermissionsError": "No puedo banear a {{member}} de {{guild}}. Asegúrate de que tengo el permiso `BAN_MEMBERS`",
+                        "higherRoleError": "No puedo banear a {{member}} de {{guild}}. Asegúrate de que mi rol es superior al rol del miembro",
+                        "unreachableError": "El mensaje directo de baneo no pudo ser enviado a {{member}}. No se puede contactar con el miembro"
                     }
                 },
                 "unban": {
-                    "description": "Permite el acceso a un miembro previamente prohibido del servidor",
-                    "name": "permitir",
+                    "description": "Desbanea a un usuario del servidor",
+                    "name": "unban",
                     "options": {
                         "id": {
-                            "description": "La id del miembro al que le deseas permitir el acceso al servidor",
+                            "description": "La id del usuario al que deseas desbanear",
                             "name": "id"
                         },
                         "reason": {
                             "name": "razon",
-                            "description": "La razón de permitir el acceso al miembro"
+                            "description": "La razón de desbanear al usuario del servidor"
                         }
                     },
                     "responses": {
-                        "success": "El miembro {{member}} ha sido permitido de {{guild}} con éxito. Razón: {{reason}}",
-                        "defaultError": "No puedo permitir a {{member}} de {{guild}}",
-                        "noPermissionsError": "No puedo permitir a {{member}} del servidor. Asegúrate de que tengo el permiso `BAN_MEMBERS`",
+                        "success": "El usuario {{user}} ha sido desbaneado de {{guild}} con éxito. Razón: {{reason}}",
+                        "defaultError": "No puedo desbanear a {{user}} de {{guild}}",
+                        "noPermissionsError": "No puedo desbanear a {{user}} de {{guild}}. Asegúrate de que tengo el permiso `BAN_MEMBERS`",
                         "invalidIDError": "La ID proporcionada es inválida o no hay ningún usuario prohibido con esa ID en el servidor"
                     }
                 },
@@ -101,7 +101,7 @@
                         }
                     },
                     "responses": {
-                        "success": "Se han eliminado con éxito {{amount}} mensajes en {{channel}}",
+                        "success": "Se han eliminado {{amount}} mensajes con éxito en {{channel}}",
                         "defaultError": "No puedo eliminar mensajes en {{channel}}",
                         "noPermissionsError": "No puedo eliminar mensajes en {{channel}}. Asegúrate de que tengo el permiso `MANAGE_MESSAGES`"
                     }
