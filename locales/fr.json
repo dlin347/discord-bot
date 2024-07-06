@@ -105,6 +105,36 @@
                         "noPermissionsError": "Je ne peux pas supprimer de messages dans {{channel}}. Assurez-vous que j'ai la permission `MANAGE_MESSAGES`",
                         "success": "{{amount}} messages ont été supprimés avec succès dans {{channel}}"
                     }
+                },
+                "lock": {
+                    "name": "lock",
+                    "description": "Verrouiller un canal spécifique",
+                    "options": {
+                        "channel": {
+                            "name": "canal",
+                            "description": "Le canal qui sera verrouillé"
+                        }
+                    },
+                    "responses": {
+                        "success": "{{channel}} verrouillé avec succès",
+                        "defaultError": "Je ne peux pas verrouiller {{channel}}",
+                        "noPermissionsError": "Je ne peux pas verrouiller {{channel}}. Assure-toi que j'ai la permission `MANAGE_CHANNELS`"
+                    }
+                },
+                "unlock": {
+                    "name": "unlock",
+                    "description": "Déverrouiller un canal spécifique",
+                    "options": {
+                        "channel": {
+                            "name": "canal",
+                            "description": "Le canal qui sera déverrouillé"
+                        }
+                    },
+                    "responses": {
+                        "success": "{{channel}} déverrouillé avec succès",
+                        "defaultError": "Je ne peux pas déverrouiller {{channel}}",
+                        "noPermissionsError": "Je ne peux pas déverrouiller {{channel}}. Assure-toi que j'ai la permission `MANAGE_CHANNELS`"
+                    }
                 }
             }
         }

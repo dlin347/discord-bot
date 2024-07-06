@@ -12,16 +12,17 @@
 - [x] Unban command
 - [x] Improvement of translations
 - [x] <<>> Missing in some logs
+- [x] Set min and max length of some slash commands fields
+- [ ] Error message: Channel already locked or channel is not locked
 - [ ] Filter by name when unbanning the user (problem: og tags)
 - [ ] Accept variants from a language
-- [ ] Set min and max length of some slash commands fields
 - [ ] Lock channel command
 - [ ] Unlock channel command
 - [ ] Add more commands from other categories
 - [ ] Integrate mongodb or locally hosted database
 - [ ] Create .github and its corresponding files (README, CONTRIBUTING, TEMPLATES...)
 - [ ] Choose an open source license (https://choosealicense.com/)
-- [ ] Host locally the bot
+- [ ] Host locally the bot => Raspberry pi 400?
 - [ ] Add the bot to some websites such as top.gg (read requirements)
 - [ ] Find a way to optimize translation
 - [ ] Integration with a website????

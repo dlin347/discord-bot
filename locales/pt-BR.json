@@ -105,6 +105,36 @@
                         "defaultError": "Não consigo deletar mensagens em {{channel}}",
                         "noPermissionsError": "Não consigo deletar mensagens em {{channel}}. Certifique-se de que eu tenho a permissão `MANAGE_MESSAGES`"
                     }
+                },
+                "lock": {
+                    "name": "lock",
+                    "description": "Bloquear um canal específico",
+                    "options": {
+                        "channel": {
+                            "name": "canal",
+                            "description": "O canal que será bloqueado"
+                        }
+                    },
+                    "responses": {
+                        "success": "{{channel}} bloqueado com sucesso",
+                        "defaultError": "Não consigo bloquear {{channel}}",
+                        "noPermissionsError": "Não posso bloquear {{channel}}. Verifique se tenho permissão `MANAGE_CHANNELS`"
+                    }
+                },
+                "unlock": {
+                    "name": "unlock",
+                    "description": "Desbloquear um canal específico",
+                    "options": {
+                        "channel": {
+                            "name": "canal",
+                            "description": "O canal que será desbloqueado"
+                        }
+                    },
+                    "responses": {
+                        "success": "{{channel}} desbloqueado com sucesso",
+                        "defaultError": "Não consigo desbloquear {{channel}}",
+                        "noPermissionsError": "Não posso desbloquear {{channel}}. Verifique se tenho permissão `MANAGE_CHANNELS`"
+                    }
                 }
             }
         }

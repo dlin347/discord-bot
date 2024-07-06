@@ -1,0 +1,30 @@
+const translation = require('../../locales/other/translation.js');
+const permissions = require('../../locales/other/permissions.js');
+const { PermissionFlagsBits } = require('discord.js');
+
+module.exports = async function lock(interaction) {
+    const localeFile = await translation(interaction.locale);
+    const channel = interaction.options.getChannel('channel') || interaction.channel;
+    const defaultError = localeFile.categories.moderation.commands.lock.responses.defaultError.replace('{{channel}}', `<@${channel.id}>`);
+
+    if (!interaction.member.permissions.has(PermissionFlagsBits.ManageChannels)) {
+        const message = await permissions(interaction.locale, 'MANAGE_CHANNELS');
+        return interaction.reply({ content: message, ephemeral: true });
+    }
+
+    if (!interaction.guild.members.me.permissions.has(PermissionFlagsBits.ManageChannels)) {
+        const noPermissionsError = localeFile.categories.moderation.commands.lock.responses.noPermissionsError.replace('{{channel}}', `<@${channel.id}>`);
+        return interaction.reply({ content: noPermissionsError, ephemeral: true });
+    }
+
+    try {
+        await channel.permissionOverwrites.edit(interaction.guild.id, { SendMessages: false }).then(async () => {
+            console.log("\x1b[33m" + `<<@${interaction.user.username}>> HAS SUCCESSFULLY LOCKED <<#${channel.name}>> IN <<${interaction.guild.name}>>` + "\x1b[0m");
+            const content = localeFile.categories.moderation.commands.lock.responses.success.replace('{{channel}}', `<#${channel.id}>`);
+            await interaction.reply({ content: content, ephemeral: true })
+        })
+    } catch (e) {
+        console.error("\x1b[31m" + '[/LOCK] ' + e + "\x1b[0m");
+        await interaction.reply({ content: defaultError, ephemeral: true });
+    }
+}

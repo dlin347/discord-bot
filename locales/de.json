@@ -105,6 +105,36 @@
                         "defaultError": "Ich kann keine Nachrichten in {{channel}} löschen",
                         "noPermissionsError": "Ich kann keine Nachrichten in {{channel}} löschen. Stellen Sie sicher, dass ich die Berechtigung `MANAGE_MESSAGES` habe"
                     }
+                },
+                "lock": {
+                    "name": "lock",
+                    "description": "Einen bestimmten Kanal sperren",
+                    "options": {
+                        "channel": {
+                            "name": "kanal",
+                            "description": "Der Kanal, der gesperrt wird"
+                        }
+                    },
+                    "responses": {
+                        "success": "{{channel}} erfolgreich gesperrt",
+                        "defaultError": "{{channel}} kann nicht gesperrt werden",
+                        "noPermissionsError": "{{channel}} kann nicht gesperrt werden. Stelle sicher, dass ich die Berechtigung `MANAGE_CHANNELS` habe"
+                    }
+                },
+                "unlock": {
+                    "name": "unlock",
+                    "description": "Ein bestimmten Kanal entsperren",
+                    "options": {
+                        "channel": {
+                            "name": "kanal",
+                            "description": "Der Kanal, der entsperrt wird"
+                        }
+                    },
+                    "responses": {
+                        "success": "{{channel}} erfolgreich entsperrt",
+                        "defaultError": "{{channel}} kann nicht entsperrt werden",
+                        "noPermissionsError": "{{channel}} kann nicht entsperrt werden. Stelle sicher, dass ich die Berechtigung `MANAGE_CHANNELS` habe"
+                    }
                 }
             }
         }

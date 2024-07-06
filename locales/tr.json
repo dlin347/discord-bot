@@ -105,6 +105,36 @@
                         "defaultError": "{{channel}} kanalında mesajları silemiyorum",
                         "noPermissionsError": "{{channel}} kanalında mesajları silemiyorum. `MANAGE_MESSAGES` iznine sahip olduğumu doğrulayın"
                     }
+                },
+                "lock": {
+                    "name": "lock",
+                    "description": "Belirli bir kanalı kilitle",
+                    "options": {
+                        "channel": {
+                            "name": "kanal",
+                            "description": "Kilitlenecek kanal"
+                        }
+                    },
+                    "responses": {
+                        "success": "{{channel}} başarıyla kilitlendi",
+                        "defaultError": "{{channel}} kilitlenemiyor",
+                        "noPermissionsError": "{{channel}} kilitlenemiyor. Make sure I have `MANAGE_CHANNELS` permission"
+                    }
+                },
+                "unlock": {
+                    "name": "unlock",
+                    "description": "Belirli bir kanalın kilidini aç",
+                    "options": {
+                        "channel": {
+                            "name": "kanal",
+                            "description": "Kilidi açılacak kanal"
+                        }
+                    },
+                    "responses": {
+                        "success": "{{channel}} başarıyla açıldı",
+                        "defaultError": "{{channel}} açılamıyor",
+                        "noPermissionsError": "{{channel}} açılamıyor. Make sure I have `MANAGE_CHANNELS` permission"
+                    }
                 }
             }
         }

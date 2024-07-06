@@ -105,6 +105,36 @@
                         "defaultError": "I can't delete messages from {{channel}}",
                         "noPermissionsError": "I can't delete messages from {{channel}}. Make sure I have `MANAGE_MESSAGES` permission"
                     }
+                },
+                "lock": {
+                    "name": "lock",
+                    "description": "Lock a specific channel",
+                    "options": {
+                        "channel": {
+                            "name": "channel",
+                            "description": "The channel that will be locked"
+                        }
+                    },
+                    "responses": {
+                        "success": "Successfully locked {{channel}}",
+                        "defaultError": "I can't lock {{channel}}",
+                        "noPermissionsError": "I can't lock {{channel}}. Make sure I have `MANAGE_CHANNELS` permission"
+                    }
+                },
+                "unlock": {
+                    "name": "unlock",
+                    "description": "Unlock a specific channel",
+                    "options": {
+                        "channel": {
+                            "name": "channel",
+                            "description": "The channel that will be unlocked"
+                        }
+                    },
+                    "responses": {
+                        "success": "Successfully unlocked {{channel}}",
+                        "defaultError": "I can't unlock {{channel}}",
+                        "noPermissionsError": "I can't unlock {{channel}}. Make sure I have `MANAGE_CHANNELS` permission"
+                    }
                 }
             }
         }

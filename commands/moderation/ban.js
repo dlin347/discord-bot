@@ -7,13 +7,13 @@ module.exports = async function banMember(interaction) {
     const member = interaction.options.getMember('member');
     const defaultError = localeFile.categories.moderation.commands.ban.responses.defaultError.replace('{{member}}', `<@${member.id}>`).replace('{{guild}}', interaction.guild.name);
 
+    if (!member.bannable) {
+        return interaction.reply({ content: defaultError, ephemeral: true });
+    }
+    
     if (!interaction.member.permissions.has(PermissionFlagsBits.BanMembers)) {
         const message = await permissions(interaction.locale, 'BAN_MEMBERS');
         return interaction.reply({ content: message, ephemeral: true });
-    }
-
-    if (!member.bannable) {
-        return interaction.reply({ content: defaultError, ephemeral: true });
     }
 
     if (!interaction.guild.members.me.permissions.has(PermissionFlagsBits.BanMembers)) {

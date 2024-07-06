@@ -4,6 +4,8 @@ const kickMember = require('./kick');
 const banMember = require('./ban');
 const unbanMember = require('./unban');
 const deleteMessages = require('./delete-messages');
+const lockChannel = require('./lock');
+const unlockChannel = require('./unlock');
 
 const de = require('../../locales/de.json');
 const fr = require('../../locales/fr.json');
@@ -94,6 +96,7 @@ module.exports = {
                             tr: tr.categories.moderation.commands.kick.options.reason.description,
                             ru: ru.categories.moderation.commands.kick.options.reason.description
                         })
+                        .setMaxLength(256)
                 )
 
         )
@@ -181,6 +184,7 @@ module.exports = {
                             tr: tr.categories.moderation.commands.ban.options.reason.description,
                             ru: ru.categories.moderation.commands.ban.options.reason.description
                         })
+                        .setMaxLength(256)
                 )
         )
         .addSubcommand(subcommand =>
@@ -248,7 +252,6 @@ module.exports = {
                             ru: ru.categories.moderation.commands.delete_messages.options.channel.description
                         })
                         .addChannelTypes(ChannelType.GuildText)
-                        .setRequired(false)
                 )
         )
         .addSubcommand(subcommand =>
@@ -291,6 +294,8 @@ module.exports = {
                             tr: tr.categories.moderation.commands.unban.options.id.description,
                             ru: ru.categories.moderation.commands.unban.options.id.description
                         })
+                        .setMinLength(17)
+                        .setMaxLength(19)
                         .setRequired(true)
                 )
                 .addStringOption(option =>
@@ -313,6 +318,93 @@ module.exports = {
                             tr: tr.categories.moderation.commands.unban.options.reason.description,
                             ru: ru.categories.moderation.commands.unban.options.reason.description
                         })
+                        .setMaxLength(256)
+                )
+        )
+        .addSubcommand(subcommand =>
+            subcommand
+                .setName('lock')
+                .setNameLocalizations({
+                    de: de.categories.moderation.commands.lock.name,
+                    fr: fr.categories.moderation.commands.lock.name,
+                    "pt-BR": pt.categories.moderation.commands.lock.name,
+                    "es-ES": es.categories.moderation.commands.lock.name,
+                    tr: tr.categories.moderation.commands.lock.name,
+                    ru: ru.categories.moderation.commands.lock.name
+                })
+                .setDescription('Lock a specific channel')
+                .setDescriptionLocalizations({
+                    de: de.categories.moderation.commands.lock.description,
+                    fr: fr.categories.moderation.commands.lock.description,
+                    "pt-BR": pt.categories.moderation.commands.lock.description,
+                    "es-ES": es.categories.moderation.commands.lock.description,
+                    tr: tr.categories.moderation.commands.lock.description,
+                    ru: ru.categories.moderation.commands.lock.description
+                })
+                .addChannelOption(option =>
+                    option
+                        .setName('channel')
+                        .setNameLocalizations({
+                            de: de.categories.moderation.commands.lock.options.channel.name,
+                            fr: fr.categories.moderation.commands.lock.options.channel.name,
+                            "pt-BR": pt.categories.moderation.commands.lock.options.channel.name,
+                            "es-ES": es.categories.moderation.commands.lock.options.channel.name,
+                            tr: tr.categories.moderation.commands.lock.options.channel.name,
+                            ru: ru.categories.moderation.commands.lock.options.channel.name
+                        })
+                        .setDescription("The channel that will be locked")
+                        .setDescriptionLocalizations({
+                            de: de.categories.moderation.commands.lock.options.channel.description,
+                            fr: fr.categories.moderation.commands.lock.options.channel.description,
+                            "pt-BR": pt.categories.moderation.commands.lock.options.channel.description,
+                            "es-ES": es.categories.moderation.commands.lock.options.channel.description,
+                            tr: tr.categories.moderation.commands.lock.options.channel.description,
+                            ru: ru.categories.moderation.commands.lock.options.channel.description
+                        })
+                        .addChannelTypes(ChannelType.GuildText)
+                )
+        )
+        .addSubcommand(subcommand =>
+            subcommand
+                .setName('unlock')
+                .setNameLocalizations({
+                    de: de.categories.moderation.commands.unlock.name,
+                    fr: fr.categories.moderation.commands.unlock.name,
+                    "pt-BR": pt.categories.moderation.commands.unlock.name,
+                    "es-ES": es.categories.moderation.commands.unlock.name,
+                    tr: tr.categories.moderation.commands.unlock.name,
+                    ru: ru.categories.moderation.commands.unlock.name
+                })
+                .setDescription('Unlock a specific channel')
+                .setDescriptionLocalizations({
+                    de: de.categories.moderation.commands.unlock.description,
+                    fr: fr.categories.moderation.commands.unlock.description,
+                    "pt-BR": pt.categories.moderation.commands.unlock.description,
+                    "es-ES": es.categories.moderation.commands.unlock.description,
+                    tr: tr.categories.moderation.commands.unlock.description,
+                    ru: ru.categories.moderation.commands.unlock.description
+                })
+                .addChannelOption(option =>
+                    option
+                        .setName('channel')
+                        .setNameLocalizations({
+                            de: de.categories.moderation.commands.unlock.options.channel.name,
+                            fr: fr.categories.moderation.commands.unlock.options.channel.name,
+                            "pt-BR": pt.categories.moderation.commands.unlock.options.channel.name,
+                            "es-ES": es.categories.moderation.commands.unlock.options.channel.name,
+                            tr: tr.categories.moderation.commands.unlock.options.channel.name,
+                            ru: ru.categories.moderation.commands.unlock.options.channel.name
+                        })
+                        .setDescription("The channel that will be unlocked")
+                        .setDescriptionLocalizations({
+                            de: de.categories.moderation.commands.unlock.options.channel.description,
+                            fr: fr.categories.moderation.commands.unlock.options.channel.description,
+                            "pt-BR": pt.categories.moderation.commands.unlock.options.channel.description,
+                            "es-ES": es.categories.moderation.commands.unlock.options.channel.description,
+                            tr: tr.categories.moderation.commands.unlock.options.channel.description,
+                            ru: ru.categories.moderation.commands.unlock.options.channel.description
+                        })
+                        .addChannelTypes(ChannelType.GuildText)
                 )
         )
         .setDMPermission(false),
@@ -331,6 +423,12 @@ module.exports = {
                     break;
                 case 'delete_messages':
                     await deleteMessages(interaction);
+                    break;
+                case 'lock':
+                    await lockChannel(interaction);
+                    break;
+                case 'unlock':
+                    await unlockChannel(interaction);
                     break;
             }
         }

@@ -105,6 +105,36 @@
                         "defaultError": "Не могу удалить сообщения в {{channel}}",
                         "noPermissionsError": "Не могу удалить сообщения в {{channel}}. Убедитесь, что у меня есть разрешение `MANAGE_MESSAGES`"
                     }
+                },
+                "lock": {
+                    "name": "lock",
+                    "description": "Заблокировать конкретный канал",
+                    "options": {
+                        "channel": {
+                            "name": "канал",
+                            "description": "Канал, который будет заблокирован"
+                        }
+                    },
+                    "responses": {
+                        "success": "{{channel}} успешно заблокирован",
+                        "defaultError": "Не могу заблокировать {{channel}}",
+                        "noPermissionsError": "Не могу заблокировать {{channel}}. Убедитесь, что у меня есть разрешение `MANAGE_CHANNELS`"
+                    }
+                },
+                "unlock": {
+                    "name": "unlock",
+                    "description": "Разблокировать конкретный канал",
+                    "options": {
+                        "channel": {
+                            "name": "канал",
+                            "description": "Канал, который будет разблокирован"
+                        }
+                    },
+                    "responses": {
+                        "success": "{{channel}} успешно разблокирован",
+                        "defaultError": "Не могу разблокировать {{channel}}",
+                        "noPermissionsError": "Не могу разблокировать {{channel}}. Убедитесь, что у меня есть разрешение `MANAGE_CHANNELS`"
+                    }
                 }
             }
         }

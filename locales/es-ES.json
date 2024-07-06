@@ -105,6 +105,36 @@
                         "defaultError": "No puedo eliminar mensajes en {{channel}}",
                         "noPermissionsError": "No puedo eliminar mensajes en {{channel}}. Asegúrate de que tengo el permiso `MANAGE_MESSAGES`"
                     }
+                },
+                "lock": {
+                    "name": "lock",
+                    "description": "Bloquea un canal específico",
+                    "options": {
+                        "channel": {
+                            "name": "canal",
+                            "description": "El canal que será bloqueado"
+                        }
+                    },
+                    "responses": {
+                        "success": "El canal {{channel}} ha sido bloqueado exitosamente",
+                        "defaultError": "No puedo bloquear el canal {{channel}}",
+                        "noPermissionsError": "No puedo bloquear el canal {{channel}}. Asegúrate de que tengo el permiso `MANAGE_CHANNELS`"
+                    }
+                },
+                "unlock": {
+                    "name": "unlock",
+                    "description": "Desbloquea un canal específico",
+                    "options": {
+                        "channel": {
+                            "name": "canal",
+                            "description": "El canal que será desbloqueado"
+                        }
+                    },
+                    "responses": {
+                        "success": "El canal {{channel}} ha sido desbloqueado exitosamente",
+                        "defaultError": "No puedo desbloquear el canal {{channel}}",
+                        "noPermissionsError": "No puedo desbloquear el canal {{channel}}. Asegúrate de que tengo el permiso `MANAGE_CHANNELS`"
+                    }
                 }
             }
         }
