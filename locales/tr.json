@@ -156,7 +156,7 @@
                         }
                     },
                     "responses": {
-                        "success": "{{channel}} kanalının yavaş modu başarıyla {{time}} olarak ayarlandı",
+                        "success": "{{channel}} kanalının yavaş modu başarıyla {{time}} olarak ayarlandı. Sebep: {{reason}}",
                         "defaultError": "{{channel}} kanalının yavaş modunu ayarlayamıyorum",
                         "noPermissionsError": "{{channel}} kanalının yavaş modunu ayarlayamıyorum. `MANAGE_CHANNELS` iznim olduğundan emin olun",
                         "invalidFormatError": "Zaman formatı geçersiz. Lütfen geçerli bir zaman formatı kullanın, örneğin: 1s, 1m, 1h",

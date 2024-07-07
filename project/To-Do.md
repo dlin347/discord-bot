@@ -17,10 +17,13 @@
 - [x] Lock channel command
 - [x] Unlock channel command
 - [x] Accept variants from a language
-- [ ] Slowmode command
-- [ ] Time function
+- [x] Slowmode command
+- [x] Time function
 - [ ] Warn command
-- [ ] Add more commands from other categories
+- [ ] Add more commands to other categories:
+- Information ==> User information
+- Information ==> Guild information
+- Information ==> Avatar
 - [ ] Filter by name when unbanning the user (problem: og tags)
 - [ ] Integrate mongodb or locally hosted database
 - [ ] Host locally the bot => Raspberry pi 400?

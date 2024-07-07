@@ -8,14 +8,14 @@ module.exports = async function unlockChannel(interaction) {
     const channelPermissions = channel.permissionOverwrites.cache.get(interaction.guild.id);
     const defaultError = localeFile.categories.moderation.commands.unlock.responses.defaultError.replace('{{channel}}', `<#${channel.id}>`);
 
-    if (channelPermissions && !channelPermissions.deny.has(PermissionFlagsBits.SendMessages)) {
-        const channelUnlocked = localeFile.categories.moderation.commands.unlock.responses.channelUnlocked.replace('{{channel}}', `<#${channel.id}>`);
-        return interaction.reply({ content: channelUnlocked, ephemeral: true });
-    }
-
     if (!interaction.member.permissions.has(PermissionFlagsBits.ManageChannels)) {
         const message = await permissions(interaction.locale, 'MANAGE_CHANNELS');
         return interaction.reply({ content: message, ephemeral: true });
+    }
+    
+    if (channelPermissions && !channelPermissions.deny.has(PermissionFlagsBits.SendMessages)) {
+        const channelUnlocked = localeFile.categories.moderation.commands.unlock.responses.channelUnlocked.replace('{{channel}}', `<#${channel.id}>`);
+        return interaction.reply({ content: channelUnlocked, ephemeral: true });
     }
 
     if (!interaction.guild.members.me.permissions.has(PermissionFlagsBits.ManageChannels)) {

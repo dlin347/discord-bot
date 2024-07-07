@@ -156,7 +156,7 @@
                         }
                     },
                     "responses": {
-                        "success": "Der Slowmode von {{channel}} wurde erfolgreich auf {{time}} gesetzt",
+                        "success": "Der Slowmode von {{channel}} wurde erfolgreich auf {{time}} gesetzt. Grund: {{reason}}",
                         "defaultError": "Ich kann den Slowmode von {{channel}} nicht setzen",
                         "noPermissionsError": "Ich kann den Slowmode von {{channel}} nicht setzen. Stelle sicher, dass ich die Berechtigung `MANAGE_CHANNELS` habe",
                         "invalidFormatError": "Das Zeitformat ist ungültig. Bitte verwende ein gültiges Zeitformat, z.B.: 1s, 1m, 1h",

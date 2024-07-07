@@ -156,7 +156,7 @@
                         }
                     },
                     "responses": {
-                        "success": "Modo lento de {{channel}} establecido exitosamente a {{time}}",
+                        "success": "Modo lento de {{channel}} establecido exitosamente a {{time}}. Razón: {{reason}}",
                         "defaultError": "No puedo establecer el modo lento de {{channel}}",
                         "noPermissionsError": "No puedo establecer el modo lento de {{channel}}. Asegúrate de que tengo el permiso `MANAGE_CHANNELS`",
                         "invalidFormatError": "El formato de tiempo es inválido. Por favor, usa un formato de tiempo válido, por ejemplo: 1s, 1m, 1h",

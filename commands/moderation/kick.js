@@ -7,13 +7,13 @@ module.exports = async function kickMember(interaction) {
     const member = interaction.options.getMember('member');
     const defaultError = localeFile.categories.moderation.commands.kick.responses.defaultError.replace('{{member}}', `<@${member.id}>`).replace('{{guild}}', interaction.guild.name);
 
-    if (!member.kickable) {
-        return interaction.reply({ content: defaultError, ephemeral: true });
-    }
-
     if (!interaction.member.permissions.has(PermissionFlagsBits.KickMembers)) {
         const message = await permissions(interaction.locale, 'KICK_MEMBERS');
         return interaction.reply({ content: message, ephemeral: true });
+    }
+
+    if (!member.kickable) {
+        return interaction.reply({ content: defaultError, ephemeral: true });
     }
 
     if (!interaction.guild.members.me.permissions.has(PermissionFlagsBits.KickMembers)) {
