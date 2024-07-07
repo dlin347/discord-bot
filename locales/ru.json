@@ -11,7 +11,7 @@
                     "name": "ping",
                     "description": "Получите задержку бота",
                     "responses": {
-                        "success": "Понг! Моя задержка {{ping}}ms",
+                        "success": "Понг! Моя задержка {{ping}}мс",
                         "defaultError": "Не могу получить свою задержку в данный момент... Попробуйте позже"
                     }
                 }
@@ -23,36 +23,36 @@
             "commands": {
                 "kick": {
                     "name": "kick",
-                    "description": "Выгнать участника с сервера",
+                    "description": "Исключить участника с сервера",
                     "options": {
                         "member": {
                             "name": "участник",
-                            "description": "Участник, которого вы хотите выгнать"
+                            "description": "Участник, которого вы хотите исключить"
                         },
                         "reason": {
                             "name": "причина",
-                            "description": "Причина выгона участника"
+                            "description": "Причина исключения участника"
                         }
                     },
                     "responses": {
-                        "success": "Участник {{member}} был успешно выгнан с {{guild}}. Причина: {{reason}}",
-                        "defaultError": "Не могу выгнать {{member}} с {{guild}}",
-                        "noPermissionsError": "Не могу выгнать {{member}} с {{guild}}. Убедитесь, что у меня есть разрешение `KICK_MEMBERS`",
-                        "higherRoleError": "Не могу выгнать {{member}} с {{guild}}. Убедитесь, что моя роль выше роли участника",
-                        "unreachableError": "Не удалось отправить сообщение о выгон участнику {{member}}. Участник недоступен"
+                        "success": "Участник {{member}} был успешно исключен из {{guild}}. Причина: {{reason}}",
+                        "defaultError": "Не могу исключить {{member}} из {{guild}}",
+                        "noPermissionsError": "Не могу исключить {{member}} из {{guild}}. Убедитесь, что у меня есть разрешение `KICK_MEMBERS`",
+                        "higherRoleError": "Не могу исключить {{member}} из {{guild}}. Убедитесь, что моя роль выше роли участника",
+                        "unreachableError": "Личное сообщение об исключении не может быть отправлено {{member}}. Участник недоступен"
                     }
                 },
                 "ban": {
+                    "description": "Забанить участника на сервере",
                     "name": "ban",
-                    "description": "Забанить участника сервера",
                     "options": {
-                        "delete_messages": {
-                            "name": "удалить_сообщения",
-                            "description": "Удалить сообщения участника за последние 7 дней?"
-                        },
                         "member": {
                             "name": "участник",
                             "description": "Участник, которого вы хотите забанить на сервере"
+                        },
+                        "delete_messages": {
+                            "name": "удалить_сообщения",
+                            "description": "Удалить сообщения участника за последние 7 дней?"
                         },
                         "reason": {
                             "name": "причина",
@@ -64,16 +64,16 @@
                         "defaultError": "Не могу забанить {{member}} на {{guild}}",
                         "noPermissionsError": "Не могу забанить {{member}} на {{guild}}. Убедитесь, что у меня есть разрешение `BAN_MEMBERS`",
                         "higherRoleError": "Не могу забанить {{member}} на {{guild}}. Убедитесь, что моя роль выше роли участника",
-                        "unreachableError": "Не удалось отправить сообщение о бане участнику {{member}}. Участник недоступен"
+                        "unreachableError": "Личное сообщение о бане не может быть отправлено {{member}}. Участник недоступен"
                     }
                 },
                 "unban": {
-                    "name": "unban",
                     "description": "Разбанить пользователя на сервере",
+                    "name": "unban",
                     "options": {
                         "id": {
-                            "name": "идентификатор",
-                            "description": "Идентификатор пользователя, которого вы хотите разбанить"
+                            "name": "id",
+                            "description": "ID пользователя, которого вы хотите разбанить"
                         },
                         "reason": {
                             "name": "причина",
@@ -81,15 +81,15 @@
                         }
                     },
                     "responses": {
-                        "success": "Пользователь {{user}} был успешно разбанен с {{guild}}. Причина: {{reason}}",
-                        "defaultError": "Не могу разбанить {{user}} с {{guild}}",
-                        "noPermissionsError": "Не могу разбанить {{user}} с {{guild}}. Убедитесь, что у меня есть разрешение `BAN_MEMBERS`",
-                        "invalidIDError": "Предоставленный идентификатор недействителен или нет забаненного пользователя с этим идентификатором на сервере"
+                        "success": "Пользователь {{user}} был успешно разбанен на {{guild}}. Причина: {{reason}}",
+                        "defaultError": "Не могу разбанить {{user}} на {{guild}}",
+                        "noPermissionsError": "Не могу разбанить {{user}} на {{guild}}. Убедитесь, что у меня есть разрешение `BAN_MEMBERS`",
+                        "invalidIDError": "Предоставленный ID недействителен или нет пользователя с таким ID, забаненного на сервере"
                     }
                 },
                 "delete_messages": {
-                    "name": "delete_messages",
-                    "description": "Удалить определенное количество сообщений в определенном канале",
+                    "name": "удалить_сообщения",
+                    "description": "Удалить определенное количество сообщений в указанном канале",
                     "options": {
                         "amount": {
                             "name": "количество",
@@ -101,14 +101,14 @@
                         }
                     },
                     "responses": {
-                        "success": "{{amount}} сообщений были успешно удалены в {{channel}}",
+                        "success": "{{amount}} сообщений успешно удалены в {{channel}}",
                         "defaultError": "Не могу удалить сообщения в {{channel}}",
                         "noPermissionsError": "Не могу удалить сообщения в {{channel}}. Убедитесь, что у меня есть разрешение `MANAGE_MESSAGES`"
                     }
                 },
                 "lock": {
                     "name": "lock",
-                    "description": "Заблокировать конкретный канал",
+                    "description": "Заблокировать указанный канал",
                     "options": {
                         "channel": {
                             "name": "канал",
@@ -116,14 +116,15 @@
                         }
                     },
                     "responses": {
-                        "success": "{{channel}} успешно заблокирован",
-                        "defaultError": "Не могу заблокировать {{channel}}",
-                        "noPermissionsError": "Не могу заблокировать {{channel}}. Убедитесь, что у меня есть разрешение `MANAGE_CHANNELS`"
+                        "success": "Канал {{channel}} был успешно заблокирован",
+                        "defaultError": "Не могу заблокировать канал {{channel}}",
+                        "noPermissionsError": "Не могу заблокировать канал {{channel}}. Убедитесь, что у меня есть разрешение `MANAGE_CHANNELS`",
+                        "channelLocked": "Канал {{channel}} уже заблокирован"
                     }
                 },
                 "unlock": {
                     "name": "unlock",
-                    "description": "Разблокировать конкретный канал",
+                    "description": "Разблокировать указанный канал",
                     "options": {
                         "channel": {
                             "name": "канал",
@@ -131,9 +132,10 @@
                         }
                     },
                     "responses": {
-                        "success": "{{channel}} успешно разблокирован",
-                        "defaultError": "Не могу разблокировать {{channel}}",
-                        "noPermissionsError": "Не могу разблокировать {{channel}}. Убедитесь, что у меня есть разрешение `MANAGE_CHANNELS`"
+                        "success": "Канал {{channel}} был успешно разблокирован",
+                        "defaultError": "Не могу разблокировать канал {{channel}}",
+                        "noPermissionsError": "Не могу разблокировать канал {{channel}}. Убедитесь, что у меня есть разрешение `MANAGE_CHANNELS`",
+                        "channelUnlocked": "Канал {{channel}} уже разблокирован"
                     }
                 }
             }

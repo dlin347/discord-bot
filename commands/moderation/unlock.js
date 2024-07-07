@@ -5,7 +5,13 @@ const { PermissionFlagsBits } = require('discord.js');
 module.exports = async function unlock(interaction) {
     const localeFile = await translation(interaction.locale);
     const channel = interaction.options.getChannel('channel') || interaction.channel;
-    const defaultError = localeFile.categories.moderation.commands.unlock.responses.defaultError.replace('{{channel}}', `<@${channel.id}>`);
+    const channelPermissions = channel.permissionOverwrites.cache.get(interaction.guild.id);
+    const defaultError = localeFile.categories.moderation.commands.unlock.responses.defaultError.replace('{{channel}}', `<#${channel.id}>`);
+
+    if (channelPermissions && !channelPermissions.deny.has(PermissionFlagsBits.SendMessages)) {
+        const channelUnlocked = localeFile.categories.moderation.commands.unlock.responses.channelUnlocked.replace('{{channel}}', `<#${channel.id}>`);
+        return interaction.reply({ content: channelUnlocked, ephemeral: true });
+    }
 
     if (!interaction.member.permissions.has(PermissionFlagsBits.ManageChannels)) {
         const message = await permissions(interaction.locale, 'MANAGE_CHANNELS');
@@ -13,7 +19,7 @@ module.exports = async function unlock(interaction) {
     }
 
     if (!interaction.guild.members.me.permissions.has(PermissionFlagsBits.ManageChannels)) {
-        const noPermissionsError = localeFile.categories.moderation.commands.unlock.responses.noPermissionsError.replace('{{channel}}', `<@${channel.id}>`);
+        const noPermissionsError = localeFile.categories.moderation.commands.unlock.responses.noPermissionsError.replace('{{channel}}', `<#${channel.id}>`);
         return interaction.reply({ content: noPermissionsError, ephemeral: true });
     }
 

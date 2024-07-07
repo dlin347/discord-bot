@@ -1,3 +1,4 @@
+// Optimizable code
 const { SlashCommandBuilder, ChannelType } = require('discord.js');
 
 const kickMember = require('./kick');
@@ -6,6 +7,7 @@ const unbanMember = require('./unban');
 const deleteMessages = require('./delete-messages');
 const lockChannel = require('./lock');
 const unlockChannel = require('./unlock');
+const slowmodeChannel = require('./slowmode');
 
 const de = require('../../locales/de.json');
 const fr = require('../../locales/fr.json');
@@ -407,6 +409,93 @@ module.exports = {
                         .addChannelTypes(ChannelType.GuildText)
                 )
         )
+        .addSubcommand(subcommand =>
+            subcommand
+                .setName('slowmode')
+                .setNameLocalizations({
+                    de: de.categories.moderation.commands.slowmode.name,
+                    fr: fr.categories.moderation.commands.slowmode.name,
+                    "pt-BR": pt.categories.moderation.commands.slowmode.name,
+                    "es-ES": es.categories.moderation.commands.slowmode.name,
+                    tr: tr.categories.moderation.commands.slowmode.name,
+                    ru: ru.categories.moderation.commands.slowmode.name
+                })
+                .setDescription('Set the slowmode for a specific channel')
+                .setDescriptionLocalizations({
+                    de: de.categories.moderation.commands.slowmode.description,
+                    fr: fr.categories.moderation.commands.slowmode.description,
+                    "pt-BR": pt.categories.moderation.commands.slowmode.description,
+                    "es-ES": es.categories.moderation.commands.slowmode.description,
+                    tr: tr.categories.moderation.commands.slowmode.description,
+                    ru: ru.categories.moderation.commands.slowmode.description
+                })
+                .addStringOption(option =>
+                    option
+                        .setName('time')
+                        .setNameLocalizations({
+                            de: de.categories.moderation.commands.slowmode.options.time.name,
+                            fr: fr.categories.moderation.commands.slowmode.options.time.name,
+                            "pt-BR": pt.categories.moderation.commands.slowmode.options.time.name,
+                            "es-ES": es.categories.moderation.commands.slowmode.options.time.name,
+                            tr: tr.categories.moderation.commands.slowmode.options.time.name,
+                            ru: ru.categories.moderation.commands.slowmode.options.time.name
+                        })
+                        .setDescription("The time of the slowmode")
+                        .setDescriptionLocalizations({
+                            de: de.categories.moderation.commands.slowmode.options.time.description,
+                            fr: fr.categories.moderation.commands.slowmode.options.time.description,
+                            "pt-BR": pt.categories.moderation.commands.slowmode.options.time.description,
+                            "es-ES": es.categories.moderation.commands.slowmode.options.time.description,
+                            tr: tr.categories.moderation.commands.slowmode.options.time.description,
+                            ru: ru.categories.moderation.commands.slowmode.options.time.description
+                        })
+                        .setRequired(true)
+                )
+                .addChannelOption(option =>
+                    option
+                        .setName('channel')
+                        .setNameLocalizations({
+                            de: de.categories.moderation.commands.slowmode.options.channel.name,
+                            fr: fr.categories.moderation.commands.slowmode.options.channel.name,
+                            "pt-BR": pt.categories.moderation.commands.slowmode.options.channel.name,
+                            "es-ES": es.categories.moderation.commands.slowmode.options.channel.name,
+                            tr: tr.categories.moderation.commands.slowmode.options.channel.name,
+                            ru: ru.categories.moderation.commands.slowmode.options.channel.name
+                        })
+                        .setDescription("The channel that will have the slowmode set")
+                        .setDescriptionLocalizations({
+                            de: de.categories.moderation.commands.slowmode.options.channel.description,
+                            fr: fr.categories.moderation.commands.slowmode.options.channel.description,
+                            "pt-BR": pt.categories.moderation.commands.slowmode.options.channel.description,
+                            "es-ES": es.categories.moderation.commands.slowmode.options.channel.description,
+                            tr: tr.categories.moderation.commands.slowmode.options.channel.description,
+                            ru: ru.categories.moderation.commands.slowmode.options.channel.description
+                        })
+                        .addChannelTypes(ChannelType.GuildText)
+                )
+                .addStringOption(option =>
+                    option
+                        .setName('reason')
+                        .setNameLocalizations({
+                            de: de.categories.moderation.commands.slowmode.options.reason.name,
+                            fr: fr.categories.moderation.commands.slowmode.options.reason.name,
+                            "pt-BR": pt.categories.moderation.commands.slowmode.options.reason.name,
+                            "es-ES": es.categories.moderation.commands.slowmode.options.reason.name,
+                            tr: tr.categories.moderation.commands.slowmode.options.reason.name,
+                            ru: ru.categories.moderation.commands.slowmode.options.reason.name
+                        })
+                        .setDescription("The reason of setting the slowmode")
+                        .setDescriptionLocalizations({
+                            de: de.categories.moderation.commands.slowmode.options.reason.description,
+                            fr: fr.categories.moderation.commands.slowmode.options.reason.description,
+                            "pt-BR": pt.categories.moderation.commands.slowmode.options.reason.description,
+                            "es-ES": es.categories.moderation.commands.slowmode.options.reason.description,
+                            tr: tr.categories.moderation.commands.slowmode.options.reason.description,
+                            ru: ru.categories.moderation.commands.slowmode.options.reason.description
+                        })
+                        .setMaxLength(256)
+                )
+        )
         .setDMPermission(false),
     async execute(interaction) {
         if (interaction.commandName === 'moderation') {
@@ -429,6 +518,9 @@ module.exports = {
                     break;
                 case 'unlock':
                     await unlockChannel(interaction);
+                    break;
+                case 'slowmode':
+                    await slowmodeChannel(interaction);
                     break;
             }
         }

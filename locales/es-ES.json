@@ -26,12 +26,12 @@
                     "description": "Expulsa a un miembro del servidor",
                     "options": {
                         "member": {
-                            "description": "El miembro que deseas expulsar",
-                            "name": "miembro"
+                            "name": "miembro",
+                            "description": "El miembro que deseas expulsar"
                         },
                         "reason": {
-                            "description": "La razón de la expulsión del miembro",
-                            "name": "razon"
+                            "name": "razon",
+                            "description": "La razón de la expulsión del miembro"
                         }
                     },
                     "responses": {
@@ -47,16 +47,16 @@
                     "name": "ban",
                     "options": {
                         "member": {
-                            "description": "El miembro que deseas banear del servidor",
-                            "name": "miembro"
+                            "name": "miembro",
+                            "description": "El miembro que deseas banear del servidor"
                         },
                         "delete_messages": {
                             "name": "eliminar_mensajes",
                             "description": "¿Eliminar los mensajes del miembro de los últimos 7 días?"
                         },
                         "reason": {
-                            "description": "La razón del baneo al miembro del servidor",
-                            "name": "razon"
+                            "name": "razon",
+                            "description": "La razón del baneo al miembro del servidor"
                         }
                     },
                     "responses": {
@@ -72,8 +72,8 @@
                     "name": "unban",
                     "options": {
                         "id": {
-                            "description": "La id del usuario al que deseas desbanear",
-                            "name": "id"
+                            "name": "id",
+                            "description": "La id del usuario al que deseas desbanear"
                         },
                         "reason": {
                             "name": "razon",
@@ -88,16 +88,16 @@
                     }
                 },
                 "delete_messages": {
-                    "description": "Elimina una cantidad de mensajes en un canal específico",
                     "name": "eliminar_mensajes",
+                    "description": "Elimina una cantidad de mensajes en un canal específico",
                     "options": {
                         "amount": {
-                            "description": "La cantidad de mensajes a eliminar",
-                            "name": "cantidad"
+                            "name": "cantidad",
+                            "description": "La cantidad de mensajes a eliminar"
                         },
                         "channel": {
-                            "description": "El canal en el que se eliminarán los mensajes",
-                            "name": "canal"
+                            "name": "canal",
+                            "description": "El canal en el que se eliminarán los mensajes"
                         }
                     },
                     "responses": {
@@ -118,7 +118,8 @@
                     "responses": {
                         "success": "El canal {{channel}} ha sido bloqueado exitosamente",
                         "defaultError": "No puedo bloquear el canal {{channel}}",
-                        "noPermissionsError": "No puedo bloquear el canal {{channel}}. Asegúrate de que tengo el permiso `MANAGE_CHANNELS`"
+                        "noPermissionsError": "No puedo bloquear el canal {{channel}}. Asegúrate de que tengo el permiso `MANAGE_CHANNELS`",
+                        "channelLocked": "El canal {{channel}} ya está bloqueado"
                     }
                 },
                 "unlock": {
@@ -133,7 +134,8 @@
                     "responses": {
                         "success": "El canal {{channel}} ha sido desbloqueado exitosamente",
                         "defaultError": "No puedo desbloquear el canal {{channel}}",
-                        "noPermissionsError": "No puedo desbloquear el canal {{channel}}. Asegúrate de que tengo el permiso `MANAGE_CHANNELS`"
+                        "noPermissionsError": "No puedo desbloquear el canal {{channel}}. Asegúrate de que tengo el permiso `MANAGE_CHANNELS`",
+                        "channelUnlocked": "El canal {{channel}} ya está desbloqueado"
                     }
                 }
             }

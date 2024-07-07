@@ -12,8 +12,14 @@ module.exports = function translation(language) {
         }
     }
     if (!localeFile) {
-        locale = 'en-US';
-        localeFile = require(path.join(localesPath, 'en-US.json'));
+        switch (language) {
+            case "es-419":
+                language = "es-ES";
+                break;
+            default:
+                language = "en-US";
+        }
+        localeFile = require(path.join(localesPath, language + '.json'));
     }
     return localeFile;
 }

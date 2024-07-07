@@ -1,7 +1,7 @@
 {
     "categories": {
         "common": {
-            "noReason": "Herhangi bir neden belirtilmedi"
+            "noReason": "Hiçbir sebep belirtilmedi"
         },
         "information": {
             "name": "bilgi",
@@ -9,21 +9,21 @@
             "commands": {
                 "ping": {
                     "name": "ping",
-                    "description": "Botun gecikmesini alın",
+                    "description": "Botun gecikmesini öğren",
                     "responses": {
-                        "success": "Pong! Gecikme sürem {{ping}}ms",
-                        "defaultError": "Şu anda gecikme süremi alamıyorum... Lütfen daha sonra tekrar deneyin"
+                        "success": "Pong! Gecikmem {{ping}}ms",
+                        "defaultError": "Şu anda gecikmemi öğrenemiyorum... Lütfen daha sonra tekrar deneyin"
                     }
                 }
             }
         },
         "moderation": {
             "name": "moderasyon",
-            "description": "Moderasyon kategorisi komutları",
+            "description": "Moderasyon kategorisindeki komutlar",
             "commands": {
                 "kick": {
                     "name": "kick",
-                    "description": "Sunucudan bir üyeyi atın",
+                    "description": "Bir üyeyi sunucudan at",
                     "options": {
                         "member": {
                             "name": "üye",
@@ -31,79 +31,79 @@
                         },
                         "reason": {
                             "name": "sebep",
-                            "description": "Üyenin atılma sebebi"
+                            "description": "Üyeyi atma sebebi"
                         }
                     },
                     "responses": {
-                        "success": "{{member}} üyesi başarıyla {{guild}} sunucusundan atıldı. Sebep: {{reason}}",
-                        "defaultError": "{{guild}} sunucusundan {{member}} üyesini atamıyorum",
-                        "noPermissionsError": "{{guild}} sunucusundan {{member}} üyesini atamıyorum. `KICK_MEMBERS` iznine sahip olduğumu doğrulayın",
-                        "higherRoleError": "{{guild}} sunucusundan {{member}} üyesini atamıyorum. Rolümün üyenin rolünden üstün olduğundan emin olun",
-                        "unreachableError": "{{member}} üyesine atma mesajı gönderilemedi. Üye ulaşılamaz durumda"
+                        "success": "Üye {{member}} başarıyla {{guild}} sunucusundan atıldı. Sebep: {{reason}}",
+                        "defaultError": "{{member}} üyesini {{guild}} sunucusundan atamıyorum",
+                        "noPermissionsError": "{{member}} üyesini {{guild}} sunucusundan atamıyorum. `KICK_MEMBERS` iznine sahip olduğumdan emin olun",
+                        "higherRoleError": "{{member}} üyesini {{guild}} sunucusundan atamıyorum. Rolümün üyenin rolünden yüksek olduğundan emin olun",
+                        "unreachableError": "{{member}} üyesine atılma mesajı gönderilemedi. Üyeye ulaşılamıyor"
                     }
                 },
                 "ban": {
-                    "description": "Sunucudan bir üyeyi yasaklayın",
+                    "description": "Bir üyeyi sunucudan yasakla",
                     "name": "ban",
                     "options": {
                         "member": {
-                            "description": "Sunucudan yasaklamak istediğiniz üye",
-                            "name": "üye"
+                            "name": "üye",
+                            "description": "Sunucudan yasaklamak istediğiniz üye"
                         },
                         "delete_messages": {
                             "name": "mesajları_sil",
-                            "description": "Üyenin son 7 gün içindeki mesajlarını silmek istiyor musunuz?"
+                            "description": "Üyenin son 7 gündeki mesajlarını silmek istiyor musunuz?"
                         },
                         "reason": {
-                            "description": "Üyenin sunucudan yasaklanma sebebi",
-                            "name": "sebep"
+                            "name": "sebep",
+                            "description": "Üyeyi sunucudan yasaklama sebebi"
                         }
                     },
                     "responses": {
-                        "success": "{{member}} üyesi başarıyla {{guild}} sunucusundan yasaklandı. Sebep: {{reason}}",
-                        "defaultError": "{{guild}} sunucusundan {{member}} üyesini yasaklayamıyorum",
-                        "noPermissionsError": "{{guild}} sunucusundan {{member}} üyesini yasaklayamıyorum. `BAN_MEMBERS` iznine sahip olduğumu doğrulayın",
-                        "higherRoleError": "{{guild}} sunucusundan {{member}} üyesini yasaklayamıyorum. Rolümün üyenin rolünden üstün olduğundan emin olun",
-                        "unreachableError": "{{member}} üyesine yasaklama mesajı gönderilemedi. Üye ulaşılamaz durumda"
+                        "success": "Üye {{member}} başarıyla {{guild}} sunucusundan yasaklandı. Sebep: {{reason}}",
+                        "defaultError": "{{member}} üyesini {{guild}} sunucusundan yasaklayamıyorum",
+                        "noPermissionsError": "{{member}} üyesini {{guild}} sunucusundan yasaklayamıyorum. `BAN_MEMBERS` iznine sahip olduğumdan emin olun",
+                        "higherRoleError": "{{member}} üyesini {{guild}} sunucusundan yasaklayamıyorum. Rolümün üyenin rolünden yüksek olduğundan emin olun",
+                        "unreachableError": "{{member}} üyesine yasaklama mesajı gönderilemedi. Üyeye ulaşılamıyor"
                     }
                 },
                 "unban": {
-                    "description": "Sunucudan bir kullanıcının yasağını kaldırın",
+                    "description": "Bir kullanıcıyı sunucudan yasaklamayı kaldır",
                     "name": "unban",
                     "options": {
                         "id": {
-                            "description": "Yasağı kaldırmak istediğiniz kullanıcının kimliği",
-                            "name": "id"
+                            "name": "id",
+                            "description": "Yasaklamasını kaldırmak istediğiniz kullanıcının ID'si"
                         },
                         "reason": {
-                            "description": "Kullanıcının sunucudan yasak kaldırma sebebi",
-                            "name": "sebep"
+                            "name": "sebep",
+                            "description": "Kullanıcının sunucudan yasaklamasını kaldırma sebebi"
                         }
                     },
                     "responses": {
-                        "success": "{{user}} kullanıcısı {{guild}} sunucusundan başarıyla yasağı kaldırıldı. Sebep: {{reason}}",
-                        "defaultError": "{{user}} kullanıcısını {{guild}} sunucusundan yasaklayamıyorum",
-                        "noPermissionsError": "{{user}} kullanıcısını {{guild}} sunucusundan yasaklayamıyorum. `BAN_MEMBERS` iznine sahip olduğumu doğrulayın",
-                        "invalidIDError": "Sağlanan ID geçersiz veya sunucuda bu ID ile yasaklı bir kullanıcı yok"
+                        "success": "Kullanıcı {{user}} başarıyla {{guild}} sunucusundan yasaklaması kaldırıldı. Sebep: {{reason}}",
+                        "defaultError": "{{user}} kullanıcısının {{guild}} sunucusundan yasaklamasını kaldıramıyorum",
+                        "noPermissionsError": "{{user}} kullanıcısının {{guild}} sunucusundan yasaklamasını kaldıramıyorum. `BAN_MEMBERS` iznine sahip olduğumdan emin olun",
+                        "invalidIDError": "Sağlanan ID geçersiz veya sunucuda bu ID ile yasaklı kullanıcı yok"
                     }
                 },
                 "delete_messages": {
-                    "description": "Belirli bir kanalda belirli bir mesaj miktarını silin",
                     "name": "mesajları_sil",
+                    "description": "Belirli bir kanaldaki mesajları sil",
                     "options": {
                         "amount": {
-                            "description": "Silinecek mesaj miktarı",
-                            "name": "miktar"
+                            "name": "miktar",
+                            "description": "Silinecek mesaj sayısı"
                         },
                         "channel": {
-                            "description": "Mesajların silineceği kanal",
-                            "name": "kanal"
+                            "name": "kanal",
+                            "description": "Mesajların silineceği kanal"
                         }
                     },
                     "responses": {
-                        "success": "{{amount}} mesaj {{channel}} kanalında başarıyla silindi",
+                        "success": "{{channel}} kanalında {{amount}} mesaj başarıyla silindi",
                         "defaultError": "{{channel}} kanalında mesajları silemiyorum",
-                        "noPermissionsError": "{{channel}} kanalında mesajları silemiyorum. `MANAGE_MESSAGES` iznine sahip olduğumu doğrulayın"
+                        "noPermissionsError": "{{channel}} kanalında mesajları silemiyorum. `MANAGE_MESSAGES` iznine sahip olduğumdan emin olun"
                     }
                 },
                 "lock": {
@@ -116,9 +116,10 @@
                         }
                     },
                     "responses": {
-                        "success": "{{channel}} başarıyla kilitlendi",
-                        "defaultError": "{{channel}} kilitlenemiyor",
-                        "noPermissionsError": "{{channel}} kilitlenemiyor. Make sure I have `MANAGE_CHANNELS` permission"
+                        "success": "{{channel}} kanalı başarıyla kilitlendi",
+                        "defaultError": "{{channel}} kanalını kilitleyemiyorum",
+                        "noPermissionsError": "{{channel}} kanalını kilitleyemiyorum. `MANAGE_CHANNELS` iznine sahip olduğumdan emin olun",
+                        "channelLocked": "{{channel}} kanalı zaten kilitli"
                     }
                 },
                 "unlock": {
@@ -131,9 +132,10 @@
                         }
                     },
                     "responses": {
-                        "success": "{{channel}} başarıyla açıldı",
-                        "defaultError": "{{channel}} açılamıyor",
-                        "noPermissionsError": "{{channel}} açılamıyor. Make sure I have `MANAGE_CHANNELS` permission"
+                        "success": "{{channel}} kanalı başarıyla kilidi açıldı",
+                        "defaultError": "{{channel}} kanalının kilidini açamıyorum",
+                        "noPermissionsError": "{{channel}} kanalının kilidini açamıyorum. `MANAGE_CHANNELS` iznine sahip olduğumdan emin olun",
+                        "channelUnlocked": "{{channel}} kanalı zaten kilidi açık"
                     }
                 }
             }
