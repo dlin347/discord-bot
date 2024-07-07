@@ -462,7 +462,7 @@ module.exports = {
                             tr: tr.categories.moderation.commands.slowmode.options.channel.name,
                             ru: ru.categories.moderation.commands.slowmode.options.channel.name
                         })
-                        .setDescription("The channel that will have the slowmode set")
+                        .setDescription("The channel where the slowmode will be set")
                         .setDescriptionLocalizations({
                             de: de.categories.moderation.commands.slowmode.options.channel.description,
                             fr: fr.categories.moderation.commands.slowmode.options.channel.description,

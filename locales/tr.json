@@ -137,6 +137,32 @@
                         "noPermissionsError": "{{channel}} kanalının kilidini açamıyorum. `MANAGE_CHANNELS` iznine sahip olduğumdan emin olun",
                         "channelUnlocked": "{{channel}} kanalı zaten kilidi açık"
                     }
+                },
+                "slowmode": {
+                    "name": "slowmode",
+                    "description": "Belirli bir kanalın yavaş modunu ayarla",
+                    "options": {
+                        "time": {
+                            "name": "time",
+                            "description": "Yavaş modun süresi"
+                        },
+                        "channel": {
+                            "name": "channel",
+                            "description": "Yavaş modun ayarlanacağı kanal"
+                        },
+                        "reason": {
+                            "name": "reason",
+                            "description": "Yavaş modun ayarlanma nedeni"
+                        }
+                    },
+                    "responses": {
+                        "success": "{{channel}} kanalının yavaş modu başarıyla {{time}} olarak ayarlandı",
+                        "defaultError": "{{channel}} kanalının yavaş modunu ayarlayamıyorum",
+                        "noPermissionsError": "{{channel}} kanalının yavaş modunu ayarlayamıyorum. `MANAGE_CHANNELS` iznim olduğundan emin olun",
+                        "invalidFormatError": "Zaman formatı geçersiz. Lütfen geçerli bir zaman formatı kullanın, örneğin: 1s, 1m, 1h",
+                        "sameSlowmodeError": "{{channel}} kanalının yavaş modu zaten {{time}} olarak ayarlanmış",
+                        "exceededTimeError": "Yavaş mod süresi maksimum izin verilen süreyi (6 saat) aşıyor"
+                    }
                 }
             }
         }

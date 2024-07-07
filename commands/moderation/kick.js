@@ -26,15 +26,15 @@ module.exports = async function kickMember(interaction) {
         return interaction.reply({ content: higherRoleError, ephemeral: true });
     }
 
-    const reason = interaction.options.getString('reason') ?? localeFile.categories.common.noReason;
-    const reasonEnUS = interaction.options.getString('reason') ?? "No reason provided";
+    const reason = interaction.options.getString('reason') || localeFile.categories.common.noReason;
+    const englishReason = interaction.options.getString('reason') || "No reason provided";
 
     try {
-        await member.kick(reasonEnUS).then(async () => {
-            console.log("\x1b[33m" + `<<@${interaction.user.username}>> HAS SUCCESSFULLY KICKED <<@${member.user.username}>> FROM <<${interaction.guild.name}>> FOR <<${reasonEnUS}>>` + "\x1b[0m")
+        await member.kick(englishReason).then(async () => {
+            console.log("\x1b[33m" + `<<@${interaction.user.username}>> HAS SUCCESSFULLY KICKED <<@${member.user.username}>> FROM <<${interaction.guild.name}>> FOR <<${englishReason}>>` + "\x1b[0m")
             const content = localeFile.categories.moderation.commands.kick.responses.success.replace('{{member}}', `<@${member.id}>`).replace('{{guild}}', interaction.guild.name).replace('{{reason}}', reason);
             await interaction.reply({ content: content, ephemeral: true });
-            await member.send({ content: `You have been kicked from ${interaction.guild.name} by @${interaction.user.tag}. Reason: ${reasonEnUS}` }).catch(async (e) => {
+            await member.send({ content: `You have been kicked from ${interaction.guild.name} by @${interaction.user.tag}. Reason: ${englishReason}` }).catch(async (e) => {
                 console.error("\x1b[31m" + '[/KICK] ' + e + "\x1b[0m");
                 const unreachableError = localeFile.categories.moderation.commands.kick.responses.unreachableError.replace('{{member}}', `<@${member.id}>`);
                 await interaction.followUp({ content: unreachableError, ephemeral: true });

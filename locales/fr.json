@@ -137,6 +137,32 @@
                         "noPermissionsError": "Je ne peux pas déverrouiller le canal {{channel}}. Assurez-vous que j'ai la permission `MANAGE_CHANNELS`",
                         "channelUnlocked": "Le canal {{channel}} est déjà déverrouillé"
                     }
+                },
+                "slowmode": {
+                    "name": "slowmode",
+                    "description": "Définir le mode lent d'un canal spécifique",
+                    "options": {
+                        "time": {
+                            "name": "temps",
+                            "description": "La durée du mode lent"
+                        },
+                        "channel": {
+                            "name": "canal",
+                            "description": "Le canal où le mode lent sera défini"
+                        },
+                        "reason": {
+                            "name": "raison",
+                            "description": "La raison de la mise en place du mode lent"
+                        }
+                    },
+                    "responses": {
+                        "success": "Mode lent de {{channel}} défini avec succès à {{time}}",
+                        "defaultError": "Je ne peux pas définir le mode lent de {{channel}}",
+                        "noPermissionsError": "Je ne peux pas définir le mode lent de {{channel}}. Assurez-vous que j'ai la permission `MANAGE_CHANNELS`",
+                        "invalidFormatError": "Le format de l'heure est invalide. Veuillez utiliser un format d'heure valide, par exemple : 1s, 1m, 1h",
+                        "sameSlowmodeError": "Le mode lent de {{channel}} est déjà défini à {{time}}",
+                        "exceededTimeError": "La durée du mode lent dépasse la limite maximale autorisée (6 heures)"
+                    }
                 }
             }
         }

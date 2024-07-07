@@ -2,7 +2,7 @@ const translation = require('../../locales/other/translation.js');
 const permissions = require('../../locales/other/permissions.js');
 const { PermissionFlagsBits } = require('discord.js');
 
-module.exports = async function lock(interaction) {
+module.exports = async function lockChannel(interaction) {
     const localeFile = await translation(interaction.locale);
     const channel = interaction.options.getChannel('channel') || interaction.channel;
     const channelPermissions = channel.permissionOverwrites.cache.get(interaction.guild.id);

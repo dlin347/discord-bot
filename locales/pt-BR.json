@@ -137,6 +137,32 @@
                         "noPermissionsError": "Não posso desbloquear o canal {{channel}}. Certifique-se de que eu tenho a permissão `MANAGE_CHANNELS`",
                         "channelUnlocked": "O canal {{channel}} já está desbloqueado"
                     }
+                },
+                "slowmode": {
+                    "name": "slowmode",
+                    "description": "Definir o modo lento de um canal específico",
+                    "options": {
+                        "time": {
+                            "name": "tempo",
+                            "description": "O tempo do modo lento"
+                        },
+                        "channel": {
+                            "name": "canal",
+                            "description": "O canal onde o modo lento será definido"
+                        },
+                        "reason": {
+                            "name": "razão",
+                            "description": "A razão para definir o modo lento"
+                        }
+                    },
+                    "responses": {
+                        "success": "Modo lento de {{channel}} definido com sucesso para {{time}}",
+                        "defaultError": "Não posso definir o modo lento de {{channel}}",
+                        "noPermissionsError": "Não posso definir o modo lento de {{channel}}. Certifique-se de que tenho a permissão `MANAGE_CHANNELS`",
+                        "invalidFormatError": "O formato de tempo é inválido. Por favor, use um formato de tempo válido, por exemplo: 1s, 1m, 1h",
+                        "sameSlowmodeError": "O modo lento de {{channel}} já está definido para {{time}}",
+                        "exceededTimeError": "O tempo do modo lento excede o máximo permitido (6 horas)"
+                    }
                 }
             }
         }

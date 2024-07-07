@@ -2,7 +2,7 @@ const translation = require('../../locales/other/translation.js');
 const permissions = require('../../locales/other/permissions.js');
 const { PermissionFlagsBits } = require('discord.js');
 
-module.exports = async function unban(interaction) {
+module.exports = async function unbanMember(interaction) {
     const localeFile = await translation(interaction.locale);
     const id = interaction.options.getString('id');
     const invalidIDError = localeFile.categories.moderation.commands.unban.responses.invalidIDError;
@@ -22,12 +22,12 @@ module.exports = async function unban(interaction) {
         return interaction.reply({ content: noPermissionsError, ephemeral: true });
     }
 
-    const reason = interaction.options.getString('reason') ?? localeFile.categories.common.noReason;
-    const reasonEnUS = interaction.options.getString('reason') || "No reason provided";
+    const reason = interaction.options.getString('reason') || localeFile.categories.common.noReason;
+    const englishReason = interaction.options.getString('reason') || "No reason provided";
 
     try {
-        await interaction.guild.members.unban(id, reasonEnUS).then(async () => {
-            console.log("\x1b[33m" + `<<@${interaction.user.username}>> HAS SUCCESSFULLY UNBANNED <<@${fetched.user.username}>> FROM <<${interaction.guild.name}>> FOR <<${reasonEnUS}>>` + "\x1b[0m");
+        await interaction.guild.members.unban(id, englishReason).then(async () => {
+            console.log("\x1b[33m" + `<<@${interaction.user.username}>> HAS SUCCESSFULLY UNBANNED <<@${fetched.user.username}>> FROM <<${interaction.guild.name}>> FOR <<${englishReason}>>` + "\x1b[0m");
             const content = localeFile.categories.moderation.commands.unban.responses.success.replace('{{user}}', `@${fetched.user.username}`).replace('{{guild}}', interaction.guild.name).replace('{{reason}}', reason);
             await interaction.reply({ content: content, ephemeral: true });
         });

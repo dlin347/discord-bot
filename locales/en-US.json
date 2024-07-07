@@ -137,6 +137,32 @@
                         "noPermissionsError": "I can't unlock {{channel}}. Make sure I have `MANAGE_CHANNELS` permission",
                         "channelUnlocked": "The channel {{channel}} is already unlocked"
                     }
+                },
+                "slowmode": {
+                    "name": "slowmode",
+                    "description": "Set the slowmode of a specific channel",
+                    "options": {
+                        "time": {
+                            "name": "time",
+                            "description": "The time of the slowmode"
+                        },
+                        "channel": {
+                            "name": "channel",
+                            "description": "The channel where the slowmode will be set"
+                        },
+                        "reason": {
+                            "name": "reason",
+                            "description": "The reason of setting the slowmode"
+                        }
+                    },
+                    "responses": {
+                        "success": "Successfully set the slowmode of {{channel}} to {{time}}",
+                        "defaultError": "I can't set the slowmode of {{channel}}",
+                        "noPermissionsError": "I can't set the slowmode of {{channel}}. Make sure I have `MANAGE_CHANNELS` permission",
+                        "invalidFormatError": "The time format is invalid. Please use a valid time format, for example: 1s, 1m, 1h",
+                        "sameSlowmodeError": "The slowmode of {{channel}} is already set to {{time}}",
+                        "exceededTimeError": "The slowmode time exceeds the maximum allowed (6 hours)"
+                    }
                 }
             }
         }

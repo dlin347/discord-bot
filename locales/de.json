@@ -137,6 +137,32 @@
                         "noPermissionsError": "Ich kann den Kanal {{channel}} nicht entsperren. Stelle sicher, dass ich die Berechtigung `MANAGE_CHANNELS` habe",
                         "channelUnlocked": "Der Kanal {{channel}} ist bereits entsperrt"
                     }
+                },
+                "slowmode": {
+                    "name": "slowmode",
+                    "description": "Setze den Slowmode eines bestimmten Kanals",
+                    "options": {
+                        "time": {
+                            "name": "zeit",
+                            "description": "Die Zeit des Slowmodes"
+                        },
+                        "channel": {
+                            "name": "kanal",
+                            "description": "Der Kanal, in dem der Slowmode gesetzt wird"
+                        },
+                        "reason": {
+                            "name": "grund",
+                            "description": "Der Grund für das Setzen des Slowmodes"
+                        }
+                    },
+                    "responses": {
+                        "success": "Der Slowmode von {{channel}} wurde erfolgreich auf {{time}} gesetzt",
+                        "defaultError": "Ich kann den Slowmode von {{channel}} nicht setzen",
+                        "noPermissionsError": "Ich kann den Slowmode von {{channel}} nicht setzen. Stelle sicher, dass ich die Berechtigung `MANAGE_CHANNELS` habe",
+                        "invalidFormatError": "Das Zeitformat ist ungültig. Bitte verwende ein gültiges Zeitformat, z.B.: 1s, 1m, 1h",
+                        "sameSlowmodeError": "Der Slowmode von {{channel}} ist bereits auf {{time}} gesetzt",
+                        "exceededTimeError": "Die Slowmode-Zeit überschreitet das zulässige Maximum (6 Stunden)"
+                    }
                 }
             }
         }
