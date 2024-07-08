@@ -14,6 +14,35 @@
                         "success": "Pong! Ma latence est de {{ping}}ms",
                         "defaultError": "Je ne peux pas obtenir ma latence pour le moment... Réessayez plus tard"
                     }
+                },
+                "member": {
+                    "name": "member",
+                    "description": "Obtenez des informations sur un membre",
+                    "options": {
+                        "member": {
+                            "name": "member",
+                            "description": "Le membre dont vous voulez obtenir des informations"
+                        }
+                    },
+                    "responses": {
+                        "embed": {
+                            "title": "Informations sur le Membre",
+                            "name": "Nom",
+                            "nickname": "Surnom",
+                            "none": "Aucun",
+                            "createdAt": "Date de Création du Compte",
+                            "joinedAt": "Date d'Adhésion au Serveur",
+                            "booster": "Le Membre est-il un Booster du Serveur ?",
+                            "isBot": "Le Membre est-il un Bot ?",
+                            "yes": "Oui",
+                            "no": "Non",
+                            "permissions": "Autorisations",
+                            "noPermissions": "Le membre n'a aucune autorisation",
+                            "roles": "Rôles ({{amount}})",
+                            "noRoles": "Le membre n'a aucun rôle"
+                        },
+                        "defaultError": "Je ne peux pas obtenir d'informations sur {{member}} en ce moment. Réessayez plus tard..."
+                    }
                 }
             }
         },

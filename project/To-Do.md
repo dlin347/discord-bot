@@ -23,6 +23,7 @@
 - [ ] Add more commands to other categories:
 - Information ==> User information
 - Information ==> Guild information
+- Information ==> Bot information
 - Information ==> Avatar
 - [ ] Filter by name when unbanning the user (problem: og tags)
 - [ ] Integrate mongodb or locally hosted database

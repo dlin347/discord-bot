@@ -14,6 +14,35 @@
                         "success": "Pong! Gecikmem {{ping}}ms",
                         "defaultError": "Şu anda gecikmemi öğrenemiyorum... Lütfen daha sonra tekrar deneyin"
                     }
+                },
+                "member": {
+                    "name": "member",
+                    "description": "Bir üye hakkında bilgi al",
+                    "options": {
+                        "member": {
+                            "name": "member",
+                            "description": "Bilgi almak istediğiniz üye"
+                        }
+                    },
+                    "responses": {
+                        "embed": {
+                            "title": "Üye Bilgisi",
+                            "name": "İsim",
+                            "nickname": "Takma Ad",
+                            "none": "Yok",
+                            "createdAt": "Hesap Oluşturma Tarihi",
+                            "joinedAt": "Sunucuya Katılma Tarihi",
+                            "booster": "Üye Sunucu Güçlendiricisi mi?",
+                            "isBot": "Üye Bot mu?",
+                            "yes": "Evet",
+                            "no": "Hayır",
+                            "permissions": "İzinler",
+                            "noPermissions": "Üyenin izni yok",
+                            "roles": "Roller ({{amount}})",
+                            "noRoles": "Üyenin rolü yok"
+                        },
+                        "defaultError": "Şu anda {{member}} hakkında bilgi alamıyorum. Daha sonra tekrar deneyin..."
+                    }
                 }
             }
         },

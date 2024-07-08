@@ -14,6 +14,35 @@
                         "success": "Pong! Meine Latenz beträgt {{ping}}ms",
                         "defaultError": "Ich kann meine Latenz momentan nicht abrufen... Versuche es später noch einmal"
                     }
+                },
+                "member": {
+                    "name": "member",
+                    "description": "Erhalten Sie Informationen über ein Mitglied",
+                    "options": {
+                        "member": {
+                            "name": "member",
+                            "description": "Das Mitglied, über das Sie Informationen erhalten möchten"
+                        }
+                    },
+                    "responses": {
+                        "embed": {
+                            "title": "Mitgliederinformation",
+                            "name": "Name",
+                            "nickname": "Spitzname",
+                            "none": "Keine",
+                            "createdAt": "Kontoerstellungsdatum",
+                            "joinedAt": "Beitrittsdatum zum Server",
+                            "booster": "Mitglied ist Server-Booster?",
+                            "isBot": "Mitglied ist Bot?",
+                            "yes": "Ja",
+                            "no": "Nein",
+                            "permissions": "Berechtigungen",
+                            "noPermissions": "Das Mitglied hat keine Berechtigungen",
+                            "roles": "Rollen ({{amount}})",
+                            "noRoles": "Das Mitglied hat keine Rollen"
+                        },
+                        "defaultError": "Ich kann momentan keine Informationen über {{member}} abrufen. Versuchen Sie es später noch einmal..."
+                    }
                 }
             }
         },

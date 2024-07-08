@@ -14,6 +14,35 @@
                         "success": "Pong! My latency is {{ping}}ms",
                         "defaultError": "I can't get my latency right now... Try again later"
                     }
+                },
+                "member": {
+                    "name": "member",
+                    "description": "Get information of a member",
+                    "options": {
+                        "member": {
+                            "name": "member",
+                            "description": "The member you want to get information of"
+                        }
+                    },
+                    "responses": {
+                        "embed": {
+                            "title": "Member Information",
+                            "name": "Name",
+                            "nickname": "Nickname",
+                            "none": "None",
+                            "createdAt": "Account Creation Date",
+                            "joinedAt": "Server Join Date",
+                            "booster": "Member Is Server Booster?",
+                            "isBot": "Member Is Bot?",
+                            "yes": "Yes",
+                            "no": "No",
+                            "permissions": "Permissions",
+                            "noPermissions": "The member has no permissions",
+                            "roles": "Roles ({{amount}})",
+                            "noRoles": "The member has no roles"
+                        },
+                        "defaultError": "I can't get information of {{member}} right now. Try again later..."
+                    }
                 }
             }
         },
