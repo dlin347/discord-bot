@@ -33,6 +33,7 @@
                             "createdAt": "Kontoerstellungsdatum",
                             "joinedAt": "Beitrittsdatum zum Server",
                             "booster": "Mitglied ist Server-Booster?",
+                            "since": "Ja, seit {{timestamp}}",
                             "isBot": "Mitglied ist Bot?",
                             "yes": "Ja",
                             "no": "Nein",

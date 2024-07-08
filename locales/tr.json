@@ -33,6 +33,7 @@
                             "createdAt": "Hesap Oluşturma Tarihi",
                             "joinedAt": "Sunucuya Katılma Tarihi",
                             "booster": "Üye Sunucu Güçlendiricisi mi?",
+                            "since": "Evet, {{timestamp}} tarihinden beri",
                             "isBot": "Üye Bot mu?",
                             "yes": "Evet",
                             "no": "Hayır",
