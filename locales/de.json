@@ -27,7 +27,7 @@
                     "responses": {
                         "embed": {
                             "title": "Mitgliederinformation",
-                            "name": "Name",
+                            "username": "Nutzername",
                             "nickname": "Spitzname",
                             "none": "Keine",
                             "createdAt": "Kontoerstellungsdatum",
@@ -38,9 +38,7 @@
                             "yes": "Ja",
                             "no": "Nein",
                             "permissions": "Berechtigungen",
-                            "noPermissions": "Das Mitglied hat keine Berechtigungen",
-                            "roles": "Rollen ({{amount}})",
-                            "noRoles": "Das Mitglied hat keine Rollen"
+                            "roles": "Rollen ({{amount}})"
                         },
                         "defaultError": "Ich kann momentan keine Informationen über {{member}} abrufen. Versuchen Sie es später noch einmal..."
                     }

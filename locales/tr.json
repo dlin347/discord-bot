@@ -27,7 +27,7 @@
                     "responses": {
                         "embed": {
                             "title": "Üye Bilgisi",
-                            "name": "İsim",
+                            "username": "Kullanıcı Adı",
                             "nickname": "Takma Ad",
                             "none": "Yok",
                             "createdAt": "Hesap Oluşturma Tarihi",
@@ -38,9 +38,7 @@
                             "yes": "Evet",
                             "no": "Hayır",
                             "permissions": "İzinler",
-                            "noPermissions": "Üyenin izni yok",
-                            "roles": "Roller ({{amount}})",
-                            "noRoles": "Üyenin rolü yok"
+                            "roles": "Roller ({{amount}})"
                         },
                         "defaultError": "Şu anda {{member}} hakkında bilgi alamıyorum. Daha sonra tekrar deneyin..."
                     }

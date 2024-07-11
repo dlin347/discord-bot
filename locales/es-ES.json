@@ -27,7 +27,7 @@
                     "responses": {
                         "embed": {
                             "title": "Información del Miembro",
-                            "name": "Nombre",
+                            "username": "Nombre de Usuario",
                             "nickname": "Apodo",
                             "none": "Ninguno",
                             "createdAt": "Fecha de Creación de la Cuenta",
@@ -38,9 +38,7 @@
                             "yes": "Sí",
                             "no": "No",
                             "permissions": "Permisos",
-                            "noPermissions": "El miembro no tiene permisos",
-                            "roles": "Roles ({{amount}})",
-                            "noRoles": "El miembro no tiene roles"
+                            "roles": "Roles ({{amount}})"
                         },
                         "defaultError": "No puedo obtener información de {{member}} en este momento. Inténtalo de nuevo más tarde..."
                     }

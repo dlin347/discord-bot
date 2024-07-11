@@ -27,7 +27,7 @@
                     "responses": {
                         "embed": {
                             "title": "Member Information",
-                            "name": "Name",
+                            "username": "Username",
                             "nickname": "Nickname",
                             "none": "None",
                             "createdAt": "Account Creation Date",
@@ -38,9 +38,7 @@
                             "yes": "Yes",
                             "no": "No",
                             "permissions": "Permissions",
-                            "noPermissions": "The member has no permissions",
-                            "roles": "Roles ({{amount}})",
-                            "noRoles": "The member has no roles"
+                            "roles": "Roles ({{amount}})"
                         },
                         "defaultError": "I can't get information of {{member}} right now. Try again later..."
                     }
