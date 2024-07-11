@@ -42,6 +42,30 @@
                         },
                         "defaultError": "Şu anda {{member}} hakkında bilgi alamıyorum. Daha sonra tekrar deneyin..."
                     }
+                },
+                "avatar": {
+                    "name": "avatar",
+                    "description": "Belirli bir üyenin avatarını belirli bir boyut ve formatta alın",
+                    "options": {
+                        "member": {
+                            "name": "üye",
+                            "description": "Avatarını almak istediğiniz üye"
+                        },
+                        "resolution": {
+                            "name": "çözünürlük",
+                            "description": "Avatar dosyasının çözünürlüğü"
+                        },
+                        "extension": {
+                            "name": "uzantı",
+                            "description": "Avatar dosyasının uzantısı"
+                        }
+                    },
+                    "responses": {
+                        "embed": {
+                            "title": "{{member}} Avatarı"
+                        },
+                        "defaultError": "{{member}} avatarını şu anda alamıyorum. Daha sonra tekrar deneyin..."
+                    }
                 }
             }
         },
@@ -116,7 +140,7 @@
                     }
                 },
                 "delete_messages": {
-                    "name": "mesajları_sil",
+                    "name": "delete_messages",
                     "description": "Belirli bir kanaldaki mesajları sil",
                     "options": {
                         "amount": {

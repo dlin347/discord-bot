@@ -42,6 +42,30 @@
                         },
                         "defaultError": "No puedo obtener información de {{member}} en este momento. Inténtalo de nuevo más tarde..."
                     }
+                },
+                "avatar": {
+                    "name": "avatar",
+                    "description": "Obtén el avatar de un miembro específico con un tamaño y formato específico",
+                    "options": {
+                        "member": {
+                            "name": "miembro",
+                            "description": "El miembro del que deseas obtener el avatar"
+                        },
+                        "resolution": {
+                            "name": "resolución",
+                            "description": "La resolución del archivo de avatar"
+                        },
+                        "extension": {
+                            "name": "extensión",
+                            "description": "La extensión del archivo de avatar"
+                        }
+                    },
+                    "responses": {
+                        "embed": {
+                            "title": "Avatar de {{member}}"
+                        },
+                        "defaultError": "No puedo obtener el avatar de {{member}} en este momento. Inténtalo de nuevo más tarde..."
+                    }
                 }
             }
         },
@@ -116,7 +140,7 @@
                     }
                 },
                 "delete_messages": {
-                    "name": "eliminar_mensajes",
+                    "name": "delete_messages",
                     "description": "Elimina una cantidad de mensajes en un canal específico",
                     "options": {
                         "amount": {

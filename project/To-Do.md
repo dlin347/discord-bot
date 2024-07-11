@@ -20,11 +20,12 @@
 - [x] Slowmode command
 - [x] Time function
 - [ ] Warn command
+- [ ] Modify delete messages option in ban command
 - [ ] Add more commands to other categories:
-- Information ==> User information
+- [x] Information ==> User information
 - Information ==> Guild information
 - Information ==> Bot information
-- Information ==> Avatar
+- [x] Information ==> Avatar
 - [ ] Filter by name when unbanning the user (problem: og tags)
 - [ ] Integrate mongodb or locally hosted database
 - [ ] Host locally the bot => Raspberry pi 400?

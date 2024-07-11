@@ -42,6 +42,30 @@
                         },
                         "defaultError": "Je ne peux pas obtenir d'informations sur {{member}} en ce moment. Réessayez plus tard..."
                     }
+                },
+                "avatar": {
+                    "name": "avatar",
+                    "description": "Obtenez l'avatar d'un membre spécifique avec une taille et un format spécifiques",
+                    "options": {
+                        "member": {
+                            "name": "membre",
+                            "description": "Le membre dont vous souhaitez obtenir l'avatar"
+                        },
+                        "resolution": {
+                            "name": "résolution",
+                            "description": "La résolution du fichier de l'avatar"
+                        },
+                        "extension": {
+                            "name": "extension",
+                            "description": "L'extension du fichier de l'avatar"
+                        }
+                    },
+                    "responses": {
+                        "embed": {
+                            "title": "Avatar de {{member}}"
+                        },
+                        "defaultError": "Je ne peux pas obtenir l'avatar de {{member}} pour le moment. Réessayez plus tard..."
+                    }
                 }
             }
         },
@@ -96,8 +120,8 @@
                     }
                 },
                 "unban": {
-                    "description": "Débannissez un utilisateur du serveur",
                     "name": "unban",
+                    "description": "Débannissez un utilisateur du serveur",
                     "options": {
                         "id": {
                             "name": "id",
@@ -116,7 +140,7 @@
                     }
                 },
                 "delete_messages": {
-                    "name": "supprimer_messages",
+                    "name": "delete_messages",
                     "description": "Supprimez un certain nombre de messages dans un canal spécifique",
                     "options": {
                         "amount": {

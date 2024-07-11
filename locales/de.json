@@ -42,6 +42,30 @@
                         },
                         "defaultError": "Ich kann momentan keine Informationen über {{member}} abrufen. Versuchen Sie es später noch einmal..."
                     }
+                },
+                "avatar": {
+                    "name": "avatar",
+                    "description": "Hole den Avatar eines bestimmten Mitglieds in einer bestimmten Größe und einem bestimmten Format",
+                    "options": {
+                        "member": {
+                            "name": "mitglied",
+                            "description": "Das Mitglied, von dem du den Avatar erhalten möchtest"
+                        },
+                        "resolution": {
+                            "name": "auflösung",
+                            "description": "Die Auflösung der Avatar-Datei"
+                        },
+                        "extension": {
+                            "name": "erweiterung",
+                            "description": "Die Erweiterung der Avatar-Datei"
+                        }
+                    },
+                    "responses": {
+                        "embed": {
+                            "title": "Avatar von {{member}}"
+                        },
+                        "defaultError": "Ich kann den Avatar von {{member}} gerade nicht abrufen. Versuche es später noch einmal..."
+                    }
                 }
             }
         },
@@ -116,7 +140,7 @@
                     }
                 },
                 "delete_messages": {
-                    "name": "nachrichten_löschen",
+                    "name": "delete_messages",
                     "description": "Eine Anzahl von Nachrichten in einem bestimmten Kanal löschen",
                     "options": {
                         "amount": {

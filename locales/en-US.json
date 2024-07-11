@@ -42,6 +42,30 @@
                         },
                         "defaultError": "I can't get information of {{member}} right now. Try again later..."
                     }
+                },
+                "avatar": {
+                    "name": "avatar",
+                    "description": "Get the avatar of a specific member with a specific size and format",
+                    "options": {
+                        "member": {
+                            "name": "member",
+                            "description": "The member you want to get the avatar of"
+                        },
+                        "resolution": {
+                            "name": "resolution",
+                            "description": "The resolution of the avatar file"
+                        },
+                        "extension": {
+                            "name": "extension",
+                            "description": "The extension of the avatar file"
+                        }
+                    },
+                    "responses": {
+                        "embed": {
+                            "title": "Avatar of {{member}}"
+                        },
+                        "defaultError": "I can't get the avatar of {{member}} right now. Try again later..."
+                    }
                 }
             }
         },
