@@ -43,6 +43,27 @@
                         "defaultError": "Não consigo obter informações de {{member}} agora. Tente novamente mais tarde..."
                     }
                 },
+                "bot": {
+                    "name": "bot",
+                    "description": "Obtenha informações do bot",
+                    "responses": {
+                        "embed": {
+                            "title": "Informações de {{bot}}",
+                            "username": "Nome de usuário",
+                            "createdAt": "Data de criação da conta",
+                            "ping": "Latência",
+                            "shards": "Shards",
+                            "uptime": "Tempo de atividade",
+                            "users": "Número de usuários",
+                            "guilds": "Número de servidores",
+                            "channels": "Número de canais",
+                            "numberCommands": "Número de comandos",
+                            "help": "Ajuda",
+                            "createdAndDeveloped": "Criado e desenvolvido com ❤️ por @dawwwei"
+                        },
+                        "defaultError": "Não consigo obter minhas informações no momento. Tente novamente mais tarde..."
+                    }
+                },
                 "avatar": {
                     "name": "avatar",
                     "description": "Obtenha o avatar de um membro específico com um tamanho e formato específico",
@@ -62,9 +83,14 @@
                     },
                     "responses": {
                         "embed": {
-                            "title": "Avatar de {{member}}"
+                            "title": "Avatar de {{member}}",
+                            "footer": {
+                                "defaultAvatar": "Exibindo o avatar padrão de {{member}}",
+                                "resolutionAndExtension": "Resolução: {{resolution}}px | Extensão: .{{extension}}"
+                            }
                         },
-                        "defaultError": "Não consigo obter o avatar de {{member}} no momento. Tente novamente mais tarde..."
+                        "defaultError": "Não consigo obter o avatar de {{member}} no momento. Tente novamente mais tarde...",
+                        "noDynamicAvatarError": "O membro {{member}} não tem um avatar dinâmico. Mostrando seu avatar estático..."
                     }
                 }
             }

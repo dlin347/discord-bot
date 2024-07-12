@@ -6,8 +6,9 @@ module.exports = async function deleteMessages(interaction) {
     const localeFile = await translation(interaction.locale);
     const amount = interaction.options.getNumber('amount');
     const channel = interaction.options.getChannel('channel') || interaction.channel;
-    const defaultError = localeFile.categories.moderation.commands.delete_messages.responses.defaultError.replace('{{channel}}', `<#${channel.id}>`);
-    const noPermissionsError = localeFile.categories.moderation.commands.delete_messages.responses.noPermissionsError.replace('{{channel}}', `<#${channel.id}>`);
+    const responses = localeFile.categories.moderation.commands.delete_messages.responses;
+    const defaultError = responses.defaultError.replace('{{channel}}', `<#${channel.id}>`);
+    const noPermissionsError = responses.noPermissionsError.replace('{{channel}}', `<#${channel.id}>`);
     const message = await permissions(interaction.locale, 'MANAGE_MESSAGES');
 
     if (!interaction.member.permissions.has(PermissionFlagsBits.ManageMessages)) {
@@ -21,7 +22,7 @@ module.exports = async function deleteMessages(interaction) {
     try {
         const messages = await channel.bulkDelete(amount);
         const realAmount = messages.size;
-        const content = localeFile.categories.moderation.commands.delete_messages.responses.success.replace('{{amount}}', realAmount).replace('{{channel}}', `<#${channel.id}>`);
+        const content = responses.success.replace('{{amount}}', realAmount).replace('{{channel}}', `<#${channel.id}>`);
         console.log("\x1b[33m" + `<<@${interaction.user.username}>> HAS SUCCESSFULLY DELETED <<${realAmount} MESSAGES>> FROM <<#${channel.name}>> (<<${interaction.guild.name}>>)` + "\x1b[0m");
         await interaction.reply({ content: content, ephemeral: true });
     } catch (e) {

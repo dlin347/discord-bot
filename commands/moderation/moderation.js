@@ -1,13 +1,13 @@
 // Optimizable code
 const { SlashCommandBuilder, ChannelType } = require('discord.js');
 
-const kickMember = require('./kick');
-const banMember = require('./ban');
-const unbanMember = require('./unban');
-const deleteMessages = require('./delete-messages');
-const lockChannel = require('./lock');
-const unlockChannel = require('./unlock');
-const slowmodeChannel = require('./slowmode');
+const kickMember = require('./kick.js');
+const banMember = require('./ban.js');
+const unbanMember = require('./unban.js');
+const deleteMessages = require('./delete-messages.js');
+const lockChannel = require('./lock.js');
+const unlockChannel = require('./unlock.js');
+const slowmodeChannel = require('./slowmode.js');
 
 const locales = {
     de: require('../../locales/de.json'),

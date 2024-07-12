@@ -1,8 +1,9 @@
 const { SlashCommandBuilder } = require('discord.js');
 
-const ping = require('./ping');
-const memberInformation = require('./member');
-const avatarMember = require('./avatar');
+const ping = require('./ping.js');
+const memberInformation = require('./member.js');
+const botInformation = require('./bot.js');
+const avatarMember = require('./avatar.js');
 
 const locales = {
     de: require('../../locales/de.json'),
@@ -95,6 +96,27 @@ module.exports = {
                             ru: locales.ru.categories.information.commands.member.options.member.description
                         })
                 )
+        )
+        .addSubcommand(subcommand =>
+            subcommand
+                .setName('bot')
+                .setNameLocalizations({
+                    de: locales.de.categories.information.commands.bot.name,
+                    fr: locales.fr.categories.information.commands.bot.name,
+                    "pt-BR": locales.pt.categories.information.commands.bot.name,
+                    "es-ES": locales.es.categories.information.commands.bot.name,
+                    tr: locales.tr.categories.information.commands.bot.name,
+                    ru: locales.ru.categories.information.commands.bot.name
+                })
+                .setDescription("Get information of the bot")
+                .setDescriptionLocalizations({
+                    de: locales.de.categories.information.commands.bot.description,
+                    fr: locales.fr.categories.information.commands.bot.description,
+                    "pt-BR": locales.pt.categories.information.commands.bot.description,
+                    "es-ES": locales.es.categories.information.commands.bot.description,
+                    tr: locales.tr.categories.information.commands.bot.description,
+                    ru: locales.ru.categories.information.commands.bot.description
+                })
         )
         .addSubcommand(subcommand =>
             subcommand
@@ -209,6 +231,9 @@ module.exports = {
                     break;
                 case 'member':
                     await memberInformation(interaction);
+                    break;
+                case 'bot':
+                    await botInformation(interaction);
                     break;
                 case 'avatar':
                     await avatarMember(interaction);

@@ -6,7 +6,8 @@ module.exports = async function lockChannel(interaction) {
     const localeFile = await translation(interaction.locale);
     const channel = interaction.options.getChannel('channel') || interaction.channel;
     const channelPermissions = channel.permissionOverwrites.cache.get(interaction.guild.id);
-    const defaultError = localeFile.categories.moderation.commands.lock.responses.defaultError.replace('{{channel}}', `<#${channel.id}>`);
+    const responses = localeFile.categories.moderation.commands.lock.responses;
+    const defaultError = responses.defaultError.replace('{{channel}}', `<#${channel.id}>`);
 
     if (!interaction.member.permissions.has(PermissionFlagsBits.ManageChannels)) {
         const message = await permissions(interaction.locale, 'MANAGE_CHANNELS');
@@ -14,19 +15,19 @@ module.exports = async function lockChannel(interaction) {
     }
 
     if (channelPermissions && channelPermissions.deny.has(PermissionFlagsBits.SendMessages)) {
-        const channelLocked = localeFile.categories.moderation.commands.lock.responses.channelLocked.replace('{{channel}}', `<#${channel.id}>`);
+        const channelLocked = responses.channelLocked.replace('{{channel}}', `<#${channel.id}>`);
         return interaction.reply({ content: channelLocked, ephemeral: true });
     }
 
     if (!interaction.guild.members.me.permissions.has(PermissionFlagsBits.ManageChannels)) {
-        const noPermissionsError = localeFile.categories.moderation.commands.lock.responses.noPermissionsError.replace('{{channel}}', `<#${channel.id}>`);
+        const noPermissionsError = responses.noPermissionsError.replace('{{channel}}', `<#${channel.id}>`);
         return interaction.reply({ content: noPermissionsError, ephemeral: true });
     }
 
     try {
         await channel.permissionOverwrites.edit(interaction.guild.id, { SendMessages: false }).then(async () => {
             console.log("\x1b[33m" + `<<@${interaction.user.username}>> HAS SUCCESSFULLY LOCKED <<#${channel.name}>> IN <<${interaction.guild.name}>>` + "\x1b[0m");
-            const content = localeFile.categories.moderation.commands.lock.responses.success.replace('{{channel}}', `<#${channel.id}>`);
+            const content = responses.success.replace('{{channel}}', `<#${channel.id}>`);
             await interaction.reply({ content: content, ephemeral: true })
         })
     } catch (e) {

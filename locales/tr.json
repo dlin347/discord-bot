@@ -43,6 +43,26 @@
                         "defaultError": "Şu anda {{member}} hakkında bilgi alamıyorum. Daha sonra tekrar deneyin..."
                     }
                 },
+                "bot": {
+                    "name": "bot",
+                    "description": "Botun bilgilerini al",
+                    "responses": {
+                        "embed": {
+                            "title": "{{bot}}'ın Bilgileri",
+                            "username": "Kullanıcı Adı",
+                            "createdAt": "Hesap Oluşturma Tarihi",
+                            "ping": "Gecikme",
+                            "shards": "Shards",
+                            "uptime": "Zaman açık",
+                            "users": "Kullanıcı Sayısı",
+                            "guilds": "Sunucu Sayısı",
+                            "channels": "Kanal Sayısı",
+                            "numberCommands": "Komut Sayısı",
+                            "help": "Yardım",
+                            "createdAndDeveloped": "❤️ ile @dawwwei tarafından oluşturuldu ve geliştirildi"
+                        }
+                    }
+                },
                 "avatar": {
                     "name": "avatar",
                     "description": "Belirli bir üyenin avatarını belirli bir boyut ve formatta alın",
@@ -62,9 +82,14 @@
                     },
                     "responses": {
                         "embed": {
-                            "title": "{{member}} Avatarı"
+                            "title": "{{member}} Avatarı",
+                            "footer": {
+                                "defaultAvatar": "{{member}}'in varsayılan avatarı görüntüleniyor",
+                                "resolutionAndExtension": "Çözünürlük: {{resolution}}px | Uzantı: .{{extension}}"
+                            }
                         },
-                        "defaultError": "{{member}} avatarını şu anda alamıyorum. Daha sonra tekrar deneyin..."
+                        "defaultError": "{{member}} avatarını şu anda alamıyorum. Daha sonra tekrar deneyin...",
+                        "noDynamicAvatarError": "Üye {{member}} dinamik bir avatara sahip değil. Statik avatarını gösteriyor."
                     }
                 }
             }
