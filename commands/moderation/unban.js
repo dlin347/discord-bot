@@ -8,7 +8,7 @@ module.exports = async function unbanMember(interaction) {
     const responses = localeFile.categories.moderation.commands.unban.responses;
     const invalidIDError = responses.invalidIDError;
     const fetched = await interaction.guild.bans.fetch(id).catch(async (e) => {
-        console.error("\x1b[31m" + '[/UNBAN] ' + e + "\x1b[0m");
+        console.error("\x1b[31m" + '[/UNBAN] ' + e.stack + "\x1b[0m");
         return interaction.reply({ content: invalidIDError, ephemeral: true });
     });
     const defaultError = responses.defaultError.replace('{{user}}', `<@${fetched.user.id}>`).replace('{{guild}}', interaction.guild.name);
@@ -36,7 +36,7 @@ module.exports = async function unbanMember(interaction) {
         if (e.name === "DiscordAPIError[10026]") {
             return interaction.reply({ content: invalidIDError, ephemeral: true });
         }
-        console.error("\x1b[31m" + '[/UNBAN] ' + e + "\x1b[0m");
+        console.error("\x1b[31m" + '[/UNBAN] ' + e.stack + "\x1b[0m");
         await interaction.reply({ content: defaultError, ephemeral: true });
     }
 }

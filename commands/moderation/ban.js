@@ -37,13 +37,13 @@ module.exports = async function banMember(interaction) {
             const content = responses.success.replace('{{member}}', member).replace('{{guild}}', interaction.guild.name).replace('{{reason}}', reason);
             await interaction.reply({ content: content, ephemeral: true });
             await member.send({ content: `You have been banned from ${interaction.guild.name} by @${interaction.user.tag}. Reason: ${englishReason}` }).catch(async (e) => {
-                console.error("\x1b[31m" + '[/BAN] ' + e + "\x1b[0m");
+                console.error("\x1b[31m" + '[/BAN] ' + e.stack + "\x1b[0m");
                 const unreachableError = responses.unreachableError.replace('{{member}}', member);
                 await interaction.followUp({ content: unreachableError, ephemeral: true });
             });
         });
     } catch (e) {
-        console.error("\x1b[31m" + '[/BAN] ' + e + "\x1b[0m");
+        console.error("\x1b[31m" + '[/BAN] ' + e.stack + "\x1b[0m");
         await interaction.reply({ content: defaultError, ephemeral: true });
     }
 }

@@ -16,9 +16,8 @@ module.exports = async function memberInformation(interaction) {
         const premiumSinceTimestamp = member.premiumSinceTimestamp ? Math.floor(member.premiumSinceTimestamp / 1000) : null;
         const premiumSince = premiumSinceTimestamp ? responsesEmbed.since.replace('{{timestamp}}', `<t:${premiumSinceTimestamp}:F> (<t:${premiumSinceTimestamp}:R>)`) : responsesEmbed.no;
         const isBot = member.user.bot ? responsesEmbed.yes : responsesEmbed.no;
-        const perms = await limit(member.permissions.toArray().map(permission => permissions[permission]).join(', '), 1018);
         const roles = await limit(member.roles.cache.map(role => role.name === '@everyone' ? role.name : '@' + role.name).join(', '), 1000);
-        const avatar = member.user.avatarURL({ dynamic: true, size: 4096 }) || member.user.defaultAvatarURL;
+        const avatar = member.user.avatarURL({ forceStatic: false, size: 4096 }) || member.user.defaultAvatarURL;
 
         const embed = new EmbedBuilder()
             .setColor('#181A1C')
@@ -33,15 +32,14 @@ module.exports = async function memberInformation(interaction) {
                 { name: responsesEmbed.joinedAt, value: `<t:${joinedTimestamp}:F> (<t:${joinedTimestamp}:R>)` },
                 { name: responsesEmbed.booster, value: premiumSince },
                 { name: responsesEmbed.isBot, value: isBot },
-                { name: responsesEmbed.roles.replace('{{amount}}', member.roles.cache.size), value: '```' + roles + '```' },
-                { name: responsesEmbed.permissions, value: '```' + perms + '```' }
+                { name: responsesEmbed.roles.replace('{{amount}}', member.roles.cache.size), value: '```' + roles + '```' }
             );
 
         await interaction.reply({ embeds: [embed], ephemeral: true });
         console.log("\x1b[33m" + `<<@${interaction.user.username}>> HAS SUCCESSFULLY USED <</MEMBER>> IN (<<${interaction.guild.name}>>)` + "\x1b[0m");
 
     } catch (e) {
-        console.error("\x1b[31m" + '[/MEMBER] ' + e + "\x1b[0m");
+        console.error("\x1b[31m" + '[/MEMBER] ' + e.stack + "\x1b[0m");
         await interaction.reply({ content: defaultError, ephemeral: true });
     }
 }

@@ -46,7 +46,7 @@ module.exports = async function slowmodeChannel(interaction) {
             await interaction.reply({ content: content, ephemeral: true });
         });
     } catch (e) {
-        console.error("\x1b[31m" + '[/SLOWMODE] ' + e + "\x1b[0m");
+        console.error("\x1b[31m" + '[/SLOWMODE] ' + e.stack + "\x1b[0m");
         await interaction.reply({ content: defaultError, ephemeral: true });
     }
 }

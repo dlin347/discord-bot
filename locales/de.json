@@ -11,7 +11,7 @@
                     "name": "ping",
                     "description": "Erhalte die Latenz des Bots",
                     "responses": {
-                        "success": "Pong! Meine Latenz beträgt {{ping}}ms",
+                        "success": "Pong! Meine Latenz beträgt {{ping}} ms",
                         "defaultError": "Ich kann meine Latenz momentan nicht abrufen... Versuche es später noch einmal"
                     }
                 },
@@ -50,15 +50,18 @@
                         "embed": {
                             "title": "Informationen von {{bot}}",
                             "username": "Benutzername",
+                            "nickname": "Spitzname",
+                            "none": "Keine",
                             "createdAt": "Erstellungsdatum des Kontos",
+                            "joinedAt": "Beitrittsdatum zum Server",
                             "ping": "Latenz",
-                            "shards": "Shards",
                             "uptime": "Betriebszeit",
                             "users": "Anzahl der Benutzer",
                             "guilds": "Anzahl der Server",
                             "channels": "Anzahl der Kanäle",
                             "numberCommands": "Anzahl der Befehle",
                             "help": "Hilfe",
+                            "roles": "Rollen ({{amount}})",
                             "createdAndDeveloped": "Erstellt und entwickelt mit ❤️ von @dawwwei"
                         },
                         "defaultError": "Ich kann meine Informationen gerade nicht abrufen. Versuche es später noch einmal..."

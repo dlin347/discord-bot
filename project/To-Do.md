@@ -34,6 +34,7 @@
 - [ ] Add the bot to some websites such as top.gg (read requirements)
 - [ ] Find a way to optimize translation
 - [ ] Integration with a website????
+- [ ] Sharding > 2500
 
 ```
 Files to modify if there is an expansion of languages:

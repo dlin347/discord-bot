@@ -11,7 +11,7 @@
                     "name": "ping",
                     "description": "Obtenez la latence du bot",
                     "responses": {
-                        "success": "Pong! Ma latence est de {{ping}}ms",
+                        "success": "Pong! Ma latence est de {{ping}} ms",
                         "defaultError": "Je ne peux pas obtenir ma latence pour le moment... Réessayez plus tard"
                     }
                 },
@@ -50,15 +50,18 @@
                         "embed": {
                             "title": "Informations sur {{bot}}",
                             "username": "Nom d'utilisateur",
+                            "nickname": "Surnom",
+                            "none": "Aucun",
                             "createdAt": "Date de création du compte",
+                            "joinedAt": "Date d'Adhésion au Serveur",
                             "ping": "Latence",
-                            "shards": "Shards",
                             "uptime": "Temps d'activité",
                             "users": "Nombre d'utilisateurs",
                             "guilds": "Nombre de serveurs",
                             "channels": "Nombre de canaux",
                             "numberCommands": "Nombre de commandes",
                             "help": "Aide",
+                            "roles": "Rôles ({{amount}})",
                             "createdAndDeveloped": "Créé et développé avec ❤️ par @dawwwei"
                         },
                         "defaultError": "Je ne peux pas obtenir mes informations pour le moment. Veuillez réessayer plus tard..."

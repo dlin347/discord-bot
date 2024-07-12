@@ -41,7 +41,7 @@ module.exports = async function avatarMember(interaction) {
         await interaction.reply({ content: content, embeds: [embed], ephemeral: true });
         console.log("\x1b[33m" + `<<@${interaction.user.username}>> HAS SUCCESSFULLY USED <</AVATAR>> IN (<<${interaction.guild.name}>>)` + "\x1b[0m");
     } catch (e) {
-        console.error("\x1b[31m" + '[/AVATAR] ' + e + "\x1b[0m");
+        console.error("\x1b[31m" + '[/AVATAR] ' + e.stack + "\x1b[0m");
         await interaction.reply({ content: defaultError, ephemeral: true });
     }
 }

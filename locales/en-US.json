@@ -11,7 +11,7 @@
                     "name": "ping",
                     "description": "Get the bot's latency",
                     "responses": {
-                        "success": "Pong! My latency is {{ping}}ms",
+                        "success": "Pong! My latency is {{ping}} ms",
                         "defaultError": "I can't get my latency right now... Try again later"
                     }
                 },
@@ -50,15 +50,18 @@
                         "embed": {
                             "title": "{{bot}}'s Information",
                             "username": "Username",
+                            "nickname": "Nickname",
+                            "none": "None",
                             "createdAt": "Account Creation Date",
+                            "joinedAt": "Server Join Date",
                             "ping": "Latency",
-                            "shards": "Shards",
                             "uptime": "Uptime",
                             "users": "Number of Users",
                             "guilds": "Number of Servers",
                             "channels": "Number of Channels",
                             "numberCommands": "Number of Commands",
                             "help": "Help",
+                            "roles": "Roles ({{amount}})",
                             "createdAndDeveloped": "Created and developed with ❤️ by @dawwwei"
                         },
                         "defaultError": "I can't get my information right now. Try again later..."

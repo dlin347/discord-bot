@@ -11,7 +11,7 @@
                     "name": "ping",
                     "description": "Botun gecikmesini öğren",
                     "responses": {
-                        "success": "Pong! Gecikmem {{ping}}ms",
+                        "success": "Pong! Gecikmem {{ping}} ms",
                         "defaultError": "Şu anda gecikmemi öğrenemiyorum... Lütfen daha sonra tekrar deneyin"
                     }
                 },
@@ -50,15 +50,18 @@
                         "embed": {
                             "title": "{{bot}}'ın Bilgileri",
                             "username": "Kullanıcı Adı",
+                            "nickname": "Takma Ad",
+                            "none": "Yok",
                             "createdAt": "Hesap Oluşturma Tarihi",
+                            "joinedAt": "Sunucuya Katılma Tarihi",
                             "ping": "Gecikme",
-                            "shards": "Shards",
                             "uptime": "Zaman açık",
                             "users": "Kullanıcı Sayısı",
                             "guilds": "Sunucu Sayısı",
                             "channels": "Kanal Sayısı",
                             "numberCommands": "Komut Sayısı",
                             "help": "Yardım",
+                            "roles": "Roller ({{amount}})",
                             "createdAndDeveloped": "❤️ ile @dawwwei tarafından oluşturuldu ve geliştirildi"
                         }
                     }

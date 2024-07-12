@@ -31,7 +31,7 @@ module.exports = async function unlockChannel(interaction) {
             await interaction.reply({ content: content, ephemeral: true })
         })
     } catch (e) {
-        console.error("\x1b[31m" + '[/UNLOCK] ' + e + "\x1b[0m");
+        console.error("\x1b[31m" + '[/UNLOCK] ' + e.stack + "\x1b[0m");
         await interaction.reply({ content: defaultError, ephemeral: true });
     }
 }
