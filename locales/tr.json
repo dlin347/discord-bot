@@ -245,6 +245,26 @@
                         "sameSlowmodeError": "{{channel}} kanalının yavaş modu zaten {{time}} olarak ayarlanmış",
                         "exceededTimeError": "Yavaş mod süresi maksimum izin verilen süreyi (6 saat) aşıyor"
                     }
+                },
+                "warn": {
+                    "name": "warn",
+                    "description": "Sunucuda bir üyeyi uyar",
+                    "options": {
+                        "member": {
+                            "name": "üye",
+                            "description": "Uyarmak istediğiniz üye"
+                        },
+                        "reason": {
+                            "name": "sebep",
+                            "description": "Üyenin uyarılma nedeni"
+                        }
+                    },
+                    "responses": {
+                        "success": "{{member}} başarıyla uyarıldı: {{reason}}",
+                        "defaultError": "{{member}} kişisini {{guild}} sunucusunda uyarılamıyorum",
+                        "higherRoleError": "{{member}} kişisini {{guild}} sunucusunda uyarılamıyorum. Üyenin benimkinden daha yüksek bir rolü var",
+                        "unreachableError": "Uyarı doğrudan mesajı {{member}} kişisine gönderilemedi. Üye ulaşılamaz durumda"
+                    }
                 }
             }
         }

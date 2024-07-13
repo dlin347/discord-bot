@@ -8,6 +8,7 @@ const deleteMessages = require('./delete-messages.js');
 const lockChannel = require('./lock.js');
 const unlockChannel = require('./unlock.js');
 const slowmodeChannel = require('./slowmode.js');
+const warnMember = require('./warn.js');
 
 const locales = {
     de: require('../../locales/de.json'),
@@ -102,7 +103,6 @@ module.exports = {
                         })
                         .setMaxLength(256)
                 )
-
         )
         .addSubcommand(subcommand =>
             subcommand
@@ -167,7 +167,6 @@ module.exports = {
                             ru: locales.ru.categories.moderation.commands.ban.options.delete_messages.description
                         })
                         .setMaxLength(7)
-                        .setRequired(true)
                 )
                 .addStringOption(option =>
                     option
@@ -500,6 +499,71 @@ module.exports = {
                         .setMaxLength(256)
                 )
         )
+        .addSubcommand(subcommand =>
+            subcommand
+                .setName('warn')
+                .setNameLocalizations({
+                    de: locales.de.categories.moderation.commands.warn.name,
+                    fr: locales.fr.categories.moderation.commands.warn.name,
+                    "pt-BR": locales.pt.categories.moderation.commands.warn.name,
+                    "es-ES": locales.es.categories.moderation.commands.warn.name,
+                    tr: locales.tr.categories.moderation.commands.warn.name,
+                    ru: locales.ru.categories.moderation.commands.warn.name
+                })
+                .setDescription('Warn a member in the server')
+                .setDescriptionLocalizations({
+                    de: locales.de.categories.moderation.commands.warn.description,
+                    fr: locales.fr.categories.moderation.commands.warn.description,
+                    "pt-BR": locales.pt.categories.moderation.commands.warn.description,
+                    "es-ES": locales.es.categories.moderation.commands.warn.description,
+                    tr: locales.tr.categories.moderation.commands.warn.description,
+                    ru: locales.ru.categories.moderation.commands.warn.description
+                })
+                .addUserOption(option =>
+                    option
+                        .setName('member')
+                        .setNameLocalizations({
+                            de: locales.de.categories.moderation.commands.warn.options.member.name,
+                            fr: locales.fr.categories.moderation.commands.warn.options.member.name,
+                            "pt-BR": locales.pt.categories.moderation.commands.warn.options.member.name,
+                            "es-ES": locales.es.categories.moderation.commands.warn.options.member.name,
+                            tr: locales.tr.categories.moderation.commands.warn.options.member.name,
+                            ru: locales.ru.categories.moderation.commands.warn.options.member.name
+                        })
+                        .setDescription('The member you want to warn')
+                        .setDescriptionLocalizations({
+                            de: locales.de.categories.moderation.commands.warn.options.member.description,
+                            fr: locales.fr.categories.moderation.commands.warn.options.member.description,
+                            "pt-BR": locales.pt.categories.moderation.commands.warn.options.member.description,
+                            "es-ES": locales.es.categories.moderation.commands.warn.options.member.description,
+                            tr: locales.tr.categories.moderation.commands.warn.options.member.description,
+                            ru: locales.ru.categories.moderation.commands.warn.options.member.description
+                        })
+                        .setRequired(true)
+                )
+                .addStringOption(option =>
+                    option
+                        .setName('reason')
+                        .setNameLocalizations({
+                            de: locales.de.categories.moderation.commands.warn.options.reason.name,
+                            fr: locales.fr.categories.moderation.commands.warn.options.reason.name,
+                            "pt-BR": locales.pt.categories.moderation.commands.warn.options.reason.name,
+                            "es-ES": locales.es.categories.moderation.commands.warn.options.reason.name,
+                            tr: locales.tr.categories.moderation.commands.warn.options.reason.name,
+                            ru: locales.ru.categories.moderation.commands.warn.options.reason.name
+                        })
+                        .setDescription('The reason of warning the member')
+                        .setDescriptionLocalizations({
+                            de: locales.de.categories.moderation.commands.warn.options.reason.description,
+                            fr: locales.fr.categories.moderation.commands.warn.options.reason.description,
+                            "pt-BR": locales.pt.categories.moderation.commands.warn.options.reason.description,
+                            "es-ES": locales.es.categories.moderation.commands.warn.options.reason.description,
+                            tr: locales.tr.categories.moderation.commands.warn.options.reason.description,
+                            ru: locales.ru.categories.moderation.commands.warn.options.reason.description
+                        })
+                        .setMaxLength(256)
+                )
+        )
         .setDMPermission(false),
     async execute(interaction) {
         if (interaction.commandName === 'moderation') {
@@ -525,6 +589,9 @@ module.exports = {
                     break;
                 case 'slowmode':
                     await slowmodeChannel(interaction);
+                    break;
+                case 'warn':
+                    await warnMember(interaction);
                     break;
             }
         }

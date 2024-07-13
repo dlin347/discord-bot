@@ -146,7 +146,7 @@
                         "noPermissionsError": "Não posso banir {{member}} de {{guild}}. Certifique-se de que eu tenho a permissão `BAN_MEMBERS`",
                         "higherRoleError": "Não posso banir {{member}} de {{guild}}. Certifique-se de que meu cargo é superior ao do membro",
                         "unreachableError": "A mensagem direta de banimento não pôde ser enviada a {{member}}. O membro está inacessível",
-                        "invalidFormatError":"O formato de tempo é inválido. Por favor, use um formato de tempo válido, por exemplo: 1s, 1m, 1h",
+                        "invalidFormatError": "O formato de tempo é inválido. Por favor, use um formato de tempo válido, por exemplo: 1s, 1m, 1h",
                         "exceededTimeError": "O tempo de exclusão de mensagens excede o máximo permitido (7 dias)"
                     }
                 },
@@ -245,6 +245,26 @@
                         "invalidFormatError": "O formato de tempo é inválido. Por favor, use um formato de tempo válido, por exemplo: 1s, 1m, 1h",
                         "sameSlowmodeError": "O modo lento de {{channel}} já está definido para {{time}}",
                         "exceededTimeError": "O tempo do modo lento excede o máximo permitido (6 horas)"
+                    }
+                },
+                "warn": {
+                    "name": "warn",
+                    "description": "Avisar um membro no servidor",
+                    "options": {
+                        "member": {
+                            "name": "membro",
+                            "description": "O membro que você deseja avisar"
+                        },
+                        "reason": {
+                            "name": "razão",
+                            "description": "A razão para avisar o membro"
+                        }
+                    },
+                    "responses": {
+                        "success": "O membro {{member}} foi avisado com sucesso por: {{reason}}",
+                        "defaultError": "Não posso avisar {{member}} em {{guild}}",
+                        "higherRoleError": "Não posso avisar {{member}} em {{guild}}. O membro tem um cargo superior ao meu",
+                        "unreachableError": "A mensagem de aviso não pôde ser enviada para {{member}}. O membro está inalcançável"
                     }
                 }
             }

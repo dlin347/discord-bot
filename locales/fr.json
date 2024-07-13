@@ -246,6 +246,26 @@
                         "sameSlowmodeError": "Le mode lent de {{channel}} est déjà défini à {{time}}",
                         "exceededTimeError": "La durée du mode lent dépasse la limite maximale autorisée (6 heures)"
                     }
+                },
+                "warn": {
+                    "name": "warn",
+                    "description": "Avertir un membre sur le serveur",
+                    "options": {
+                        "member": {
+                            "name": "membre",
+                            "description": "Le membre que vous souhaitez avertir"
+                        },
+                        "reason": {
+                            "name": "raison",
+                            "description": "La raison de l'avertissement du membre"
+                        }
+                    },
+                    "responses": {
+                        "success": "Le membre {{member}} a été averti avec succès pour : {{reason}}",
+                        "defaultError": "Je ne peux pas avertir {{member}} dans {{guild}}",
+                        "higherRoleError": "Je ne peux pas avertir {{member}} dans {{guild}}. Le membre a un rôle supérieur au mien",
+                        "unreachableError": "Le message d'avertissement n'a pas pu être envoyé à {{member}}. Le membre est injoignable"
+                    }
                 }
             }
         }

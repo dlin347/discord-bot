@@ -1,4 +1,5 @@
 module.exports = async function convert(str) {
+    str = str.trim();
     if (str.toLowerCase().match(/(\d+)([smhdwy])/)) {
         const number = Number(str.slice(0, str.length - 1));
         const unit = str[str.length - 1];

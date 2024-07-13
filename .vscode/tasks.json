@@ -1,0 +1,17 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Watch index.js",
+            "type": "shell",
+            "command": "node",
+            "args": [
+                "--watch",
+                "index.js"
+            ],
+            "runOptions": {
+                "runOn": "folderOpen"
+            }
+        }
+    ]
+}

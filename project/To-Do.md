@@ -20,7 +20,7 @@
 - [x] Slowmode command
 - [x] Time function
 - [ ] Warn command
-- [ ] Modify delete messages option in ban command
+- [x] Modify delete messages option in ban command
 - [ ] Add more commands to other categories:
 - [x] Information ==> User information
 - Information ==> Guild information
@@ -36,8 +36,11 @@
 - [ ] Integration with a website????
 - [ ] Sharding > 2500
 - [ ] Translate permissions
-- [ ] Delete messages ban message
-- [ ] Ban regex failing
+- [ ] Set delete_messages from ban command non required
+- [ ] Fix ban and slowmode commands
+- [ ] Yourself, myself actions
+- [ ] Modify ban message with delete_message period
+- [ ] Finish fixing ban command
 
 ```
 Files to modify if there is an expansion of languages:

@@ -246,6 +246,26 @@
                         "sameSlowmodeError": "The slowmode of {{channel}} is already set to {{time}}",
                         "exceededTimeError": "The slowmode time exceeds the maximum allowed (6 hours)"
                     }
+                },
+                "warn": {
+                    "name": "warn",
+                    "description": "Warn a member in the server",
+                    "options": {
+                        "member": {
+                            "name": "member",
+                            "description": "The member you want to warn"
+                        },
+                        "reason": {
+                            "name": "reason",
+                            "description": "The reason for warning the member"
+                        }
+                    },
+                    "responses": {
+                        "success": "Successfully warned {{member}} for: {{reason}}",
+                        "defaultError": "I can't warn {{member}} in {{guild}}",
+                        "higherRoleError": "I can't warn {{member}} in {{guild}}. The member has a higher role than me",
+                        "unreachableError": "The warn direct message couldn't be sent to {{member}}. The member is unreachable"
+                    }
                 }
             }
         }

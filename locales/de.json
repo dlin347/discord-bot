@@ -246,6 +246,26 @@
                         "sameSlowmodeError": "Der Slowmode von {{channel}} ist bereits auf {{time}} gesetzt",
                         "exceededTimeError": "Die Slowmode-Zeit überschreitet das zulässige Maximum (6 Stunden)"
                     }
+                },
+                "warn": {
+                    "name": "warn",
+                    "description": "Verwarne ein Mitglied im Server",
+                    "options": {
+                        "member": {
+                            "name": "mitglied",
+                            "description": "Das Mitglied, das du verwarnen möchtest"
+                        },
+                        "reason": {
+                            "name": "grund",
+                            "description": "Der Grund für die Verwarnung des Mitglieds"
+                        }
+                    },
+                    "responses": {
+                        "success": "Das Mitglied {{member}} wurde erfolgreich verwarnt für: {{reason}}",
+                        "defaultError": "Ich kann {{member}} in {{guild}} nicht verwarnen",
+                        "higherRoleError": "Ich kann {{member}} in {{guild}} nicht verwarnen. Das Mitglied hat eine höhere Rolle als ich",
+                        "unreachableError": "Die Verwarnung konnte nicht an {{member}} gesendet werden. Das Mitglied ist nicht erreichbar"
+                    }
                 }
             }
         }

@@ -246,6 +246,26 @@
                         "sameSlowmodeError": "El modo lento de {{channel}} ya está establecido a {{time}}",
                         "exceededTimeError": "El tiempo del modo lento excede el máximo permitido (6 horas)"
                     }
+                },
+                "warn": {
+                    "name": "warn",
+                    "description": "Adverte a un miembro en el servidor",
+                    "options": {
+                        "member": {
+                            "name": "miembro",
+                            "description": "El miembro que deseas advertir"
+                        },
+                        "reason": {
+                            "name": "razón",
+                            "description": "La razón para advertir al miembro"
+                        }
+                    },
+                    "responses": {
+                        "success": "El miembro {{member}} ha sido advertido exitosamente por: {{reason}}",
+                        "defaultError": "No puedo advertir a {{member}} en {{guild}}",
+                        "higherRoleError": "No puedo advertir a {{member}} en {{guild}}. El miembro tiene un rol superior al mío",
+                        "unreachableError": "No se pudo enviar el mensaje de advertencia a {{member}}. El miembro no es alcanzable"
+                    }
                 }
             }
         }
