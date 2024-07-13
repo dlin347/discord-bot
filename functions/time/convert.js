@@ -15,6 +15,8 @@ module.exports = async function convert(str) {
                 return number * 604800000;
             case "y":
                 return number * 31556952000;
+            default:
+                return null;
         }
     } else {
         return null;

@@ -5,10 +5,12 @@ const { PermissionFlagsBits } = require('discord.js');
 
 module.exports = async function banMember(interaction) {
     const localeFile = await translation(interaction.locale);
-    const member = interaction.options.getMember('member');
     const responses = localeFile.categories.moderation.commands.ban.responses;
+    const member = interaction.options.getMember('member');
+    const time = interaction.options.getString('delete_messages');
+    const deleteMessages = (await convert(time) / 1000);
     const defaultError = responses.defaultError.replace('{{member}}', member).replace('{{guild}}', interaction.guild.name);
-    
+
     if (!interaction.member.permissions.has(PermissionFlagsBits.BanMembers)) {
         const message = await permissions(interaction.locale, 'BAN_MEMBERS');
         return interaction.reply({ content: message, ephemeral: true });
@@ -28,9 +30,18 @@ module.exports = async function banMember(interaction) {
         return interaction.reply({ content: higherRoleError, ephemeral: true });
     }
 
+    if (!deleteMessages && time[0] !== '0') {
+        const invalidFormatError = responses.invalidFormatError;
+        return interaction.reply({ content: invalidFormatError, ephemeral: true });
+    }
+
+    if (deleteMessages > 604800) {
+        const exceededTimeError = responses.exceededTimeError;
+        return interaction.reply({ content: exceededTimeError, ephemeral: true });
+    }
+
     const reason = interaction.options.getString('reason') || localeFile.categories.common.noReason;
     const englishReason = interaction.options.getString('reason') || "No reason provided";
-    const deleteMessages = ((await convert(interaction.options.getString('delete_messages'))) / 1000);
 
     try {
         await member.ban({ deleteMessageSeconds: deleteMessages, reason: englishReason }).then(async () => {

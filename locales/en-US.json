@@ -133,7 +133,7 @@
                         },
                         "delete_messages": {
                             "name": "delete_messages",
-                            "description": "Delete the member's messages from the past 7 days?"
+                            "description": "Period of time of the messages to delete"
                         },
                         "reason": {
                             "name": "reason",

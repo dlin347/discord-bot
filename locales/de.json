@@ -133,7 +133,7 @@
                         },
                         "delete_messages": {
                             "name": "nachrichten_löschen",
-                            "description": "Die Nachrichten des Mitglieds der letzten 7 Tage löschen?"
+                            "description": "Zeitspanne der zu löschenden Nachrichten"
                         },
                         "reason": {
                             "name": "grund",

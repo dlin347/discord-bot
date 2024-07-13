@@ -133,7 +133,7 @@
                         },
                         "delete_messages": {
                             "name": "eliminar_mensagens",
-                            "description": "Excluir as mensagens do membro dos últimos 7 dias?"
+                            "description": "Período de tempo das mensagens a serem excluídas"
                         },
                         "reason": {
                             "name": "razão",

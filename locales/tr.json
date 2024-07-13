@@ -132,7 +132,7 @@
                         },
                         "delete_messages": {
                             "name": "mesajları_sil",
-                            "description": "Üyenin son 7 gündeki mesajlarını silmek istiyor musunuz?"
+                            "description": "Silinecek mesajların zaman aralığı"
                         },
                         "reason": {
                             "name": "sebep",

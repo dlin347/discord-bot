@@ -36,6 +36,8 @@
 - [ ] Integration with a website????
 - [ ] Sharding > 2500
 - [ ] Translate permissions
+- [ ] Delete messages ban message
+- [ ] Ban regex failing
 
 ```
 Files to modify if there is an expansion of languages:
