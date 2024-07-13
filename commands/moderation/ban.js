@@ -1,5 +1,6 @@
 const translation = require('../../locales/other/translation.js');
 const permissions = require('../../locales/other/permissions.js');
+const convert = require('../../functions/time/convert.js');
 const { PermissionFlagsBits } = require('discord.js');
 
 module.exports = async function banMember(interaction) {
@@ -29,7 +30,7 @@ module.exports = async function banMember(interaction) {
 
     const reason = interaction.options.getString('reason') || localeFile.categories.common.noReason;
     const englishReason = interaction.options.getString('reason') || "No reason provided";
-    const deleteMessages = interaction.options.getBoolean('delete_messages') ? (60 * 60 * 24 * 7) : 0;
+    const deleteMessages = ((await convert(interaction.options.getString('delete_messages'))) / 1000);
 
     try {
         await member.ban({ deleteMessageSeconds: deleteMessages, reason: englishReason }).then(async () => {

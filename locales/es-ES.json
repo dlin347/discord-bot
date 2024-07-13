@@ -145,7 +145,9 @@
                         "defaultError": "No puedo banear a {{member}} de {{guild}}",
                         "noPermissionsError": "No puedo banear a {{member}} de {{guild}}. Asegúrate de que tengo el permiso `BAN_MEMBERS`",
                         "higherRoleError": "No puedo banear a {{member}} de {{guild}}. Asegúrate de que mi rol es superior al rol del miembro",
-                        "unreachableError": "El mensaje directo de baneo no pudo ser enviado a {{member}}. No se puede contactar con el miembro"
+                        "unreachableError": "El mensaje directo de baneo no pudo ser enviado a {{member}}. No se puede contactar con el miembro",
+                        "invalidFormatError": "El formato de tiempo es inválido. Por favor, usa un formato de tiempo válido, por ejemplo: 1s, 1m, 1h",
+                        "exceededTimeError": "El tiempo de eliminación de mensajes excede el máximo permitido (7 días)"
                     }
                 },
                 "unban": {

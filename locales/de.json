@@ -145,7 +145,9 @@
                         "defaultError": "Ich kann {{member}} nicht von {{guild}} bannen",
                         "noPermissionsError": "Ich kann {{member}} nicht von {{guild}} bannen. Stelle sicher, dass ich die Berechtigung `BAN_MEMBERS` habe",
                         "higherRoleError": "Ich kann {{member}} nicht von {{guild}} bannen. Stelle sicher, dass meine Rolle über der Rolle des Mitglieds ist",
-                        "unreachableError": "Die Direktnachricht zum Bannen konnte nicht an {{member}} gesendet werden. Das Mitglied ist nicht erreichbar"
+                        "unreachableError": "Die Direktnachricht zum Bannen konnte nicht an {{member}} gesendet werden. Das Mitglied ist nicht erreichbar",
+                        "invalidFormatError": "Das Zeitformat ist ungültig. Bitte verwende ein gültiges Zeitformat, z.B.: 1s, 1m, 1h",
+                        "exceededTimeError": "Die Zeit für das Löschen von Nachrichten überschreitet die zulässige Höchstdauer (7 Tage)"
                     }
                 },
                 "unban": {

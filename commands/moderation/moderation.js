@@ -146,7 +146,7 @@ module.exports = {
                         })
                         .setRequired(true)
                 )
-                .addBooleanOption(option =>
+                .addStringOption(option =>
                     option
                         .setName('delete_messages')
                         .setNameLocalizations({
@@ -166,6 +166,7 @@ module.exports = {
                             tr: locales.tr.categories.moderation.commands.ban.options.delete_messages.description,
                             ru: locales.ru.categories.moderation.commands.ban.options.delete_messages.description
                         })
+                        .setMaxLength(7)
                         .setRequired(true)
                 )
                 .addStringOption(option =>
@@ -451,6 +452,7 @@ module.exports = {
                             tr: locales.tr.categories.moderation.commands.slowmode.options.time.description,
                             ru: locales.ru.categories.moderation.commands.slowmode.options.time.description
                         })
+                        .setMaxLength(6)
                         .setRequired(true)
                 )
                 .addChannelOption(option =>

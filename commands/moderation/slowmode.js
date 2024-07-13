@@ -16,7 +16,7 @@ module.exports = async function slowmodeChannel(interaction) {
         return interaction.reply({ content: message, ephemeral: true });
     }
 
-    if (!timeS) {
+    if (!timeS && timeS !== 0) {
         const invalidFormatError = responses.invalidFormatError;
         return interaction.reply({ content: invalidFormatError, ephemeral: true });
     }

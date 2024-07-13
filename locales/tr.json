@@ -144,7 +144,9 @@
                         "defaultError": "{{member}} üyesini {{guild}} sunucusundan yasaklayamıyorum",
                         "noPermissionsError": "{{member}} üyesini {{guild}} sunucusundan yasaklayamıyorum. `BAN_MEMBERS` iznine sahip olduğumdan emin olun",
                         "higherRoleError": "{{member}} üyesini {{guild}} sunucusundan yasaklayamıyorum. Rolümün üyenin rolünden yüksek olduğundan emin olun",
-                        "unreachableError": "{{member}} üyesine yasaklama mesajı gönderilemedi. Üyeye ulaşılamıyor"
+                        "unreachableError": "{{member}} üyesine yasaklama mesajı gönderilemedi. Üyeye ulaşılamıyor",
+                        "invalidFormatError": "Geçersiz bir zaman formatı belirtildi. Lütfen geçerli bir zaman formatı belirtin, örneğin: 1s, 1m, 1h",
+                        "exceededTimeError": "Yasaklama süresi maksimum izin verilen süreyi (7 gün) aşıyor"
                     }
                 },
                 "unban": {

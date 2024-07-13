@@ -145,7 +145,9 @@
                         "defaultError": "Não posso banir {{member}} de {{guild}}",
                         "noPermissionsError": "Não posso banir {{member}} de {{guild}}. Certifique-se de que eu tenho a permissão `BAN_MEMBERS`",
                         "higherRoleError": "Não posso banir {{member}} de {{guild}}. Certifique-se de que meu cargo é superior ao do membro",
-                        "unreachableError": "A mensagem direta de banimento não pôde ser enviada a {{member}}. O membro está inacessível"
+                        "unreachableError": "A mensagem direta de banimento não pôde ser enviada a {{member}}. O membro está inacessível",
+                        "invalidFormatError":"O formato de tempo é inválido. Por favor, use um formato de tempo válido, por exemplo: 1s, 1m, 1h",
+                        "exceededTimeError": "O tempo de exclusão de mensagens excede o máximo permitido (7 dias)"
                     }
                 },
                 "unban": {

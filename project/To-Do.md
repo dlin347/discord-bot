@@ -24,7 +24,7 @@
 - [ ] Add more commands to other categories:
 - [x] Information ==> User information
 - Information ==> Guild information
-- Information ==> Bot information
+- [x] Information ==> Bot information
 - [x] Information ==> Avatar
 - [ ] Filter by name when unbanning the user (problem: og tags)
 - [ ] Integrate mongodb or locally hosted database
@@ -35,6 +35,7 @@
 - [ ] Find a way to optimize translation
 - [ ] Integration with a website????
 - [ ] Sharding > 2500
+- [ ] Translate permissions
 
 ```
 Files to modify if there is an expansion of languages:

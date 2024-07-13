@@ -17,6 +17,7 @@ module.exports = async function memberInformation(interaction) {
         const premiumSince = premiumSinceTimestamp ? responsesEmbed.since.replace('{{timestamp}}', `<t:${premiumSinceTimestamp}:F> (<t:${premiumSinceTimestamp}:R>)`) : responsesEmbed.no;
         const isBot = member.user.bot ? responsesEmbed.yes : responsesEmbed.no;
         const roles = await limit(member.roles.cache.map(role => role.name === '@everyone' ? role.name : '@' + role.name).join(', '), 1000);
+        const perms = await limit(interaction.guild.members.me.permissions.toArray().map(permission => permissions[permission]).join(', '), 1018);
         const avatar = member.user.avatarURL({ forceStatic: false, size: 4096 }) || member.user.defaultAvatarURL;
 
         const embed = new EmbedBuilder()
@@ -32,7 +33,8 @@ module.exports = async function memberInformation(interaction) {
                 { name: responsesEmbed.joinedAt, value: `<t:${joinedTimestamp}:F> (<t:${joinedTimestamp}:R>)` },
                 { name: responsesEmbed.booster, value: premiumSince },
                 { name: responsesEmbed.isBot, value: isBot },
-                { name: responsesEmbed.roles.replace('{{amount}}', member.roles.cache.size), value: '```' + roles + '```' }
+                { name: responsesEmbed.roles.replace('{{amount}}', member.roles.cache.size), value: '```' + roles + '```' },
+                { name: responsesEmbed.permissions, value: '```' + perms + '```' }
             );
 
         await interaction.reply({ embeds: [embed], ephemeral: true });
