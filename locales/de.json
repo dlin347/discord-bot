@@ -141,7 +141,7 @@
                         }
                     },
                     "responses": {
-                        "success": "Das Mitglied {{member}} wurde erfolgreich von {{guild}} gebannt. Grund: {{reason}}",
+                        "success": "Das Mitglied {{member}} wurde erfolgreich von {{guild}} gebannt. Grund: {{reason}}. Die Nachrichten des Mitglieds vom letzten {{time}} wurden gelöscht",
                         "defaultError": "Ich kann {{member}} nicht von {{guild}} bannen",
                         "noPermissionsError": "Ich kann {{member}} nicht von {{guild}} bannen. Stelle sicher, dass ich die Berechtigung `BAN_MEMBERS` habe",
                         "higherRoleError": "Ich kann {{member}} nicht von {{guild}} bannen. Stelle sicher, dass meine Rolle über der Rolle des Mitglieds ist",

@@ -141,7 +141,7 @@
                         }
                     },
                     "responses": {
-                        "success": "Le membre {{member}} a été banni de {{guild}} avec succès. Raison: {{reason}}",
+                        "success": "Le membre {{member}} a été banni de {{guild}} avec succès. Raison: {{reason}}. Les messages du membre de la dernière {{time}} ont été supprimés",
                         "defaultError": "Je ne peux pas bannir {{member}} de {{guild}}",
                         "noPermissionsError": "Je ne peux pas bannir {{member}} de {{guild}}. Assurez-vous que j'ai la permission `BAN_MEMBERS`",
                         "higherRoleError": "Je ne peux pas bannir {{member}} de {{guild}}. Assurez-vous que mon rôle est supérieur à celui du membre",

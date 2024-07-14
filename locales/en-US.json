@@ -141,7 +141,7 @@
                         }
                     },
                     "responses": {
-                        "success": "Successfully banned {{member}} from {{guild}}. Reason: {{reason}}",
+                        "success": "Successfully banned {{member}} from {{guild}}. Reason: {{reason}}. Deleted messages of the member from the last {{age}}",
                         "defaultError": "I can't ban {{member}} from {{guild}}",
                         "noPermissionsError": "I can't ban {{member}} from {{guild}}. Make sure I have `BAN_MEMBERS` permission",
                         "higherRoleError": "I can't ban {{member}} from {{guild}}. Make sure my role is higher than the member's role",

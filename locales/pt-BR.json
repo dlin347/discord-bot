@@ -141,7 +141,7 @@
                         }
                     },
                     "responses": {
-                        "success": "O membro {{member}} foi banido de {{guild}} com sucesso. Razão: {{reason}}",
+                        "success": "O membro {{member}} foi banido de {{guild}} com sucesso. Razão: {{reason}}. As mensagens do membro do último {{time}} foram excluídas",
                         "defaultError": "Não posso banir {{member}} de {{guild}}",
                         "noPermissionsError": "Não posso banir {{member}} de {{guild}}. Certifique-se de que eu tenho a permissão `BAN_MEMBERS`",
                         "higherRoleError": "Não posso banir {{member}} de {{guild}}. Certifique-se de que meu cargo é superior ao do membro",

@@ -6,7 +6,8 @@ const { PermissionFlagsBits } = require('discord.js');
 module.exports = async function slowmodeChannel(interaction) {
     const localeFile = await translation(interaction.locale);
     const time = interaction.options.getString('time');
-    const timeS = ((await convert(time) ? await convert(time) : NaN) / 1000); //Null / 1000 = 0???
+    const convertTime = await convert(time);
+    const timeS = ((convertTime == 0 || convertTime ? convertTime : NaN) / 1000);
     const channel = interaction.options.getChannel('channel') || interaction.channel;
     const responses = localeFile.categories.moderation.commands.slowmode.responses;
     const defaultError = responses.defaultError.replace('{{channel}}', `<#${channel.id}>`);
@@ -16,7 +17,7 @@ module.exports = async function slowmodeChannel(interaction) {
         return interaction.reply({ content: message, ephemeral: true });
     }
 
-    if (!timeS) {
+    if (!timeS && convertTime != 0) {
         const invalidFormatError = responses.invalidFormatError;
         return interaction.reply({ content: invalidFormatError, ephemeral: true });
     }

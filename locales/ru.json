@@ -141,7 +141,7 @@
                         }
                     },
                     "responses": {
-                        "success": "Участник {{member}} был успешно забанен на {{guild}}. Причина: {{reason}}",
+                        "success": "Участник {{member}} был успешно забанен на {{guild}}. Причина: {{reason}}. Сообщения пользователя за последнее {{time}} были удалены.",
                         "defaultError": "Не могу забанить {{member}} на {{guild}}",
                         "noPermissionsError": "Не могу забанить {{member}} на {{guild}}. Убедитесь, что у меня есть разрешение `BAN_MEMBERS`",
                         "higherRoleError": "Не могу забанить {{member}} на {{guild}}. Убедитесь, что моя роль выше роли участника",

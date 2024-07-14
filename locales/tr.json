@@ -140,7 +140,7 @@
                         }
                     },
                     "responses": {
-                        "success": "Üye {{member}} başarıyla {{guild}} sunucusundan yasaklandı. Sebep: {{reason}}",
+                        "success": "Üye {{member}} başarıyla {{guild}} sunucusundan yasaklandı. Sebep: {{reason}}. Üyenin son {{time}}'a ait mesajları silindi.",
                         "defaultError": "{{member}} üyesini {{guild}} sunucusundan yasaklayamıyorum",
                         "noPermissionsError": "{{member}} üyesini {{guild}} sunucusundan yasaklayamıyorum. `BAN_MEMBERS` iznine sahip olduğumdan emin olun",
                         "higherRoleError": "{{member}} üyesini {{guild}} sunucusundan yasaklayamıyorum. Rolümün üyenin rolünden yüksek olduğundan emin olun",

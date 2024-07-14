@@ -141,7 +141,7 @@
                         }
                     },
                     "responses": {
-                        "success": "El miembro {{member}} ha sido baneado de {{guild}} con éxito. Razón: {{reason}}",
+                        "success": "El miembro {{member}} ha sido baneado de {{guild}} con éxito. Razón: {{reason}}. Se han eliminado los mensajes del miembro de los últimos {{time}}",
                         "defaultError": "No puedo banear a {{member}} de {{guild}}",
                         "noPermissionsError": "No puedo banear a {{member}} de {{guild}}. Asegúrate de que tengo el permiso `BAN_MEMBERS`",
                         "higherRoleError": "No puedo banear a {{member}} de {{guild}}. Asegúrate de que mi rol es superior al rol del miembro",
@@ -167,7 +167,7 @@
                         "success": "El usuario {{user}} ha sido desbaneado de {{guild}} con éxito. Razón: {{reason}}",
                         "defaultError": "No puedo desbanear a {{user}} de {{guild}}",
                         "noPermissionsError": "No puedo desbanear a {{user}} de {{guild}}. Asegúrate de que tengo el permiso `BAN_MEMBERS`",
-                        "invalidIDError": "La ID proporcionada es inválida o no hay ningún usuario prohibido con esa ID en el servidor"
+                        "invalidIDError": "La ID proporcionada es inválida o no hay ningún usuario baneado con esa ID en el servidor"
                     }
                 },
                 "delete_messages": {
