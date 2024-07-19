@@ -14,11 +14,26 @@ module.exports = async function serverInformation(interaction) {
         const verificationLevel = responsesEmbed.vLevel[guild.verificationLevel];
         const boostTier = responsesEmbed.bTier[guild.premiumTier];
         const members = guild.members.cache;
-        const membersMsg;
+        const usersMsg = responsesEmbed.usersMsg
+            .replace('{{totalmembers}}', members.size)
+            .replace('{{active}}', members.filter(member => member.presence.status !== 'offline').size) // To fix, returning null/undefined
+            .replace('{{humans}}', members.filter(member => member.user.bot).size)
+            .replace('{{bots}}', members.filter(member => !member.user.bot).size);
         const channels = guild.channels.cache;
-        const channelsMsg;
+        const channelsMsg = responsesEmbed.channelsMsg
+            .replace('{{totalchannels}}', channels.size)
+            .replace('{{text}}', channels.filter(channel => channel.type === 0).size)
+            .replace('{{voice}}', channels.filter(channel => channel.type === 2).size)
+            .replace('{{categories}}', channels.filter(channel => channel.type === 4).size);
         const emojis = guild.emojis.cache;
-        const emojisMsg;
+        const emojisMsg = responsesEmbed.emojisMsg
+            .replace('{{totalemojis}}', emojis.size)
+            .replace('{{static}}', emojis.filter(emoji => !emoji.animated).size)
+            .replace('{{animated}}', emojis.filter(emoji => emoji.animated).size);
+        const rulesChannel = guild.rulesChannel || responsesEmbed.unset;
+        const afkChannel = guild.afkChannel || responsesEmbed.unset;
+        const systemChannel = guild.systemChannel || responsesEmbed.unset;
+        const roles = await limit(guild.roles.cache.map(role => role.name === '@everyone' ? role.name : '@' + role.name).join(', '), 1000);
 
         const embed = new EmbedBuilder()
             .setColor('#181A1C')
@@ -32,38 +47,17 @@ module.exports = async function serverInformation(interaction) {
                 { name: responsesEmbed.createdAt, value: `<t:${createdTimestamp}:F> (<t:${createdTimestamp}:R>)` },
                 { name: responsesEmbed.verificationLevel, value: verificationLevel },
                 { name: responsesEmbed.boostTier, value: boostTier },
-                { name: responsesEmbed.boosters, value: guild.premiumSubscriptionCount },
-                { name: responsesEmbed.members, value:  },
-                { name: responsesEmbed.users, value:  },
-                { name: responsesEmbed.channels, value:  },
-                { name: responsesEmbed.rulesChannel, value:  },
-                { name: responsesEmbed.emojis, value:  },
-                { name: responsesEmbed.roles, value:  },
+                { name: responsesEmbed.boosts, value: guild.premiumSubscriptionCount.toString() },
+                { name: responsesEmbed.rulesChannel, value: rulesChannel, inline: true },
+                { name: responsesEmbed.afkChannel, value: afkChannel, inline: true },
+                { name: responsesEmbed.systemChannel, value: systemChannel, inline: true },
+                { name: responsesEmbed.users, value: usersMsg, inline: true },
+                { name: responsesEmbed.channels, value: channelsMsg, inline: true },
+                { name: responsesEmbed.emojis, value: emojisMsg, inline: true },
+                { name: responsesEmbed.roles.replace('{{amount}}', guild.roles.cache.size), value: '```' + roles + '```' }
             );
 
         await interaction.reply({ embeds: [embed], ephemeral: true });
-
-        console.log(interaction.guild.name);
-        console.log(interaction.guild.id);
-        console.log(interaction.guild.ownerId);
-        console.log(interaction.guild.preferredLocale);
-        console.log(interaction.guild.createdTimestamp);
-        console.log(interaction.guild.verificationLevel);
-        console.log(interaction.guild.premiumTier);
-        console.log(interaction.guild.premiumSubscriptionCount);
-        console.log(interaction.guild.members.cache.size);
-        console.log(interaction.guild.members.cache.filter(member => !member.user.bot).size);
-        console.log(interaction.guild.members.cache.filter(member => member.user.bot).size);
-        console.log(interaction.guild.members.cache.filter(member => member.user.presence.status === 'online').size);
-        console.log(interaction.guild.channels.cache.size);
-        console.log(interaction.guild.channels.cache.filter(channel => channel.type === 0).size); //TXT
-        console.log(interaction.guild.channels.cache.filter(channel => channel.type === 2).size); //VC
-        console.log(interaction.guild.channels.cache.filter(channel => channel.type === 4).size); //CAT
-        console.log(interaction.guild.rulesChannel || 'Unset');
-        console.log(interaction.guild.emojis.cache.size);
-        console.log(interaction.guild.emojis.cache.filter(emoji => !emoji.animated).size);
-        console.log(interaction.guild.emojis.cache.filter(emoji => emoji.animated).size);
-
         console.log("\x1b[33m" + `<<@${interaction.user.username}>> HAS SUCCESSFULLY USED <</SERVER>> IN (<<${interaction.guild.name}>>)` + "\x1b[0m");
     } catch (e) {
         console.error("\x1b[31m" + '[/SERVER] ' + e.stack + "\x1b[0m");
