@@ -13,10 +13,6 @@ module.exports = async function kickMember(interaction) {
         return interaction.reply({ content: message, ephemeral: true });
     }
 
-    if (!member.kickable) {
-        return interaction.reply({ content: defaultError, ephemeral: true });
-    }
-
     if (!interaction.guild.members.me.permissions.has(PermissionFlagsBits.KickMembers)) {
         const noPermissionsError = responses.noPermissionsError.replace('{{member}}', member).replace('{{guild}}', interaction.guild.name);
         return interaction.reply({ content: noPermissionsError, ephemeral: true });
@@ -25,6 +21,10 @@ module.exports = async function kickMember(interaction) {
     if (interaction.guild.members.me.roles.highest.comparePositionTo(member.roles.highest) <= 0) {
         const higherRoleError = responses.higherRoleError.replace('{{member}}', member).replace('{{guild}}', interaction.guild.name);
         return interaction.reply({ content: higherRoleError, ephemeral: true });
+    }
+
+    if (!member.kickable || interaction.user.id === member.id) {
+        return interaction.reply({ content: defaultError, ephemeral: true });
     }
 
     const reason = interaction.options.getString('reason') || localeFile.categories.common.noReason;

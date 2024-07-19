@@ -1,5 +1,4 @@
-let deleteMessages;
-let deleteMessagesString;
+let deleteMessages, deleteMessagesString;
 const translation = require('../../locales/other/translation.js');
 const permissions = require('../../locales/other/permissions.js');
 const convert = require('../../functions/time/convert.js');
@@ -18,10 +17,6 @@ module.exports = async function banMember(interaction) {
         return interaction.reply({ content: message, ephemeral: true });
     }
 
-    if (!member.bannable) {
-        return interaction.reply({ content: defaultError, ephemeral: true });
-    }
-
     if (!interaction.guild.members.me.permissions.has(PermissionFlagsBits.BanMembers)) {
         const noPermissionsError = responses.noPermissionsError.replace('{{member}}', member).replace('{{guild}}', interaction.guild.name);
         return interaction.reply({ content: noPermissionsError, ephemeral: true });
@@ -30,6 +25,10 @@ module.exports = async function banMember(interaction) {
     if (interaction.guild.members.me.roles.highest.comparePositionTo(member.roles.highest) <= 0) {
         const higherRoleError = responses.higherRoleError.replace('{{member}}', member).replace('{{guild}}', interaction.guild.name);
         return interaction.reply({ content: higherRoleError, ephemeral: true });
+    }
+
+    if (!member.bannable || interaction.user.id === member.id) {
+        return interaction.reply({ content: defaultError, ephemeral: true });
     }
 
     if (convertTime) {

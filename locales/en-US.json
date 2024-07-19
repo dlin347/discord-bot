@@ -95,6 +95,47 @@
                         "defaultError": "I can't get the avatar of {{member}} right now. Try again later...",
                         "noDynamicAvatarError": "The member {{member}} doesn't have a dynamic avatar. Displaying a static avatar instead..."
                     }
+                },
+                "server": {
+                    "name": "server",
+                    "description": "Get information of the server",
+                    "responses": {
+                        "embed": {
+                            "title": "Server Information",
+                            "name": "Name",
+                            "owner": "Owner",
+                            "region": "Region",
+                            "createdAt": "Creation Date",
+                            "verificationLevel": "Verification Level",
+                            "default": "Default",
+                            "explicit": "Explicit",
+                            "safe": "Safe",
+                            "ageRestricted": "Age Restricted",
+                            "boostTier": "Boost Tier",
+                            "none": "None",
+                            "tier1": "Tier 1",
+                            "tier2": "Tier 2",
+                            "tier3": "Tier 3",
+                            "boosters": "Number of Boosters",
+                            "members": "Members",
+                            "totalMembers": "Total: {{totalmembers}}",
+                            "active": "Active: {{active}}",
+                            "humans": "Humans: {{humans}}",
+                            "bots": "Bots: {{bots}}",
+                            "channels": "Channels",
+                            "text": "Text: {{text}}",
+                            "voice": "Voice: {{voice}}",
+                            "categories": "Categories: {{categories}}",
+                            "rulesChannel": "Rules Channel",
+                            "unset": "Unset",
+                            "emojis": "Emojis",
+                            "totalEmojis": "Total: {{totalemojis}}",
+                            "static": "Static: {{static}}",
+                            "animated": "Animated: {{animated}}",
+                            "roles": "Roles ({{amount}})"
+                        },
+                        "defaultError": "I can't get information of the server right now. Try again later..."
+                    }
                 }
             }
         },
@@ -141,7 +182,7 @@
                         }
                     },
                     "responses": {
-                        "success": "Successfully banned {{member}} from {{guild}}. Reason: {{reason}}. Deleted messages of the member from the last {{age}}",
+                        "success": "Successfully banned {{member}} from {{guild}}. Reason: {{reason}}.\nDeleted messages of the member from the last {{age}}",
                         "defaultError": "I can't ban {{member}} from {{guild}}",
                         "noPermissionsError": "I can't ban {{member}} from {{guild}}. Make sure I have `BAN_MEMBERS` permission",
                         "higherRoleError": "I can't ban {{member}} from {{guild}}. Make sure my role is higher than the member's role",
@@ -261,7 +302,7 @@
                         }
                     },
                     "responses": {
-                        "success": "Successfully warned {{member}} for: {{reason}}",
+                        "success": "Successfully warned {{member}}. Reason: {{reason}}",
                         "defaultError": "I can't warn {{member}} in {{guild}}",
                         "higherRoleError": "I can't warn {{member}} in {{guild}}. The member has a higher role than me",
                         "unreachableError": "The warn direct message couldn't be sent to {{member}}. The member is unreachable"

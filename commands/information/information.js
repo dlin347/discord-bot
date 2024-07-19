@@ -4,6 +4,7 @@ const ping = require('./ping.js');
 const memberInformation = require('./member.js');
 const botInformation = require('./bot.js');
 const avatarMember = require('./avatar.js');
+const serverInformation = require('./server.js');
 
 const locales = {
     de: require('../../locales/de.json'),
@@ -220,6 +221,27 @@ module.exports = {
                         )
                 )
         )
+        .addSubcommand(subcommand =>
+            subcommand
+                .setName('server')
+                .setNameLocalizations({
+                    de: locales.de.categories.information.commands.server.name,
+                    fr: locales.fr.categories.information.commands.server.name,
+                    "pt-BR": locales.pt.categories.information.commands.server.name,
+                    "es-ES": locales.es.categories.information.commands.server.name,
+                    tr: locales.tr.categories.information.commands.server.name,
+                    ru: locales.ru.categories.information.commands.server.name
+                })
+                .setDescription("Get information of the server")
+                .setDescriptionLocalizations({
+                    de: locales.de.categories.information.commands.server.description,
+                    fr: locales.fr.categories.information.commands.server.description,
+                    "pt-BR": locales.pt.categories.information.commands.server.description,
+                    "es-ES": locales.es.categories.information.commands.server.description,
+                    tr: locales.tr.categories.information.commands.server.description,
+                    ru: locales.ru.categories.information.commands.server.description
+                })
+        )
         .setDMPermission(false),
 
     async execute(interaction) {
@@ -237,6 +259,9 @@ module.exports = {
                     break;
                 case 'avatar':
                     await avatarMember(interaction);
+                    break;
+                case 'server':
+                    await serverInformation(interaction);
                     break;
             }
         }

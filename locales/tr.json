@@ -94,6 +94,47 @@
                         "defaultError": "{{member}} avatarını şu anda alamıyorum. Daha sonra tekrar deneyin...",
                         "noDynamicAvatarError": "Üye {{member}} dinamik bir avatara sahip değil. Statik avatarını gösteriyor."
                     }
+                },
+                "server": {
+                    "name": "server",
+                    "description": "Sunucu bilgilerini alın",
+                    "responses": {
+                        "embed": {
+                            "title": "Sunucu Bilgisi",
+                            "name": "İsim",
+                            "owner": "Sahip",
+                            "region": "Bölge",
+                            "createdAt": "Oluşturulma Tarihi",
+                            "verificationLevel": "Doğrulama Seviyesi",
+                            "default": "Varsayılan",
+                            "explicit": "Açık",
+                            "safe": "Güvenli",
+                            "ageRestricted": "Yaş Sınırlı",
+                            "boostTier": "Boost Seviyesi",
+                            "none": "Hiçbiri",
+                            "tier1": "Seviye 1",
+                            "tier2": "Seviye 2",
+                            "tier3": "Seviye 3",
+                            "boosters": "Booster Sayısı",
+                            "members": "Üyeler",
+                            "totalMembers": "Toplam: {{totalmembers}}",
+                            "active": "Aktif: {{active}}",
+                            "humans": "İnsanlar: {{humans}}",
+                            "bots": "Botlar: {{bots}}",
+                            "channels": "Kanallar",
+                            "text": "Metin: {{text}}",
+                            "voice": "Ses: {{voice}}",
+                            "categories": "Kategoriler: {{categories}}",
+                            "rulesChannel": "Kurallar Kanalı",
+                            "unset": "Belirtilmemiş",
+                            "emojis": "Emojiler",
+                            "totalEmojis": "Toplam: {{totalemojis}}",
+                            "static": "Statik: {{static}}",
+                            "animated": "Animasyonlu: {{animated}}",
+                            "roles": "Roller ({{amount}})"
+                        },
+                        "defaultError": "Şu anda sunucu bilgilerini alamıyorum. Daha sonra tekrar deneyin..."
+                    }
                 }
             }
         },
@@ -140,7 +181,7 @@
                         }
                     },
                     "responses": {
-                        "success": "Üye {{member}} başarıyla {{guild}} sunucusundan yasaklandı. Sebep: {{reason}}. Üyenin son {{time}}'a ait mesajları silindi.",
+                        "success": "Üye {{member}} başarıyla {{guild}} sunucusundan yasaklandı. Sebep: {{reason}}.\nÜyenin son {{time}}'a ait mesajları silindi.",
                         "defaultError": "{{member}} üyesini {{guild}} sunucusundan yasaklayamıyorum",
                         "noPermissionsError": "{{member}} üyesini {{guild}} sunucusundan yasaklayamıyorum. `BAN_MEMBERS` iznine sahip olduğumdan emin olun",
                         "higherRoleError": "{{member}} üyesini {{guild}} sunucusundan yasaklayamıyorum. Rolümün üyenin rolünden yüksek olduğundan emin olun",
@@ -260,7 +301,7 @@
                         }
                     },
                     "responses": {
-                        "success": "{{member}} başarıyla uyarıldı: {{reason}}",
+                        "success": "Başarıyla {{member}} uyarıldı. Sebep: {{reason}}",
                         "defaultError": "{{member}} kişisini {{guild}} sunucusunda uyarılamıyorum",
                         "higherRoleError": "{{member}} kişisini {{guild}} sunucusunda uyarılamıyorum. Üyenin benimkinden daha yüksek bir rolü var",
                         "unreachableError": "Uyarı doğrudan mesajı {{member}} kişisine gönderilemedi. Üye ulaşılamaz durumda"

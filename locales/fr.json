@@ -95,6 +95,47 @@
                         "defaultError": "Je ne peux pas obtenir l'avatar de {{member}} pour le moment. Réessayez plus tard...",
                         "noDynamicAvatarError": "Le membre {{member}} n'a pas d'avatar dynamique. Montrant son avatar statique..."
                     }
+                },
+                "server": {
+                    "name": "server",
+                    "description": "Obtenir des informations sur le serveur",
+                    "responses": {
+                        "embed": {
+                            "title": "Informations du serveur",
+                            "name": "Nom",
+                            "owner": "Propriétaire",
+                            "region": "Région",
+                            "createdAt": "Date de création",
+                            "verificationLevel": "Niveau de vérification",
+                            "default": "Par défaut",
+                            "explicit": "Explicite",
+                            "safe": "Sûr",
+                            "ageRestricted": "Restreint par âge",
+                            "boostTier": "Niveau de boost",
+                            "none": "Aucun",
+                            "tier1": "Niveau 1",
+                            "tier2": "Niveau 2",
+                            "tier3": "Niveau 3",
+                            "boosters": "Nombre de boosters",
+                            "members": "Membres",
+                            "totalMembers": "Total : {{totalmembers}}",
+                            "active": "Actifs : {{active}}",
+                            "humans": "Humains : {{humans}}",
+                            "bots": "Bots : {{bots}}",
+                            "channels": "Canaux",
+                            "text": "Textuel : {{text}}",
+                            "voice": "Vocal : {{voice}}",
+                            "categories": "Catégories : {{categories}}",
+                            "rulesChannel": "Canal des règles",
+                            "unset": "Non défini",
+                            "emojis": "Émojis",
+                            "totalEmojis": "Total : {{totalemojis}}",
+                            "static": "Statique : {{static}}",
+                            "animated": "Animé : {{animated}}",
+                            "roles": "Rôles ({{amount}})"
+                        },
+                        "defaultError": "Je ne peux pas obtenir les informations du serveur pour le moment. Réessayez plus tard..."
+                    }
                 }
             }
         },
@@ -141,7 +182,7 @@
                         }
                     },
                     "responses": {
-                        "success": "Le membre {{member}} a été banni de {{guild}} avec succès. Raison: {{reason}}. Les messages du membre de la dernière {{time}} ont été supprimés",
+                        "success": "Le membre {{member}} a été banni de {{guild}} avec succès. Raison: {{reason}}.\nLes messages du membre de la dernière {{time}} ont été supprimés",
                         "defaultError": "Je ne peux pas bannir {{member}} de {{guild}}",
                         "noPermissionsError": "Je ne peux pas bannir {{member}} de {{guild}}. Assurez-vous que j'ai la permission `BAN_MEMBERS`",
                         "higherRoleError": "Je ne peux pas bannir {{member}} de {{guild}}. Assurez-vous que mon rôle est supérieur à celui du membre",
@@ -261,7 +302,7 @@
                         }
                     },
                     "responses": {
-                        "success": "Le membre {{member}} a été averti avec succès pour : {{reason}}",
+                        "success": "Le membre {{member}} a été averti avec succès. Raison: {{reason}}",
                         "defaultError": "Je ne peux pas avertir {{member}} dans {{guild}}",
                         "higherRoleError": "Je ne peux pas avertir {{member}} dans {{guild}}. Le membre a un rôle supérieur au mien",
                         "unreachableError": "Le message d'avertissement n'a pas pu être envoyé à {{member}}. Le membre est injoignable"

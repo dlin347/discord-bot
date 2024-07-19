@@ -95,6 +95,47 @@
                         "defaultError": "Не могу получить аватар {{member}} в данный момент. Попробуйте позже...",
                         "noDynamicAvatarError": "У пользователя {{member}} нет динамического аватара. Показывает свой статичный аватар..."
                     }
+                },
+                "server": {
+                    "name": "server",
+                    "description": "Получить информацию о сервере",
+                    "responses": {
+                        "embed": {
+                            "title": "Информация о сервере",
+                            "name": "Имя",
+                            "owner": "Владелец",
+                            "region": "Регион",
+                            "createdAt": "Дата создания",
+                            "verificationLevel": "Уровень верификации",
+                            "default": "По умолчанию",
+                            "explicit": "Явный",
+                            "safe": "Безопасный",
+                            "ageRestricted": "Ограничение по возрасту",
+                            "boostTier": "Уровень буста",
+                            "none": "Никакой",
+                            "tier1": "Уровень 1",
+                            "tier2": "Уровень 2",
+                            "tier3": "Уровень 3",
+                            "boosters": "Количество бустеров",
+                            "members": "Участники",
+                            "totalMembers": "Всего: {{totalmembers}}",
+                            "active": "Активных: {{active}}",
+                            "humans": "Людей: {{humans}}",
+                            "bots": "Ботов: {{bots}}",
+                            "channels": "Каналы",
+                            "text": "Текст: {{text}}",
+                            "voice": "Голос: {{voice}}",
+                            "categories": "Категории: {{categories}}",
+                            "rulesChannel": "Канал с правилами",
+                            "unset": "Не установлен",
+                            "emojis": "Эмодзи",
+                            "totalEmojis": "Всего: {{totalemojis}}",
+                            "static": "Статичные: {{static}}",
+                            "animated": "Анимированные: {{animated}}",
+                            "roles": "Роли ({{amount}})"
+                        },
+                        "defaultError": "Я не могу получить информацию о сервере прямо сейчас. Попробуйте позже..."
+                    }
                 }
             }
         },
@@ -141,7 +182,7 @@
                         }
                     },
                     "responses": {
-                        "success": "Участник {{member}} был успешно забанен на {{guild}}. Причина: {{reason}}. Сообщения пользователя за последнее {{time}} были удалены.",
+                        "success": "Участник {{member}} был успешно забанен на {{guild}}. Причина: {{reason}}.\nСообщения пользователя за последнее {{time}} были удалены.",
                         "defaultError": "Не могу забанить {{member}} на {{guild}}",
                         "noPermissionsError": "Не могу забанить {{member}} на {{guild}}. Убедитесь, что у меня есть разрешение `BAN_MEMBERS`",
                         "higherRoleError": "Не могу забанить {{member}} на {{guild}}. Убедитесь, что моя роль выше роли участника",
@@ -261,7 +302,7 @@
                         }
                     },
                     "responses": {
-                        "success": "Участник {{member}} успешно предупрежден за: {{reason}}",
+                        "success": "Участник {{member}} успешно предупрежден. причина: {{reason}}",
                         "defaultError": "Не могу предупредить {{member}} на сервере {{guild}}",
                         "higherRoleError": "Не могу предупредить {{member}} на сервере {{guild}}. У участника выше роль, чем у меня",
                         "unreachableError": "Невозможно отправить сообщение с предупреждением {{member}}. Участник недоступен"

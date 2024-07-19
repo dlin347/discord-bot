@@ -95,6 +95,47 @@
                         "defaultError": "Não consigo obter o avatar de {{member}} no momento. Tente novamente mais tarde...",
                         "noDynamicAvatarError": "O membro {{member}} não tem um avatar dinâmico. Mostrando seu avatar estático..."
                     }
+                },
+                "server": {
+                    "name": "server",
+                    "description": "Obtenha informações do servidor",
+                    "responses": {
+                        "embed": {
+                            "title": "Informações do Servidor",
+                            "name": "Nome",
+                            "owner": "Proprietário",
+                            "region": "Região",
+                            "createdAt": "Data de criação",
+                            "verificationLevel": "Nível de verificação",
+                            "default": "Padrão",
+                            "explicit": "Explícito",
+                            "safe": "Seguro",
+                            "ageRestricted": "Restrito por idade",
+                            "boostTier": "Nível de boost",
+                            "none": "Nenhum",
+                            "tier1": "Nível 1",
+                            "tier2": "Nível 2",
+                            "tier3": "Nível 3",
+                            "boosters": "Número de boosters",
+                            "members": "Membros",
+                            "totalMembers": "Total: {{totalmembers}}",
+                            "active": "Ativos: {{active}}",
+                            "humans": "Humanos: {{humans}}",
+                            "bots": "Bots: {{bots}}",
+                            "channels": "Canais",
+                            "text": "Texto: {{text}}",
+                            "voice": "Voz: {{voice}}",
+                            "categories": "Categorias: {{categories}}",
+                            "rulesChannel": "Canal de regras",
+                            "unset": "Não definido",
+                            "emojis": "Emojis",
+                            "totalEmojis": "Total: {{totalemojis}}",
+                            "static": "Estáticos: {{static}}",
+                            "animated": "Animados: {{animated}}",
+                            "roles": "Cargos ({{amount}})"
+                        },
+                        "defaultError": "Não consigo obter informações do servidor agora. Tente novamente mais tarde..."
+                    }
                 }
             }
         },
@@ -141,7 +182,7 @@
                         }
                     },
                     "responses": {
-                        "success": "O membro {{member}} foi banido de {{guild}} com sucesso. Razão: {{reason}}. As mensagens do membro do último {{time}} foram excluídas",
+                        "success": "O membro {{member}} foi banido de {{guild}} com sucesso. Razão: {{reason}}.\nAs mensagens do membro do último {{time}} foram excluídas",
                         "defaultError": "Não posso banir {{member}} de {{guild}}",
                         "noPermissionsError": "Não posso banir {{member}} de {{guild}}. Certifique-se de que eu tenho a permissão `BAN_MEMBERS`",
                         "higherRoleError": "Não posso banir {{member}} de {{guild}}. Certifique-se de que meu cargo é superior ao do membro",
@@ -261,7 +302,7 @@
                         }
                     },
                     "responses": {
-                        "success": "O membro {{member}} foi avisado com sucesso por: {{reason}}",
+                        "success": "O membro {{member}} foi avisado com sucesso. Razão: {{reason}}",
                         "defaultError": "Não posso avisar {{member}} em {{guild}}",
                         "higherRoleError": "Não posso avisar {{member}} em {{guild}}. O membro tem um cargo superior ao meu",
                         "unreachableError": "A mensagem de aviso não pôde ser enviada para {{member}}. O membro está inalcançável"

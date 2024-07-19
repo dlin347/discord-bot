@@ -95,6 +95,47 @@
                         "defaultError": "No puedo obtener el avatar de {{member}} en este momento. Inténtalo de nuevo más tarde...",
                         "noDynamicAvatarError": "El miembro {{member}} no tiene un avatar dinámico. Mostrando su avatar estático..."
                     }
+                },
+                "server": {
+                    "name": "server",
+                    "description": "Obtén información del servidor",
+                    "responses": {
+                        "embed": {
+                            "title": "Información del Servidor",
+                            "name": "Nombre",
+                            "owner": "Propietario",
+                            "region": "Región",
+                            "createdAt": "Fecha de creación",
+                            "verificationLevel": "Nivel de verificación",
+                            "default": "Predeterminado",
+                            "explicit": "Explícito",
+                            "safe": "Seguro",
+                            "ageRestricted": "Restringido por edad",
+                            "boostTier": "Nivel de boost",
+                            "none": "Ninguno",
+                            "tier1": "Nivel 1",
+                            "tier2": "Nivel 2",
+                            "tier3": "Nivel 3",
+                            "boosters": "Número de boosters",
+                            "members": "Miembros",
+                            "totalMembers": "Total: {{totalmembers}}",
+                            "active": "Activos: {{active}}",
+                            "humans": "Humanos: {{humans}}",
+                            "bots": "Bots: {{bots}}",
+                            "channels": "Canales",
+                            "text": "Texto: {{text}}",
+                            "voice": "Voz: {{voice}}",
+                            "categories": "Categorías: {{categories}}",
+                            "rulesChannel": "Canal de reglas",
+                            "unset": "No establecido",
+                            "emojis": "Emojis",
+                            "totalEmojis": "Total: {{totalemojis}}",
+                            "static": "Estáticos: {{static}}",
+                            "animated": "Animados: {{animated}}",
+                            "roles": "Roles ({{amount}})"
+                        },
+                        "defaultError": "No puedo obtener información del servidor en este momento. Inténtalo de nuevo más tarde..."
+                    }
                 }
             }
         },
@@ -141,7 +182,7 @@
                         }
                     },
                     "responses": {
-                        "success": "El miembro {{member}} ha sido baneado de {{guild}} con éxito. Razón: {{reason}}. Se han eliminado los mensajes del miembro de los últimos {{time}}",
+                        "success": "El miembro {{member}} ha sido baneado de {{guild}} con éxito. Razón: {{reason}}.\nSe han eliminado los mensajes del miembro de los últimos {{time}}",
                         "defaultError": "No puedo banear a {{member}} de {{guild}}",
                         "noPermissionsError": "No puedo banear a {{member}} de {{guild}}. Asegúrate de que tengo el permiso `BAN_MEMBERS`",
                         "higherRoleError": "No puedo banear a {{member}} de {{guild}}. Asegúrate de que mi rol es superior al rol del miembro",
@@ -261,7 +302,7 @@
                         }
                     },
                     "responses": {
-                        "success": "El miembro {{member}} ha sido advertido exitosamente por: {{reason}}",
+                        "success": "El miembro {{member}} ha sido advertido exitosamente. Razón: {{reason}}",
                         "defaultError": "No puedo advertir a {{member}} en {{guild}}",
                         "higherRoleError": "No puedo advertir a {{member}} en {{guild}}. El miembro tiene un rol superior al mío",
                         "unreachableError": "No se pudo enviar el mensaje de advertencia a {{member}}. El miembro no es alcanzable"

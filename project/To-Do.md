@@ -19,13 +19,17 @@
 - [x] Accept variants from a language
 - [x] Slowmode command
 - [x] Time function
-- [ ] Warn command
 - [x] Modify delete messages option in ban command
-- [ ] Add more commands to other categories:
-- [x] Information ==> User information
-- Information ==> Guild information
-- [x] Information ==> Bot information
-- [x] Information ==> Avatar
+- [x] Member information command
+- [x] Warn command (unfinished)
+- [ ] Guild information command
+- [x] Bot information command
+- [x] Avatar command
+- [x] Set delete_messages from ban command non required
+- [x] Modify ban message with delete_message period
+- [x] Finish fixing ban command
+- [x] Fix ban and slowmode commands
+- [x] Yourself, myself actions (done but, kick, ban and warn needs specific message)
 - [ ] Filter by name when unbanning the user (problem: og tags)
 - [ ] Integrate mongodb or locally hosted database
 - [ ] Host locally the bot => Raspberry pi 400?
@@ -36,11 +40,6 @@
 - [ ] Integration with a website????
 - [ ] Sharding > 2500
 - [ ] Translate permissions
-- [ ] Set delete_messages from ban command non required
-- [ ] Fix ban and slowmode commands
-- [ ] Yourself, myself actions
-- [ ] Modify ban message with delete_message period
-- [ ] Finish fixing ban command
 
 ```
 Files to modify if there is an expansion of languages:

@@ -95,6 +95,47 @@
                         "defaultError": "Ich kann den Avatar von {{member}} gerade nicht abrufen. Versuche es später noch einmal...",
                         "noDynamicAvatarError": "Das Mitglied {{member}} hat keinen dynamischen Avatar. Zeigt seinen statischen Avatar..."
                     }
+                },
+                "server": {
+                    "name": "server",
+                    "description": "Erhalte Informationen über den Server",
+                    "responses": {
+                        "embed": {
+                            "title": "Server-Informationen",
+                            "name": "Name",
+                            "owner": "Besitzer",
+                            "region": "Region",
+                            "createdAt": "Erstellungsdatum",
+                            "verificationLevel": "Verifizierungsstufe",
+                            "default": "Standard",
+                            "explicit": "Explizit",
+                            "safe": "Sicher",
+                            "ageRestricted": "Altersbeschränkung",
+                            "boostTier": "Boost-Stufe",
+                            "none": "Keine",
+                            "tier1": "Stufe 1",
+                            "tier2": "Stufe 2",
+                            "tier3": "Stufe 3",
+                            "boosters": "Anzahl der Booster",
+                            "members": "Mitglieder",
+                            "totalMembers": "Gesamt: {{totalmembers}}",
+                            "active": "Aktiv: {{active}}",
+                            "humans": "Menschen: {{humans}}",
+                            "bots": "Bots: {{bots}}",
+                            "channels": "Kanäle",
+                            "text": "Text: {{text}}",
+                            "voice": "Sprache: {{voice}}",
+                            "categories": "Kategorien: {{categories}}",
+                            "rulesChannel": "Regelkanal",
+                            "unset": "Nicht festgelegt",
+                            "emojis": "Emojis",
+                            "totalEmojis": "Gesamt: {{totalemojis}}",
+                            "static": "Statisch: {{static}}",
+                            "animated": "Animiert: {{animated}}",
+                            "roles": "Rollen ({{amount}})"
+                        },
+                        "defaultError": "Ich kann derzeit keine Informationen über den Server abrufen. Versuche es später noch einmal..."
+                    }
                 }
             }
         },
@@ -141,7 +182,7 @@
                         }
                     },
                     "responses": {
-                        "success": "Das Mitglied {{member}} wurde erfolgreich von {{guild}} gebannt. Grund: {{reason}}. Die Nachrichten des Mitglieds vom letzten {{time}} wurden gelöscht",
+                        "success": "Das Mitglied {{member}} wurde erfolgreich von {{guild}} gebannt. Grund: {{reason}}.\nDie Nachrichten des Mitglieds vom letzten {{time}} wurden gelöscht",
                         "defaultError": "Ich kann {{member}} nicht von {{guild}} bannen",
                         "noPermissionsError": "Ich kann {{member}} nicht von {{guild}} bannen. Stelle sicher, dass ich die Berechtigung `BAN_MEMBERS` habe",
                         "higherRoleError": "Ich kann {{member}} nicht von {{guild}} bannen. Stelle sicher, dass meine Rolle über der Rolle des Mitglieds ist",
@@ -261,7 +302,7 @@
                         }
                     },
                     "responses": {
-                        "success": "Das Mitglied {{member}} wurde erfolgreich verwarnt für: {{reason}}",
+                        "success": "Das Mitglied {{member}} wurde erfolgreich verwarnt. Grund: {{reason}}",
                         "defaultError": "Ich kann {{member}} in {{guild}} nicht verwarnen",
                         "higherRoleError": "Ich kann {{member}} in {{guild}} nicht verwarnen. Das Mitglied hat eine höhere Rolle als ich",
                         "unreachableError": "Die Verwarnung konnte nicht an {{member}} gesendet werden. Das Mitglied ist nicht erreichbar"
