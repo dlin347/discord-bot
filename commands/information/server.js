@@ -16,7 +16,7 @@ module.exports = async function serverInformation(interaction) {
         const members = guild.members.cache;
         const usersMsg = responsesEmbed.usersMsg
             .replace('{{totalmembers}}', members.size)
-            .replace('{{active}}', members.filter(member => member.presence.status !== 'offline').size) // To fix, returning null/undefined
+            .replace('{{active}}', members.filter(member => member.presence?.status !== 'offline' && member.presence?.status !== undefined).size) // To fix, returning null/undefined
             .replace('{{humans}}', members.filter(member => member.user.bot).size)
             .replace('{{bots}}', members.filter(member => !member.user.bot).size);
         const channels = guild.channels.cache;
@@ -48,9 +48,9 @@ module.exports = async function serverInformation(interaction) {
                 { name: responsesEmbed.verificationLevel, value: verificationLevel },
                 { name: responsesEmbed.boostTier, value: boostTier },
                 { name: responsesEmbed.boosts, value: guild.premiumSubscriptionCount.toString() },
-                { name: responsesEmbed.rulesChannel, value: rulesChannel, inline: true },
-                { name: responsesEmbed.afkChannel, value: afkChannel, inline: true },
-                { name: responsesEmbed.systemChannel, value: systemChannel, inline: true },
+                { name: responsesEmbed.rulesChannel, value: rulesChannel.toString(), inline: true },
+                { name: responsesEmbed.afkChannel, value: afkChannel.toString(), inline: true },
+                { name: responsesEmbed.systemChannel, value: systemChannel.toString(), inline: true },
                 { name: responsesEmbed.users, value: usersMsg, inline: true },
                 { name: responsesEmbed.channels, value: channelsMsg, inline: true },
                 { name: responsesEmbed.emojis, value: emojisMsg, inline: true },

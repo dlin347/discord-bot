@@ -3,6 +3,23 @@
         "common": {
             "noReason": "No reason provided"
         },
+        "fun": {
+            "name": "fun",
+            "description": "Fun category commands",
+            "commands": {
+                "coinflip": {
+                    "name": "coinflip",
+                    "description": "Flip a coin and get the result",
+                    "responses": {
+                        "result": "The coin landed on **{{result}}**",
+                        "heads": "heads",
+                        "tails": "tails",
+                        "edge": "edge",
+                        "defaultError": "I can't flip a coin right now... Try again later"
+                    }
+                }
+            }
+        },
         "information": {
             "name": "information",
             "description": "Get information of diverse things",
@@ -125,7 +142,7 @@
                             "users": "Users",
                             "usersMsg": "Total: {{totalmembers}}\nActive: {{active}}\nHumans: {{humans}}\nBots: {{bots}}",
                             "channels": "Channels",
-                            "channelsMsg": "Total: {{totalchannels}}\nText: {{text}}\nVoice: {{voice}}, Categories: {{categories}}",
+                            "channelsMsg": "Total: {{totalchannels}}\nText: {{text}}\nVoice: {{voice}}\nCategories: {{categories}}",
                             "rulesChannel": "Rules Channel",
                             "afkChannel": "AFK Channel",
                             "systemChannel": "System Channel",

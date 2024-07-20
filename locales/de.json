@@ -3,8 +3,25 @@
         "common": {
             "noReason": "Es wurde kein Grund angegeben"
         },
+        "fun": {
+            "name": "spaß",
+            "description": "Befehle der Kategorie Spaß",
+            "commands": {
+                "coinflip": {
+                    "name": "coinflip",
+                    "description": "Wirf eine Münze und erhalte das Ergebnis",
+                    "responses": {
+                        "result": "Das Ergebnis des Münzwurfs ist **{{result}}**",
+                        "heads": "kopf",
+                        "tails": "zahl",
+                        "edge": "kante",
+                        "defaultError": "Ich kann das Ergebnis des Münzwurfs nicht abrufen... Versuche es später noch einmal"
+                    }
+                }
+            }
+        },
         "information": {
-            "name": "information",
+            "name": "informationen",
             "description": "Erhalte Informationen über verschiedene Dinge",
             "commands": {
                 "ping": {

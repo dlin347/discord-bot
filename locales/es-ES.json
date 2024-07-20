@@ -3,6 +3,23 @@
         "common": {
             "noReason": "No se proporcionó ninguna razón"
         },
+        "fun": {
+            "name": "diversión",
+            "description": "Comandos de la categoría de diversión",
+            "commands": {
+                "coinflip": {
+                    "name": "coinflip",
+                    "description": "Lanza una moneda y obtén el resultado",
+                    "responses": {
+                        "result": "La moneda ha caído en **{{result}}**",
+                        "heads": "cara",
+                        "tails": "cruz",
+                        "edge": "canto",
+                        "defaultError": "No puedo lanzar la moneda en este momento... Inténtalo de nuevo más tarde"
+                    }
+                }
+            }
+        },
         "information": {
             "name": "información",
             "description": "Obtén información de diversas cosas",

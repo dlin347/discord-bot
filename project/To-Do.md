@@ -21,8 +21,8 @@
 - [x] Time function
 - [x] Modify delete messages option in ban command
 - [x] Member information command
-- [x] Warn command (unfinished)
-- [ ] Guild information command
+- [ ] Warn command (unfinished)
+- [x] Guild information command
 - [x] Bot information command
 - [x] Avatar command
 - [x] Set delete_messages from ban command non required

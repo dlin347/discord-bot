@@ -3,6 +3,22 @@
         "common": {
             "noReason": "Hiçbir sebep belirtilmedi"
         },
+        "fun": {
+            "name": "eğlence",
+            "description": "Eğlence kategorisindeki komutlar",
+            "commands": {
+                "coinflip": {
+                    "name": "coinflip",
+                    "description": "Yazı tura at",
+                    "responses": {
+                        "result": "Para birimi **{{result}}**'da düştü",
+                        "heads": "yazı",
+                        "tails": "tura",
+                        "edge": "kenar"
+                    }
+                }
+            }
+        },
         "information": {
             "name": "bilgi",
             "description": "Çeşitli şeyler hakkında bilgi edinin",

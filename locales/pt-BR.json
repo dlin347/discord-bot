@@ -3,6 +3,22 @@
         "common": {
             "noReason": "Nenhuma razão foi fornecida"
         },
+        "fun": {
+            "name": "diversão",
+            "description": "Comandos da categoria de diversão",
+            "commands": {
+                "coinflip": {
+                    "name": "coinflip",
+                    "description": "Jogue uma moeda e veja o resultado",
+                    "responses": {
+                        "result": "O resultado do lançamento da moeda é **{{result}}**",
+                        "heads": "cara",
+                        "tails": "coroa",
+                        "edge": "borda"
+                    }
+                }
+            }
+        },
         "information": {
             "name": "informação",
             "description": "Obtenha informações sobre diversas coisas",
@@ -112,7 +128,7 @@
                                 "Baixo",
                                 "Médio",
                                 "Alto",
-                                "Muito Alto"                     
+                                "Muito Alto"
                             ],
                             "boostTier": "Nível de boost",
                             "bTier": [

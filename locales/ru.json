@@ -3,6 +3,22 @@
         "common": {
             "noReason": "Причина не указана"
         },
+        "fun": {
+            "name": "развлечения",
+            "description": "Команды категории развлечений",
+            "commands": {
+                "coinflip": {
+                    "name": "coinflip",
+                    "description": "Бросьте монету и получите результат",
+                    "responses": {
+                        "result": "Вы бросили монету и получили {{result}}",
+                        "heads": "oрел",
+                        "tails": "pешка",
+                        "edge": "край"
+                    }
+                }
+            }
+        },
         "information": {
             "name": "информация",
             "description": "Получите информацию о различных вещах",

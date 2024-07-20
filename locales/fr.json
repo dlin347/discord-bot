@@ -3,6 +3,22 @@
         "common": {
             "noReason": "Aucune raison n'a été fournie"
         },
+        "fun": {
+            "name": "amusant",
+            "description": "Commandes de la catégorie amusant",
+            "commands": {
+                "coinflip": {
+                    "name": "coinflip",
+                    "description": "Lance une pièce de monnaie et obtenez le résultat",
+                    "responses": {
+                        "result": "La pièce de monnaie a atterri sur **{{result}}**",
+                        "heads": "pile",
+                        "tails": "face",
+                        "edge": "bord"
+                    }
+                }
+            }
+        },
         "information": {
             "name": "information",
             "description": "Obtenez des informations sur diverses choses",
