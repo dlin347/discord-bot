@@ -11,11 +11,33 @@
                     "name": "coinflip",
                     "description": "Flip a coin and get the result",
                     "responses": {
-                        "result": "The coin landed on **{{result}}**",
+                        "result": "The coin **(🪙)** landed on **{{result}}**",
                         "heads": "heads",
                         "tails": "tails",
                         "edge": "edge",
-                        "defaultError": "I can't flip a coin right now... Try again later"
+                        "defaultError": "I can't flip a coin **(🪙)** right now... Try again later"
+                    }
+                },
+                "dice": {
+                    "name": "dice",
+                    "description": "Roll a dice and get the result",
+                    "responses": {
+                        "result": "The dice **(🎲)** rolled **{{result}}**",
+                        "defaultError": "I can't roll a dice **(🎲)** right now... Try again later"
+                    }
+                },
+                "eightball": {
+                    "name": "8ball",
+                    "description": "Ask the magic 8-ball a question and get an answer",
+                    "options": {
+                        "question": {
+                            "name": "question",
+                            "description": "The question you want to ask the 8-ball"
+                        }
+                    },
+                    "responses": {
+                        "answer": "You asked to the magic 8-ball **(🎱)**: **{{question}}**\nThe magic 8-ball **(🎱)** answered with: **{{answer}}**",
+                        "defaultError": "I can't ask the magic 8-ball **(🎱)** right now... Try again later"
                     }
                 }
             }

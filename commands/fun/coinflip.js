@@ -1,11 +1,11 @@
 const translation = require('../../locales/other/translation.js');
+const path = require('node:path');
 
 module.exports = async function coinflip(interaction) {
-    const path = require('node:path');
     const localeFile = await translation(interaction.locale);
     const responses = localeFile.categories.fun.commands.coinflip.responses;
-    let coin = responses.result;
     const random = Math.random();
+    let coin = responses.result;
 
     try {
         if (random < 0.5) {
@@ -18,8 +18,8 @@ module.exports = async function coinflip(interaction) {
 
         await interaction.reply({ files: [path.join(__dirname, '../../images/coinflip/result.gif')], ephemeral: true });
         setTimeout(async () => {
-            await interaction.editReply({ content: coin, files: [path.join(__dirname, '../../images/coinflip/result.gif')], ephemeral: true });
-        }, 5500)
+            await interaction.editReply({ content: coin, files: [], ephemeral: true });
+        }, 6100)
         console.log("\x1b[33m" + `<<@${interaction.user.username}>> HAS SUCCESSFULLY USED <</COINFLIP>> IN (<<${interaction.guild.name}>>)` + "\x1b[0m");
     } catch (e) {
         console.error("\x1b[31m" + '[/COINFLIP] ' + e.stack + "\x1b[0m");

@@ -11,10 +11,33 @@
                     "name": "coinflip",
                     "description": "Yazı tura at",
                     "responses": {
-                        "result": "Para birimi **{{result}}**'da düştü",
+                        "result": "Para birimi **(🪙) {{result}}** seviyesine düştü",
                         "heads": "yazı",
                         "tails": "tura",
-                        "edge": "kenar"
+                        "edge": "kenar",
+                        "defaultError": "Şu anda para birimi **(🪙)** atamıyorum... Daha sonra tekrar deneyin"
+                    }
+                },
+                "dice": {
+                    "name": "dice",
+                    "description": "Zar at",
+                    "responses": {
+                        "result": "Zar **(🎲)** **{{result}}** üzerine düştü",
+                        "defaultError": "Şu anda zar **(🎲)** atamıyorum... Daha sonra tekrar deneyin"
+                    }
+                },
+                "eightball": {
+                    "name": "8ball",
+                    "description": "Büyülü topa bir soru sor ve cevap al",
+                    "options": {
+                        "question": {
+                            "name": "question",
+                            "description": "Büyülü topa sormak istediğiniz soru"
+                        }
+                    },
+                    "responses": {
+                        "answer": "Büyülü topa **(🔮)** şu soruyu sordunuz: **{{question}}**\nBüyülü top **(🔮)** şu cevabı verdi: **{{answer}}**",
+                        "defaultError": "Bu anda büyülü topa **(🔮)** soru soramıyorum... Lütfen daha sonra tekrar deneyin"
                     }
                 }
             }

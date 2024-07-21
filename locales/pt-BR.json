@@ -11,10 +11,33 @@
                     "name": "coinflip",
                     "description": "Jogue uma moeda e veja o resultado",
                     "responses": {
-                        "result": "O resultado do lançamento da moeda é **{{result}}**",
+                        "result": "O resultado do lançamento da moeda **(🪙)** é **{{result}}**",
                         "heads": "cara",
                         "tails": "coroa",
-                        "edge": "borda"
+                        "edge": "borda",
+                        "defaultError": "Não posso lançar a moeda **(🪙)** agora. Tente novamente mais tarde..."
+                    }
+                },
+                "dice": {
+                    "name": "dice",
+                    "description": "Role um dado e veja o resultado",
+                    "responses": {
+                        "result": "O resultado do lançamento do dado **(🎲)** é **{{result}}**",
+                        "defaultError": "Não posso rolar o dado **(🎲)** agora. Tente novamente mais tarde..."
+                    }
+                },
+                "eightball": {
+                    "name": "8ball",
+                    "description": "Faça uma pergunta para a bola mágica e obtenha uma resposta",
+                    "options": {
+                        "question": {
+                            "name": "question",
+                            "description": "A pergunta que você quer fazer para a bola mágica"
+                        }
+                    },
+                    "responses": {
+                        "answer": "Você perguntou para a bola mágica **(🔮)**: **{{question}}**\nA bola mágica **(🔮)** respondeu com: **{{answer}}**",
+                        "defaultError": "Não consigo fazer a pergunta para a bola mágica **(🔮)** no momento... Tente novamente mais tarde"
                     }
                 }
             }

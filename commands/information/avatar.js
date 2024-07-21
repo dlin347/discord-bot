@@ -2,11 +2,11 @@ const { EmbedBuilder } = require('discord.js');
 const translation = require('../../locales/other/translation.js');
 
 module.exports = async function avatarMember(interaction) {
-    let content, footer, forceStatic = true;
     const localeFile = await translation(interaction.locale);
     const responses = localeFile.categories.information.commands.avatar.responses;
     const member = interaction.options.getMember('member') || interaction.member;
     const defaultError = responses.defaultError.replace('{{member}}', member);
+    let content, footer, forceStatic = true;
 
     try {
         let extension = interaction.options.getString('extension') || 'png';

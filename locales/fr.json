@@ -11,10 +11,33 @@
                     "name": "coinflip",
                     "description": "Lance une pièce de monnaie et obtenez le résultat",
                     "responses": {
-                        "result": "La pièce de monnaie a atterri sur **{{result}}**",
+                        "result": "La pièce de monnaie **(🪙)** a atterri sur **{{result}}**",
                         "heads": "pile",
                         "tails": "face",
-                        "edge": "bord"
+                        "edge": "bord",
+                        "defaultError": "Je ne peux pas lancer la pièce de monnaie **(🪙)** pour le moment... Réessayez plus tard"
+                    }
+                },
+                "dice": {
+                    "name": "dice",
+                    "description": "Lance un dé et obtenez le résultat",
+                    "responses": {
+                        "result": "Le dé **(🎲)** a atterri sur **{{result}}**",
+                        "defaultError": "Je ne peux pas lancer le dé **(🎲)** pour le moment... Réessayez plus tard"
+                    }
+                },
+                "eightball": {
+                    "name": "8ball",
+                    "description": "Posez une question à la boule magique et obtenez une réponse",
+                    "options": {
+                        "question": {
+                            "name": "question",
+                            "description": "La question que vous voulez poser à la boule magique"
+                        }
+                    },
+                    "responses": {
+                        "answer": "Vous avez demandé à la boule magique **(🔮)** : **{{question}}**\nLa boule magique **(🔮)** a répondu par : **{{answer}}**",
+                        "defaultError": "Je ne peux pas poser de question à la boule magique **(🔮)** pour l'instant... Essayez de nouveau plus tard"
                     }
                 }
             }

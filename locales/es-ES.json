@@ -11,11 +11,33 @@
                     "name": "coinflip",
                     "description": "Lanza una moneda y obtén el resultado",
                     "responses": {
-                        "result": "La moneda ha caído en **{{result}}**",
+                        "result": "La moneda **(🪙)** ha caído en **{{result}}**",
                         "heads": "cara",
                         "tails": "cruz",
                         "edge": "canto",
-                        "defaultError": "No puedo lanzar la moneda en este momento... Inténtalo de nuevo más tarde"
+                        "defaultError": "No puedo lanzar la moneda **(🪙)** en este momento... Inténtalo de nuevo más tarde"
+                    }
+                },
+                "dice": {
+                    "name": "dice",
+                    "description": "Lanza un dado y obtén el resultado",
+                    "responses": {
+                        "result": "El dado **(🎲)** ha caído en **{{result}}**",
+                        "defaultError": "No puedo lanzar el dado **(🎲)** en este momento... Inténtalo de nuevo más tarde"
+                    }
+                },
+                "eightball": {
+                    "name": "8ball",
+                    "description": "Hazle una pregunta a la bola mágica y obtén una respuesta",
+                    "options": {
+                        "question": {
+                            "name": "question",
+                            "description": "La pregunta que quieres hacerle a la bola mágica"
+                        }
+                    },
+                    "responses": {
+                        "answer": "Le has preguntado a la bola mágica **(🔮)**: **{{question}}**\nLa bola mágica **(🔮)** te ha respondido con: **{{answer}}**",
+                        "defaultError": "No puedo preguntarle a la bola mágica **(🔮)** en este momento... Inténtalo de nuevo más tarde"
                     }
                 }
             }

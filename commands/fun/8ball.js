@@ -1,0 +1,1 @@
+// To code, responses and command translated

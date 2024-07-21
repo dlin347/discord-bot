@@ -11,11 +11,33 @@
                     "name": "coinflip",
                     "description": "Wirf eine Münze und erhalte das Ergebnis",
                     "responses": {
-                        "result": "Das Ergebnis des Münzwurfs ist **{{result}}**",
+                        "result": "Das Ergebnis des Münzwurfs **(🪙)** ist **{{result}}**",
                         "heads": "kopf",
                         "tails": "zahl",
                         "edge": "kante",
-                        "defaultError": "Ich kann das Ergebnis des Münzwurfs nicht abrufen... Versuche es später noch einmal"
+                        "defaultError": "Ich kann das Ergebnis des Münzwurfs **(🪙)** nicht abrufen... Versuche es später noch einmal"
+                    }
+                },
+                "dice": {
+                    "name": "dice",
+                    "description": "Wirf einen Würfel und erhalte das Ergebnis",
+                    "responses": {
+                        "result": "Das Ergebnis des Würfelwurfs **(🎲)** ist **{{result}}**",
+                        "defaultError": "Ich kann das Ergebnis des Würfelwurfs **(🎲)** nicht abrufen... Versuche es später noch einmal"
+                    }
+                },
+                "eightball": {
+                    "name": "8ball",
+                    "description": "Stelle der magischen Kugel eine Frage und erhalte eine Antwort",
+                    "options": {
+                        "question": {
+                            "name": "question",
+                            "description": "Die Frage, die du der magischen Kugel stellen möchtest"
+                        }
+                    },
+                    "responses": {
+                        "answer": "Du hast der magischen Kugel **(🔮)** folgende Frage gestellt: **{{question}}**\nDie magische Kugel **(🔮)** hat geantwortet: **{{answer}}**",
+                        "defaultError": "Ich kann der magischen Kugel **(🔮)** momentan keine Frage stellen... Bitte versuche es später noch einmal"
                     }
                 }
             }
