@@ -22,6 +22,28 @@
                     "name": "dice",
                     "description": "Wirf einen Würfel und erhalte das Ergebnis",
                     "responses": {
+                        "array": [
+                            "Es ist sicher",
+                            "Antwort unklar, versuche es erneut",
+                            "Verlasse dich nicht darauf",
+                            "Es ist entschieden so",
+                            "Frage später noch einmal",
+                            "Meine Antwort ist nein",
+                            "Zweifellos",
+                            "Besser, es dir jetzt nicht zu sagen",
+                            "Meine Quellen sagen nein",
+                            "Ja, definitiv",
+                            "Kann jetzt nicht vorhergesagt werden",
+                            "Die Aussichten sind nicht so gut",
+                            "Du kannst dich darauf verlassen",
+                            "Konzentriere dich und frage erneut",
+                            "Sehr zweifelhaft",
+                            "So wie ich es sehe, ja",
+                            "Höchstwahrscheinlich",
+                            "Aussicht gut",
+                            "Ja",
+                            "Anzeichen deuten auf ja hin"
+                        ],
                         "result": "Das Ergebnis des Würfelwurfs **(🎲)** ist **{{result}}**",
                         "defaultError": "Ich kann das Ergebnis des Würfelwurfs **(🎲)** nicht abrufen... Versuche es später noch einmal"
                     }
@@ -31,7 +53,7 @@
                     "description": "Stelle der magischen Kugel eine Frage und erhalte eine Antwort",
                     "options": {
                         "question": {
-                            "name": "question",
+                            "name": "frage",
                             "description": "Die Frage, die du der magischen Kugel stellen möchtest"
                         }
                     },

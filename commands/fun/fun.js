@@ -3,6 +3,7 @@ const { SlashCommandBuilder } = require('discord.js');
 const coinflip = require('./coinflip.js');
 const dice = require('./dice.js');
 const meme = require('./meme.js');
+const eightball = require('./8ball.js');
 
 const locales = {
     de: require('../../locales/de.json'),
@@ -99,22 +100,24 @@ module.exports = {
                     option
                         .setName('question')
                         .setNameLocalizations({
-                            de: locales.de.categories.information.commands.eightball.options.question.name,
-                            fr: locales.fr.categories.information.commands.eightball.options.question.name,
-                            "pt-BR": locales.pt.categories.information.commands.eightball.options.question.name,
-                            "es-ES": locales.es.categories.information.commands.eightball.options.question.name,
-                            tr: locales.tr.categories.information.commands.eightball.options.question.name,
-                            ru: locales.ru.categories.information.commands.eightball.options.question.name
+                            de: locales.de.categories.fun.commands.eightball.options.question.name,
+                            fr: locales.fr.categories.fun.commands.eightball.options.question.name,
+                            "pt-BR": locales.pt.categories.fun.commands.eightball.options.question.name,
+                            "es-ES": locales.es.categories.fun.commands.eightball.options.question.name,
+                            tr: locales.tr.categories.fun.commands.eightball.options.question.name,
+                            ru: locales.ru.categories.fun.commands.eightball.options.question.name
                         })
                         .setDescription('The question you want to ask the 8-ball')
                         .setDescriptionLocalizations({
-                            de: locales.de.categories.information.commands.eightball.options.question.description,
-                            fr: locales.fr.categories.information.commands.eightball.options.question.description,
-                            "pt-BR": locales.pt.categories.information.commands.eightball.options.question.description,
-                            "es-ES": locales.es.categories.information.commands.eightball.options.question.description,
-                            tr: locales.tr.categories.information.commands.eightball.options.question.description,
-                            ru: locales.ru.categories.information.commands.eightball.options.question.description
+                            de: locales.de.categories.fun.commands.eightball.options.question.description,
+                            fr: locales.fr.categories.fun.commands.eightball.options.question.description,
+                            "pt-BR": locales.pt.categories.fun.commands.eightball.options.question.description,
+                            "es-ES": locales.es.categories.fun.commands.eightball.options.question.description,
+                            tr: locales.tr.categories.fun.commands.eightball.options.question.description,
+                            ru: locales.ru.categories.fun.commands.eightball.options.question.description
                         })
+                        .setRequired(true)
+                        .setMaxLength(512)
                 )
         )
         .addSubcommand(subcommand =>

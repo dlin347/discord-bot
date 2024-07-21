@@ -8,7 +8,7 @@
             "description": "Comandos de la categoría de diversión",
             "commands": {
                 "coinflip": {
-                    "name": "coinflip",
+                    "name": "caraocruz",
                     "description": "Lanza una moneda y obtén el resultado",
                     "responses": {
                         "result": "La moneda **(🪙)** ha caído en **{{result}}**",
@@ -19,7 +19,7 @@
                     }
                 },
                 "dice": {
-                    "name": "dice",
+                    "name": "dado",
                     "description": "Lanza un dado y obtén el resultado",
                     "responses": {
                         "result": "El dado **(🎲)** ha caído en **{{result}}**",
@@ -31,11 +31,33 @@
                     "description": "Hazle una pregunta a la bola mágica y obtén una respuesta",
                     "options": {
                         "question": {
-                            "name": "question",
+                            "name": "pregunta",
                             "description": "La pregunta que quieres hacerle a la bola mágica"
                         }
                     },
                     "responses": {
+                        "array": [
+                            "Es seguro",
+                            "Respuesta confusa, inténtalo de nuevo",
+                            "No cuentes con ello",
+                            "Es decididamente así",
+                            "Pregunta de nuevo más tarde",
+                            "Mi respuesta es no",
+                            "Sin duda",
+                            "Mejor no decírtelo ahora",
+                            "Mis fuentes dicen que no",
+                            "Sí, definitivamente",
+                            "No se puede predecir ahora",
+                            "Las perspectivas no son buenas",
+                            "Puedes confiar en ello",
+                            "Concéntrate y pregunta de nuevo",
+                            "Muy dudoso",
+                            "Así como lo veo, sí",
+                            "Lo más probable",
+                            "Perspectiva buena",
+                            "Sí",
+                            "Las señales apuntan a que sí"
+                        ],
                         "answer": "Le has preguntado a la bola mágica **(🔮)**: **{{question}}**\nLa bola mágica **(🔮)** te ha respondido con: **{{answer}}**",
                         "defaultError": "No puedo preguntarle a la bola mágica **(🔮)** en este momento... Inténtalo de nuevo más tarde"
                     }
@@ -55,7 +77,7 @@
                     }
                 },
                 "member": {
-                    "name": "member",
+                    "name": "miembro",
                     "description": "Obtén información de un miembro",
                     "options": {
                         "member": {
@@ -183,7 +205,7 @@
             "description": "Comandos de la categoría de moderación",
             "commands": {
                 "kick": {
-                    "name": "kick",
+                    "name": "kickear",
                     "description": "Expulsa a un miembro del servidor",
                     "options": {
                         "member": {
@@ -205,7 +227,7 @@
                 },
                 "ban": {
                     "description": "Banea a un miembro del servidor",
-                    "name": "ban",
+                    "name": "banear",
                     "options": {
                         "member": {
                             "name": "miembro",
@@ -232,7 +254,7 @@
                 },
                 "unban": {
                     "description": "Desbanea a un usuario del servidor",
-                    "name": "unban",
+                    "name": "desbanear",
                     "options": {
                         "id": {
                             "name": "id",
@@ -251,7 +273,7 @@
                     }
                 },
                 "delete_messages": {
-                    "name": "delete_messages",
+                    "name": "eliminar_mensajes",
                     "description": "Elimina una cantidad de mensajes en un canal específico",
                     "options": {
                         "amount": {
@@ -270,7 +292,7 @@
                     }
                 },
                 "lock": {
-                    "name": "lock",
+                    "name": "bloquear",
                     "description": "Bloquea un canal específico",
                     "options": {
                         "channel": {
@@ -286,7 +308,7 @@
                     }
                 },
                 "unlock": {
-                    "name": "unlock",
+                    "name": "desbloquear",
                     "description": "Desbloquea un canal específico",
                     "options": {
                         "channel": {
@@ -328,7 +350,7 @@
                     }
                 },
                 "warn": {
-                    "name": "warn",
+                    "name": "advertir",
                     "description": "Adverte a un miembro en el servidor",
                     "options": {
                         "member": {

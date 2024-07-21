@@ -20,7 +20,7 @@
                 },
                 "dice": {
                     "name": "dice",
-                    "description": "Zar at",
+                    "description": "Zar at ve sonucu öğren",
                     "responses": {
                         "result": "Zar **(🎲)** **{{result}}** üzerine düştü",
                         "defaultError": "Şu anda zar **(🎲)** atamıyorum... Daha sonra tekrar deneyin"
@@ -31,11 +31,33 @@
                     "description": "Büyülü topa bir soru sor ve cevap al",
                     "options": {
                         "question": {
-                            "name": "question",
+                            "name": "soru",
                             "description": "Büyülü topa sormak istediğiniz soru"
                         }
                     },
                     "responses": {
+                        "array": [
+                            "Bu kesin",
+                            "Cevap belirsiz, tekrar deneyin",
+                            "Buna güvenmeyin",
+                            "Kesinlikle öyle",
+                            "Daha sonra tekrar sor",
+                            "Cevabım hayır",
+                            "Şüphesiz",
+                            "Şimdi size söylemesem iyi olur",
+                            "Kaynaklarım hayır diyor",
+                            "Kesinlikle evet",
+                            "Şimdi tahmin edemem",
+                            "Görünüm pek iyi değil",
+                            "Buna güvenebilirsiniz",
+                            "Odaklanın ve tekrar sorun",
+                            "Çok şüpheli",
+                            "Gördüğüm kadarıyla, evet",
+                            "Büyük olasılıkla",
+                            "Görünüm iyi",
+                            "Evet",
+                            "İşaretler eveti gösteriyor"
+                        ],
                         "answer": "Büyülü topa **(🔮)** şu soruyu sordunuz: **{{question}}**\nBüyülü top **(🔮)** şu cevabı verdi: **{{answer}}**",
                         "defaultError": "Bu anda büyülü topa **(🔮)** soru soramıyorum... Lütfen daha sonra tekrar deneyin"
                     }

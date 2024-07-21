@@ -31,11 +31,33 @@
                     "description": "Faça uma pergunta para a bola mágica e obtenha uma resposta",
                     "options": {
                         "question": {
-                            "name": "question",
+                            "name": "pergunta",
                             "description": "A pergunta que você quer fazer para a bola mágica"
                         }
                     },
                     "responses": {
+                        "array": [
+                            "É certo",
+                            "Resposta nebulosa, tente novamente",
+                            "Não conte com isso",
+                            "Decididamente sim",
+                            "Pergunte novamente mais tarde",
+                            "Minha resposta é não",
+                            "Sem dúvida",
+                            "Melhor não te dizer agora",
+                            "Minhas fontes dizem que não",
+                            "Sim, definitivamente",
+                            "Não posso prever agora",
+                            "Perspectiva não é boa",
+                            "Você pode contar com isso",
+                            "Concentre-se e pergunte novamente",
+                            "Muito duvidoso",
+                            "Como eu vejo, sim",
+                            "Muito provavelmente",
+                            "Perspectiva boa",
+                            "Sim",
+                            "Os sinais apontam que sim"
+                        ],
                         "answer": "Você perguntou para a bola mágica **(🔮)**: **{{question}}**\nA bola mágica **(🔮)** respondeu com: **{{answer}}**",
                         "defaultError": "Não consigo fazer a pergunta para a bola mágica **(🔮)** no momento... Tente novamente mais tarde"
                     }

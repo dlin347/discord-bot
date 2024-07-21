@@ -36,6 +36,28 @@
                         }
                     },
                     "responses": {
+                        "array": [
+                            "C'est certain",
+                            "Réponse floue, réessayez",
+                            "N'y comptez pas",
+                            "C'est décidément ainsi",
+                            "Demandez plus tard",
+                            "Ma réponse est non",
+                            "Sans aucun doute",
+                            "Mieux vaut ne pas vous le dire maintenant",
+                            "Mes sources disent non",
+                            "Oui, définitivement",
+                            "Ne peut pas prédire maintenant",
+                            "Les perspectives ne sont pas bonnes",
+                            "Vous pouvez compter dessus",
+                            "Concentrez-vous et demandez à nouveau",
+                            "Très douteux",
+                            "Comme je le vois, oui",
+                            "Très probablement",
+                            "Perspectives bonnes",
+                            "Oui",
+                            "Les signes pointent vers oui"
+                        ],
                         "answer": "Vous avez demandé à la boule magique **(🔮)** : **{{question}}**\nLa boule magique **(🔮)** a répondu par : **{{answer}}**",
                         "defaultError": "Je ne peux pas poser de question à la boule magique **(🔮)** pour l'instant... Essayez de nouveau plus tard"
                     }
