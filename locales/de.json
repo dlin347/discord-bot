@@ -61,6 +61,20 @@
                         "answer": "Du hast der magischen Kugel **(🔮)** folgende Frage gestellt: **{{question}}**\nDie magische Kugel **(🔮)** hat geantwortet: **{{answer}}**",
                         "defaultError": "Ich kann der magischen Kugel **(🔮)** momentan keine Frage stellen... Bitte versuche es später noch einmal"
                     }
+                },
+                "cat": {
+                    "name": "cat",
+                    "description": "Erhalte ein zufälliges Katzenbild",
+                    "responses": {
+                        "defaultError": "Ich kann momentan kein zufälliges Katzenbild abrufen... Versuche es später noch einmal"
+                    }
+                },
+                "dog": {
+                    "name": "dog",
+                    "description": "Erhalte ein zufälliges Hundebild",
+                    "responses": {
+                        "defaultError": "Ich kann momentan kein zufälliges Hundebild abrufen... Versuche es später noch einmal"
+                    }
                 }
             }
         },

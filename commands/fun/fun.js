@@ -4,6 +4,8 @@ const coinflip = require('./coinflip.js');
 const dice = require('./dice.js');
 const meme = require('./meme.js');
 const eightball = require('./8ball.js');
+const cat = require('./cat.js');
+const dog = require('./dog.js');
 
 const locales = {
     de: require('../../locales/de.json'),
@@ -122,6 +124,48 @@ module.exports = {
         )
         .addSubcommand(subcommand =>
             subcommand
+                .setName('cat')
+                .setNameLocalizations({
+                    de: locales.de.categories.fun.commands.cat.name,
+                    fr: locales.fr.categories.fun.commands.cat.name,
+                    "pt-BR": locales.pt.categories.fun.commands.cat.name,
+                    "es-ES": locales.es.categories.fun.commands.cat.name,
+                    tr: locales.tr.categories.fun.commands.cat.name,
+                    ru: locales.ru.categories.fun.commands.cat.name
+                })
+                .setDescription("Get a random cat image")
+                .setDescriptionLocalizations({
+                    de: locales.de.categories.fun.commands.cat.description,
+                    fr: locales.fr.categories.fun.commands.cat.description,
+                    "pt-BR": locales.pt.categories.fun.commands.cat.description,
+                    "es-ES": locales.es.categories.fun.commands.cat.description,
+                    tr: locales.tr.categories.fun.commands.cat.description,
+                    ru: locales.ru.categories.fun.commands.cat.description
+                })
+        )
+        .addSubcommand(subcommand =>
+            subcommand
+                .setName('dog')
+                .setNameLocalizations({
+                    de: locales.de.categories.fun.commands.dog.name,
+                    fr: locales.fr.categories.fun.commands.dog.name,
+                    "pt-BR": locales.pt.categories.fun.commands.dog.name,
+                    "es-ES": locales.es.categories.fun.commands.dog.name,
+                    tr: locales.tr.categories.fun.commands.dog.name,
+                    ru: locales.ru.categories.fun.commands.dog.name
+                })
+                .setDescription("Get a random dog image")
+                .setDescriptionLocalizations({
+                    de: locales.de.categories.fun.commands.dog.description,
+                    fr: locales.fr.categories.fun.commands.dog.description,
+                    "pt-BR": locales.pt.categories.fun.commands.dog.description,
+                    "es-ES": locales.es.categories.fun.commands.dog.description,
+                    tr: locales.tr.categories.fun.commands.dog.description,
+                    ru: locales.ru.categories.fun.commands.dog.description
+                })
+        )
+        .addSubcommand(subcommand =>
+            subcommand
                 .setName('meme')
                 .setDescription("Get a random meme image (only available in english)")
         )
@@ -142,6 +186,12 @@ module.exports = {
                     break;
                 case 'meme':
                     await meme(interaction);
+                    break;
+                case 'cat':
+                    await cat(interaction);
+                    break;
+                case 'dog':
+                    await dog(interaction);
                     break;
             }
         }

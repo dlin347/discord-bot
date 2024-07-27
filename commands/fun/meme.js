@@ -1,9 +1,9 @@
-module.exports = async function meme(interaction) {
-    /* 
+/* 
     Since memes are only available in english I have decided to remove the translation function from this file.
-    */
-    const { generate } = require('rmeme');
+*/
+const { generate } = require('rmeme');
 
+module.exports = async function meme(interaction) {
     try {
         await interaction.reply({ content: 'Here is a random meme image for you:', files: [generate()], ephemeral: true });
         console.log("\x1b[33m" + `<<@${interaction.user.username}>> HAS SUCCESSFULLY USED <</MEME>> IN (<<${interaction.guild.name}>>)` + "\x1b[0m");

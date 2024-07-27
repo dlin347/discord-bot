@@ -61,6 +61,20 @@
                         "answer": "Büyülü topa **(🔮)** şu soruyu sordunuz: **{{question}}**\nBüyülü top **(🔮)** şu cevabı verdi: **{{answer}}**",
                         "defaultError": "Bu anda büyülü topa **(🔮)** soru soramıyorum... Lütfen daha sonra tekrar deneyin"
                     }
+                },
+                "cat": {
+                    "name": "cat",
+                    "description": "Rastgele bir kedi resmi al",
+                    "responses": {
+                        "defaultError": "Şu anda kedi resmi alamıyorum... Daha sonra tekrar deneyin"
+                    }
+                },
+                "dog": {
+                    "name": "dog",
+                    "description": "Rastgele bir köpek resmi al",
+                    "responses": {
+                        "defaultError": "Şu anda köpek resmi alamıyorum... Daha sonra tekrar deneyin"
+                    }
                 }
             }
         },

@@ -61,6 +61,20 @@
                         "answer": "Você perguntou para a bola mágica **(🔮)**: **{{question}}**\nA bola mágica **(🔮)** respondeu com: **{{answer}}**",
                         "defaultError": "Não consigo fazer a pergunta para a bola mágica **(🔮)** no momento... Tente novamente mais tarde"
                     }
+                },
+                "cat": {
+                    "name": "cat",
+                    "description": "Obtenha uma imagem aleatória de um gato",
+                    "responses": {
+                        "defaultError": "Não consigo obter uma imagem de um gato no momento. Tente novamente mais tarde..."
+                    }
+                },
+                "dog": {
+                    "name": "dog",
+                    "description": "Obtenha uma imagem aleatória de um cachorro",
+                    "responses": {
+                        "defaultError": "Não consigo obter uma imagem de um cachorro no momento. Tente novamente mais tarde..."
+                    }
                 }
             }
         },
