@@ -8,7 +8,7 @@ module.exports = async function banMember(interaction) {
     const localeFile = await translation(interaction.locale);
     const responses = localeFile.categories.moderation.commands.ban.responses;
     const member = interaction.options.getMember('member');
-    const time = interaction.options.getString('delete_messages') || 'Hellnaw';
+    const time = interaction.options.getString('delete_messages') || 'EasterEgg';
     const convertTime = await convert(time);
     const defaultError = responses.defaultError.replace('{{member}}', member).replace('{{guild}}', interaction.guild.name);
 
@@ -54,7 +54,6 @@ module.exports = async function banMember(interaction) {
 
     try {
         await member.ban({ deleteMessageSeconds: deleteMessages, reason: englishReason }).then(async () => {
-            console.log("\x1b[33m" + `<<@${interaction.user.username}>> HAS SUCCESSFULLY BANNED <<@${member.user.username}>> FROM <<${interaction.guild.name}>> FOR <<${englishReason}>>` + "\x1b[0m");
             const content = responses.success.replace('{{member}}', member).replace('{{guild}}', interaction.guild.name).replace('{{reason}}', reason).replace('{{time}}', deleteMessagesString);
             await interaction.reply({ content: content, ephemeral: true });
             await member.send({ content: `You have been banned from ${interaction.guild.name} by @${interaction.user.tag}. Reason: ${englishReason}` }).catch(async (e) => {

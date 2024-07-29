@@ -1,6 +1,6 @@
 const { EmbedBuilder } = require('discord.js');
 const translation = require('../../locales/other/translation.js');
-const permissions = require('../../functions/permissions/permissions.js')
+const permissions = require('../../data/permissions/permissions.json')
 const limit = require('../../functions/text/limit.js');
 
 module.exports = async function memberInformation(interaction) {
@@ -38,7 +38,6 @@ module.exports = async function memberInformation(interaction) {
             );
 
         await interaction.reply({ embeds: [embed], ephemeral: true });
-        console.log("\x1b[33m" + `<<@${interaction.user.username}>> HAS SUCCESSFULLY USED <</MEMBER>> IN (<<${interaction.guild.name}>>)` + "\x1b[0m");
 
     } catch (e) {
         console.error("\x1b[31m" + '[/MEMBER] ' + e.stack + "\x1b[0m");

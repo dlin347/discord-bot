@@ -11,7 +11,6 @@ module.exports = async function coinflip(interaction) {
 
     try {
         await interaction.reply({ content: content, ephemeral: true });
-        console.log("\x1b[33m" + `<<@${interaction.user.username}>> HAS SUCCESSFULLY USED <</8BALL>> IN (<<${interaction.guild.name}>>)` + "\x1b[0m");
     } catch (e) {
         console.error("\x1b[31m" + '[/8BALL] ' + e.stack + "\x1b[0m");
         await interaction.reply({ content: responses.defaultError, ephemeral: true });

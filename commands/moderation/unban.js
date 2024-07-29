@@ -28,7 +28,6 @@ module.exports = async function unbanMember(interaction) {
 
     try {
         await interaction.guild.members.unban(id, englishReason).then(async () => {
-            console.log("\x1b[33m" + `<<@${interaction.user.username}>> HAS SUCCESSFULLY UNBANNED <<@${fetched.user.username}>> FROM <<${interaction.guild.name}>> FOR <<${englishReason}>>` + "\x1b[0m");
             const content = responses.success.replace('{{user}}', `@${fetched.user.username}`).replace('{{guild}}', interaction.guild.name).replace('{{reason}}', reason);
             await interaction.reply({ content: content, ephemeral: true });
         });

@@ -20,7 +20,6 @@ module.exports = async function coinflip(interaction) {
         setTimeout(async () => {
             await interaction.editReply({ content: coin, files: [], ephemeral: true });
         }, 6100)
-        console.log("\x1b[33m" + `<<@${interaction.user.username}>> HAS SUCCESSFULLY USED <</COINFLIP>> IN (<<${interaction.guild.name}>>)` + "\x1b[0m");
     } catch (e) {
         console.error("\x1b[31m" + '[/COINFLIP] ' + e.stack + "\x1b[0m");
         await interaction.reply({ content: responses.defaultError, ephemeral: true });

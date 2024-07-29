@@ -42,7 +42,6 @@ module.exports = async function slowmodeChannel(interaction) {
 
     try {
         await channel.setRateLimitPerUser(timeS, englishReason).then(async () => {
-            console.log("\x1b[33m" + `<<@${interaction.user.username}>> HAS SUCCESSFULLY SET THE SLOWMODE TIME <<${time}>> TO <<#${channel.name}>> IN <<${interaction.guild.name}>> FOR <<${englishReason}>>` + "\x1b[0m")
             const content = responses.success.replace('{{channel}}', `<#${channel.id}>`).replace('{{time}}', time).replace('{{reason}}', reason);
             await interaction.reply({ content: content, ephemeral: true });
         });

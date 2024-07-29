@@ -6,6 +6,8 @@ const meme = require('./meme.js');
 const eightball = require('./8ball.js');
 const cat = require('./cat.js');
 const dog = require('./dog.js');
+const joke = require('./joke.js');
+const quote = require('./quote.js');
 
 const locales = {
     de: require('../../locales/de.json'),
@@ -166,8 +168,18 @@ module.exports = {
         )
         .addSubcommand(subcommand =>
             subcommand
+                .setName('joke')
+                .setDescription("Get a random joke (only available in english)")
+        )
+        .addSubcommand(subcommand =>
+            subcommand
                 .setName('meme')
                 .setDescription("Get a random meme image (only available in english)")
+        )
+        .addSubcommand(subcommand =>
+            subcommand
+                .setName('quote')
+                .setDescription("Get a random famous quote (only available in english)")
         )
         .setDMPermission(false),
 
@@ -192,6 +204,12 @@ module.exports = {
                     break;
                 case 'dog':
                     await dog(interaction);
+                    break;
+                case 'joke':
+                    await joke(interaction);
+                    break;
+                case 'quote':
+                    await quote(interaction);
                     break;
             }
         }

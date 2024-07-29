@@ -7,7 +7,6 @@ module.exports = async function ping(interaction) {
 
     try {
         await interaction.reply({ content: success, ephemeral: true });
-        console.log("\x1b[33m" + `<<@${interaction.user.username}>> HAS SUCCESSFULLY USED <</PING>> IN (<<${interaction.guild.name}>>)` + "\x1b[0m");
     } catch (e) {
         console.error("\x1b[31m" + '[/PING] ' + e.stack + "\x1b[0m");
         await interaction.reply({ content: defaultError, ephemeral: true });

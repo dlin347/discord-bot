@@ -30,9 +30,17 @@
 - [x] Finish fixing ban command
 - [x] Fix ban and slowmode commands
 - [x] Yourself, myself actions (done but, kick, ban and warn needs specific message)
+- [x] Coinflip command
+- [x] Dice command
+- [x] Meme command
+- [x] Joke command
+- [x] Cat command
+- [x] Dog command
+- [x] Quote command
+- [ ] Rock, paper, scissors command
+- [ ] Trivia command
 - [ ] Filter by name when unbanning the user (problem: og tags)
-- [ ] Integrate mongodb or locally hosted database
-- [ ] Host locally the bot => Raspberry pi 400?
+- [ ] Find a database
 - [ ] Create .github and its corresponding files (README, CONTRIBUTING, TEMPLATES...)
 - [ ] Choose an open source license (https://choosealicense.com/)
 - [ ] Add the bot to some websites such as top.gg (read requirements)
@@ -45,4 +53,10 @@
 Files to modify if there is an expansion of languages:
 /locales/*
 /commands/*
+
+Commands/files to translate in the future:
+- Joke
+- Meme
+- Quote
+- /data/*
 ```

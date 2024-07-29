@@ -39,7 +39,6 @@ module.exports = async function botInformation(interaction) {
             );
 
         await interaction.reply({ embeds: [embed], ephemeral: true });
-        console.log("\x1b[33m" + `<<@${interaction.user.username}>> HAS SUCCESSFULLY USED <</BOT>> IN (<<${interaction.guild.name}>>)` + "\x1b[0m");
     } catch (e) {
         console.error("\x1b[31m" + '[/BOT] ' + e.stack + "\x1b[0m");
         await interaction.reply({ content: defaultError, ephemeral: true });

@@ -26,7 +26,6 @@ module.exports = async function lockChannel(interaction) {
 
     try {
         await channel.permissionOverwrites.edit(interaction.guild.id, { SendMessages: false }).then(async () => {
-            console.log("\x1b[33m" + `<<@${interaction.user.username}>> HAS SUCCESSFULLY LOCKED <<#${channel.name}>> IN <<${interaction.guild.name}>>` + "\x1b[0m");
             const content = responses.success.replace('{{channel}}', `<#${channel.id}>`);
             await interaction.reply({ content: content, ephemeral: true })
         })

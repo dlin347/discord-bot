@@ -32,7 +32,6 @@ module.exports = async function kickMember(interaction) {
 
     try {
         await member.kick(englishReason).then(async () => {
-            console.log("\x1b[33m" + `<<@${interaction.user.username}>> HAS SUCCESSFULLY KICKED <<@${member.user.username}>> FROM <<${interaction.guild.name}>> FOR <<${englishReason}>>` + "\x1b[0m")
             const content = responses.success.replace('{{member}}', member).replace('{{guild}}', interaction.guild.name).replace('{{reason}}', reason);
             await interaction.reply({ content: content, ephemeral: true });
             await member.send({ content: `You have been kicked from ${interaction.guild.name} by @${interaction.user.tag}. Reason: ${englishReason}` }).catch(async (e) => {
