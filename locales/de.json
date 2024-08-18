@@ -75,6 +75,22 @@
                     "responses": {
                         "defaultError": "Ich kann momentan kein zufälliges Hundebild abrufen... Versuche es später noch einmal"
                     }
+                },
+                "rps": {
+                    "name": "ssp",
+                    "description": "Spiele Schere, Stein, Papier mit dem Bot",
+                    "options": {
+                        "choice": {
+                            "name": "auswahl",
+                            "description": "Deine Auswahl für Schere, Stein, Papier"
+                        }
+                    },
+                    "responses": {
+                        "win": "**Du hast gewonnen!**\nDeine Auswahl war: `{{choice}}`\nMeine Auswahl war: `{{botChoice}}`",
+                        "lose": "**Du hast verloren!**\nDeine Auswahl war: `{{choice}}`\nMeine Auswahl war: `{{botChoice}}`",
+                        "draw": "**Unentschieden!** Wir haben beide gewählt: `{{choice}}`",
+                        "defaultError": "Ich kann gerade nicht Schere, Stein, Papier spielen... Versuche es später noch einmal"
+                    }
                 }
             }
         },

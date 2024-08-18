@@ -75,6 +75,22 @@
                     "responses": {
                         "defaultError": "No puedo obtener una imagen de un perro en este momento... Inténtalo de nuevo más tarde"
                     }
+                },
+                "rps": {
+                    "name": "ppt",
+                    "description": "Juega a piedra, papel o tijera con el bot",
+                    "options": {
+                        "choice": {
+                            "name": "elección",
+                            "description": "Tu elección para jugar a piedra, papel o tijera"
+                        }
+                    },
+                    "responses": {
+                        "win": "**¡Has ganado!**\nTu elección ha sido: `{{choice}}`\nMi elección ha sido: `{{botChoice}}`",
+                        "lose": "**¡Has perdido!**\nTu elección ha sido: `{{choice}}`\nMi elección ha sido: `{{botChoice}}",
+                        "draw": "**¡Hemos empatado!** Ambos hemos elegido: `{{choice}}`",
+                        "defaultError": "No puedo jugar a piedra, papel o tijera en este momento... Inténtalo de nuevo más tarde"
+                    }
                 }
             }
         },

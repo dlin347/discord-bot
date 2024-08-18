@@ -75,6 +75,22 @@
                     "responses": {
                         "defaultError": "Je ne peux pas obtenir une image de chien pour le moment... Réessayez plus tard"
                     }
+                },
+                "rps": {
+                    "name": "ppc",
+                    "description": "Jouez à pierre, papier, ciseaux avec le bot",
+                    "options": {
+                        "choice": {
+                            "name": "choix",
+                            "description": "Votre choix pour jouer à pierre, papier, ciseaux"
+                        }
+                    },
+                    "responses": {
+                        "win": "**Vous avez gagné!**\nVotre choix était : `{{choice}}`\nMon choix était : `{{botChoice}}`",
+                        "lose": "**Vous avez perdu!**\nVotre choix était : `{{choice}}`\nMon choix était : `{{botChoice}}`",
+                        "draw": "**Nous sommes à égalité!** Nous avons tous les deux choisi : `{{choice}}`",
+                        "defaultError": "Je ne peux pas jouer à pierre, papier, ciseaux pour le moment... Réessayez plus tard"
+                    }
                 }
             }
         },

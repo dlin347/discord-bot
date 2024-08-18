@@ -75,6 +75,22 @@
                     "responses": {
                         "defaultError": "Şu anda köpek resmi alamıyorum... Daha sonra tekrar deneyin"
                     }
+                },
+                "rps": {
+                    "name": "tkt",
+                    "description": "Bot ile taş, kağıt, makas oyna",
+                    "options": {
+                        "choice": {
+                            "name": "seçim",
+                            "description": "Taş, kağıt, makas oynamak için seçiminiz"
+                        }
+                    },
+                    "responses": {
+                        "win": "**Kazandınız!**\nSeçiminiz: `{{choice}}`\nBenim seçimim: `{{botChoice}}`",
+                        "lose": "**Kaybettiniz!**\nSeçiminiz: `{{choice}}`\nBenim seçimim: `{{botChoice}}`",
+                        "draw": "**Berabere kaldık!** İkimiz de şunu seçtik: `{{choice}}`",
+                        "defaultError": "Şu anda taş, kağıt, makas oynayamam... Lütfen daha sonra tekrar deneyin"
+                    }
                 }
             }
         },

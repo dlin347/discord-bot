@@ -75,6 +75,22 @@
                     "responses": {
                         "defaultError": "Não consigo obter uma imagem de um cachorro no momento. Tente novamente mais tarde..."
                     }
+                },
+                "rps": {
+                    "name": "ppt",
+                    "description": "Jogue pedra, papel ou tesoura com o bot",
+                    "options": {
+                        "choice": {
+                            "name": "escolha",
+                            "description": "Sua escolha para jogar pedra, papel ou tesoura"
+                        }
+                    },
+                    "responses": {
+                        "win": "**Você ganhou!**\nSua escolha foi: `{{choice}}`\nMinha escolha foi: `{{botChoice}}`",
+                        "lose": "**Você perdeu!**\nSua escolha foi: `{{choice}}`\nMinha escolha foi: `{{botChoice}}`",
+                        "draw": "**Empatamos!** Ambos escolhemos: `{{choice}}`",
+                        "defaultError": "Não posso jogar pedra, papel ou tesoura agora... Tente novamente mais tarde"
+                    }
                 }
             }
         },

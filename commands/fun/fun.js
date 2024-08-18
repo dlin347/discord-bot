@@ -8,6 +8,7 @@ const cat = require('./cat.js');
 const dog = require('./dog.js');
 const joke = require('./joke.js');
 const quote = require('./quote.js');
+const rps = require('./rps.js');
 
 const locales = {
     de: require('../../locales/de.json'),
@@ -168,6 +169,54 @@ module.exports = {
         )
         .addSubcommand(subcommand =>
             subcommand
+                .setName('rps')
+                .setNameLocalizations({
+                    de: locales.de.categories.fun.commands.rps.name,
+                    fr: locales.fr.categories.fun.commands.rps.name,
+                    "pt-BR": locales.pt.categories.fun.commands.rps.name,
+                    "es-ES": locales.es.categories.fun.commands.rps.name,
+                    tr: locales.tr.categories.fun.commands.rps.name,
+                    ru: locales.ru.categories.fun.commands.rps.name
+                })
+                .setDescription("Play rock, paper, scissors with the bot")
+                .setDescriptionLocalizations({
+                    de: locales.de.categories.fun.commands.rps.description,
+                    fr: locales.fr.categories.fun.commands.rps.description,
+                    "pt-BR": locales.pt.categories.fun.commands.rps.description,
+                    "es-ES": locales.es.categories.fun.commands.rps.description,
+                    tr: locales.tr.categories.fun.commands.rps.description,
+                    ru: locales.ru.categories.fun.commands.rps.description
+                })
+                .addStringOption(option =>
+                    option
+                        .setName('choice')
+                        .setNameLocalizations({
+                            de: locales.de.categories.fun.commands.rps.options.choice.name,
+                            fr: locales.fr.categories.fun.commands.rps.options.choice.name,
+                            "pt-BR": locales.pt.categories.fun.commands.rps.options.choice.name,
+                            "es-ES": locales.es.categories.fun.commands.rps.options.choice.name,
+                            tr: locales.tr.categories.fun.commands.rps.options.choice.name,
+                            ru: locales.ru.categories.fun.commands.rps.options.choice.name
+                        })
+                        .setDescription('Your choice to play rock, paper, scissors')
+                        .setDescriptionLocalizations({
+                            de: locales.de.categories.fun.commands.rps.options.choice.description,
+                            fr: locales.fr.categories.fun.commands.rps.options.choice.description,
+                            "pt-BR": locales.pt.categories.fun.commands.rps.options.choice.description,
+                            "es-ES": locales.es.categories.fun.commands.rps.options.choice.description,
+                            tr: locales.tr.categories.fun.commands.rps.options.choice.description,
+                            ru: locales.ru.categories.fun.commands.rps.options.choice.description
+                        })
+                        .addChoices(
+                            { name: '🪨', value: '🪨' },
+                            { name: '🧻', value: '🧻' },
+                            { name: '✂️', value: '✂️' },
+                        )
+                        .setRequired(true)
+                )
+        )
+        .addSubcommand(subcommand =>
+            subcommand
                 .setName('joke')
                 .setDescription("Get a random joke (only available in english)")
         )
@@ -210,6 +259,9 @@ module.exports = {
                     break;
                 case 'quote':
                     await quote(interaction);
+                    break;
+                case 'rps':
+                    await rps(interaction);
                     break;
             }
         }

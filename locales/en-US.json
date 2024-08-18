@@ -75,6 +75,22 @@
                     "responses": {
                         "defaultError": "I can't get a random dog image right now... Try again later"
                     }
+                },
+                "rps": {
+                    "name": "rps",
+                    "description": "Play rock, paper, scissors with the bot",
+                    "options": {
+                        "choice": {
+                            "name": "choice",
+                            "description": "Your choice to play rock, paper, scissors"
+                        }
+                    },
+                    "responses": {
+                        "win": "**You won!**\nYour choice was: `{{choice}}`\nMy choice was: `{{botChoice}}`",
+                        "lose": "**You lost!**\nYour choice was: `{{choice}}`\nMy choice was: `{{botChoice}}`",
+                        "draw": "**It's a draw!** We both chose: `{{choice}}`",
+                        "defaultError": "I can't play rock, paper, scissors right now... Please try again later"
+                    }
                 }
             }
         },
