@@ -6,7 +6,9 @@ module.exports = async function kickMember(interaction) {
     const localeFile = await translation(interaction.locale);
     const member = interaction.options.getMember('member');
     const responses = localeFile.categories.moderation.commands.kick.responses;
-    const defaultError = responses.defaultError.replace('{{member}}', member).replace('{{guild}}', interaction.guild.name);
+    const defaultError = responses.defaultError
+        .replace('{{member}}', member)
+        .replace('{{guild}}', interaction.guild.name);
 
     if (!interaction.member.permissions.has(PermissionFlagsBits.KickMembers)) {
         const message = await permissions(interaction.locale, 'KICK_MEMBERS');
@@ -14,12 +16,16 @@ module.exports = async function kickMember(interaction) {
     }
 
     if (!interaction.guild.members.me.permissions.has(PermissionFlagsBits.KickMembers)) {
-        const noPermissionsError = responses.noPermissionsError.replace('{{member}}', member).replace('{{guild}}', interaction.guild.name);
+        const noPermissionsError = responses.noPermissionsError
+            .replace('{{member}}', member)
+            .replace('{{guild}}', interaction.guild.name);
         return interaction.reply({ content: noPermissionsError, ephemeral: true });
     }
 
     if (interaction.guild.members.me.roles.highest.comparePositionTo(member.roles.highest) <= 0) {
-        const higherRoleError = responses.higherRoleError.replace('{{member}}', member).replace('{{guild}}', interaction.guild.name);
+        const higherRoleError = responses.higherRoleError
+            .replace('{{member}}', member)
+            .replace('{{guild}}', interaction.guild.name);
         return interaction.reply({ content: higherRoleError, ephemeral: true });
     }
 
@@ -32,7 +38,10 @@ module.exports = async function kickMember(interaction) {
 
     try {
         await member.kick(englishReason).then(async () => {
-            const content = responses.success.replace('{{member}}', member).replace('{{guild}}', interaction.guild.name).replace('{{reason}}', reason);
+            const content = responses.success
+                .replace('{{member}}', member)
+                .replace('{{guild}}', interaction.guild.name)
+                .replace('{{reason}}', reason);
             await interaction.reply({ content: content, ephemeral: true });
             await member.send({ content: `You have been kicked from ${interaction.guild.name} by @${interaction.user.tag}. Reason: ${englishReason}` }).catch(async (e) => {
                 console.error("\x1b[31m" + '[/KICK] ' + e.stack + "\x1b[0m");

@@ -26,7 +26,9 @@ module.exports = async function avatarMember(interaction) {
         if (!member.user.avatarURL()) {
             footer = responses.embed.footer.defaultAvatar.replace('{{member}}', `${member.user.username}`);
         } else {
-            footer = responses.embed.footer.resolutionAndExtension.replace('{{resolution}}', resolution).replace('{{extension}}', extension);
+            footer = responses.embed.footer.resolutionAndExtension
+                .replace('{{resolution}}', resolution)
+                .replace('{{extension}}', extension);
         };
 
         const embed = new EmbedBuilder()

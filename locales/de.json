@@ -3,6 +3,26 @@
         "common": {
             "noReason": "Es wurde kein Grund angegeben"
         },
+        "utility": {
+            "name": "nuetzlichkeit",
+            "description": "Befehle aus der Kategorie Nützlichkeit",
+            "commands": {
+                "shorten": {
+                    "name": "verkuerzen",
+                    "description": "Einen URL-Link verkürzen",
+                    "options": {
+                        "url": {
+                            "name": "url",
+                            "description": "Der URL-Link, den du verkürzen möchtest"
+                        }
+                    },
+                    "responses": {
+                        "success": "Der Link `{{originalURL}} wurde erfolgreich auf `{{shortenedURL}}` verkürzt",
+                        "defaultError": "Ich kann den URL-Link im Moment nicht verkürzen... Bitte versuche es später erneut"
+                    }
+                }
+            }
+        },
         "fun": {
             "name": "spaß",
             "description": "Befehle der Kategorie Spaß",

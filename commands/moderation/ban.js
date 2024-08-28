@@ -10,7 +10,9 @@ module.exports = async function banMember(interaction) {
     const member = interaction.options.getMember('member');
     const time = interaction.options.getString('delete_messages') || 'EasterEgg';
     const convertTime = await convert(time);
-    const defaultError = responses.defaultError.replace('{{member}}', member).replace('{{guild}}', interaction.guild.name);
+    const defaultError = responses.defaultError
+        .replace('{{member}}', member)
+        .replace('{{guild}}', interaction.guild.name);
 
     if (!interaction.member.permissions.has(PermissionFlagsBits.BanMembers)) {
         const message = await permissions(interaction.locale, 'BAN_MEMBERS');
@@ -18,12 +20,16 @@ module.exports = async function banMember(interaction) {
     }
 
     if (!interaction.guild.members.me.permissions.has(PermissionFlagsBits.BanMembers)) {
-        const noPermissionsError = responses.noPermissionsError.replace('{{member}}', member).replace('{{guild}}', interaction.guild.name);
+        const noPermissionsError = responses.noPermissionsError
+            .replace('{{member}}', member)
+            .replace('{{guild}}', interaction.guild.name);
         return interaction.reply({ content: noPermissionsError, ephemeral: true });
     }
 
     if (interaction.guild.members.me.roles.highest.comparePositionTo(member.roles.highest) <= 0) {
-        const higherRoleError = responses.higherRoleError.replace('{{member}}', member).replace('{{guild}}', interaction.guild.name);
+        const higherRoleError = responses.higherRoleError
+            .replace('{{member}}', member)
+            .replace('{{guild}}', interaction.guild.name);
         return interaction.reply({ content: higherRoleError, ephemeral: true });
     }
 
@@ -54,7 +60,11 @@ module.exports = async function banMember(interaction) {
 
     try {
         await member.ban({ deleteMessageSeconds: deleteMessages, reason: englishReason }).then(async () => {
-            const content = responses.success.replace('{{member}}', member).replace('{{guild}}', interaction.guild.name).replace('{{reason}}', reason).replace('{{time}}', deleteMessagesString);
+            const content = responses.success
+                .replace('{{member}}', member)
+                .replace('{{guild}}', interaction.guild.name)
+                .replace('{{reason}}', reason)
+                .replace('{{time}}', deleteMessagesString);
             await interaction.reply({ content: content, ephemeral: true });
             await member.send({ content: `You have been banned from ${interaction.guild.name} by @${interaction.user.tag}. Reason: ${englishReason}` }).catch(async (e) => {
                 console.error("\x1b[31m" + '[/BAN] ' + e.stack + "\x1b[0m");

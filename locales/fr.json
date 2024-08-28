@@ -3,6 +3,26 @@
         "common": {
             "noReason": "Aucune raison n'a été fournie"
         },
+        "utility": {
+            "name": "utilite",
+            "description": "Commandes de la catégorie utilité",
+            "commands": {
+                "shorten": {
+                    "name": "raccourcir",
+                    "description": "Raccourcir un lien URL",
+                    "options": {
+                        "url": {
+                            "name": "url",
+                            "description": "Le lien URL que vous souhaitez raccourcir"
+                        }
+                    },
+                    "responses": {
+                        "success": "Le lien `{{originalURL}}` a été raccourci avec succès en `{{shortenedURL}}`",
+                        "defaultError": "Je ne peux pas raccourcir le lien URL pour le moment... Veuillez réessayer plus tard"
+                    }
+                }
+            }
+        },
         "fun": {
             "name": "amusant",
             "description": "Commandes de la catégorie amusant",

@@ -6,7 +6,10 @@ module.exports = async function dice(interaction) {
     const dice = Math.floor(Math.random() * 6) + 1;
 
     try {
-        await interaction.reply({ content: responses.result.replace('{{result}}', dice), ephemeral: true });
+        await interaction.reply({
+            content: responses.result
+                .replace('{{result}}', dice), ephemeral: true
+        });
     } catch (e) {
         console.error("\x1b[31m" + '[/DICE] ' + e.stack + "\x1b[0m");
         await interaction.reply({ content: responses.defaultError, ephemeral: true });

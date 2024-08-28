@@ -6,7 +6,9 @@ module.exports = async function warnMember(interaction) {
     const localeFile = await translation(interaction.locale);
     const member = interaction.options.getMember('member');
     const responses = localeFile.categories.moderation.commands.warn.responses;
-    const defaultError = responses.defaultError.replace('{{member}}', member).replace('{{guild}}', interaction.guild.name);
+    const defaultError = responses.defaultError
+        .replace('{{member}}', member)
+        .replace('{{guild}}', interaction.guild.name);
 
     if (!interaction.member.permissions.has(PermissionFlagsBits.ManageMessages)) {
         const message = await permissions(interaction.locale, 'MANAGE_MESSAGES');
@@ -14,7 +16,9 @@ module.exports = async function warnMember(interaction) {
     }
 
     if (interaction.guild.members.me.roles.highest.comparePositionTo(member.roles.highest) <= 0) {
-        const higherRoleError = responses.higherRoleError.replace('{{member}}', member).replace('{{guild}}', interaction.guild.name);
+        const higherRoleError = responses.higherRoleError
+            .replace('{{member}}', member)
+            .replace('{{guild}}', interaction.guild.name);
         return interaction.reply({ content: higherRoleError, ephemeral: true });
     }
 
@@ -29,6 +33,18 @@ module.exports = async function warnMember(interaction) {
         // Choose database
         // Warn member ==> Save in database with author of the command (maybe case id for each guild), try to reach the member
         // Cybot Actions: Do X when user reaches a specific number of warns (reset?)
+    /* 
+    {
+    "guildId": {
+        "userId": [{
+            "id": 00,
+            "moderator": 000000000,
+            "reason": "",
+            "date": ""
+        }]
+    }
+}
+    */
     } catch (e) {
         console.error("\x1b[31m" + '[/WARN] ' + e.stack + "\x1b[0m");
         await interaction.reply({ content: defaultError, ephemeral: true });

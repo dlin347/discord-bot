@@ -28,7 +28,9 @@ module.exports = async function slowmodeChannel(interaction) {
     }
 
     if (channel.rateLimitPerUser === timeS) {
-        const sameSlowmodeError = responses.sameSlowmodeError.replace('{{channel}}', `<#${channel.id}>`).replace('{{time}}', time);
+        const sameSlowmodeError = responses.sameSlowmodeError
+            .replace('{{channel}}', `<#${channel.id}>`)
+            .replace('{{time}}', time);
         return interaction.reply({ content: sameSlowmodeError, ephemeral: true });
     }
 
@@ -42,7 +44,10 @@ module.exports = async function slowmodeChannel(interaction) {
 
     try {
         await channel.setRateLimitPerUser(timeS, englishReason).then(async () => {
-            const content = responses.success.replace('{{channel}}', `<#${channel.id}>`).replace('{{time}}', time).replace('{{reason}}', reason);
+            const content = responses.success
+                .replace('{{channel}}', `<#${channel.id}>`)
+                .replace('{{time}}', time)
+                .replace('{{reason}}', reason);
             await interaction.reply({ content: content, ephemeral: true });
         });
     } catch (e) {

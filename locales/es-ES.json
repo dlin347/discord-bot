@@ -3,6 +3,26 @@
         "common": {
             "noReason": "No se proporcionó ninguna razón"
         },
+        "utility": {
+            "name": "utilidad",
+            "description": "Comandos de la categoría de utilidad",
+            "commands": {
+                "shorten": {
+                    "name": "acortar",
+                    "description": "Acorta un enlace URL",
+                    "options": {
+                        "url": {
+                            "name": "url",
+                            "description": "El enlace URL que deseas acortar"
+                        }
+                    },
+                    "responses": {
+                        "success": "Se ha acortado el enlace `{{originalURL}}` a `{{shortenedURL}}` exitosamente",
+                        "defaultError": "No puedo acortar el enlace URL en este momento... Inténtalo de nuevo más tarde"
+                    }
+                }
+            }
+        },
         "fun": {
             "name": "diversión",
             "description": "Comandos de la categoría de diversión",
@@ -87,7 +107,7 @@
                     },
                     "responses": {
                         "win": "**¡Has ganado!**\nTu elección ha sido: `{{choice}}`\nMi elección ha sido: `{{botChoice}}`",
-                        "lose": "**¡Has perdido!**\nTu elección ha sido: `{{choice}}`\nMi elección ha sido: `{{botChoice}}",
+                        "lose": "**¡Has perdido!**\nTu elección ha sido: `{{choice}}`\nMi elección ha sido: `{{botChoice}}`",
                         "draw": "**¡Hemos empatado!** Ambos hemos elegido: `{{choice}}`",
                         "defaultError": "No puedo jugar a piedra, papel o tijera en este momento... Inténtalo de nuevo más tarde"
                     }

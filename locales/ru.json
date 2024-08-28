@@ -3,6 +3,26 @@
         "common": {
             "noReason": "Причина не указана"
         },
+        "utility": {
+            "name": "utility",
+            "description": "Команды из категории utility",
+            "commands": {
+                "shorten": {
+                    "name": "shorten",
+                    "description": "Сократить URL-ссылку",
+                    "options": {
+                        "url": {
+                            "name": "url",
+                            "description": "URL-ссылка, которую вы хотите сократить"
+                        }
+                    },
+                    "responses": {
+                        "success": "Ссылка `{{originalURL}}` успешно сокращена до `{{shortenedURL}}`",
+                        "defaultError": "Не могу сократить URL-ссылку в данный момент... Пожалуйста, попробуйте позже"
+                    }
+                }
+            }
+        },
         "fun": {
             "name": "развлечения",
             "description": "Команды категории развлечений",

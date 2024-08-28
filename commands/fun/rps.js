@@ -8,7 +8,10 @@ module.exports = async function rps(interaction) {
     const botChoice = ['🪨', '🧻', '✂️'][Math.floor(Math.random() * 3)];
 
     if (choice == botChoice) {
-        return await interaction.reply({ content: responses.draw.replace('{{choice}}', choice), ephemeral: true });
+        return await interaction.reply({
+            content: responses.draw
+                .replace('{{choice}}', choice), ephemeral: true
+        });
     }
 
     try {
@@ -35,7 +38,11 @@ module.exports = async function rps(interaction) {
                 }
                 break;
         }
-        await interaction.reply({ content: content.replace('{{choice}}', choice).replace('{{botChoice}}', botChoice), ephemeral: true });
+        await interaction.reply({
+            content: content
+                .replace('{{choice}}', choice)
+                .replace('{{botChoice}}', botChoice), ephemeral: true
+        });
     } catch (e) {
         console.error("\x1b[31m" + '[/RPS] ' + e.stack + "\x1b[0m");
         await interaction.reply({ content: responses.defaultError, ephemeral: true });

@@ -3,6 +3,26 @@
         "common": {
             "noReason": "Nenhuma razão foi fornecida"
         },
+        "utility": {
+            "name": "utilidade",
+            "description": "Comandos da categoria utilidade",
+            "commands": {
+                "shorten": {
+                    "name": "encurtar",
+                    "description": "Encurtar um link URL",
+                    "options": {
+                        "url": {
+                            "name": "url",
+                            "description": "O link URL que você deseja encurtar"
+                        }
+                    },
+                    "responses": {
+                        "success": "O link `{{originalURL}}` foi encurtado com sucesso para `{{shortenedURL}}`",
+                        "defaultError": "Não consigo encurtar o link URL no momento... Por favor, tente novamente mais tarde"
+                    }
+                }
+            }
+        },
         "fun": {
             "name": "diversão",
             "description": "Comandos da categoria de diversão",

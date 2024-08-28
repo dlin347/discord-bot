@@ -3,6 +3,26 @@
         "common": {
             "noReason": "Hiçbir sebep belirtilmedi"
         },
+        "utility": {
+            "name": "araclar",
+            "description": "Araçlar kategorisindeki komutlar",
+            "commands": {
+                "shorten": {
+                    "name": "kisaltil",
+                    "description": "Bir URL bağlantısını kısalt",
+                    "options": {
+                        "url": {
+                            "name": "url",
+                            "description": "Kısaltmak istediğiniz URL bağlantısı"
+                        }
+                    },
+                    "responses": {
+                        "success": "Bağlantı `{{originalURL}}` başarıyla `{{shortenedURL}}` olarak kısaltıldı",
+                        "defaultError": "URL bağlantısını şu anda kısaltamıyorum... Lütfen daha sonra tekrar deneyin"
+                    }
+                }
+            }
+        },
         "fun": {
             "name": "eğlence",
             "description": "Eğlence kategorisindeki komutlar",

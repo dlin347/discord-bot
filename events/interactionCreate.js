@@ -33,7 +33,9 @@ module.exports = {
                 const expirationTime = timestamps.get(interaction.user.id) + cooldownAmount;
                 if (now < expirationTime) {
                     const expiredTimestamp = Math.round(expirationTime / 1000);
-                    const cooldown = messages[locale].cooldown.replace('{{command}}', `</${command.data.name}:${cmd.id}>`).replace('{{timestamp}}', `<t:${expiredTimestamp}:R>`);
+                    const cooldown = messages[locale].cooldown
+                        .replace('{{command}}', `</${command.data.name}:${cmd.id}>`)
+                        .replace('{{timestamp}}', `<t:${expiredTimestamp}:R>`);
                     return interaction.reply({ content: `${cooldown}`, ephemeral: true });
                 }
             }

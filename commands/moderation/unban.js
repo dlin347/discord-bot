@@ -11,7 +11,9 @@ module.exports = async function unbanMember(interaction) {
         console.error("\x1b[31m" + '[/UNBAN] ' + e.stack + "\x1b[0m");
         return interaction.reply({ content: invalidIDError, ephemeral: true });
     });
-    const defaultError = responses.defaultError.replace('{{user}}', `<@${fetched.user.id}>`).replace('{{guild}}', interaction.guild.name);
+    const defaultError = responses.defaultError
+        .replace('{{user}}', `<@${fetched.user.id}>`)
+        .replace('{{guild}}', interaction.guild.name);
 
     if (!interaction.member.permissions.has(PermissionFlagsBits.BanMembers)) {
         const message = await permissions(interaction.locale, 'BAN_MEMBERS');
@@ -19,7 +21,9 @@ module.exports = async function unbanMember(interaction) {
     }
 
     if (!interaction.guild.members.me.permissions.has(PermissionFlagsBits.BanMembers)) {
-        const noPermissionsError = responses.noPermissionsError.replace('{{user}}', `<@${fetched.user.id}>`).replace('{{guild}}', interaction.guild.name);
+        const noPermissionsError = responses.noPermissionsError
+            .replace('{{user}}', `<@${fetched.user.id}>`)
+            .replace('{{guild}}', interaction.guild.name);
         return interaction.reply({ content: noPermissionsError, ephemeral: true });
     }
 
@@ -28,7 +32,10 @@ module.exports = async function unbanMember(interaction) {
 
     try {
         await interaction.guild.members.unban(id, englishReason).then(async () => {
-            const content = responses.success.replace('{{user}}', `@${fetched.user.username}`).replace('{{guild}}', interaction.guild.name).replace('{{reason}}', reason);
+            const content = responses.success
+                .replace('{{user}}', `@${fetched.user.username}`)
+                .replace('{{guild}}', interaction.guild.name)
+                .replace('{{reason}}', reason);
             await interaction.reply({ content: content, ephemeral: true });
         });
     } catch (e) {

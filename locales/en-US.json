@@ -3,6 +3,26 @@
         "common": {
             "noReason": "No reason provided"
         },
+        "utility": {
+            "name": "utility",
+            "description": "Commands from the utility category",
+            "commands": {
+                "shorten": {
+                    "name": "shorten",
+                    "description": "Shorten a URL link",
+                    "options": {
+                        "url": {
+                            "name": "url",
+                            "description": "The URL link you want to shorten"
+                        }
+                    },
+                    "responses": {
+                        "success": "The link `{{originalURL}}` has been successfully shortened to `{{shortenedURL}}`",
+                        "defaultError": "I can't shorten the URL link right now... Please try again later"
+                    }
+                }
+            }
+        },
         "fun": {
             "name": "fun",
             "description": "Fun category commands",
