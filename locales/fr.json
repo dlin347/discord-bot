@@ -55,7 +55,7 @@
                             "Vendredi",
                             "Samedi"
                         ],
-                        "success": "Zone : {{zone}}\nHeure : <t:{{unix}}:T>\nDate : <t:{{zone}}:d>\nJour de la semaine : {{dayweek}}\nJour de l'année : {{dayyear}}\nNuméro de la semaine : {{numberweek}}\nDécalage UTC : {{utcoffset}}",
+                        "success": "Zone : {{zone}}\nHeure : {{time}}\nDate : {{date}}\nJour de la semaine : {{dayweek}}\nJour de l'année : {{dayyear}}\nNuméro de la semaine : {{numberweek}}\nDécalage UTC : {{utcoffset}}",
                         "defaultError": "Je ne peux pas obtenir d'informations sur l'heure et la date du lieu spécifié pour le moment... Veuillez réessayer plus tard"
                     }
                 }

@@ -55,7 +55,7 @@
                             "Freitag",
                             "Samstag"
                         ],
-                        "success": "Zone: {{zone}}\nUhrzeit: <t:{{unix}}:T>\nDatum: <t:{{zone}}:d>\nWochentag: {{dayweek}}\nTag des Jahres: {{dayyear}}\nWochennummer: {{numberweek}}\nUTC-Abweichung: {{utcoffset}}",
+                        "success": "Zone: {{zone}}\nUhrzeit: {{time}}\nDatum: {{date}}\nWochentag: {{dayweek}}\nTag des Jahres: {{dayyear}}\nWochennummer: {{numberweek}}\nUTC-Abweichung: {{utcoffset}}",
                         "defaultError": "Ich kann derzeit keine Informationen über die Uhrzeit und das Datum des angegebenen Standorts abrufen... Bitte versuche es später erneut"
                     }
                 }

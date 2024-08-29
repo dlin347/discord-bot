@@ -55,7 +55,7 @@
                             "Sexta-feira",
                             "Sábado"
                         ],
-                        "success": "Zona: {{zone}}\nHora: <t:{{unix}}:T>\nData: <t:{{zone}}:d>\nDia da Semana: {{dayweek}}\nDia do Ano: {{dayyear}}\nNúmero da Semana: {{numberweek}}\nDesvio UTC: {{utcoffset}}",
+                        "success": "Zona: {{zone}}\nHora: {{time}}\nData: {{date}}\nDia da Semana: {{dayweek}}\nDia do Ano: {{dayyear}}\nNúmero da Semana: {{numberweek}}\nDesvio UTC: {{utcoffset}}",
                         "defaultError": "Não consigo obter informações sobre a hora e a data do local especificado no momento... Por favor, tente novamente mais tarde"
                     }
                 }

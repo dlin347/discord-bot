@@ -55,7 +55,7 @@
                             "Friday",
                             "Saturday"
                         ],
-                        "success": "Zone: {{zone}}\nTime: <t:{{unix}}:T>\nDate: <t:{{zone}}:d>\nDay of the Week: {{dayweek}}\nDay of the Year: {{dayyear}}\nWeek Number: {{numberweek}}\nUTC Offset: {{utcoffset}}",
+                        "success": "Zone: {{zone}}\nTime: {{time}}\nDate: {{date}}\nDay of the Week: {{dayweek}}\nDay of the Year: {{dayyear}}\nWeek Number: {{numberweek}}\nUTC Offset: {{utcoffset}}",
                         "defaultError": "I can't retrieve information about the time and date of the specified location right now... Please try again later"
                     }
                 }

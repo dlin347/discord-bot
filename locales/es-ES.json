@@ -55,7 +55,7 @@
                             "Viernes",
                             "Sábado"
                         ],
-                        "success": "Zona: {{zone}}\nHora: <t:{{unix}}:T>\nFecha: <t:{{zone}}:d>\nDía de la Semana: {{dayweek}}\nDía del Año: {{dayyear}}\nNúmero de Semana: {{numberweek}}\nDiferencia con UTC: {{utcoffset}}",
+                        "success": "Zona: {{zone}}\nHora: {{time}}\nFecha: {{date}}\nDía de la Semana: {{dayweek}}\nDía del Año: {{dayyear}}\nNúmero de Semana: {{numberweek}}\nDiferencia con UTC: {{utcoffset}}",
                         "defaultError": "No puedo obtener información sobre la hora y fecha del lugar especificado en este momento... Inténtalo de nuevo más tarde"
                     }
                 }

@@ -116,6 +116,164 @@ module.exports = {
                             tr: locales.tr.categories.utility.commands.clock.options.zone.description,
                             ru: locales.ru.categories.utility.commands.clock.options.zone.description
                         })
+                        .addChoices(
+                            {
+                                name: "America > New York",
+                                value: "America/New_York",
+                                name_localizations: {
+                                    de: locales.de.categories.utility.commands.clock.options.zone.choices.newyork,
+                                    fr: locales.fr.categories.utility.commands.clock.options.zone.choices.newyork,
+                                    "pt-BR": locales.pt.categories.utility.commands.clock.options.zone.choices.newyork,
+                                    "es-ES": locales.es.categories.utility.commands.clock.options.zone.choices.newyork,
+                                    tr: locales.tr.categories.utility.commands.clock.options.zone.choices.newyork,
+                                    ru: locales.ru.categories.utility.commands.clock.options.zone.choices.newyork
+                                }
+                            },
+                            {
+                                name: "America > Los Angeles",
+                                value: "America/Los_Angeles",
+                                name_localizations: {
+                                    de: locales.de.categories.utility.commands.clock.options.zone.choices.losangeles,
+                                    fr: locales.fr.categories.utility.commands.clock.options.zone.choices.losangeles,
+                                    "pt-BR": locales.pt.categories.utility.commands.clock.options.zone.choices.losangeles,
+                                    "es-ES": locales.es.categories.utility.commands.clock.options.zone.choices.losangeles,
+                                    tr: locales.tr.categories.utility.commands.clock.options.zone.choices.losangeles,
+                                    ru: locales.ru.categories.utility.commands.clock.options.zone.choices.losangeles
+                                }
+                            },
+                            {
+                                name: "America > Mexico City",
+                                value: "America/Mexico_City",
+                                name_localizations: {
+                                    de: locales.de.categories.utility.commands.clock.options.zone.choices.mexicocity,
+                                    fr: locales.fr.categories.utility.commands.clock.options.zone.choices.mexicocity,
+                                    "pt-BR": locales.pt.categories.utility.commands.clock.options.zone.choices.mexicocity,
+                                    "es-ES": locales.es.categories.utility.commands.clock.options.zone.choices.mexicocity,
+                                    tr: locales.tr.categories.utility.commands.clock.options.zone.choices.mexicocity,
+                                    ru: locales.ru.categories.utility.commands.clock.options.zone.choices.mexicocity
+                                }
+                            },
+                            {
+                                name: "America > Buenos Aires",
+                                value: "America/Argentina/Buenos_Aires",
+                                name_localizations: {
+                                    de: locales.de.categories.utility.commands.clock.options.zone.choices.buenosaires,
+                                    fr: locales.fr.categories.utility.commands.clock.options.zone.choices.buenosaires,
+                                    "pt-BR": locales.pt.categories.utility.commands.clock.options.zone.choices.buenosaires,
+                                    "es-ES": locales.es.categories.utility.commands.clock.options.zone.choices.buenosaires,
+                                    tr: locales.tr.categories.utility.commands.clock.options.zone.choices.buenosaires,
+                                    ru: locales.ru.categories.utility.commands.clock.options.zone.choices.buenosaires
+                                }
+                            },
+                            {
+                                name: "Europe > Madrid",
+                                value: "Europe/Madrid",
+                                name_localizations: {
+                                    de: locales.de.categories.utility.commands.clock.options.zone.choices.madrid,
+                                    fr: locales.fr.categories.utility.commands.clock.options.zone.choices.madrid,
+                                    "pt-BR": locales.pt.categories.utility.commands.clock.options.zone.choices.madrid,
+                                    "es-ES": locales.es.categories.utility.commands.clock.options.zone.choices.madrid,
+                                    tr: locales.tr.categories.utility.commands.clock.options.zone.choices.madrid,
+                                    ru: locales.ru.categories.utility.commands.clock.options.zone.choices.madrid
+                                }
+                            },
+                            {
+                                name: "Europe > London",
+                                value: "Europe/London",
+                                name_localizations: {
+                                    de: locales.de.categories.utility.commands.clock.options.zone.choices.london,
+                                    fr: locales.fr.categories.utility.commands.clock.options.zone.choices.london,
+                                    "pt-BR": locales.pt.categories.utility.commands.clock.options.zone.choices.london,
+                                    "es-ES": locales.es.categories.utility.commands.clock.options.zone.choices.london,
+                                    tr: locales.tr.categories.utility.commands.clock.options.zone.choices.london,
+                                    ru: locales.ru.categories.utility.commands.clock.options.zone.choices.london
+                                }
+                            },
+                            {
+                                name: "Europe > Paris",
+                                value: "Europe/Paris",
+                                name_localizations: {
+                                    de: locales.de.categories.utility.commands.clock.options.zone.choices.paris,
+                                    fr: locales.fr.categories.utility.commands.clock.options.zone.choices.paris,
+                                    "pt-BR": locales.pt.categories.utility.commands.clock.options.zone.choices.paris,
+                                    "es-ES": locales.es.categories.utility.commands.clock.options.zone.choices.paris,
+                                    tr: locales.tr.categories.utility.commands.clock.options.zone.choices.paris,
+                                    ru: locales.ru.categories.utility.commands.clock.options.zone.choices.paris
+                                }
+                            },
+                            {
+                                name: "Europe > Moscow",
+                                value: "Europe/Moscow",
+                                name_localizations: {
+                                    de: locales.de.categories.utility.commands.clock.options.zone.choices.moscow,
+                                    fr: locales.fr.categories.utility.commands.clock.options.zone.choices.moscow,
+                                    "pt-BR": locales.pt.categories.utility.commands.clock.options.zone.choices.moscow,
+                                    "es-ES": locales.es.categories.utility.commands.clock.options.zone.choices.moscow,
+                                    tr: locales.tr.categories.utility.commands.clock.options.zone.choices.moscow,
+                                    ru: locales.ru.categories.utility.commands.clock.options.zone.choices.moscow
+                                }
+                            },
+                            {
+                                name: "Africa > Cairo",
+                                value: "Africa/Cairo",
+                                name_localizations: {
+                                    de: locales.de.categories.utility.commands.clock.options.zone.choices.cairo,
+                                    fr: locales.fr.categories.utility.commands.clock.options.zone.choices.cairo,
+                                    "pt-BR": locales.pt.categories.utility.commands.clock.options.zone.choices.cairo,
+                                    "es-ES": locales.es.categories.utility.commands.clock.options.zone.choices.cairo,
+                                    tr: locales.tr.categories.utility.commands.clock.options.zone.choices.cairo,
+                                    ru: locales.ru.categories.utility.commands.clock.options.zone.choices.cairo
+                                }
+                            },
+                            {
+                                name: "Asia > Dubai",
+                                value: "Asia/Dubai",
+                                name_localizations: {
+                                    de: locales.de.categories.utility.commands.clock.options.zone.choices.dubai,
+                                    fr: locales.fr.categories.utility.commands.clock.options.zone.choices.dubai,
+                                    "pt-BR": locales.pt.categories.utility.commands.clock.options.zone.choices.dubai,
+                                    "es-ES": locales.es.categories.utility.commands.clock.options.zone.choices.dubai,
+                                    tr: locales.tr.categories.utility.commands.clock.options.zone.choices.dubai,
+                                    ru: locales.ru.categories.utility.commands.clock.options.zone.choices.dubai
+                                }
+                            },
+                            {
+                                name: "Asia > Tokyo",
+                                value: "Asia/Tokyo",
+                                name_localizations: {
+                                    de: locales.de.categories.utility.commands.clock.options.zone.choices.tokyo,
+                                    fr: locales.fr.categories.utility.commands.clock.options.zone.choices.tokyo,
+                                    "pt-BR": locales.pt.categories.utility.commands.clock.options.zone.choices.tokyo,
+                                    "es-ES": locales.es.categories.utility.commands.clock.options.zone.choices.tokyo,
+                                    tr: locales.tr.categories.utility.commands.clock.options.zone.choices.tokyo,
+                                    ru: locales.ru.categories.utility.commands.clock.options.zone.choices.tokyo
+                                }
+                            },
+                            {
+                                name: "Asia > Shanghai",
+                                value: "Asia/Shanghai",
+                                name_localizations: {
+                                    de: locales.de.categories.utility.commands.clock.options.zone.choices.shanghai,
+                                    fr: locales.fr.categories.utility.commands.clock.options.zone.choices.shanghai,
+                                    "pt-BR": locales.pt.categories.utility.commands.clock.options.zone.choices.shanghai,
+                                    "es-ES": locales.es.categories.utility.commands.clock.options.zone.choices.shanghai,
+                                    tr: locales.tr.categories.utility.commands.clock.options.zone.choices.shanghai,
+                                    ru: locales.ru.categories.utility.commands.clock.options.zone.choices.shanghai
+                                }
+                            },
+                            {
+                                name: "Oceania > Sydney",
+                                value: "Australia/Sydney",
+                                name_localizations: {
+                                    de: locales.de.categories.utility.commands.clock.options.zone.choices.sydney,
+                                    fr: locales.fr.categories.utility.commands.clock.options.zone.choices.sydney,
+                                    "pt-BR": locales.pt.categories.utility.commands.clock.options.zone.choices.sydney,
+                                    "es-ES": locales.es.categories.utility.commands.clock.options.zone.choices.sydney,
+                                    tr: locales.tr.categories.utility.commands.clock.options.zone.choices.sydney,
+                                    ru: locales.ru.categories.utility.commands.clock.options.zone.choices.sydney
+                                }
+                            }
+                        )
                         .setRequired(true)
                 )
         )

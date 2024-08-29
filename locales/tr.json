@@ -55,7 +55,7 @@
                             "Cuma",
                             "Cumartesi"
                         ],
-                        "success": "Bölge: {{zone}}\nSaat: <t:{{unix}}:T>\nTarih: <t:{{zone}}:d>\nHaftanın Günü: {{dayweek}}\nYılın Günü: {{dayyear}}\nHafta Numarası: {{numberweek}}\nUTC Farkı: {{utcoffset}}",
+                        "success": "Bölge: {{zone}}\nSaat: {{time}}\nTarih: {{date}}\nHaftanın Günü: {{dayweek}}\nYılın Günü: {{dayyear}}\nHafta Numarası: {{numberweek}}\nUTC Farkı: {{utcoffset}}",
                         "defaultError": "Şu anda belirtilen konum hakkında saat ve tarih bilgilerini alıyorum... Lütfen daha sonra tekrar deneyin"
                     }
                 }
