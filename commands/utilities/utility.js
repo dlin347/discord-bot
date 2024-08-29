@@ -1,6 +1,7 @@
 const { SlashCommandBuilder } = require('discord.js');
 
 const urlShortener = require('./shorten.js');
+const clock = require('./clock.js');
 
 const locales = {
     de: require('../../locales/de.json'),
@@ -75,6 +76,49 @@ module.exports = {
                         .setMaxLength(256)
                 )
         )
+        .addSubcommand(subcommand =>
+            subcommand
+                .setName('clock')
+                .setNameLocalizations({
+                    de: locales.de.categories.utility.commands.clock.name,
+                    fr: locales.fr.categories.utility.commands.clock.name,
+                    "pt-BR": locales.pt.categories.utility.commands.clock.name,
+                    "es-ES": locales.es.categories.utility.commands.clock.name,
+                    tr: locales.tr.categories.utility.commands.clock.name,
+                    ru: locales.ru.categories.utility.commands.clock.name
+                })
+                .setDescription('Get information about the current time and date in a specific zone')
+                .setDescriptionLocalizations({
+                    de: locales.de.categories.utility.commands.clock.description,
+                    fr: locales.fr.categories.utility.commands.clock.description,
+                    "pt-BR": locales.pt.categories.utility.commands.clock.description,
+                    "es-ES": locales.es.categories.utility.commands.clock.description,
+                    tr: locales.tr.categories.utility.commands.clock.description,
+                    ru: locales.ru.categories.utility.commands.clock.description
+                })
+                .addStringOption(option =>
+                    option
+                        .setName('zone')
+                        .setNameLocalizations({
+                            de: locales.de.categories.utility.commands.clock.options.zone.name,
+                            fr: locales.fr.categories.utility.commands.clock.options.zone.name,
+                            "pt-BR": locales.pt.categories.utility.commands.clock.options.zone.name,
+                            "es-ES": locales.es.categories.utility.commands.clock.options.zone.name,
+                            tr: locales.tr.categories.utility.commands.clock.options.zone.name,
+                            ru: locales.ru.categories.utility.commands.clock.options.zone.name
+                        })
+                        .setDescription('The zone you want to get information from')
+                        .setDescriptionLocalizations({
+                            de: locales.de.categories.utility.commands.clock.options.zone.description,
+                            fr: locales.fr.categories.utility.commands.clock.options.zone.description,
+                            "pt-BR": locales.pt.categories.utility.commands.clock.options.zone.description,
+                            "es-ES": locales.es.categories.utility.commands.clock.options.zone.description,
+                            tr: locales.tr.categories.utility.commands.clock.options.zone.description,
+                            ru: locales.ru.categories.utility.commands.clock.options.zone.description
+                        })
+                        .setRequired(true)
+                )
+        )
         .setDMPermission(false),
     async execute(interaction) {
         if (interaction.commandName === 'utility') {
@@ -82,6 +126,9 @@ module.exports = {
             switch (subcommand) {
                 case 'shorten':
                     await urlShortener(interaction);
+                    break;
+                case 'clock':
+                    await clock(interaction);
                     break;
             }
         }

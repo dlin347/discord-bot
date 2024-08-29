@@ -20,6 +20,44 @@
                         "success": "Bağlantı `{{originalURL}}` başarıyla `{{shortenedURL}}` olarak kısaltıldı",
                         "defaultError": "URL bağlantısını şu anda kısaltamıyorum... Lütfen daha sonra tekrar deneyin"
                     }
+                },
+                "clock": {
+                    "name": "saat",
+                    "description": "Belirli bir bölgede geçerli olan saat ve tarih bilgilerini alın",
+                    "options": {
+                        "zone": {
+                            "name": "bölge",
+                            "description": "Bilgi almak istediğiniz bölge",
+                            "choices": {
+                                "newyork": "Amerika > New York",
+                                "losangeles": "Amerika > Los Angeles",
+                                "mexicocity": "Amerika > Mexico City",
+                                "buenosaires": "Amerika > Buenos Aires",
+                                "madrid": "Avrupa > Madrid",
+                                "london": "Avrupa > Londra",
+                                "paris": "Avrupa > Paris",
+                                "moscow": "Avrupa > Moskova",
+                                "elcairo": "Afrika > Kahire",
+                                "dubai": "Asya > Dubai",
+                                "tokyo": "Asya > Tokyo",
+                                "shanghai": "Asya > Şanghay",
+                                "sydney": "Okyanusya > Sidney"
+                            }
+                        }
+                    },
+                    "responses": {
+                        "daysweek": [
+                            "Pazar",
+                            "Pazartesi",
+                            "Salı",
+                            "Çarşamba",
+                            "Perşembe",
+                            "Cuma",
+                            "Cumartesi"
+                        ],
+                        "success": "Bölge: {{zone}}\nSaat: <t:{{unix}}:T>\nTarih: <t:{{zone}}:d>\nHaftanın Günü: {{dayweek}}\nYılın Günü: {{dayyear}}\nHafta Numarası: {{numberweek}}\nUTC Farkı: {{utcoffset}}",
+                        "defaultError": "Şu anda belirtilen konum hakkında saat ve tarih bilgilerini alıyorum... Lütfen daha sonra tekrar deneyin"
+                    }
                 }
             }
         },

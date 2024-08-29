@@ -20,6 +20,44 @@
                         "success": "Der Link `{{originalURL}} wurde erfolgreich auf `{{shortenedURL}}` verkürzt",
                         "defaultError": "Ich kann den URL-Link im Moment nicht verkürzen... Bitte versuche es später erneut"
                     }
+                },
+                "clock": {
+                    "name": "uhr",
+                    "description": "Erhalte Informationen über die aktuelle Uhrzeit und das Datum in einer bestimmten Zone",
+                    "options": {
+                        "zone": {
+                            "name": "zone",
+                            "description": "Die Zone, aus der du Informationen erhalten möchtest",
+                            "choices": {
+                                "newyork": "Amerika > New York",
+                                "losangeles": "Amerika > Los Angeles",
+                                "mexicocity": "Amerika > Mexiko-Stadt",
+                                "buenosaires": "Amerika > Buenos Aires",
+                                "madrid": "Europa > Madrid",
+                                "london": "Europa > London",
+                                "paris": "Europa > Paris",
+                                "moscow": "Europa > Moskau",
+                                "elcairo": "Afrika > Kairo",
+                                "dubai": "Asien > Dubai",
+                                "tokyo": "Asien > Tokio",
+                                "shanghai": "Asien > Schanghai",
+                                "sydney": "Ozeanien > Sydney"
+                            }
+                        }
+                    },
+                    "responses": {
+                        "daysweek": [
+                            "Sonntag",
+                            "Montag",
+                            "Dienstag",
+                            "Mittwoch",
+                            "Donnerstag",
+                            "Freitag",
+                            "Samstag"
+                        ],
+                        "success": "Zone: {{zone}}\nUhrzeit: <t:{{unix}}:T>\nDatum: <t:{{zone}}:d>\nWochentag: {{dayweek}}\nTag des Jahres: {{dayyear}}\nWochennummer: {{numberweek}}\nUTC-Abweichung: {{utcoffset}}",
+                        "defaultError": "Ich kann derzeit keine Informationen über die Uhrzeit und das Datum des angegebenen Standorts abrufen... Bitte versuche es später erneut"
+                    }
                 }
             }
         },

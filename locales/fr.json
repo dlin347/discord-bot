@@ -20,6 +20,44 @@
                         "success": "Le lien `{{originalURL}}` a été raccourci avec succès en `{{shortenedURL}}`",
                         "defaultError": "Je ne peux pas raccourcir le lien URL pour le moment... Veuillez réessayer plus tard"
                     }
+                },
+                "clock": {
+                    "name": "horloge",
+                    "description": "Obtenez des informations sur l'heure et la date actuelles dans une zone spécifique",
+                    "options": {
+                        "zone": {
+                            "name": "zone",
+                            "description": "La zone dont vous souhaitez obtenir des informations",
+                            "choices": {
+                                "newyork": "Amérique > New York",
+                                "losangeles": "Amérique > Los Angeles",
+                                "mexicocity": "Amérique > Mexico",
+                                "buenosaires": "Amérique > Buenos Aires",
+                                "madrid": "Europe > Madrid",
+                                "london": "Europe > Londres",
+                                "paris": "Europe > Paris",
+                                "moscow": "Europe > Moscou",
+                                "elcairo": "Afrique > Le Caire",
+                                "dubai": "Asie > Dubaï",
+                                "tokyo": "Asie > Tokyo",
+                                "shanghai": "Asie > Shanghai",
+                                "sydney": "Océanie > Sydney"
+                            }
+                        }
+                    },
+                    "responses": {
+                        "daysweek": [
+                            "Dimanche",
+                            "Lundi",
+                            "Mardi",
+                            "Mercredi",
+                            "Jeudi",
+                            "Vendredi",
+                            "Samedi"
+                        ],
+                        "success": "Zone : {{zone}}\nHeure : <t:{{unix}}:T>\nDate : <t:{{zone}}:d>\nJour de la semaine : {{dayweek}}\nJour de l'année : {{dayyear}}\nNuméro de la semaine : {{numberweek}}\nDécalage UTC : {{utcoffset}}",
+                        "defaultError": "Je ne peux pas obtenir d'informations sur l'heure et la date du lieu spécifié pour le moment... Veuillez réessayer plus tard"
+                    }
                 }
             }
         },
