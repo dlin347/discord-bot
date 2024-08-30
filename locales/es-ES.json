@@ -3,6 +3,38 @@
         "common": {
             "noReason": "No se proporcionó ninguna razón"
         },
+        "economy": {
+            "name": "economía",
+            "description": "Comandos de la categoría de economía",
+            "commands": {
+                "work": {
+                    "name": "trabajar",
+                    "description": "Trabaja y gana dinero",
+                    "responses": {
+                        "works": [
+                            "cajero/a",
+                            "cocinero/a",
+                            "conductor/a de Uber",
+                            "diseñador/a",
+                            "doctor/a",
+                            "electricista",
+                            "enfermero/a",
+                            "escritor/a",
+                            "peluquero/a",
+                            "ingeniero/a",
+                            "mecánico/a",
+                            "policía",
+                            "profesor/a",
+                            "programador/a",
+                            "repartidor/a",
+                            "vendedor/a"
+                        ],
+                        "success": "¡Has trabajado como {{work}} y has ganado {{amount}} 🪙!",
+                        "defaultError": "No puedes trabajar en este momento debido a problemas técnicos... Inténtalo de nuevo más tarde"
+                    }
+                }
+            }
+        },
         "utility": {
             "name": "utilidad",
             "description": "Comandos de la categoría de utilidad",

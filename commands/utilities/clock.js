@@ -8,11 +8,11 @@ module.exports = async function clock(interaction) {
 
     try {
         const information = await axios.get(`https://worldtimeapi.org/api/timezone/${zone}`);
-        /* const datetime = new Date(information.data.datetime); */
         interaction.reply({
             content: responses.success
-                .replace('{{zone}}', zone.replace('_', ' '))
-                /* Time and Date Pending... */
+                .replace('{{zone}}', zone)
+                .replace('{{time}}', information.data.datetime.slice(11, 19))
+                .replace('{{date}}', information.data.datetime.slice(0, 10))
                 .replace('{{dayweek}}', responses.daysweek[information.data.day_of_week])
                 .replace('{{dayyear}}', information.data.day_of_year)
                 .replace('{{numberweek}}', information.data.week_number)

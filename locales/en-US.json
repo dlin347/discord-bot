@@ -3,6 +3,38 @@
         "common": {
             "noReason": "No reason provided"
         },
+        "economy": {
+            "name": "economy",
+            "description": "Economy category commands",
+            "commands": {
+                "work": {
+                    "name": "work",
+                    "description": "Work and earn money",
+                    "responses": {
+                        "works": [
+                            "cashier",
+                            "cook",
+                            "Uber driver",
+                            "designer",
+                            "doctor",
+                            "electrician",
+                            "nurse",
+                            "writer",
+                            "hairdresser",
+                            "engineer",
+                            "mechanic",
+                            "police officer",
+                            "teacher",
+                            "programmer",
+                            "delivery driver",
+                            "salesperson"
+                        ],
+                        "success": "You worked as a {{work}} and earned {{amount}} 🪙!",
+                        "defaultError": "You can't work right now due to technical issues... Please try again later"
+                    }
+                }
+            }
+        },
         "utility": {
             "name": "utility",
             "description": "Commands from the utility category",

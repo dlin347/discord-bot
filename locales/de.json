@@ -3,6 +3,38 @@
         "common": {
             "noReason": "Es wurde kein Grund angegeben"
         },
+        "economy": {
+            "name": "wirtschaft",
+            "description": "Befehle der Kategorie Wirtschaft",
+            "commands": {
+                "work": {
+                    "name": "arbeiten",
+                    "description": "Arbeite und verdiene Geld",
+                    "responses": {
+                        "works": [
+                            "kassierer/in",
+                            "koch/köchin",
+                            "uber-fahrer/in",
+                            "designer/in",
+                            "arzt/ärztin",
+                            "elektriker/in",
+                            "krankenpfleger/in",
+                            "schriftsteller/in",
+                            "friseur/in",
+                            "ingenieur/in",
+                            "mechaniker/in",
+                            "polizist/in",
+                            "lehrer/in",
+                            "programmierer/in",
+                            "lieferant/in",
+                            "verkäufer/in"
+                        ],
+                        "success": "Du hast als {{work}} gearbeitet und {{amount}} 🪙 verdient!",
+                        "defaultError": "Du kannst im Moment wegen technischer Probleme nicht arbeiten... Bitte versuche es später erneut"
+                    }
+                }
+            }
+        },
         "utility": {
             "name": "nuetzlichkeit",
             "description": "Befehle aus der Kategorie Nützlichkeit",

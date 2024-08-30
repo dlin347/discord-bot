@@ -1,0 +1,38 @@
+-- Show money
+-- Add money
+-- Remove money
+-- Set money
+-- Deposit
+-- Withdraw
+-- Transfer
+-- Reset all
+-- Rob
+
+-- Buy / Sell Items
+-- Add items to the shop and their price
+
+-- Bet in games
+- Coinflip
+- Dice
+- Roulette
+- Slot machine
+
+Schema to build:
+{
+    "guildId": {
+        "configuration": {
+            "items": [{
+                "id": 00,
+                "name": "",
+                "price": 00
+            }]
+        },
+        "users": {
+            "userId": {
+            "money": 00,
+            "moneyBanked": 00,
+            "inventory": []
+            }
+        }
+    }
+}

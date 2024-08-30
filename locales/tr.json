@@ -3,6 +3,38 @@
         "common": {
             "noReason": "Hiçbir sebep belirtilmedi"
         },
+        "economy": {
+            "name": "ekonomi",
+            "description": "Ekonomi kategorisi komutları",
+            "commands": {
+                "work": {
+                    "name": "çalışmak",
+                    "description": "Çalış ve para kazan",
+                    "responses": {
+                        "works": [
+                            "kasiyer",
+                            "aşçı",
+                            "Uber şoförü",
+                            "tasarımcı",
+                            "doktor",
+                            "elektrikçi",
+                            "hemşire",
+                            "yazar",
+                            "kuaför",
+                            "mühendis",
+                            "mekanik",
+                            "polis memuru",
+                            "öğretmen",
+                            "programcı",
+                            "kurye",
+                            "satış elemanı"
+                        ],
+                        "success": "{{work}} olarak çalıştınız ve {{amount}} 🪙 kazandınız!",
+                        "defaultError": "Teknik sorunlar nedeniyle şu anda çalışamıyorsunuz... Lütfen daha sonra tekrar deneyin"
+                    }
+                }
+            }
+        },
         "utility": {
             "name": "araclar",
             "description": "Araçlar kategorisindeki komutlar",
