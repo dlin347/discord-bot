@@ -32,6 +32,21 @@
                         "success": "Du hast als {{work}} gearbeitet und {{amount}} 🪙 verdient!",
                         "defaultError": "Du kannst im Moment wegen technischer Probleme nicht arbeiten... Bitte versuche es später erneut"
                     }
+                },
+                "balance": {
+                    "name": "kontostand",
+                    "description": "Zeigt den Geldbetrag eines bestimmten Mitglieds an",
+                    "options": {
+                        "member": {
+                            "name": "mitglied",
+                            "description": "Das Mitglied, dessen Geldbetrag du anzeigen möchtest"
+                        }
+                    },
+                    "responses": {
+                        "success": "Das Mitglied {{member}} hat {{cash}} in bar und {{bank}} auf der Bank 🪙",
+                        "self": "Du hast {{cash}} in bar und {{bank}} auf der Bank 🪙",
+                        "defaultError": "Ich kann den Geldbetrag von {{member}} momentan nicht anzeigen... Bitte versuche es später erneut"
+                    }
                 }
             }
         },

@@ -32,6 +32,21 @@
                         "success": "{{work}} olarak çalıştınız ve {{amount}} 🪙 kazandınız!",
                         "defaultError": "Teknik sorunlar nedeniyle şu anda çalışamıyorsunuz... Lütfen daha sonra tekrar deneyin"
                     }
+                },
+                "balance": {
+                    "name": "bakiye",
+                    "description": "Belirli bir üyenin para miktarını gösterir",
+                    "options": {
+                        "member": {
+                            "name": "üye",
+                            "description": "Para miktarını göstermek istediğiniz üye"
+                        }
+                    },
+                    "responses": {
+                        "success": "Üye {{member}}, {{cash}} nakit ve {{bank}} banka hesabında 🪙 var",
+                        "self": "Senin {{cash}} nakit ve {{bank}} banka hesabında 🪙 var",
+                        "defaultError": "{{member}} üyesinin para miktarını şu anda gösteremiyorum... Lütfen daha sonra tekrar deneyin"
+                    }
                 }
             }
         },

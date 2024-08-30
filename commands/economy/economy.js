@@ -1,6 +1,7 @@
 const { SlashCommandBuilder } = require('discord.js');
 
 const work = require('./work.js');
+const balance = require('./balance.js');
 
 const locales = {
     de: require('../../locales/de.json'),
@@ -52,6 +53,48 @@ module.exports = {
                     ru: locales.ru.categories.economy.commands.work.description
                 })
         )
+        .addSubcommand(subcommand =>
+            subcommand
+                .setName('balance')
+                .setNameLocalizations({
+                    de: locales.de.categories.economy.commands.balance.name,
+                    fr: locales.fr.categories.economy.commands.balance.name,
+                    "pt-BR": locales.pt.categories.economy.commands.balance.name,
+                    "es-ES": locales.es.categories.economy.commands.balance.name,
+                    tr: locales.tr.categories.economy.commands.balance.name,
+                    ru: locales.ru.categories.economy.commands.balance.name
+                })
+                .setDescription("balance the amount of money of a specific member")
+                .setDescriptionLocalizations({
+                    de: locales.de.categories.economy.commands.balance.description,
+                    fr: locales.fr.categories.economy.commands.balance.description,
+                    "pt-BR": locales.pt.categories.economy.commands.balance.description,
+                    "es-ES": locales.es.categories.economy.commands.balance.description,
+                    tr: locales.tr.categories.economy.commands.balance.description,
+                    ru: locales.ru.categories.economy.commands.balance.description
+                })
+                .addUserOption(option =>
+                    option
+                        .setName('member')
+                        .setNameLocalizations({
+                            de: locales.de.categories.economy.commands.balance.options.member.name,
+                            fr: locales.fr.categories.economy.commands.balance.options.member.name,
+                            "pt-BR": locales.pt.categories.economy.commands.balance.options.member.name,
+                            "es-ES": locales.es.categories.economy.commands.balance.options.member.name,
+                            tr: locales.tr.categories.economy.commands.balance.options.member.name,
+                            ru: locales.ru.categories.economy.commands.balance.options.member.name
+                        })
+                        .setDescription('The member you want to balance the amount of money')
+                        .setDescriptionLocalizations({
+                            de: locales.de.categories.economy.commands.balance.options.member.description,
+                            fr: locales.fr.categories.economy.commands.balance.options.member.description,
+                            "pt-BR": locales.pt.categories.economy.commands.balance.options.member.description,
+                            "es-ES": locales.es.categories.economy.commands.balance.options.member.description,
+                            tr: locales.tr.categories.economy.commands.balance.options.member.description,
+                            ru: locales.ru.categories.economy.commands.balance.options.member.description
+                        })
+                )
+        )
         .setDMPermission(false),
 
     async execute(interaction) {
@@ -60,6 +103,9 @@ module.exports = {
             switch (subcommand) {
                 case 'work':
                     await work(interaction);
+                    break;
+                case 'balance':
+                    await balance(interaction);
                     break;
             }
         }

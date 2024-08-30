@@ -32,6 +32,21 @@
                         "success": "¡Has trabajado como {{work}} y has ganado {{amount}} 🪙!",
                         "defaultError": "No puedes trabajar en este momento debido a problemas técnicos... Inténtalo de nuevo más tarde"
                     }
+                },
+                "balance": {
+                    "name": "saldo",
+                    "description": "Muestra la cantidad de dinero de un miembro específico",
+                    "options": {
+                        "member": {
+                            "name": "miembro",
+                            "description": "El miembro del que deseas mostrar la cantidad de dinero"
+                        }
+                    },
+                    "responses": {
+                        "success": "El miembro {{member}} tiene {{cash}} en efectivo y {{bank}} en el banco 🪙",
+                        "self": "Tienes {{cash}} en efectivo y {{bank}} en el banco 🪙",
+                        "defaultError": "No puedo mostrar la cantidad de dinero de {{member}} en este momento... Por favor, inténtalo de nuevo más tarde"
+                    }
                 }
             }
         },

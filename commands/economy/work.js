@@ -1,9 +1,5 @@
 const translation = require('../../locales/other/translation.js');
 
-/* 
-Find a way to add subcommand cooldown
-*/
-
 module.exports = async function work(interaction) {
     const db = require('megadb');
     const economy = new db.crearDB({
@@ -13,11 +9,11 @@ module.exports = async function work(interaction) {
     const localeFile = await translation(interaction.locale);
     const responses = localeFile.categories.economy.commands.work.responses;
 
-    if (!economy.tiene(interaction.guild.id + '.users.' + interaction.user.id)) {
-        await economy.establecer(interaction.guild.id + '.users.' + interaction.user.id, { "money": 0, "moneyBanked": 0, "inventory": [] });
-    }
-
     try {
+        if (!economy.tiene(interaction.guild.id + '.users.' + interaction.user.id)) {
+            await economy.establecer(interaction.guild.id + '.users.' + interaction.user.id, { "money": 0, "moneyBanked": 0, "inventory": [] });
+        }
+
         const amount = Math.floor(Math.random() * 500);
         await economy.sumar(interaction.guild.id + '.users.' + interaction.user.id + '.money', amount);
         await interaction.reply({

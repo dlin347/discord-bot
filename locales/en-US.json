@@ -32,6 +32,21 @@
                         "success": "You worked as a {{work}} and earned {{amount}} 🪙!",
                         "defaultError": "You can't work right now due to technical issues... Please try again later"
                     }
+                },
+                "balance": {
+                    "name": "balance",
+                    "description": "Display the amount of money of a specific member",
+                    "options": {
+                        "member": {
+                            "name": "member",
+                            "description": "The member you want to display the amount of money"
+                        }
+                    },
+                    "responses": {
+                        "success": "The member {{member}} has {{cash}} in cash and {{bank}} in the bank 🪙",
+                        "self": "You have {{cash}} in cash and {{bank}} in the bank 🪙",
+                        "defaultError": "I can't display the amount of money of {{member}} right now... Please try again later"
+                    }
                 }
             }
         },
