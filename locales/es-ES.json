@@ -65,6 +65,24 @@
                         "success": "Se ha añadido con éxito {{amount}} 🪙 a {{member}}",
                         "defaultError": "No puedo añadir dinero a {{member}} en este momento... Por favor, inténtalo de nuevo más tarde"
                     }
+                },
+                "removemoney": {
+                    "name": "quitar-dinero",
+                    "description": "Quita dinero a un miembro específico",
+                    "options": {
+                        "member": {
+                            "name": "miembro",
+                            "description": "El miembro al que deseas quitar dinero"
+                        },
+                        "amount": {
+                            "name": "cantidad",
+                            "description": "La cantidad de dinero que deseas quitar"
+                        }
+                    },
+                    "responses": {
+                        "success": "Se ha quitado con éxito {{amount}} 🪙 a {{member}}",
+                        "defaultError": "No puedo quitar dinero a {{member}} en este momento... Por favor, inténtalo de nuevo más tarde"
+                    }
                 }
             }
         },

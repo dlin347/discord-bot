@@ -65,6 +65,24 @@
                         "success": "{{amount}} 🪙 a été ajouté avec succès à {{member}}",
                         "defaultError": "Je ne peux pas ajouter d'argent à {{member}} pour le moment... Veuillez réessayer plus tard"
                     }
+                },
+                "removemoney": {
+                    "name": "retirer-argent",
+                    "description": "Retire de l'argent à un membre spécifique",
+                    "options": {
+                        "member": {
+                            "name": "membre",
+                            "description": "Le membre auquel vous souhaitez retirer de l'argent"
+                        },
+                        "amount": {
+                            "name": "montant",
+                            "description": "Le montant d'argent que vous souhaitez retirer"
+                        }
+                    },
+                    "responses": {
+                        "success": "{{amount}} 🪙 a été retiré avec succès de {{member}}",
+                        "defaultError": "Je ne peux pas retirer d'argent à {{member}} pour le moment... Veuillez réessayer plus tard"
+                    }
                 }
             }
         },

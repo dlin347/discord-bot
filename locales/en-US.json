@@ -49,7 +49,7 @@
                     }
                 },
                 "addmoney": {
-                    "name": "addmoney",
+                    "name": "add-money",
                     "description": "Add money to a specific member",
                     "options": {
                         "member": {
@@ -64,6 +64,24 @@
                     "responses": {
                         "success": "Successfully added {{amount}} 🪙 to {{member}}",
                         "defaultError": "I can't add money to {{member}} right now... Please try again later"
+                    }
+                },
+                "removemoney": {
+                    "name": "remove-money",
+                    "description": "Remove money to a specific member",
+                    "options": {
+                        "member": {
+                            "name": "member",
+                            "description": "The member you want to remove money to"
+                        },
+                        "amount": {
+                            "name": "amount",
+                            "description": "The amount of money you want to remove"
+                        }
+                    },
+                    "responses": {
+                        "success": "Successfully removed {{amount}} 🪙 to {{member}}",
+                        "defaultError": "I can't remove money to {{member}} right now... Please try again later"
                     }
                 }
             }

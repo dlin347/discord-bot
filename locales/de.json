@@ -65,6 +65,24 @@
                         "success": "{{amount}} 🪙 wurde erfolgreich zu {{member}} hinzugefügt",
                         "defaultError": "Ich kann {{member}} momentan kein Geld hinzufügen... Bitte versuche es später erneut"
                     }
+                },
+                "removemoney": {
+                    "name": "geld-entfernen",
+                    "description": "Geld von einem bestimmten Mitglied entfernen",
+                    "options": {
+                        "member": {
+                            "name": "mitglied",
+                            "description": "Das Mitglied, von dem du Geld entfernen möchtest"
+                        },
+                        "amount": {
+                            "name": "betrag",
+                            "description": "Der Betrag an Geld, den du entfernen möchtest"
+                        }
+                    },
+                    "responses": {
+                        "success": "{{amount}} 🪙 wurde erfolgreich von {{member}} entfernt",
+                        "defaultError": "Ich kann momentan kein Geld von {{member}} entfernen... Bitte versuche es später erneut"
+                    }
                 }
             }
         },

@@ -27,9 +27,9 @@ module.exports = async function warnMember(interaction) {
         return interaction.reply({ content: higherRoleError, ephemeral: true });
     }
 
-    /* if (interaction.user.id === member.id) {
+    if (interaction.user.id === member.id) {
         return interaction.reply({ content: defaultError, ephemeral: true });
-    } */
+    }
 
     if (!warnings.tiene(interaction.guild.id + '.users.' + member.id)) {
         await warnings.establecer(interaction.guild.id + '.users.' + member.id, []);
@@ -37,10 +37,11 @@ module.exports = async function warnMember(interaction) {
 
     const reason = interaction.options.getString('reason') || localeFile.categories.common.noReason;
     const englishReason = interaction.options.getString('reason') || "No reason provided";
+    const warns = await warnings.obtener(`${interaction.guild.id}.users.${member.id}`);
 
     try {
         await warnings.push(interaction.guild.id + '.users.' + member.id, {
-            "id": await warnings.obtener(`${interaction.guild.id}.users.${member.id}`).length ?? 0 + 1,
+            "id": warns.length + 1,
             "moderator": interaction.user.id,
             "reason": englishReason,
             "date": interaction.createdTimestamp

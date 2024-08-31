@@ -3,6 +3,7 @@ const { SlashCommandBuilder } = require('discord.js');
 const work = require('./work.js');
 const balance = require('./balance.js');
 const addMoney = require('./add-money.js');
+const removeMoney = require('./remove-money.js');
 
 const locales = {
     de: require('../../locales/de.json'),
@@ -161,6 +162,71 @@ module.exports = {
                         .setRequired(true)
                 )
         )
+        .addSubcommand(subcommand =>
+            subcommand
+                .setName('remove-money')
+                .setNameLocalizations({
+                    de: locales.de.categories.economy.commands.removemoney.name,
+                    fr: locales.fr.categories.economy.commands.removemoney.name,
+                    "pt-BR": locales.pt.categories.economy.commands.removemoney.name,
+                    "es-ES": locales.es.categories.economy.commands.removemoney.name,
+                    tr: locales.tr.categories.economy.commands.removemoney.name,
+                    ru: locales.ru.categories.economy.commands.removemoney.name
+                })
+                .setDescription("Remove money to a specific member")
+                .setDescriptionLocalizations({
+                    de: locales.de.categories.economy.commands.removemoney.description,
+                    fr: locales.fr.categories.economy.commands.removemoney.description,
+                    "pt-BR": locales.pt.categories.economy.commands.removemoney.description,
+                    "es-ES": locales.es.categories.economy.commands.removemoney.description,
+                    tr: locales.tr.categories.economy.commands.removemoney.description,
+                    ru: locales.ru.categories.economy.commands.removemoney.description
+                })
+                .addUserOption(option =>
+                    option
+                        .setName('member')
+                        .setNameLocalizations({
+                            de: locales.de.categories.economy.commands.removemoney.options.member.name,
+                            fr: locales.fr.categories.economy.commands.removemoney.options.member.name,
+                            "pt-BR": locales.pt.categories.economy.commands.removemoney.options.member.name,
+                            "es-ES": locales.es.categories.economy.commands.removemoney.options.member.name,
+                            tr: locales.tr.categories.economy.commands.removemoney.options.member.name,
+                            ru: locales.ru.categories.economy.commands.removemoney.options.member.name
+                        })
+                        .setDescription('The member you want to remove money')
+                        .setDescriptionLocalizations({
+                            de: locales.de.categories.economy.commands.removemoney.options.member.description,
+                            fr: locales.fr.categories.economy.commands.removemoney.options.member.description,
+                            "pt-BR": locales.pt.categories.economy.commands.removemoney.options.member.description,
+                            "es-ES": locales.es.categories.economy.commands.removemoney.options.member.description,
+                            tr: locales.tr.categories.economy.commands.removemoney.options.member.description,
+                            ru: locales.ru.categories.economy.commands.removemoney.options.member.description
+                        })
+                        .setRequired(true)
+                )
+                .addIntegerOption(option =>
+                    option
+                        .setName('amount')
+                        .setNameLocalizations({
+                            de: locales.de.categories.economy.commands.removemoney.options.amount.name,
+                            fr: locales.fr.categories.economy.commands.removemoney.options.amount.name,
+                            "pt-BR": locales.pt.categories.economy.commands.removemoney.options.amount.name,
+                            "es-ES": locales.es.categories.economy.commands.removemoney.options.amount.name,
+                            tr: locales.tr.categories.economy.commands.removemoney.options.amount.name,
+                            ru: locales.ru.categories.economy.commands.removemoney.options.amount.name
+                        })
+                        .setDescription('The amount of money you want to remove')
+                        .setDescriptionLocalizations({
+                            de: locales.de.categories.economy.commands.removemoney.options.amount.description,
+                            fr: locales.fr.categories.economy.commands.removemoney.options.amount.description,
+                            "pt-BR": locales.pt.categories.economy.commands.removemoney.options.amount.description,
+                            "es-ES": locales.es.categories.economy.commands.removemoney.options.amount.description,
+                            tr: locales.tr.categories.economy.commands.removemoney.options.amount.description,
+                            ru: locales.ru.categories.economy.commands.removemoney.options.amount.description
+                        })
+                        .setRequired(true)
+                )
+        )
         .setDMPermission(false),
 
     async execute(interaction) {
@@ -175,6 +241,9 @@ module.exports = {
                     break;
                 case 'add-money':
                     await addMoney(interaction);
+                    break;
+                case 'remove-money':
+                    await removeMoney(interaction);
                     break;
             }
         }

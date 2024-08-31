@@ -65,6 +65,24 @@
                         "success": "{{amount}} 🪙 başarıyla {{member}}'e eklendi",
                         "defaultError": "{{member}}'e şu anda para ekleyemiyorum... Lütfen daha sonra tekrar deneyin"
                     }
+                },
+                "removemoney": {
+                    "name": "para-sil",
+                    "description": "Belirli bir üyeden para siler",
+                    "options": {
+                        "member": {
+                            "name": "üye",
+                            "description": "Parayı silmek istediğiniz üye"
+                        },
+                        "amount": {
+                            "name": "miktar",
+                            "description": "Silmek istediğiniz para miktarı"
+                        }
+                    },
+                    "responses": {
+                        "success": "{{amount}} 🪙 başarıyla {{member}}'den silindi",
+                        "defaultError": "{{member}}'den şu anda para silemiyorum... Lütfen daha sonra tekrar deneyin"
+                    }
                 }
             }
         },
