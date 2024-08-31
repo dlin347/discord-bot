@@ -2,6 +2,7 @@ const { SlashCommandBuilder } = require('discord.js');
 
 const work = require('./work.js');
 const balance = require('./balance.js');
+const addMoney = require('./add-money.js');
 
 const locales = {
     de: require('../../locales/de.json'),
@@ -95,6 +96,71 @@ module.exports = {
                         })
                 )
         )
+        .addSubcommand(subcommand =>
+            subcommand
+                .setName('add-money')
+                .setNameLocalizations({
+                    de: locales.de.categories.economy.commands.addmoney.name,
+                    fr: locales.fr.categories.economy.commands.addmoney.name,
+                    "pt-BR": locales.pt.categories.economy.commands.addmoney.name,
+                    "es-ES": locales.es.categories.economy.commands.addmoney.name,
+                    tr: locales.tr.categories.economy.commands.addmoney.name,
+                    ru: locales.ru.categories.economy.commands.addmoney.name
+                })
+                .setDescription("Add money to a specific member")
+                .setDescriptionLocalizations({
+                    de: locales.de.categories.economy.commands.addmoney.description,
+                    fr: locales.fr.categories.economy.commands.addmoney.description,
+                    "pt-BR": locales.pt.categories.economy.commands.addmoney.description,
+                    "es-ES": locales.es.categories.economy.commands.addmoney.description,
+                    tr: locales.tr.categories.economy.commands.addmoney.description,
+                    ru: locales.ru.categories.economy.commands.addmoney.description
+                })
+                .addUserOption(option =>
+                    option
+                        .setName('member')
+                        .setNameLocalizations({
+                            de: locales.de.categories.economy.commands.addmoney.options.member.name,
+                            fr: locales.fr.categories.economy.commands.addmoney.options.member.name,
+                            "pt-BR": locales.pt.categories.economy.commands.addmoney.options.member.name,
+                            "es-ES": locales.es.categories.economy.commands.addmoney.options.member.name,
+                            tr: locales.tr.categories.economy.commands.addmoney.options.member.name,
+                            ru: locales.ru.categories.economy.commands.addmoney.options.member.name
+                        })
+                        .setDescription('The member you want to add money')
+                        .setDescriptionLocalizations({
+                            de: locales.de.categories.economy.commands.addmoney.options.member.description,
+                            fr: locales.fr.categories.economy.commands.addmoney.options.member.description,
+                            "pt-BR": locales.pt.categories.economy.commands.addmoney.options.member.description,
+                            "es-ES": locales.es.categories.economy.commands.addmoney.options.member.description,
+                            tr: locales.tr.categories.economy.commands.addmoney.options.member.description,
+                            ru: locales.ru.categories.economy.commands.addmoney.options.member.description
+                        })
+                        .setRequired(true)
+                )
+                .addIntegerOption(option =>
+                    option
+                        .setName('amount')
+                        .setNameLocalizations({
+                            de: locales.de.categories.economy.commands.addmoney.options.amount.name,
+                            fr: locales.fr.categories.economy.commands.addmoney.options.amount.name,
+                            "pt-BR": locales.pt.categories.economy.commands.addmoney.options.amount.name,
+                            "es-ES": locales.es.categories.economy.commands.addmoney.options.amount.name,
+                            tr: locales.tr.categories.economy.commands.addmoney.options.amount.name,
+                            ru: locales.ru.categories.economy.commands.addmoney.options.amount.name
+                        })
+                        .setDescription('The amount of money you want to add')
+                        .setDescriptionLocalizations({
+                            de: locales.de.categories.economy.commands.addmoney.options.amount.description,
+                            fr: locales.fr.categories.economy.commands.addmoney.options.amount.description,
+                            "pt-BR": locales.pt.categories.economy.commands.addmoney.options.amount.description,
+                            "es-ES": locales.es.categories.economy.commands.addmoney.options.amount.description,
+                            tr: locales.tr.categories.economy.commands.addmoney.options.amount.description,
+                            ru: locales.ru.categories.economy.commands.addmoney.options.amount.description
+                        })
+                        .setRequired(true)
+                )
+        )
         .setDMPermission(false),
 
     async execute(interaction) {
@@ -106,6 +172,9 @@ module.exports = {
                     break;
                 case 'balance':
                     await balance(interaction);
+                    break;
+                case 'add-money':
+                    await addMoney(interaction);
                     break;
             }
         }

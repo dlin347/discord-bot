@@ -47,6 +47,24 @@
                         "self": "Senin {{cash}} nakit ve {{bank}} banka hesabında 🪙 var",
                         "defaultError": "{{member}} üyesinin para miktarını şu anda gösteremiyorum... Lütfen daha sonra tekrar deneyin"
                     }
+                },
+                "addmoney": {
+                    "name": "para-ekle",
+                    "description": "Belirli bir üyeye para ekler",
+                    "options": {
+                        "member": {
+                            "name": "üye",
+                            "description": "Parayı eklemek istediğiniz üye"
+                        },
+                        "amount": {
+                            "name": "miktar",
+                            "description": "Eklemek istediğiniz para miktarı"
+                        }
+                    },
+                    "responses": {
+                        "success": "{{amount}} 🪙 başarıyla {{member}}'e eklendi",
+                        "defaultError": "{{member}}'e şu anda para ekleyemiyorum... Lütfen daha sonra tekrar deneyin"
+                    }
                 }
             }
         },

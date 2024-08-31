@@ -47,6 +47,24 @@
                         "self": "Você tem {{cash}} em dinheiro e {{bank}} no banco 🪙",
                         "defaultError": "Não posso exibir a quantidade de dinheiro de {{member}} no momento... Por favor, tente novamente mais tarde"
                     }
+                },
+                "addmoney": {
+                    "name": "adicionar-dinheiro",
+                    "description": "Adiciona dinheiro a um membro específico",
+                    "options": {
+                        "member": {
+                            "name": "membro",
+                            "description": "O membro ao qual você deseja adicionar dinheiro"
+                        },
+                        "amount": {
+                            "name": "quantia",
+                            "description": "A quantia de dinheiro que você deseja adicionar"
+                        }
+                    },
+                    "responses": {
+                        "success": "{{amount}} 🪙 foi adicionado com sucesso a {{member}}",
+                        "defaultError": "Não consigo adicionar dinheiro a {{member}} no momento... Por favor, tente novamente mais tarde"
+                    }
                 }
             }
         },

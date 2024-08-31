@@ -1,4 +1,3 @@
--- Show money
 -- Add money
 -- Remove money
 -- Set money

@@ -47,6 +47,24 @@
                         "self": "You have {{cash}} in cash and {{bank}} in the bank 🪙",
                         "defaultError": "I can't display the amount of money of {{member}} right now... Please try again later"
                     }
+                },
+                "addmoney": {
+                    "name": "addmoney",
+                    "description": "Add money to a specific member",
+                    "options": {
+                        "member": {
+                            "name": "member",
+                            "description": "The member you want to add money to"
+                        },
+                        "amount": {
+                            "name": "amount",
+                            "description": "The amount of money you want to add"
+                        }
+                    },
+                    "responses": {
+                        "success": "Successfully added {{amount}} 🪙 to {{member}}",
+                        "defaultError": "I can't add money to {{member}} right now... Please try again later"
+                    }
                 }
             }
         },

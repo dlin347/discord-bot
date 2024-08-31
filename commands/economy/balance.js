@@ -27,6 +27,6 @@ module.exports = async function balance(interaction) {
         });
     } catch (e) {
         console.error("\x1b[31m" + '[/BALANCE] ' + e.stack + "\x1b[0m");
-        await interaction.reply({ content: defaultError, ephemeral: true });
+        await interaction.reply({ content: responses.defaultError.replace('{{member}}', member), ephemeral: true });
     }
 }

@@ -47,6 +47,24 @@
                         "self": "Vous avez {{cash}} en espèces et {{bank}} à la banque 🪙",
                         "defaultError": "Je ne peux pas afficher le montant d'argent de {{member}} en ce moment... Veuillez réessayer plus tard"
                     }
+                },
+                "addmoney": {
+                    "name": "ajouter-argent",
+                    "description": "Ajoute de l'argent à un membre spécifique",
+                    "options": {
+                        "member": {
+                            "name": "membre",
+                            "description": "Le membre auquel vous souhaitez ajouter de l'argent"
+                        },
+                        "amount": {
+                            "name": "montant",
+                            "description": "Le montant d'argent que vous souhaitez ajouter"
+                        }
+                    },
+                    "responses": {
+                        "success": "{{amount}} 🪙 a été ajouté avec succès à {{member}}",
+                        "defaultError": "Je ne peux pas ajouter d'argent à {{member}} pour le moment... Veuillez réessayer plus tard"
+                    }
                 }
             }
         },

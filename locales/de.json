@@ -47,6 +47,24 @@
                         "self": "Du hast {{cash}} in bar und {{bank}} auf der Bank 🪙",
                         "defaultError": "Ich kann den Geldbetrag von {{member}} momentan nicht anzeigen... Bitte versuche es später erneut"
                     }
+                },
+                "addmoney": {
+                    "name": "geld-hinzufügen",
+                    "description": "Füge einem bestimmten Mitglied Geld hinzu",
+                    "options": {
+                        "member": {
+                            "name": "mitglied",
+                            "description": "Das Mitglied, dem du Geld hinzufügen möchtest"
+                        },
+                        "amount": {
+                            "name": "betrag",
+                            "description": "Den Geldbetrag, den du hinzufügen möchtest"
+                        }
+                    },
+                    "responses": {
+                        "success": "{{amount}} 🪙 wurde erfolgreich zu {{member}} hinzugefügt",
+                        "defaultError": "Ich kann {{member}} momentan kein Geld hinzufügen... Bitte versuche es später erneut"
+                    }
                 }
             }
         },
