@@ -1,7 +1,8 @@
 {
     "categories": {
         "common": {
-            "noReason": "No se proporcionó ninguna razón"
+            "noReason": "No se proporcionó ninguna razón",
+            "noMoneyError": "No tienes suficiente dinero para completar la transacción"
         },
         "economy": {
             "name": "economía",
@@ -82,6 +83,52 @@
                     "responses": {
                         "success": "Se ha quitado con éxito {{amount}} 🪙 a {{member}}",
                         "defaultError": "No puedo quitar dinero a {{member}} en este momento... Por favor, inténtalo de nuevo más tarde"
+                    }
+                },
+                "transfer": {
+                    "name": "transferir",
+                    "description": "Transfiere dinero a un miembro específico",
+                    "options": {
+                        "member": {
+                            "name": "miembro",
+                            "description": "El miembro al que deseas transferir dinero"
+                        },
+                        "amount": {
+                            "name": "cantidad",
+                            "description": "La cantidad de dinero que deseas transferir"
+                        }
+                    },
+                    "responses": {
+                        "success": "Se ha transferido con éxito {{amount}} 🪙 a {{member}}",
+                        "defaultError": "No puedo transferir dinero a {{member}} en este momento... Por favor, inténtalo de nuevo más tarde"
+                    }
+                },
+                "deposit": {
+                    "name": "depositar",
+                    "description": "Deposita tu dinero en el banco",
+                    "options": {
+                        "amount": {
+                            "name": "cantidad",
+                            "description": "La cantidad de dinero que deseas depositar"
+                        }
+                    },
+                    "responses": {
+                        "success": "Se ha depositado con éxito {{amount}} 🪙 en el banco",
+                        "defaultError": "No puedo depositar tu dinero en el banco en este momento... Por favor, inténtalo de nuevo más tarde"
+                    }
+                },
+                "withdraw": {
+                    "name": "retirar",
+                    "description": "Retira tu dinero del banco",
+                    "options": {
+                        "amount": {
+                            "name": "cantidad",
+                            "description": "La cantidad de dinero que deseas retirar"
+                        }
+                    },
+                    "responses": {
+                        "success": "Se ha retirado con éxito {{amount}} 🪙 del banco",
+                        "defaultError": "No puedo retirar tu dinero del banco en este momento... Por favor, inténtalo de nuevo más tarde"
                     }
                 }
             }

@@ -1,7 +1,8 @@
 {
     "categories": {
         "common": {
-            "noReason": "No reason provided"
+            "noReason": "No reason provided",
+            "noMoneyError": "You don't have enough money to complete the transaction"
         },
         "economy": {
             "name": "economy",
@@ -82,6 +83,52 @@
                     "responses": {
                         "success": "Successfully removed {{amount}} 🪙 to {{member}}",
                         "defaultError": "I can't remove money to {{member}} right now... Please try again later"
+                    }
+                },
+                "transfer": {
+                    "name": "transfer",
+                    "description": "Transfer money to a specific member",
+                    "options": {
+                        "member": {
+                            "name": "member",
+                            "description": "The member you want to transfer money to"
+                        },
+                        "amount": {
+                            "name": "amount",
+                            "description": "The amount of money you want to transfer"
+                        }
+                    },
+                    "responses": {
+                        "success": "Successfully transferred {{amount}} 🪙 to {{member}}",
+                        "defaultError": "I can't transfer money to {{member}} right now... Please try again later"
+                    }
+                },
+                "deposit": {
+                    "name": "deposit",
+                    "description": "Deposit your money to the bank",
+                    "options": {
+                        "amount": {
+                            "name": "amount",
+                            "description": "The amount of money you want to deposit"
+                        }
+                    },
+                    "responses": {
+                        "success": "Successfully deposited {{amount}} 🪙 to the bank",
+                        "defaultError": "I can't deposit your money to the bank right now... Please try again later"
+                    }
+                },
+                "withdraw": {
+                    "name": "withdraw",
+                    "description": "Withdraw your money from the bank",
+                    "options": {
+                        "amount": {
+                            "name": "amount",
+                            "description": "The amount of money you want to withdraw"
+                        }
+                    },
+                    "responses": {
+                        "success": "Successfully withdrew {{amount}} 🪙 from the bank",
+                        "defaultError": "I can't withdraw your money from the bank right now... Please try again later"
                     }
                 }
             }

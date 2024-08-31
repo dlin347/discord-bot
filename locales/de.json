@@ -1,7 +1,8 @@
 {
     "categories": {
         "common": {
-            "noReason": "Es wurde kein Grund angegeben"
+            "noReason": "Es wurde kein Grund angegeben",
+            "noMoneyError": "Du hast nicht genügend Geld, um die Transaktion abzuschließen"
         },
         "economy": {
             "name": "wirtschaft",
@@ -82,6 +83,52 @@
                     "responses": {
                         "success": "{{amount}} 🪙 wurde erfolgreich von {{member}} entfernt",
                         "defaultError": "Ich kann momentan kein Geld von {{member}} entfernen... Bitte versuche es später erneut"
+                    }
+                },
+                "transfer": {
+                    "name": "überweisen",
+                    "description": "Überweise Geld an ein bestimmtes Mitglied",
+                    "options": {
+                        "member": {
+                            "name": "mitglied",
+                            "description": "Das Mitglied, an das du Geld überweisen möchtest"
+                        },
+                        "amount": {
+                            "name": "betrag",
+                            "description": "Der Geldbetrag, den du überweisen möchtest"
+                        }
+                    },
+                    "responses": {
+                        "success": "{{amount}} 🪙 wurde erfolgreich an {{member}} überwiesen",
+                        "defaultError": "Ich kann momentan kein Geld an {{member}} überweisen... Bitte versuche es später erneut"
+                    }
+                },
+                "deposit": {
+                    "name": "einzahlen",
+                    "description": "Zahle dein Geld auf die Bank ein",
+                    "options": {
+                        "amount": {
+                            "name": "betrag",
+                            "description": "Der Geldbetrag, den du einzahlen möchtest"
+                        }
+                    },
+                    "responses": {
+                        "success": "{{amount}} 🪙 wurde erfolgreich auf die Bank eingezahlt",
+                        "defaultError": "Ich kann dein Geld momentan nicht auf die Bank einzahlen... Bitte versuche es später erneut"
+                    }
+                },
+                "withdraw": {
+                    "name": "abheben",
+                    "description": "Hebe dein Geld von der Bank ab",
+                    "options": {
+                        "amount": {
+                            "name": "betrag",
+                            "description": "Der Geldbetrag, den du abheben möchtest"
+                        }
+                    },
+                    "responses": {
+                        "success": "{{amount}} 🪙 wurde erfolgreich von der Bank abgehoben",
+                        "defaultError": "Ich kann dein Geld momentan nicht von der Bank abheben... Bitte versuche es später erneut"
                     }
                 }
             }

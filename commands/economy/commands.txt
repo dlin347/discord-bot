@@ -1,7 +1,4 @@
 -- Set money
--- Deposit
--- Withdraw
--- Transfer
 -- Reset all
 -- Rob
 

@@ -1,7 +1,8 @@
 {
     "categories": {
         "common": {
-            "noReason": "Hiçbir sebep belirtilmedi"
+            "noReason": "Hiçbir sebep belirtilmedi",
+            "noMoneyError": "İşlemi tamamlamak için yeterli paranız yok"
         },
         "economy": {
             "name": "ekonomi",
@@ -82,6 +83,52 @@
                     "responses": {
                         "success": "{{amount}} 🪙 başarıyla {{member}}'den silindi",
                         "defaultError": "{{member}}'den şu anda para silemiyorum... Lütfen daha sonra tekrar deneyin"
+                    }
+                },
+                "transfer": {
+                    "name": "transfer",
+                    "description": "Belirli bir üyeye para transferi yapar",
+                    "options": {
+                        "member": {
+                            "name": "üye",
+                            "description": "Parayı transfer etmek istediğiniz üye"
+                        },
+                        "amount": {
+                            "name": "miktar",
+                            "description": "Transfer etmek istediğiniz para miktarı"
+                        }
+                    },
+                    "responses": {
+                        "success": "{{amount}} 🪙 başarıyla {{member}}'e transfer edildi",
+                        "defaultError": "{{member}}'e şu anda para transferi yapamıyorum... Lütfen daha sonra tekrar deneyin"
+                    }
+                },
+                "deposit": {
+                    "name": "yatırmak",
+                    "description": "Paranızı bankaya yatırın",
+                    "options": {
+                        "amount": {
+                            "name": "miktar",
+                            "description": "Yatırmak istediğiniz para miktarı"
+                        }
+                    },
+                    "responses": {
+                        "success": "{{amount}} 🪙 başarıyla bankaya yatırıldı",
+                        "defaultError": "Şu anda paranızı bankaya yatıramıyorum... Lütfen daha sonra tekrar deneyin"
+                    }
+                },
+                "withdraw": {
+                    "name": "çekmek",
+                    "description": "Paranızı bankadan çekin",
+                    "options": {
+                        "amount": {
+                            "name": "miktar",
+                            "description": "Çekmek istediğiniz para miktarı"
+                        }
+                    },
+                    "responses": {
+                        "success": "{{amount}} 🪙 başarıyla bankadan çekildi",
+                        "defaultError": "Şu anda paranızı bankadan çekemiyorum... Lütfen daha sonra tekrar deneyin"
                     }
                 }
             }

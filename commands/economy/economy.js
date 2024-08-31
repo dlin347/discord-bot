@@ -4,6 +4,9 @@ const work = require('./work.js');
 const balance = require('./balance.js');
 const addMoney = require('./add-money.js');
 const removeMoney = require('./remove-money.js');
+const transfer = require('./transfer.js');
+const deposit = require('./deposit.js');
+const withdraw = require('./withdraw.js');
 
 const locales = {
     de: require('../../locales/de.json'),
@@ -227,6 +230,157 @@ module.exports = {
                         .setRequired(true)
                 )
         )
+        .addSubcommand(subcommand =>
+            subcommand
+                .setName('transfer')
+                .setNameLocalizations({
+                    de: locales.de.categories.economy.commands.transfer.name,
+                    fr: locales.fr.categories.economy.commands.transfer.name,
+                    "pt-BR": locales.pt.categories.economy.commands.transfer.name,
+                    "es-ES": locales.es.categories.economy.commands.transfer.name,
+                    tr: locales.tr.categories.economy.commands.transfer.name,
+                    ru: locales.ru.categories.economy.commands.transfer.name
+                })
+                .setDescription("Transfer money to a specific member")
+                .setDescriptionLocalizations({
+                    de: locales.de.categories.economy.commands.transfer.description,
+                    fr: locales.fr.categories.economy.commands.transfer.description,
+                    "pt-BR": locales.pt.categories.economy.commands.transfer.description,
+                    "es-ES": locales.es.categories.economy.commands.transfer.description,
+                    tr: locales.tr.categories.economy.commands.transfer.description,
+                    ru: locales.ru.categories.economy.commands.transfer.description
+                })
+                .addUserOption(option =>
+                    option
+                        .setName('member')
+                        .setNameLocalizations({
+                            de: locales.de.categories.economy.commands.transfer.options.member.name,
+                            fr: locales.fr.categories.economy.commands.transfer.options.member.name,
+                            "pt-BR": locales.pt.categories.economy.commands.transfer.options.member.name,
+                            "es-ES": locales.es.categories.economy.commands.transfer.options.member.name,
+                            tr: locales.tr.categories.economy.commands.transfer.options.member.name,
+                            ru: locales.ru.categories.economy.commands.transfer.options.member.name
+                        })
+                        .setDescription('The member you want transfer money')
+                        .setDescriptionLocalizations({
+                            de: locales.de.categories.economy.commands.transfer.options.member.description,
+                            fr: locales.fr.categories.economy.commands.transfer.options.member.description,
+                            "pt-BR": locales.pt.categories.economy.commands.transfer.options.member.description,
+                            "es-ES": locales.es.categories.economy.commands.transfer.options.member.description,
+                            tr: locales.tr.categories.economy.commands.transfer.options.member.description,
+                            ru: locales.ru.categories.economy.commands.transfer.options.member.description
+                        })
+                        .setRequired(true)
+                )
+                .addIntegerOption(option =>
+                    option
+                        .setName('amount')
+                        .setNameLocalizations({
+                            de: locales.de.categories.economy.commands.transfer.options.amount.name,
+                            fr: locales.fr.categories.economy.commands.transfer.options.amount.name,
+                            "pt-BR": locales.pt.categories.economy.commands.transfer.options.amount.name,
+                            "es-ES": locales.es.categories.economy.commands.transfer.options.amount.name,
+                            tr: locales.tr.categories.economy.commands.transfer.options.amount.name,
+                            ru: locales.ru.categories.economy.commands.transfer.options.amount.name
+                        })
+                        .setDescription('The amount of money you want to transfer')
+                        .setDescriptionLocalizations({
+                            de: locales.de.categories.economy.commands.transfer.options.amount.description,
+                            fr: locales.fr.categories.economy.commands.transfer.options.amount.description,
+                            "pt-BR": locales.pt.categories.economy.commands.transfer.options.amount.description,
+                            "es-ES": locales.es.categories.economy.commands.transfer.options.amount.description,
+                            tr: locales.tr.categories.economy.commands.transfer.options.amount.description,
+                            ru: locales.ru.categories.economy.commands.transfer.options.amount.description
+                        })
+                        .setRequired(true)
+                )
+        )
+        .addSubcommand(subcommand =>
+            subcommand
+                .setName('deposit')
+                .setNameLocalizations({
+                    de: locales.de.categories.economy.commands.deposit.name,
+                    fr: locales.fr.categories.economy.commands.deposit.name,
+                    "pt-BR": locales.pt.categories.economy.commands.deposit.name,
+                    "es-ES": locales.es.categories.economy.commands.deposit.name,
+                    tr: locales.tr.categories.economy.commands.deposit.name,
+                    ru: locales.ru.categories.economy.commands.deposit.name
+                })
+                .setDescription("Deposit your money to the bank")
+                .setDescriptionLocalizations({
+                    de: locales.de.categories.economy.commands.deposit.description,
+                    fr: locales.fr.categories.economy.commands.deposit.description,
+                    "pt-BR": locales.pt.categories.economy.commands.deposit.description,
+                    "es-ES": locales.es.categories.economy.commands.deposit.description,
+                    tr: locales.tr.categories.economy.commands.deposit.description,
+                    ru: locales.ru.categories.economy.commands.deposit.description
+                })
+                .addIntegerOption(option =>
+                    option
+                        .setName('amount')
+                        .setNameLocalizations({
+                            de: locales.de.categories.economy.commands.deposit.options.amount.name,
+                            fr: locales.fr.categories.economy.commands.deposit.options.amount.name,
+                            "pt-BR": locales.pt.categories.economy.commands.deposit.options.amount.name,
+                            "es-ES": locales.es.categories.economy.commands.deposit.options.amount.name,
+                            tr: locales.tr.categories.economy.commands.deposit.options.amount.name,
+                            ru: locales.ru.categories.economy.commands.deposit.options.amount.name
+                        })
+                        .setDescription('The amount of money you want to deposit')
+                        .setDescriptionLocalizations({
+                            de: locales.de.categories.economy.commands.deposit.options.amount.description,
+                            fr: locales.fr.categories.economy.commands.deposit.options.amount.description,
+                            "pt-BR": locales.pt.categories.economy.commands.deposit.options.amount.description,
+                            "es-ES": locales.es.categories.economy.commands.deposit.options.amount.description,
+                            tr: locales.tr.categories.economy.commands.deposit.options.amount.description,
+                            ru: locales.ru.categories.economy.commands.deposit.options.amount.description
+                        })
+                        .setRequired(true)
+                )
+        )
+        .addSubcommand(subcommand =>
+            subcommand
+                .setName('withdraw')
+                .setNameLocalizations({
+                    de: locales.de.categories.economy.commands.withdraw.name,
+                    fr: locales.fr.categories.economy.commands.withdraw.name,
+                    "pt-BR": locales.pt.categories.economy.commands.withdraw.name,
+                    "es-ES": locales.es.categories.economy.commands.withdraw.name,
+                    tr: locales.tr.categories.economy.commands.withdraw.name,
+                    ru: locales.ru.categories.economy.commands.withdraw.name
+                })
+                .setDescription("Withdraw your money from the bank")
+                .setDescriptionLocalizations({
+                    de: locales.de.categories.economy.commands.withdraw.description,
+                    fr: locales.fr.categories.economy.commands.withdraw.description,
+                    "pt-BR": locales.pt.categories.economy.commands.withdraw.description,
+                    "es-ES": locales.es.categories.economy.commands.withdraw.description,
+                    tr: locales.tr.categories.economy.commands.withdraw.description,
+                    ru: locales.ru.categories.economy.commands.withdraw.description
+                })
+                .addIntegerOption(option =>
+                    option
+                        .setName('amount')
+                        .setNameLocalizations({
+                            de: locales.de.categories.economy.commands.withdraw.options.amount.name,
+                            fr: locales.fr.categories.economy.commands.withdraw.options.amount.name,
+                            "pt-BR": locales.pt.categories.economy.commands.withdraw.options.amount.name,
+                            "es-ES": locales.es.categories.economy.commands.withdraw.options.amount.name,
+                            tr: locales.tr.categories.economy.commands.withdraw.options.amount.name,
+                            ru: locales.ru.categories.economy.commands.withdraw.options.amount.name
+                        })
+                        .setDescription('The amount of money you want withdraw')
+                        .setDescriptionLocalizations({
+                            de: locales.de.categories.economy.commands.withdraw.options.amount.description,
+                            fr: locales.fr.categories.economy.commands.withdraw.options.amount.description,
+                            "pt-BR": locales.pt.categories.economy.commands.withdraw.options.amount.description,
+                            "es-ES": locales.es.categories.economy.commands.withdraw.options.amount.description,
+                            tr: locales.tr.categories.economy.commands.withdraw.options.amount.description,
+                            ru: locales.ru.categories.economy.commands.withdraw.options.amount.description
+                        })
+                        .setRequired(true)
+                )
+        )
         .setDMPermission(false),
 
     async execute(interaction) {
@@ -244,6 +398,15 @@ module.exports = {
                     break;
                 case 'remove-money':
                     await removeMoney(interaction);
+                    break;
+                case 'transfer':
+                    await transfer(interaction);
+                    break;
+                case 'deposit':
+                    await deposit(interaction);
+                    break;
+                case 'withdraw':
+                    await withdraw(interaction);
                     break;
             }
         }
