@@ -1,2 +1,2 @@
 # Cybot
-A multilanguage discord bot project made for the community based in node.js
+A multilanguage discord chatbot project made for the community based in node.js
